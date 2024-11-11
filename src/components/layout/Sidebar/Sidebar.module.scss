@@ -1,4 +1,90 @@
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+@use '../../../styles/abstracts/mixins' as *;
+
 .sidebar {
   width: 240px;
   height: 100%;
+
+  &Container {
+    width: 100%;
+    min-height: 100vh;
+    background: color.$color-white-primary;
+    box-shadow: color.$shadow-box-light;
+    border-radius: 24px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  &Logo {
+    padding-block-start: 40px;
+    padding-inline-start: 24px;
+  }
+
+  &LogoNavContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 42px;
+  }
+
+  &Nav {
+    width: 100%;
+  }
+
+  &NavList {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    padding-inline-start: 16px;
+
+    &Item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    &ItemLink {
+      @include listItem;
+    }
+  }
+
+  &Logout {
+    display: flex;
+    flex-direction: column;
+    gap: 51px;
+    padding-inline: 16px;
+    padding-block-end: 45px;
+  }
+
+  &LogoutBlock {
+    position: relative;
+  }
+
+  &SupportButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 129px;
+    min-height: 48px;
+    position: absolute;
+    bottom: 26px;
+    left: 19px;
+    background: color.$background-support-primary;
+    box-shadow: color.$shadow-box-support;
+    font-size: size.$font-size-lg;
+    color: color.$color-white-primary;
+    border-radius: 14px;
+    font-weight: 700;
+  }
+
+  &LogoutButton {
+    background: inherit;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    @include listItem;
+  }
 }

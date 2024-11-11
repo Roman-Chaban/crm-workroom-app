@@ -1,8 +1,15 @@
 import type { Metadata } from 'next';
 
+import { Nunito_Sans } from 'next/font/google';
+
 import { Sidebar, BodyWrapper, Main } from '@/components/index/index';
 
 import '@/styles/main/main.scss';
+
+const basicFont = Nunito_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+});
 
 export const metadata: Metadata = {
   title: 'CRM Workroom | Dashboard',
@@ -17,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={basicFont.className}>
         <BodyWrapper>
           <Sidebar />
           <Main>{children}</Main>

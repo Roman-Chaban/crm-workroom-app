@@ -1,0 +1,14 @@
+@use '../base/colors/colors' as color;
+@use '../base/globals/globals' as size;
+
+@mixin BoundingBox() {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@mixin listItem {
+  color: color.$color-gray-neutral;
+  font-size: size.$font-size-lg;
+  font-weight: 600;
+}
