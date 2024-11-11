@@ -1,0 +1,10 @@
+@use '../../../styles/base/colors/colors' as color;
+
+.bodyWrapper {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 25px 20px;
+  background: color.$background-main-light;
+}
