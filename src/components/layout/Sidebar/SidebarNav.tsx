@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { nav, navList } from '@/classNames/sidebar/sidebarClassNames';
 
-import { sidebarNav } from '@/components/static-data/sidebar-nav';
+import { sidebarNav } from '@/static-data/sidebar-nav';
 
 import { SidebarNavItem } from './SidebarNavItem';
 
