@@ -1,9 +1,9 @@
 @use '../base/colors/colors' as color;
 @use '../base/globals/globals' as size;
 
-@mixin BoundingBox() {
+@mixin BoundingBox {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -11,4 +11,23 @@
   color: color.$color-gray-neutral;
   font-size: size.$font-size-lg;
   font-weight: 600;
+}
+
+@mixin Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 129px;
+  min-height: 48px;
+  position: absolute;
+  bottom: 26px;
+  left: 19px;
+  background: color.$background-support-primary;
+  box-shadow: color.$shadow-box-support;
+  font-size: size.$font-size-lg;
+  color: color.$color-white-primary;
+  border-radius: 14px;
+  font-weight: 700;
 }

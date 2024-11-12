@@ -4,7 +4,7 @@ import { nav, navList } from '@/classNames/sidebar/sidebarClassNames';
 
 import { sidebarNav } from '@/static-data/sidebar-nav';
 
-import { SidebarNavItem } from './SidebarNavItem';
+import { SidebarNavItem } from '@/components/index/index';
 
 export const SidebarNav: FC = () => {
   return (

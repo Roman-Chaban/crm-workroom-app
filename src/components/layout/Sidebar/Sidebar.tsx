@@ -10,8 +10,7 @@ import {
   logoNavContainer,
 } from '@/classNames/sidebar/sidebarClassNames';
 
-import { SidebarNav, Container } from '@/components/index/index';
-import { SidebarLogout } from './SidebarLogout';
+import { SidebarNav, Container, SidebarLogout } from '@/components/index/index';
 
 export const Sidebar: FC = () => {
   return (

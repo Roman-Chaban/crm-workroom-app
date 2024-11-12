@@ -1,6 +1,6 @@
+@use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/base/colors/colors' as color;
 @use '../../../styles/base/globals/globals' as size;
-@use '../../../styles/abstracts/mixins' as *;
 
 .sidebar {
   width: 240px;
@@ -13,7 +13,7 @@
     box-shadow: color.$shadow-box-light;
     border-radius: 24px;
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
     gap: 40px;
     justify-content: space-between;
   }
@@ -62,22 +62,7 @@
   }
 
   &SupportButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    max-width: 129px;
-    min-height: 48px;
-    position: absolute;
-    bottom: 26px;
-    left: 19px;
-    background: color.$background-support-primary;
-    box-shadow: color.$shadow-box-support;
-    font-size: size.$font-size-lg;
-    color: color.$color-white-primary;
-    border-radius: 14px;
-    font-weight: 700;
+    @include Button;
   }
 
   &LogoutButton {

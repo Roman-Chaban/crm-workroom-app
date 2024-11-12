@@ -5,3 +5,6 @@ export { BodyWrapper } from '@/components/containers/BodyWrapper/BodyWrapper';
 export { WidthContainer } from '@/components/containers/WidthContainer/WidthContainer';
 export { Container } from '@/components/containers/Container/Container';
 export { SidebarNav } from '@/components/layout/Sidebar/SidebarNav';
+export { SidebarLogout } from '@/components/layout/Sidebar/SidebarLogout';
+export { SidebarNavItem } from '@/components/layout/Sidebar/SidebarNavItem';
+export { Button } from '@/components/ui-components/Button/Button';

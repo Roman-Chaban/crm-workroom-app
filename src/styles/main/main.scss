@@ -1,4 +1,9 @@
 @use '../reset/reset' as *;
+@use '../base/colors/colors' as color;
+
+body {
+  background: color.$background-main-light;
+}
 
 .main {
   width: 100%;

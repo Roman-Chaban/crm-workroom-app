@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import Image from 'next/image';
 
-import { Button } from '@/components/ui-components/Button/Button';
+import { Button } from '@/components/index/index';
 
 import {
   logout,
