@@ -5,21 +5,26 @@ import Image from 'next/image';
 
 import { SidebarNavListItem } from '@/types/sidebar-nav';
 
+import classNames from 'classnames';
+
 import {
   navListItem,
   navListItemLink,
   navListItemIcon,
+  isActiveLink,
+  isActiveColor,
 } from '@/classNames/sidebar/sidebarClassNames';
 
 interface SidebarNavItemProps {
   item: SidebarNavListItem;
+  isActive: boolean;
 }
 
-export const SidebarNavItem: FC<SidebarNavItemProps> = ({ item }) => {
+export const SidebarNavItem: FC<SidebarNavItemProps> = ({ item, isActive }) => {
   return (
-    <li className={navListItem}>
+    <li className={classNames(navListItem, { [isActiveLink]: isActive })}>
       <Image
-        src={item.inactiveIcon}
+        src={isActive ? item.activeIcon : item.inactiveIcon}
         alt={item.label}
         title={item.label}
         width={24}
@@ -27,7 +32,10 @@ export const SidebarNavItem: FC<SidebarNavItemProps> = ({ item }) => {
         priority
         className={navListItemIcon}
       />
-      <Link href={item.href} className={navListItemLink}>
+      <Link
+        href={item.href}
+        className={classNames(navListItemLink, { [isActiveColor]: isActive })}
+      >
         {item.label}
       </Link>
     </li>

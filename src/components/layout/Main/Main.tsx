@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 
-import { Header, WidthContainer } from '@/components/index/index';
+import { Header, Grid } from '@/components/index/index';
 
 import { main } from '@/classNames/main/mainClassNames';
 
@@ -10,9 +10,9 @@ interface MainProps {
 
 export const Main: FC<MainProps> = ({ children }) => {
   return (
-    <WidthContainer>
+    <Grid gridTemplateRows="auto 1fr" gap="50px">
       <Header />
       <main className={main}>{children}</main>
-    </WidthContainer>
+    </Grid>
   );
 };

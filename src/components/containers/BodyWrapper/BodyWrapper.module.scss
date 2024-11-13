@@ -1,4 +1,4 @@
-@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/mixins/mixins' as *;
 @use '../../../styles/base/colors/colors' as color;
 
 .bodyWrapper {
@@ -6,7 +6,7 @@
   gap: 30px;
   width: 100%;
   @include BoundingBox;
-  min-height: 100vh;
-  padding: 20px 20px 25px 20px;
   background: color.$background-main-light;
+  padding: 20px 20px 25px 20px;
+  min-height: 100vh;
 }

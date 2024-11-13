@@ -8,3 +8,5 @@ export { SidebarNav } from '@/components/layout/Sidebar/SidebarNav';
 export { SidebarLogout } from '@/components/layout/Sidebar/SidebarLogout';
 export { SidebarNavItem } from '@/components/layout/Sidebar/SidebarNavItem';
 export { Button } from '@/components/ui-components/Button/Button';
+export { Grid } from '@/components/containers/Grid/Grid';
+export { Input } from '@/components/ui-components/Input/Input';

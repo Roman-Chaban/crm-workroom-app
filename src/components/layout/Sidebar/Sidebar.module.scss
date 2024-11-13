@@ -1,14 +1,13 @@
-@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/mixins/mixins' as *;
 @use '../../../styles/base/colors/colors' as color;
 @use '../../../styles/base/globals/globals' as size;
 
 .sidebar {
-  width: 240px;
-  height: 100%;
-
+  width: 100%;
+  max-width: 200px;
   &Container {
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     background: color.$color-white-primary;
     box-shadow: color.$shadow-box-light;
     border-radius: 24px;
@@ -36,13 +35,14 @@
   &NavList {
     display: flex;
     flex-flow: column nowrap;
-    gap: 20px;
+    gap: 24px;
     padding-inline-start: 16px;
 
     &Item {
       display: flex;
       align-items: center;
       gap: 16px;
+      padding-inline-start: 8px;
     }
     &ItemLink {
       @include listItem;
@@ -71,5 +71,28 @@
     align-items: center;
     gap: 16px;
     @include listItem;
+  }
+
+  &NavListItemActive {
+    width: 100%;
+    max-width: 172px;
+    height: 44px;
+    padding: 10px 8px;
+    border-radius: 10px;
+    background-color: rgba(color.$background-support-primary, 0.1);
+    position: relative;
+    &::after {
+      content: '';
+      background: color.$background-support-primary;
+      border-radius: 2px;
+      width: 4px;
+      height: 100%;
+      position: absolute;
+      right: -12px;
+    }
+  }
+
+  & .activeColor {
+    color: color.$background-support-primary;
   }
 }

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <section className={home}>
-      <div className={homeContainer}></div>
+      <div className={homeContainer}>Home</div>
     </section>
   );
 }

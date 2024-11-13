@@ -1,5 +1,5 @@
-@use '../base/colors/colors' as color;
-@use '../base/globals/globals' as size;
+@use '../../base/colors/colors' as color;
+@use '../../base/globals/globals' as size;
 
 @mixin BoundingBox {
   width: 100%;
@@ -30,4 +30,15 @@
   color: color.$color-white-primary;
   border-radius: 14px;
   font-weight: 700;
+}
+
+@mixin menuButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: color.$color-white-primary;
+  box-shadow: color.$shadow-box-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

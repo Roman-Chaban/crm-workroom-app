@@ -22,6 +22,7 @@ export interface InputProps {
   maxLength?: number;
   minLength?: number;
   classNames: InputClassNames;
+  icon: string;
 }
 
 export type InputTypes =

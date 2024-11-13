@@ -1,0 +1,29 @@
+$breakpoint-large: 1440px;
+$breakpoint-medium: 1024px;
+$breakpoint-small: 768px;
+$breakpoint-extra-small: 600px;
+$breakpoint-extra-extra-small: 400px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == large {
+    @media (max-width: $breakpoint-large) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (max-width: $breakpoint-medium) {
+      @content;
+    }
+  } @else if $breakpoint == small {
+    @media (max-width: $breakpoint-small) {
+      @content;
+    }
+  } @else if $breakpoint == extra-small {
+    @media (max-width: $breakpoint-extra-small) {
+      @content;
+    }
+  } @else if $breakpoint == extra-extra-small {
+    @media (max-width: $breakpoint-extra-extra-small) {
+      @content;
+    }
+  }
+}

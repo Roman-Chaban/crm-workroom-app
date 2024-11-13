@@ -1,16 +1,14 @@
-import type { ChangeEvent, FC } from 'react';
+import type { FC } from 'react';
 
-import { useState } from 'react';
+import Image from 'next/image';
 
-import { InputProps, Value } from '@/types/input';
+import { InputProps } from '@/types/input';
 
 export const Input: FC<InputProps> = ({
   htmlFor = '',
   type = 'text',
   label,
   id = '',
-  value,
-  onChange,
   placeholder = '',
   style,
   name = '',
@@ -20,26 +18,23 @@ export const Input: FC<InputProps> = ({
   maxLength,
   minLength,
   classNames,
+  value,
+  onChange,
+  icon,
 }) => {
-  const [inputValue, setInputValue] = useState<Value>(value);
-
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-    onChange(event);
-  };
-
   return (
     <div className={classNames.container}>
       <label htmlFor={htmlFor} className={classNames.label}>
         {label}
       </label>
+      <Image src={icon} width={24} height={24} alt="" />
       <input
         className={classNames.input}
         type={type}
         id={id}
         name={name}
-        value={inputValue}
-        onChange={handleInputChange}
+        value={value}
+        onChange={onChange}
         placeholder={placeholder}
         style={style}
         required={required}

@@ -1,4 +1,47 @@
-@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/mixins/mixins' as *;
 @use '../../../styles/base/colors/colors' as color;
 @use '../../../styles/base/globals/globals' as size;
 
+.header {
+  width: 100%;
+  grid-column: span 12;
+  height: auto;
+
+  &Container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &SearchContainer {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    width: 100%;
+    max-width: 412px;
+    min-height: 48px;
+    background: color.$color-white-primary;
+    border-radius: 14px;
+  }
+
+  &SearchInput {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 12px 19px;
+    padding-inline-start: 0;
+    @include listItem;
+    caret-color: color.$color-gray-neutral;
+    font-weight: 400;
+    &::placeholder {
+      @include listItem;
+      font-weight: 400;
+    }
+  }
+
+  &Notification {
+    @include menuButton;
+  }
+}

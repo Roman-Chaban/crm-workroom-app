@@ -18,22 +18,30 @@ export const containerClassNames = {
   logoutImage: styles['sidebarLogoutImage'],
   logoutLink: styles['sidebarLogoutLink'],
   logoutButton: styles['sidebarLogoutButton'],
-  supportButton: styles['sidebarSupportButton']
+  supportButton: styles['sidebarSupportButton'],
+  isActiveLink: styles['sidebarNavListItemActive'],
+  isActiveColor: styles['activeColor'],
 };
 
 export const sidebar = classNames(containerClassNames.sidebar);
 export const container = classNames(containerClassNames.container);
 export const logo = classNames(containerClassNames.logo);
 export const logoIcon = classNames(containerClassNames.logoIcon);
-export const logoNavContainer = classNames(containerClassNames.logoNavContainer);
+export const logoNavContainer = classNames(
+  containerClassNames.logoNavContainer
+);
 export const nav = classNames(containerClassNames.sidebarNav);
 export const navList = classNames(containerClassNames.navList);
 export const navListItem = classNames(containerClassNames.navListItem);
 export const navListItemLink = classNames(containerClassNames.navListItemLink);
 export const navListItemIcon = classNames(containerClassNames.navListItemIcon);
 export const logout = classNames(containerClassNames.logout);
-export const logoutImageBlock = classNames(containerClassNames.logoutImageBlock);
+export const logoutImageBlock = classNames(
+  containerClassNames.logoutImageBlock
+);
 export const logoutImage = classNames(containerClassNames.logoutImage);
 export const logoutLink = classNames(containerClassNames.logoutLink);
 export const logoutButton = classNames(containerClassNames.logoutButton);
 export const supportButton = classNames(containerClassNames.supportButton);
+export const isActiveLink = classNames(containerClassNames.isActiveLink);
+export const isActiveColor = classNames(containerClassNames.isActiveColor);
