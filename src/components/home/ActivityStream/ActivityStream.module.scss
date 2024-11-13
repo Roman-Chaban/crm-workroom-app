@@ -1,0 +1,16 @@
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+
+.activityStream {
+  @include whiteContainer(339px);
+  height: 538px;
+
+  &Container {
+    @include containerPadding;
+  }
+
+  &Title {
+    @include boldTitle;
+  }
+}

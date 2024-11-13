@@ -35,6 +35,7 @@
     @include listItem;
     caret-color: color.$color-gray-neutral;
     font-weight: 400;
+
     &::placeholder {
       @include listItem;
       font-weight: 400;

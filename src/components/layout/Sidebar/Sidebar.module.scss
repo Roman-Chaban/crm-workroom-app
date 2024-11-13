@@ -5,6 +5,7 @@
 .sidebar {
   width: 100%;
   max-width: 200px;
+
   &Container {
     width: 100%;
     min-height: 100%;
@@ -35,7 +36,7 @@
   &NavList {
     display: flex;
     flex-flow: column nowrap;
-    gap: 24px;
+    gap: 14px;
     padding-inline-start: 16px;
 
     &Item {
@@ -43,7 +44,9 @@
       align-items: center;
       gap: 16px;
       padding-inline-start: 8px;
+      min-height: 48px;
     }
+
     &ItemLink {
       @include listItem;
     }
@@ -81,6 +84,7 @@
     border-radius: 10px;
     background-color: rgba(color.$background-support-primary, 0.1);
     position: relative;
+
     &::after {
       content: '';
       background: color.$background-support-primary;

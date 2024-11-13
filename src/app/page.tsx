@@ -1,5 +1,15 @@
 import { Metadata } from 'next';
 
+import {
+  Container,
+  DashboardPanel,
+  Box,
+  Workload,
+  NearestEvents,
+  Projects,
+  ActivityStream,
+} from '@/components/index/index';
+
 import { home, homeContainer } from '@/classNames/home/homeClassNames';
 
 export const metadata: Metadata = {
@@ -7,10 +17,20 @@ export const metadata: Metadata = {
   icons: '/favicon/favicon.svg',
 };
 
-export default function Home() {
+export default function HomePage() {
   return (
     <section className={home}>
-      <div className={homeContainer}>Home</div>
+      <Container className={homeContainer}>
+        <DashboardPanel />
+        <Box>
+          <Workload />
+          <NearestEvents />
+        </Box>
+        <Box>
+          <Projects />
+          <ActivityStream />
+        </Box>
+      </Container>
     </section>
   );
 }

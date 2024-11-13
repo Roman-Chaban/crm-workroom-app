@@ -3,5 +3,8 @@
 
   &Container {
     width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 28px;
   }
 }

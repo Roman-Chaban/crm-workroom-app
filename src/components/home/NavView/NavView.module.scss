@@ -1,0 +1,18 @@
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+
+.NavViewContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 34px;
+
+  & .NavViewTitle {
+    @include boldTitle;
+  }
+
+  & .NavViewLink {
+    @include viewLink;
+  }
+}

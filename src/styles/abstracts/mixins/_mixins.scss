@@ -42,3 +42,41 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin title($min-height: $min-height) {
+  color: color.$color-black-deep;
+  font-size: size.$font-size-4xl;
+  font-weight: 700;
+  min-height: $min-height;
+}
+
+
+@mixin whiteContainer($max-width: $max-width, ) {
+  width: 100%;
+  height: 100%;
+  max-width: $max-width;
+  background: color.$color-white-primary;
+  box-shadow: color.$shadow-box-light;
+  border-radius: 24px;
+}
+
+@mixin containerPadding {
+  padding: 28px 20px 16px 30px;
+}
+
+@mixin boldTitle {
+  font-size: size.$font-size-2xl;
+  color: color.$color-black-deep;
+  font-weight: 700;
+}
+
+
+@mixin viewLink {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: size.$font-size-lg;
+  color: color.$background-support-primary;
+  font-weight: 600;
+}
+

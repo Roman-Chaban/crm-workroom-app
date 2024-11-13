@@ -1,20 +1,22 @@
-import type { Metadata } from 'next';
+import React from "react";
 
-import { Nunito_Sans } from 'next/font/google';
+import type { Metadata } from "next";
 
-import { Sidebar, BodyWrapper, Main } from '@/components/index/index';
+import { Nunito_Sans } from "next/font/google";
 
-import '@/styles/main/main.scss';
+import { Sidebar, BodyWrapper, Main } from "@/components/index/index";
+
+import "@/styles/main/main.scss";
 
 const basicFont = Nunito_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: 'CRM Workroom | Dashboard',
-  icons: '/favicon/favicon.svg',
-  authors: { name: 'Roman Chaban' },
+  title: "CRM Workroom | Dashboard",
+  icons: "/favicon/favicon.svg",
+  authors: { name: "Roman Chaban" },
 };
 
 export default function RootLayout({

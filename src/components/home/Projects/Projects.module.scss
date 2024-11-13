@@ -1,0 +1,26 @@
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+
+.projects {
+  width: 100%;
+  max-width: 781px;
+
+  &Container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &Items {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+  }
+
+  &Item {
+    @include whiteContainer(100%);
+    min-height: 148px;
+  }
+}

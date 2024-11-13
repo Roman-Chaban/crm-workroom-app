@@ -1,0 +1,30 @@
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+
+.dashboard {
+  width: 100%;
+  height: auto;
+
+  &Container {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+  }
+
+  &GreetTitle {
+    @include listItem;
+    font-weight: 400;
+    line-height: 22px;
+    min-height: 22px;
+  }
+
+
+  &Title {
+    line-height: 48px;
+    @include title(48px);
+  }
+
+
+}

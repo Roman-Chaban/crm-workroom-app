@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { ChangeEvent, useState, type FC } from 'react';
+import { ChangeEvent, useState, type FC } from "react";
 
-import Image from 'next/image';
+import Image from "next/image";
 
-import { Button, Input } from '@/components/index';
+import { Button, Input } from "@/components/index";
 
-import { Value } from '@/types/input';
+import { Value } from "@/types/input";
 
 import {
   header,
@@ -15,10 +15,10 @@ import {
   searchInput,
   searchLabel,
   notification,
-} from '@/classNames/header/headerClassNames';
+} from "@/classNames/header/headerClassNames";
 
 export const Header: FC = () => {
-  const [inputValue, setInputValue] = useState<Value>('');
+  const [inputValue, setInputValue] = useState<Value>("");
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
