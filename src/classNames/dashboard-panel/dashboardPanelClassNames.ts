@@ -1,12 +1,12 @@
-import classNames from "classnames";
+import classNames from 'classnames';
 
-import styles from "@/components/home/DashboardPanel/DashboardPanel.module.scss";
+import styles from '@/components/home/DashboardPanel/DashboardPanel.module.scss';
 
 export const containerClassNames = {
-  dashBoard: styles["dashboard"],
-  container: styles["dashboardContainer"],
-  greetTitle: styles["dashboardGreetTitle"],
-  title: styles["dashboardTitle"],
+  dashBoard: styles['dashboard'],
+  container: styles['dashboardContainer'],
+  greetTitle: styles['dashboardGreetTitle'],
+  title: styles['dashboardTitle'],
 };
 
 export const dashboard = classNames(containerClassNames.dashBoard);

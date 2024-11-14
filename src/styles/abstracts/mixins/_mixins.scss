@@ -120,3 +120,32 @@
   border-radius: 14px;
   background: color.$background-main-light;
 }
+
+@mixin selectLabel {
+  font-size: size.$font-size-md;
+  color: color.$color-gray-neutral;
+  font-weight: 700;
+  line-height: 171%;
+}
+
+@mixin select {
+  width: 100%;
+  max-width: 464px;
+  border-radius: 19px;
+  min-height: 49px;
+  border: 1.5px solid color.$background-modal-light;
+  box-shadow: color.$shadow-modal;
+  background: color.$color-white-primary;
+  margin: 0;
+  padding-inline-start: 18px;
+  appearance: none;
+  @include selectLabel;
+  font-weight: 400;
+}
+
+@mixin inputHover {
+  transition: border-color 0.3s ease-in-out;
+  &:hover {
+    border-color: color.$background-support-hover;
+  }
+}

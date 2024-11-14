@@ -4,7 +4,7 @@ $breakpoint-small: 768px;
 $breakpoint-extra-small: 600px;
 $breakpoint-extra-extra-small: 400px;
 
-@mixin respond-to($breakpoint) {
+@mixin respond-toWidth($breakpoint) {
   @if $breakpoint == large {
     @media (max-width: $breakpoint-large) {
       @content;
@@ -23,6 +23,36 @@ $breakpoint-extra-extra-small: 400px;
     }
   } @else if $breakpoint == extra-extra-small {
     @media (max-width: $breakpoint-extra-extra-small) {
+      @content;
+    }
+  }
+}
+
+$breakpoint-height-large: 1440px;
+$breakpoint-height-medium: 995px;
+$breakpoint-height-small: 768px;
+$breakpoint-height-extra-small: 600px;
+$breakpoint-height-extra-extra-small: 400px;
+
+@mixin respond-toHeight($breakpoint) {
+  @if $breakpoint == height-large {
+    @media (max-height: $breakpoint-height-large) {
+      @content;
+    }
+  } @else if $breakpoint == height-medium {
+    @media (max-height: $breakpoint-height-medium) {
+      @content;
+    }
+  } @else if $breakpoint == height-small {
+    @media (max-height: $breakpoint-height-small) {
+      @content;
+    }
+  } @else if $breakpoint == height-extra-small {
+    @media (max-height: $breakpoint-height-extra-small) {
+      @content;
+    }
+  } @else if $breakpoint == height-extra-extra-small {
+    @media (max-height: $breakpoint-height-extra-extra-small) {
       @content;
     }
   }

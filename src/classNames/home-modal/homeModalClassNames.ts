@@ -11,6 +11,9 @@ export const containerClassNames = {
   closeIcon: styles['modalCloseIcon'],
   modalHeaderParagraph: styles['modalHeaderParagraph'],
   modalBannerImage: styles['modalBannerImage'],
+  textarea: styles['modalTextarea'],
+  textareaLabel: styles['modalTextareaLabel'],
+  modalSendButton: styles['modalSendButton'],
 };
 
 export const modal = classNames(containerClassNames.modal);
@@ -30,3 +33,6 @@ export const modalBannerImage = classNames(
 );
 
 export const closeIcon = classNames(containerClassNames.closeIcon);
+export const textarea = classNames(containerClassNames.textarea);
+export const textareaLabel = classNames(containerClassNames.textareaLabel);
+export const sendButton = classNames(containerClassNames.modalSendButton);

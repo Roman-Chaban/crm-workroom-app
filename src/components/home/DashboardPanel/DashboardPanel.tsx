@@ -1,13 +1,13 @@
-import type { FC } from "react";
+import type { FC } from 'react';
 
-import { Container } from "@/components/containers/Container/Container";
+import { Container } from '@/components/index/index';
 
 import {
   dashboard,
   dashboardContainer,
   greetTitle,
   title,
-} from "@/classNames/dashboard-panel/dashboardPanelClassNames";
+} from '@/classNames/dashboard-panel/dashboardPanelClassNames';
 
 export const DashboardPanel: FC = () => {
   return (

@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
 import {
   Container,
@@ -8,13 +8,13 @@ import {
   NearestEvents,
   Projects,
   ActivityStream,
-} from "@/components/index/index";
+} from '@/components/index/index';
 
-import { home, homeContainer } from "@/classNames/home/homeClassNames";
+import { home, homeContainer } from '@/classNames/home/homeClassNames';
 
 export const metadata: Metadata = {
-  title: "CRM Workroom | Home",
-  icons: "/favicon/favicon.svg",
+  title: 'CRM Workroom | Home',
+  icons: '/favicon/favicon.svg',
 };
 
 export default function HomePage() {

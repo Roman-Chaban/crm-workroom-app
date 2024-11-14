@@ -17,3 +17,7 @@ export { Box } from '@/components/containers/Box/Box';
 export { Projects } from '@/components/home/Projects/Projects';
 export { ActivityStream } from '@/components/home/ActivityStream/ActivityStream';
 export { HomeModal } from '@/components/home/HomeModal/HomeModal';
+export { SidebarLogo } from '@/components/layout/Sidebar/SidebarLogo';
+export { Select } from '@/components/ui-components/Select/Select';
+export { HomeModalHeader } from '@/components/home/HomeModal/HomeModalHeader';
+export { Textarea } from '@/components/ui-components/Textarea/Textarea';
