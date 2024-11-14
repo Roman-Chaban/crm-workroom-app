@@ -21,3 +21,5 @@ export { SidebarLogo } from '@/components/layout/Sidebar/SidebarLogo';
 export { Select } from '@/components/ui-components/Select/Select';
 export { HomeModalHeader } from '@/components/home/HomeModal/HomeModalHeader';
 export { Textarea } from '@/components/ui-components/Textarea/Textarea';
+export { HomeModalFieldsForm } from '@/components/home/HomeModal/HomeModalFieldsForm';
+export { HomeModalIllustration } from '@/components/home/HomeModal/HomeModalIllustration';
