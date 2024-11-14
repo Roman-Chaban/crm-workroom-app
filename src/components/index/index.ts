@@ -16,3 +16,4 @@ export { DashboardPanel } from '@/components/home/DashboardPanel/DashboardPanel'
 export { Box } from '@/components/containers/Box/Box';
 export { Projects } from '@/components/home/Projects/Projects';
 export { ActivityStream } from '@/components/home/ActivityStream/ActivityStream';
+export { HomeModal } from '@/components/home/HomeModal/HomeModal';

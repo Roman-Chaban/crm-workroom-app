@@ -12,7 +12,11 @@ import {
 
 import { SidebarNav, Container, SidebarLogout } from '@/components/index/index';
 
-export const Sidebar: FC = () => {
+interface SidebarProps {
+  onOpenModal: () => void;
+}
+
+export const Sidebar: FC<SidebarProps> = ({ onOpenModal }) => {
   return (
     <aside className={sidebar}>
       <Container className={container}>
@@ -29,7 +33,7 @@ export const Sidebar: FC = () => {
           </div>
           <SidebarNav />
         </Container>
-        <SidebarLogout />
+        <SidebarLogout onOpenModal={onOpenModal} />
       </Container>
     </aside>
   );
