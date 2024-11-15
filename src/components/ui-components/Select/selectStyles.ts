@@ -1,8 +1,10 @@
 import { StylesConfig } from 'react-select';
+
 import { keyframes } from '@emotion/react';
 
 import { Option } from '@/interfaces/select';
-import { themeColors } from '@/constants/colors';
+
+import { colors } from '@/constants/colors';
 
 const fadeIn = keyframes`
   from {
@@ -12,17 +14,6 @@ const fadeIn = keyframes`
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-`;
-
-const fadeOut = keyframes`
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-10px);
   }
 `;
 
@@ -37,19 +28,19 @@ const customStyles: StylesConfig<Option, false> = {
   }),
   control: (base) => ({
     ...base,
-    border: `2px solid ${themeColors.backgroundModalLight}`,
-    boxShadow: themeColors.shadowModal,
+    border: `2px solid ${colors.backgroundModalLight}`,
+    boxShadow: colors.shadowModal,
     borderRadius: 14,
     minHeight: 49,
     cursor: 'pointer',
     transition: 'all 0.3s',
     ':hover': {
-      borderColor: themeColors.backgroundSupportHover,
+      borderColor: colors.backgroundSupportHover,
     },
   }),
   placeholder: (base) => ({
     ...base,
-    color: themeColors.colorGrayNeutral,
+    color: colors.colorGrayNeutral,
     fontSize: 14,
     lineHeight: '171%',
     transition: 'opacity 0.3s',
@@ -60,9 +51,9 @@ const customStyles: StylesConfig<Option, false> = {
     opacity: 0,
     animationFillMode: 'forwards',
     borderRadius: 14,
-    boxShadow: themeColors.shadowBoxLight,
-    background: themeColors.colorWhitePrimary,
-    border: `2px solid ${themeColors.backgroundModalLight}`,
+    boxShadow: colors.shadowBoxLight,
+    background: colors.colorWhitePrimary,
+    border: `2px solid ${colors.backgroundModalLight}`,
     maxHeight: '240px',
     overflowY: 'auto',
     scrollbarWidth: 'none',
@@ -74,28 +65,28 @@ const customStyles: StylesConfig<Option, false> = {
   option: (base) => ({
     ...base,
     padding: '11px',
-    color: themeColors.colorGrayNeutral,
+    color: colors.colorGrayNeutral,
     fontSize: 16,
     margin: 10,
     maxWidth: '95%',
     borderRadius: 14,
     lineHeight: '171%',
-    background: themeColors.colorWhitePrimary,
+    background: colors.colorWhitePrimary,
     cursor: 'pointer',
     transition: 'background-color 0.3s, color 0.3s',
     ':hover': {
-      backgroundColor: themeColors.optionBackground,
-      color: themeColors.colorBlackDeep,
+      backgroundColor: colors.optionBackground,
+      color: colors.colorBlackDeep,
       fontWeight: 700,
     },
     ':active': {
-      backgroundColor: themeColors.backgroundSupportActive,
-      color: themeColors.colorWhitePrimary,
+      backgroundColor: colors.backgroundSupportActive,
+      color: colors.colorWhitePrimary,
     },
   }),
   singleValue: (base) => ({
     ...base,
-    color: themeColors.colorGrayNeutral,
+    color: colors.colorGrayNeutral,
     animation: `${fadeIn} 0.3s ease-in-out`,
   }),
 };

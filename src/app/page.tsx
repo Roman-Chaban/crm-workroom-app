@@ -8,18 +8,19 @@ import {
   NearestEvents,
   Projects,
   ActivityStream,
+  Section,
 } from '@/components/index/index';
 
-import { home, homeContainer } from '@/classNames/home/homeClassNames';
+import { home, homeContainer } from '@/classNames/home/home';
 
 export const metadata: Metadata = {
-  title: 'CRM Workroom | Home',
+  title: 'CRM Workroom | Dashboard',
   icons: '/favicon/favicon.svg',
 };
 
 export default function HomePage() {
   return (
-    <section className={home}>
+    <Section className={home}>
       <Container className={homeContainer}>
         <DashboardPanel />
         <Box>
@@ -31,6 +32,6 @@ export default function HomePage() {
           <ActivityStream />
         </Box>
       </Container>
-    </section>
+    </Section>
   );
 }

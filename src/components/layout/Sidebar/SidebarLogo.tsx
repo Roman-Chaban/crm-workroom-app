@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import Image from 'next/image';
 
-import { logo, logoIcon } from '@/classNames/sidebar/sidebarClassNames';
+import { logo, logoIcon } from '@/classNames/sidebar/sidebar';
 
 export const SidebarLogo: FC = () => {
   return (

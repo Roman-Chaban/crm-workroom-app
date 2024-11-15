@@ -4,7 +4,7 @@ import {
   sidebar,
   container,
   logoNavContainer,
-} from '@/classNames/sidebar/sidebarClassNames';
+} from '@/classNames/sidebar/sidebar';
 
 import {
   SidebarNav,

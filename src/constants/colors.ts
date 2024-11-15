@@ -1,4 +1,4 @@
-export const themeColors = {
+export const colors = {
   colorWhitePrimary: '#fff',
   colorGrayNeutral: '#7d8592',
   shadowBoxLight: '0 6px 58px 0 rgba(196, 203, 214, 0.1)',
@@ -33,4 +33,4 @@ export const themeColors = {
   borderNeutral: '#e6ebf5',
   backgroundSwitcher: '#ced5e0',
   colorStatusSuccess: '#38cb89',
-};
+} as const;

@@ -10,10 +10,7 @@ import {
   HomeModalFieldsForm,
 } from '@/components/index';
 
-import {
-  modal,
-  modalContainer,
-} from '@/classNames/home-modal/homeModalClassNames';
+import { modal, modalContainer } from '@/classNames/home-modal/home-modal';
 
 import { Option, SelectedValue } from '@/interfaces/select';
 

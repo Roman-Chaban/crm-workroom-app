@@ -7,7 +7,7 @@ import {
   navViewContainer,
   navViewLink,
   navViewTitle,
-} from '@/classNames/nav-view/nav-viewClassNames';
+} from '@/classNames/nav-view/nav-view';
 
 interface NavViewProps {
   props: {

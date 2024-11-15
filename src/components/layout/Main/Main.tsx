@@ -1,8 +1,8 @@
-import type { FC, ReactNode } from "react";
+import type { FC, ReactNode } from 'react';
 
-import { Header, Grid } from "@/components/index/index";
+import { Header, Grid } from '@/components/index/index';
 
-import { main } from "@/classNames/main/mainClassNames";
+import { main } from '@/classNames/main/main';
 
 interface MainProps {
   children: ReactNode;

@@ -7,7 +7,7 @@ import {
   dashboardContainer,
   greetTitle,
   title,
-} from '@/classNames/dashboard-panel/dashboardPanelClassNames';
+} from '@/classNames/dashboard-panel/dashboard-panel';
 
 export const DashboardPanel: FC = () => {
   return (

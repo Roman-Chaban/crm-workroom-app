@@ -4,7 +4,7 @@ import {
   activityStream,
   activityStreamContainer,
   activityStreamTitle,
-} from '@/classNames/activity-stream/activityStreamClassNames';
+} from '@/classNames/activity-stream/activity-stream';
 
 export const ActivityStream: FC = () => {
   return (

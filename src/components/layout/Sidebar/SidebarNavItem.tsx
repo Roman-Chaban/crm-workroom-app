@@ -13,7 +13,7 @@ import {
   navListItemIcon,
   isActiveLink,
   isActiveColor,
-} from '@/classNames/sidebar/sidebarClassNames';
+} from '@/classNames/sidebar/sidebar';
 
 interface SidebarNavItemProps {
   item: SidebarNavListItem;

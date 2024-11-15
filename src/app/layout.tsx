@@ -15,6 +15,7 @@ const basicFont = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
+  applicationName: 'CRM Workroom',
   title: 'CRM Workroom | Dashboard',
   icons: '/favicon/favicon.svg',
   authors: { name: 'Roman Chaban' },

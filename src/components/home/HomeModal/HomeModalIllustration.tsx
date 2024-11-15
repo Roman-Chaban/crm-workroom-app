@@ -5,7 +5,7 @@ import Image from 'next/image';
 import {
   modalBannerImage,
   modalHeaderParagraph,
-} from '@/classNames/home-modal/homeModalClassNames';
+} from '@/classNames/home-modal/home-modal';
 
 export const HomeModalIllustration: FC = () => {
   return (

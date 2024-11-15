@@ -9,13 +9,13 @@ import {
   logoutButton,
   logoutImageBlock,
   supportButton,
-} from '@/classNames/sidebar/sidebarClassNames';
+} from '@/classNames/sidebar/sidebar';
 
 interface SidebarLogoutProps {
   onOpenModal: () => void;
 }
 
-export const SidebarLogout: FC<SidebarLogoutProps> = ({onOpenModal}) => {
+export const SidebarLogout: FC<SidebarLogoutProps> = ({ onOpenModal }) => {
   return (
     <div className={logout}>
       <div className={logoutImageBlock}>
@@ -26,7 +26,7 @@ export const SidebarLogout: FC<SidebarLogoutProps> = ({onOpenModal}) => {
           height={214}
           priority
         />
-        <Button type="button" className={supportButton} onClick={onOpenModal} >
+        <Button type="button" className={supportButton} onClick={onOpenModal}>
           <Image
             src={'/icons/sidebar-icons/chat-icon.svg'}
             alt="Support Image"

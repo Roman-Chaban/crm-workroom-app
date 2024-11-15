@@ -12,7 +12,7 @@ import {
   sendButton,
   textarea,
   textareaLabel,
-} from '@/classNames/home-modal/homeModalClassNames';
+} from '@/classNames/home-modal/home-modal';
 
 import selectStyles from '@/components/ui-components/Select/selectStyles';
 
