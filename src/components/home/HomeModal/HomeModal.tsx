@@ -1,20 +1,21 @@
-'use client';
+"use client";
 
-import { ChangeEvent, ForwardedRef, forwardRef, useState } from 'react';
+import { ChangeEvent, ForwardedRef, forwardRef, useState } from "react";
 
-import { SingleValue } from 'react-select';
+import { SingleValue } from "react-select";
 
 import {
   HomeModalHeader,
   HomeModalIllustration,
   HomeModalFieldsForm,
-} from '@/components/index';
+  Container,
+} from "@/components/index";
 
-import { modal, modalContainer } from '@/classNames/home-modal/home-modal';
+import { modal, modalContainer } from "@/classNames/home-modal/home-modal";
 
-import { Option, SelectedValue } from '@/interfaces/select';
+import { Option, SelectedValue } from "@/interfaces/select";
 
-import { AreaValue } from '@/types/textarea';
+import { AreaValue } from "@/types/textarea";
 
 interface HomeModalProps {
   onCloseModal: () => void;
@@ -23,24 +24,24 @@ interface HomeModalProps {
 export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
   ({ onCloseModal }, ref: ForwardedRef<HTMLDivElement>) => {
     const [selectedValue, setSelectedValue] =
-      useState<SelectedValue>('Choose an option');
-    const [areaDescription, setAreaDescription] = useState<AreaValue>('');
+      useState<SelectedValue>("Choose an option");
+    const [areaDescription, setAreaDescription] = useState<AreaValue>("");
 
-    const handleSelectChange = (newValue: SingleValue<Option>) => {
-      if (newValue) {
-        setSelectedValue(newValue.label);
+    const handleSelectChange = (selectValue: SingleValue<Option>) => {
+      if (selectValue) {
+        setSelectedValue(selectValue.label);
       }
     };
 
     const handleChangeAreaDescription = (
-      event: ChangeEvent<HTMLTextAreaElement>
+      event: ChangeEvent<HTMLTextAreaElement>,
     ) => {
       setAreaDescription(event.target.value);
     };
 
     return (
       <div className={modal}>
-        <div className={modalContainer} ref={ref}>
+        <Container className={modalContainer} ref={ref}>
           <HomeModalHeader onCloseModal={onCloseModal} />
           <HomeModalIllustration />
           <HomeModalFieldsForm
@@ -49,10 +50,10 @@ export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
             areaDescription={areaDescription}
             handleChangeAreaDescription={handleChangeAreaDescription}
           />
-        </div>
+        </Container>
       </div>
     );
-  }
+  },
 );
 
-HomeModal.displayName = 'HomeModal';
+HomeModal.displayName = "HomeModal";

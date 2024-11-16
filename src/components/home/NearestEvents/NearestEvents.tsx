@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { NavView } from '@/components/home/NavView/NavView';
+import { NavView } from '@/components/index/index';
 
 import {
   nearestEvents,
