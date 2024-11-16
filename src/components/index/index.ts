@@ -15,6 +15,8 @@ export { NearestEvents } from '@/components/home/NearestEvents/NearestEvents';
 export { DashboardPanel } from '@/components/home/DashboardPanel/DashboardPanel';
 export { Box } from '@/components/containers/Box/Box';
 export { Projects } from '@/components/home/Projects/Projects';
+export { ProjectItem } from '@/components/home/Projects/ProjectItem';
+export { NavView } from '@/components/home/NavView/NavView';
 export { ActivityStream } from '@/components/home/ActivityStream/ActivityStream';
 export { HomeModal } from '@/components/home/HomeModal/HomeModal';
 export { SidebarLogo } from '@/components/layout/Sidebar/SidebarLogo';

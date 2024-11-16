@@ -1,10 +1,15 @@
-import { FC, ReactNode } from 'react';
+import { FC, ForwardedRef, ReactNode } from 'react';
 
 interface ContainerProps {
   children: ReactNode;
   className?: string;
+  ref?: ForwardedRef<HTMLDivElement>;
 }
 
-export const Container: FC<ContainerProps> = ({ children, className }) => {
-  return <div className={className}>{children}</div>;
+export const Container: FC<ContainerProps> = ({ children, className, ref }) => {
+  return (
+    <div className={className} ref={ref}>
+      {children}
+    </div>
+  );
 };

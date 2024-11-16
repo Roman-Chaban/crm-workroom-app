@@ -6,8 +6,7 @@ import {
   projectsItems,
 } from '@/classNames/projects/projects';
 
-import { NavView } from '../NavView/NavView';
-import { ProjectItem } from './ProjectItem';
+import { NavView, ProjectItem } from '@/components/index/index';
 
 export const Projects: FC = () => {
   const projectsItemsList: Array<{ id: number; title: string }> = [

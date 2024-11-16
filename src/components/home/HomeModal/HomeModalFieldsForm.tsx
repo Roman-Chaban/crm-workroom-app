@@ -1,12 +1,12 @@
 'use client';
 
 import type { FC } from 'react';
-
 import { ChangeEvent } from 'react';
 
-import Select, { SingleValue } from 'react-select';
-
 import { Button, Textarea } from '@/components/index';
+
+import Select, { SingleValue } from 'react-select';
+import selectStyles from '@/components/ui-components/Select/selectStyles';
 
 import {
   sendButton,
@@ -14,10 +14,7 @@ import {
   textareaLabel,
 } from '@/classNames/home-modal/home-modal';
 
-import selectStyles from '@/components/ui-components/Select/selectStyles';
-
 import { options } from '@/static-data/request-options';
-
 import { Option } from '@/interfaces/select';
 
 interface HomeModalFieldsFormProps {
@@ -35,6 +32,8 @@ export const HomeModalFieldsForm: FC<HomeModalFieldsFormProps> = ({
   handleSelectChange,
   handleChangeAreaDescription,
 }) => {
+  const description = 'description';
+
   return (
     <form autoComplete="off">
       <Select
@@ -45,12 +44,12 @@ export const HomeModalFieldsForm: FC<HomeModalFieldsFormProps> = ({
       />
       <Textarea
         className={textarea}
-        htmlFor="description"
-        id="description"
+        htmlFor={description}
+        id={description}
         value={areaDescription}
         onChange={handleChangeAreaDescription}
         labelClassName={textareaLabel}
-        name="description"
+        name={description}
         placeholder="Add some description of the request"
       >
         Description
