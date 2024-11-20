@@ -9,6 +9,8 @@ export const containerClassNames = {
   searchLabel: styles['headerSearchLabel'],
   searchContainer: styles['headerSearchContainer'],
   notification: styles['headerNotification'],
+  headerButtons: styles['headerButtonsContainer'],
+  signIn: styles['headerSignInButton'],
 };
 
 export const header = classNames(containerClassNames.home);
@@ -17,3 +19,5 @@ export const searchContainer = classNames(containerClassNames.searchContainer);
 export const searchInput = classNames(containerClassNames.searchInput);
 export const searchLabel = classNames(containerClassNames.searchLabel);
 export const notification = classNames(containerClassNames.notification);
+export const headerButtons = classNames(containerClassNames.headerButtons);
+export const signIn = classNames(containerClassNames.signIn);

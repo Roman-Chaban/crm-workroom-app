@@ -4,6 +4,7 @@ export interface InputClassNames {
   container: string;
   input: string;
   label: string;
+  inputIcon?: string;
 }
 
 export interface InputProps {
@@ -15,6 +16,7 @@ export interface InputProps {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   name: string;
+  checked?: boolean;
   style?: CSSProperties;
   required?: boolean;
   disabled?: boolean;
@@ -22,7 +24,7 @@ export interface InputProps {
   maxLength?: number;
   minLength?: number;
   classNames: InputClassNames;
-  icon: string;
+  icon?: string;
 }
 
 export type InputTypes =

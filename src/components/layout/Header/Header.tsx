@@ -2,9 +2,10 @@
 
 import { ChangeEvent, useState, type FC } from 'react';
 
+import Link from 'next/link';
 import Image from 'next/image';
 
-import { Button, Input } from '@/components/index';
+import { Button, Container, Input } from '@/components/index';
 
 import { Value } from '@/types/input';
 
@@ -15,7 +16,11 @@ import {
   searchInput,
   searchLabel,
   notification,
+  headerButtons,
+  signIn,
 } from '@/classNames/header/header';
+
+import { SidebarNavPaths } from '@/enums/nav-paths';
 
 export const Header: FC = () => {
   const [inputValue, setInputValue] = useState<Value>('');
@@ -43,14 +48,26 @@ export const Header: FC = () => {
             label: searchLabel,
           }}
         />
-        <Button type="button" className={notification}>
-          <Image
-            src="/icons/outlined-icons/notification.svg"
-            alt="Notification Icon"
-            width={24}
-            height={24}
-          />
-        </Button>
+        <Container className={headerButtons}>
+          <Button type="button" className={notification}>
+            <Image
+              src="/icons/outlined-icons/notification.svg"
+              alt="Notification Icon"
+              width={24}
+              height={24}
+            />
+          </Button>
+          <Button type="button" className={signIn}>
+            <Link href={SidebarNavPaths.MULTI_STEP_SIGN_IN}>
+              <Image
+                src="/icons/outlined-icons/add-user.svg"
+                alt="Notification Icon"
+                width={24}
+                height={24}
+              />
+            </Link>
+          </Button>
+        </Container>
       </div>
     </header>
   );

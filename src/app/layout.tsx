@@ -4,10 +4,12 @@ import type { Metadata } from 'next';
 
 import { Nunito_Sans } from 'next/font/google';
 
-import { BodyWrapper, Main } from '@/components/index/index';
+import { BodyWrapper } from '@/components/index/index';
+
+import { SidebarRender } from '@/components/containers/SidebarRender/SidebarRender';
 
 import '@/styles/main/main.scss';
-import { HomeClient } from '@/components/containers/HomeClient/HomeClient';
+import { MainRender } from '@/components/containers/MainRender/MainRender';
 
 const basicFont = Nunito_Sans({
   subsets: ['latin'],
@@ -30,8 +32,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={basicFont.className}>
         <BodyWrapper>
-          <HomeClient />
-          <Main>{children}</Main>
+          <SidebarRender />
+          <MainRender>{children}</MainRender>
         </BodyWrapper>
       </body>
     </html>

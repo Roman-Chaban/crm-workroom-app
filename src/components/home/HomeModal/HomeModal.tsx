@@ -1,21 +1,22 @@
-"use client";
+'use client';
 
-import { ChangeEvent, ForwardedRef, forwardRef, useState } from "react";
+import { ChangeEvent, ForwardedRef, forwardRef, useState } from 'react';
 
-import { SingleValue } from "react-select";
+import { SingleValue } from 'react-select';
 
 import {
   HomeModalHeader,
   HomeModalIllustration,
   HomeModalFieldsForm,
   Container,
-} from "@/components/index";
+} from '@/components/index';
 
-import { modal, modalContainer } from "@/classNames/home-modal/home-modal";
+import { modal, modalContainer } from '@/classNames/home-modal/home-modal';
 
-import { Option, SelectedValue } from "@/interfaces/select";
+import { Option, SelectedValue } from '@/interfaces/select';
 
-import { AreaValue } from "@/types/textarea";
+import { AreaValue } from '@/types/textarea';
+import { options } from '@/static-data/request-options';
 
 interface HomeModalProps {
   onCloseModal: () => void;
@@ -23,9 +24,10 @@ interface HomeModalProps {
 
 export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
   ({ onCloseModal }, ref: ForwardedRef<HTMLDivElement>) => {
-    const [selectedValue, setSelectedValue] =
-      useState<SelectedValue>("Choose an option");
-    const [areaDescription, setAreaDescription] = useState<AreaValue>("");
+    const [selectedValue, setSelectedValue] = useState<SelectedValue>(
+      options[0].label
+    );
+    const [areaDescription, setAreaDescription] = useState<AreaValue>('');
 
     const handleSelectChange = (selectValue: SingleValue<Option>) => {
       if (selectValue) {
@@ -34,7 +36,7 @@ export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
     };
 
     const handleChangeAreaDescription = (
-      event: ChangeEvent<HTMLTextAreaElement>,
+      event: ChangeEvent<HTMLTextAreaElement>
     ) => {
       setAreaDescription(event.target.value);
     };
@@ -53,7 +55,7 @@ export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
         </Container>
       </div>
     );
-  },
+  }
 );
 
-HomeModal.displayName = "HomeModal";
+HomeModal.displayName = 'HomeModal';

@@ -26,3 +26,8 @@ export { Textarea } from '@/components/ui-components/Textarea/Textarea';
 export { HomeModalFieldsForm } from '@/components/home/HomeModal/HomeModalFieldsForm';
 export { HomeModalIllustration } from '@/components/home/HomeModal/HomeModalIllustration';
 export { Section } from '@/components/containers/Section/Section';
+export { SignInBanner } from '@/components/auth/SignInBanner/SignInBanner';
+export { SignInFormFields } from '@/components/auth/SingInForm/SignInFormFields';
+export { SignInFormSubmit } from '@/components/auth/SingInForm/SignInFormSubmit';
+export { SignInFormRemember } from '@/components/auth/SingInForm/SignInFromRemember';
+export { SignInForm } from '@/components/auth/SingInForm/SingInForm';

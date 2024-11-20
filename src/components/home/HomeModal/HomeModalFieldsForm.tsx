@@ -9,6 +9,7 @@ import Select, { SingleValue } from 'react-select';
 import selectStyles from '@/components/ui-components/Select/selectStyles';
 
 import {
+  selectLabel,
   sendButton,
   textarea,
   textareaLabel,
@@ -36,12 +37,15 @@ export const HomeModalFieldsForm: FC<HomeModalFieldsFormProps> = ({
 
   return (
     <form autoComplete="off">
-      <Select
-        options={options}
-        placeholder={selectedValue}
-        styles={selectStyles}
-        onChange={handleSelectChange}
-      />
+      <label className={selectLabel}>
+        Request Subject
+        <Select
+          options={options}
+          placeholder={selectedValue}
+          styles={selectStyles}
+          onChange={handleSelectChange}
+        />
+      </label>
       <Textarea
         className={textarea}
         htmlFor={description}

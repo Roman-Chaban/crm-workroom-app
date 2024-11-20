@@ -20,14 +20,23 @@ export const Input: FC<InputProps> = ({
   classNames,
   value,
   onChange,
-  icon,
+  icon = '',
+  checked,
 }) => {
   return (
     <div className={classNames.container}>
       <label htmlFor={htmlFor} className={classNames.label}>
         {label}
       </label>
-      <Image src={icon} width={24} height={24} alt="" />
+      {icon && (
+        <Image
+          src={icon}
+          width={24}
+          height={24}
+          alt="Icon"
+          className={classNames.inputIcon}
+        />
+      )}
       <input
         className={classNames.input}
         type={type}
@@ -42,6 +51,7 @@ export const Input: FC<InputProps> = ({
         autoFocus={autoFocus}
         maxLength={maxLength}
         minLength={minLength}
+        checked={checked}
       />
     </div>
   );

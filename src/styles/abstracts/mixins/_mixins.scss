@@ -149,3 +149,62 @@
     border-color: color.$background-support-hover;
   }
 }
+
+@mixin signInTitle {
+  font-weight: 700;
+  color: color.$color-white-primary;
+  font-size: size.$font-size-3xl;
+}
+
+@mixin signInSubtitle($max-width: $max-width) {
+  width: 100%;
+  font-weight: 700;
+  line-height: 140%;
+  max-width: $max-width;
+  color: color.$color-white-primary;
+  font-size: size.$font-size-5xl;
+}
+
+@mixin label {
+  width: 100%;
+  max-width: 403px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+@mixin input {
+  width: 100%;
+  max-width: 403px;
+  border-radius: 14px;
+  border: 2px solid color.$background-modal-light;
+  background: color.$color-white-primary;
+  box-shadow: color.$shadow-modal;
+  height: 48px;
+  padding-inline: 18px;
+  color: color.$color-gray-neutral;
+  caret-color: color.$color-gray-light;
+}
+
+@mixin rememberLabel {
+  color: color.$color-gray-neutral;
+  font-size: size.$font-size-lg;
+  font-weight: 400;
+}
+
+@mixin checkboxInput($width: $width, $height: $height) {
+  appearance: none;
+  width: $width;
+  height: $width;
+  border: 2.3px solid color.$color-black-deep;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+@mixin accountButton {
+  font-size: size.$font-size-lg;
+  font-weight: 400;
+  background: inherit;
+}

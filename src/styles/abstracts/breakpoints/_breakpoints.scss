@@ -1,4 +1,5 @@
 $breakpoint-large: 1440px;
+$breakpoint-large-medium: 1200px;
 $breakpoint-medium: 1024px;
 $breakpoint-small: 768px;
 $breakpoint-extra-small: 600px;
@@ -6,7 +7,11 @@ $breakpoint-extra-extra-small: 400px;
 
 @mixin respond-toWidth($breakpoint) {
   @if $breakpoint == large {
-    @media (max-width: $breakpoint-large) {
+    @media (max-width: calc(#{$breakpoint-large} - 1px)) {
+      @content;
+    }
+  } @else if $breakpoint == large-medium {
+    @media (max-width: calc(#{$breakpoint-large-medium} - 1px)) {
       @content;
     }
   } @else if $breakpoint == medium {

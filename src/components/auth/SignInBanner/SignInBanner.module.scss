@@ -1,0 +1,94 @@
+@use '../../../styles/abstracts/breakpoints/breakpoints' as *;
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+
+.signInBanner {
+  width: 100%;
+  height: 100%;
+  max-width: 680px;
+
+  &Container {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    gap: 48px;
+    background: color.$background-support-primary;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    padding: 65px 84px 74px 84px;
+  }
+
+  &Logo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &LogoIcon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+
+  &Title {
+    @include signInTitle;
+  }
+
+  &Subtitle {
+    @include signInSubtitle(398px);
+  }
+
+  &Illustration {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 373px;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@include respond-toWidth(large) {
+  .signInBannerContainer {
+    padding: 65px 5vw 74px 5vw;
+  }
+}
+
+@include respond-toWidth(large-medium) {
+  .signInBannerContainer {
+    padding: 35px 4vw 74px 4vw;
+    gap: 38px;
+  }
+
+  .signInBannerTitle {
+    font-size: size.$font-size-3xl;
+  }
+}
+
+@include respond-toWidth(medium) {
+  .signInBanner {
+    max-width: 100%;
+  }
+
+  .signInBannerContainer {
+    padding: 65px 3vw 74px 3vw;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 24px;
+    align-items: center;
+  }
+
+  .signInBannerTitle {
+    font-size: size.$font-size-4xl;
+  }
+
+  .signInBannerSubtitle {
+    max-width: 500px;
+    text-align: center;
+    text-align-last: center;
+  }
+
+  .signInBannerIllustration {
+    aspect-ratio: 4 / 3;
+  }
+}

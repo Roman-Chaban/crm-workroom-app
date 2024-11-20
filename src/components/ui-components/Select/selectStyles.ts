@@ -22,7 +22,7 @@ const customStyles: StylesConfig<Option, false> = {
     ...base,
     display: 'flex',
     flexDirection: 'column',
-    marginBlockStart: '32px',
+    marginBlockStart: 0,
     position: 'relative',
     animation: `${fadeIn} 0.3s ease-in-out`,
   }),
@@ -44,6 +44,7 @@ const customStyles: StylesConfig<Option, false> = {
     fontSize: 14,
     lineHeight: '171%',
     transition: 'opacity 0.3s',
+    fontWeight: 400,
   }),
   menu: (base) => ({
     ...base,
@@ -68,6 +69,8 @@ const customStyles: StylesConfig<Option, false> = {
     color: colors.colorGrayNeutral,
     fontSize: 16,
     margin: 10,
+    fontWeight: 400,
+    maxHeight: 46,
     maxWidth: '95%',
     borderRadius: 14,
     lineHeight: '171%',
@@ -88,6 +91,18 @@ const customStyles: StylesConfig<Option, false> = {
     ...base,
     color: colors.colorGrayNeutral,
     animation: `${fadeIn} 0.3s ease-in-out`,
+  }),
+  indicatorSeparator: (base) => ({
+    ...base,
+    display: 'none',
+  }),
+  indicatorsContainer: (base) => ({
+    ...base,
+    paddingInlineEnd: 10,
+  }),
+  dropdownIndicator: (base) => ({
+    ...base,
+    color: colors.colorGrayNeutral,
   }),
 };
 

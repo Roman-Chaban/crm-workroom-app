@@ -42,7 +42,17 @@
     }
   }
 
+  &ButtonsContainer {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
   &Notification {
+    @include menuButton;
+  }
+
+  &SignInButton {
     @include menuButton;
   }
 }

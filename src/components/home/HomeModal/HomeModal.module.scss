@@ -18,6 +18,8 @@
   z-index: 100;
 
   &Container {
+    display: flex;
+    flex-direction: column;
     @include whiteContainer(100%);
     max-width: 584px;
     margin-top: auto;
@@ -25,7 +27,8 @@
     margin-bottom: auto;
     padding: 30px 60px;
     box-sizing: border-box;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     &::-webkit-scrollbar {
       width: 3.5px;
@@ -118,6 +121,14 @@
     position: static;
     margin-block-start: 51px;
     margin-left: auto;
+  }
+
+  &SelectLabel {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 7px;
+    margin-block-start: 32px;
+    @include selectLabel;
   }
 }
 

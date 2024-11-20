@@ -10,7 +10,7 @@ import { Sidebar, HomeModal } from '@/components/index';
 type IsOpenModal = boolean;
 type ModalRef = null;
 
-export const HomeClient: FC = () => {
+export const HomeClient = () => {
   const [isOpenModal, setIsOpenModal] = useState<IsOpenModal>(false);
   const modalRef = useRef<ModalRef>(null);
 
