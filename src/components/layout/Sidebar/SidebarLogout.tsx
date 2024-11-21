@@ -4,12 +4,7 @@ import Image from 'next/image';
 
 import { Button } from '@/components/index/index';
 
-import {
-  logout,
-  logoutButton,
-  logoutImageBlock,
-  supportButton,
-} from '@/classNames/sidebar/sidebar';
+import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 
 interface SidebarLogoutProps {
   onOpenModal: () => void;
@@ -17,8 +12,8 @@ interface SidebarLogoutProps {
 
 export const SidebarLogout: FC<SidebarLogoutProps> = ({ onOpenModal }) => {
   return (
-    <div className={logout}>
-      <div className={logoutImageBlock}>
+    <div className={styles['sidebarLogout']}>
+      <div className={styles['sidebarLogoutBlock']}>
         <Image
           src={'/images/sidebar/support.svg'}
           alt="Support Image"
@@ -26,7 +21,11 @@ export const SidebarLogout: FC<SidebarLogoutProps> = ({ onOpenModal }) => {
           height={214}
           priority
         />
-        <Button type="button" className={supportButton} onClick={onOpenModal}>
+        <Button
+          type="button"
+          className={styles['sidebarSupportButton']}
+          onClick={onOpenModal}
+        >
           <Image
             src={'/icons/sidebar-icons/chat-icon.svg'}
             alt="Support Image"
@@ -36,7 +35,7 @@ export const SidebarLogout: FC<SidebarLogoutProps> = ({ onOpenModal }) => {
           Support
         </Button>
       </div>
-      <Button type="button" className={logoutButton}>
+      <Button type="button" className={styles['sidebarLogoutButton']}>
         <Image
           src={'/icons/sidebar-icons/logout.svg'}
           alt="Logout Icon"

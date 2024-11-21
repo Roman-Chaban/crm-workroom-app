@@ -4,13 +4,7 @@ import Link from 'next/link';
 
 import { Button, Input } from '@/components/index';
 
-import {
-  forgotPassword,
-  rememberBlock,
-  rememberCheckbox,
-  rememberContainer,
-  rememberLabel,
-} from '@/classNames/signIn/signIn';
+import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
 interface SignInFormRememberProps {
   remember: boolean;
@@ -22,7 +16,7 @@ export const SignInFormRemember: FC<SignInFormRememberProps> = ({
   handleCheckedRemember,
 }) => {
   return (
-    <div className={rememberBlock}>
+    <div className={styles['signInFormBlockRemember']}>
       <Input
         htmlFor="remember"
         type="checkbox"
@@ -33,12 +27,12 @@ export const SignInFormRemember: FC<SignInFormRememberProps> = ({
         onChange={handleCheckedRemember}
         name="remember"
         classNames={{
-          input: rememberCheckbox,
-          container: rememberContainer,
-          label: rememberLabel,
+          input: styles['signInFormBlockRememberCheckbox'],
+          container: styles['signInFormBlockRememberContainer'],
+          label: styles['signInFormBlockRememberLabel'],
         }}
       />
-      <Button type="button" className={forgotPassword}>
+      <Button type="button" className={styles['signInFormBlockForgotButton']}>
         <Link href={''}>Forgot Password?</Link>
       </Button>
     </div>

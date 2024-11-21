@@ -1,17 +1,13 @@
 import type { FC } from 'react';
 
 import {
-  sidebar,
-  container,
-  logoNavContainer,
-} from '@/classNames/sidebar/sidebar';
-
-import {
   SidebarNav,
   Container,
   SidebarLogout,
   SidebarLogo,
 } from '@/components/index/index';
+
+import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 
 interface SidebarProps {
   onOpenModal: () => void;
@@ -19,9 +15,9 @@ interface SidebarProps {
 
 export const Sidebar: FC<SidebarProps> = ({ onOpenModal }) => {
   return (
-    <aside className={sidebar}>
-      <Container className={container}>
-        <Container className={logoNavContainer}>
+    <aside className={styles['sidebar']}>
+      <Container className={styles['sidebarContainer']}>
+        <Container className={styles['sidebarLogoNavContainer']}>
           <SidebarLogo />
           <SidebarNav />
         </Container>

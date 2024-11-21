@@ -16,7 +16,10 @@ import { modal, modalContainer } from '@/classNames/home-modal/home-modal';
 import { Option, SelectedValue } from '@/interfaces/select';
 
 import { AreaValue } from '@/types/textarea';
+
 import { options } from '@/static-data/request-options';
+
+import styles from './HomeModal.module.scss';
 
 interface HomeModalProps {
   onCloseModal: () => void;
@@ -42,8 +45,8 @@ export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
     };
 
     return (
-      <div className={modal}>
-        <Container className={modalContainer} ref={ref}>
+      <div className={styles['modal']}>
+        <Container className={styles['modalContainer']} ref={ref}>
           <HomeModalHeader onCloseModal={onCloseModal} />
           <HomeModalIllustration />
           <HomeModalFieldsForm

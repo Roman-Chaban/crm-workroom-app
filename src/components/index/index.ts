@@ -31,3 +31,5 @@ export { SignInFormFields } from '@/components/auth/SingInForm/SignInFormFields'
 export { SignInFormSubmit } from '@/components/auth/SingInForm/SignInFormSubmit';
 export { SignInFormRemember } from '@/components/auth/SingInForm/SignInFromRemember';
 export { SignInForm } from '@/components/auth/SingInForm/SingInForm';
+export { MultiStepsSignUpSidebar } from '@/components/auth/MultiStepsSignUpSidebar/MultiStepsSignUpSidebar';
+export { MultiStepSignUpEntering } from '@/components/auth/MultiStepsSignUpEntering/MultiStepsSignUpEntering';

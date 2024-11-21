@@ -1,18 +1,15 @@
-import type { Metadata } from 'next';
+import {
+  Container,
+  MultiStepSignUpEntering,
+  MultiStepsSignUpSidebar,
+} from '@/components/index';
 
-import { MultiStepSignUpEntering } from '@/components/auth/MultiStepSignUp/MultiStepsSignUpEntering';
-import { MultiStepsSignUpBanner } from '@/components/auth/MultiStepSignUp/MultiStepsSignUpBanner';
-import { Container } from '@/components/index';
+import styles from '@/styles/pages/signIn.module.scss';
 
-export const metadata: Metadata = {
-  title: 'Sign Up | Step 1',
-  icons: '/favicon/favicon.svg',
-};
-
-export default function MultiStepSignUpPage() {
+export default function MultiStepsSignUpPage() {
   return (
-    <Container>
-      <MultiStepsSignUpBanner />
+    <Container className={styles['signUpSteps']}>
+      <MultiStepsSignUpSidebar />
       <MultiStepSignUpEntering />
     </Container>
   );

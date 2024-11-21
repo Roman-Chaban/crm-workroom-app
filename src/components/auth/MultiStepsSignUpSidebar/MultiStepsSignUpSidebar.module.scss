@@ -1,0 +1,78 @@
+@use '../../../styles/abstracts/breakpoints/breakpoints' as *;
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+
+.sidebarSteps {
+  width: 100%;
+  max-width: 346px;
+  &Container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 135px;
+    width: 100%;
+    max-width: 346px;
+    height: 100%;
+    border-radius: 24px;
+    background: color.$background-support-primary;
+    padding: 60px 40px;
+  }
+  &GetStarted {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  &GetStartedTitle {
+    @include signInTitle;
+    font-size: size.$font-size-4xxl;
+  }
+
+  & .stepsList {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 36px;
+  }
+
+  & .stepsListItem {
+    font-size: size.$font-size-xl;
+    color: rgba(color.$color-white-primary, 0.5);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 21px;
+
+    &:last-child > .stepsListItemCircle::before {
+      content: none;
+    }
+
+    & .stepsListItemCircle {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      outline: 2.5px solid rgba(color.$color-white-primary, 0.5);
+      position: relative;
+    }
+
+    & .stepsListItemCircle::before {
+      content: '';
+      position: absolute;
+      border-radius: 1px;
+      width: 2px;
+      height: 26px;
+      top: 120%;
+      left: 45%;
+      background: rgba(color.$color-white-primary, 0.5);
+    }
+  }
+}
+
+.active {
+  outline-color: color.$color-white-primary !important;
+  background: rgba(color.$color-white-primary, 0.3);
+
+  &::before {
+    background: color.$color-white-primary !important;
+  }
+}

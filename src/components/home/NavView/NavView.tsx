@@ -3,11 +3,7 @@ import type { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import {
-  navViewContainer,
-  navViewLink,
-  navViewTitle,
-} from '@/classNames/nav-view/nav-view';
+import styles from './NavView.module.scss';
 
 interface NavViewProps {
   props: {
@@ -18,9 +14,9 @@ interface NavViewProps {
 
 export const NavView: FC<NavViewProps> = ({ props }) => {
   return (
-    <div className={navViewContainer}>
-      <h2 className={navViewTitle}>{props.title}</h2>
-      <Link href={'/'} className={navViewLink}>
+    <div className={styles['NavViewContainer']}>
+      <h2 className={styles['NavViewTitle']}>{props.title}</h2>
+      <Link href={'/'} className={styles['NavViewLink']}>
         {props.link}{' '}
         <Image
           src={'/icons/projects-icons/arrow-right.svg'}

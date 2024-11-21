@@ -2,14 +2,9 @@ import type { FC } from 'react';
 
 import { Input } from '@/components/index';
 
-import {
-  input,
-  inputContainer,
-  inputIcon,
-  label,
-} from '@/classNames/signIn/signIn';
-
 import { EventType } from '@/types/signIn';
+
+import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
 interface SignInFormFieldsProps {
   email: string;
@@ -28,9 +23,9 @@ export const SignInFormFields: FC<SignInFormFieldsProps> = ({
     <>
       <Input
         classNames={{
-          input: input,
-          container: inputContainer,
-          label: label,
+          input: styles['signInFormBlockInput'],
+          container: styles['signInFormBlockInputContainer'],
+          label: styles['signInFormBlockLabel'],
         }}
         htmlFor="email"
         id="email"
@@ -43,10 +38,10 @@ export const SignInFormFields: FC<SignInFormFieldsProps> = ({
       />
       <Input
         classNames={{
-          input: input,
-          container: inputContainer,
-          label: label,
-          inputIcon: inputIcon,
+          input: styles['signInFormBlockInput'],
+          container: styles['signInFormBlockInputContainer'],
+          label: styles['signInFormBlockLabel'],
+          inputIcon: styles['signInFormBlockViewIcon'],
         }}
         htmlFor="password"
         id="password"

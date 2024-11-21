@@ -1,20 +1,16 @@
 import type { FC } from 'react';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { Button } from '@/components/index';
 
-import {
-  signInAccount,
-  signInButton,
-  signInSubmit,
-} from '@/classNames/signIn/signIn';
-import Image from 'next/image';
+import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
 export const SignInFormSubmit: FC = () => {
   return (
-    <div className={signInSubmit}>
-      <Button type="button" className={signInButton}>
+    <div className={styles['signInFormBlockSubmit']}>
+      <Button type="button" className={styles['signInFormBlockButton']}>
         Sign In
         <Image
           src={'/images/auth/icons/arrow-right.svg'}
@@ -24,7 +20,7 @@ export const SignInFormSubmit: FC = () => {
           priority
         />
       </Button>
-      <Button type="button" className={signInAccount}>
+      <Button type="button" className={styles['signInFormBlockAccount']}>
         <Link href={''}>Don’t have an account?</Link>
       </Button>
     </div>

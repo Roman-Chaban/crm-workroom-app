@@ -9,18 +9,9 @@ import { Button, Container, Input } from '@/components/index';
 
 import { Value } from '@/types/input';
 
-import {
-  header,
-  headerContainer,
-  searchContainer,
-  searchInput,
-  searchLabel,
-  notification,
-  headerButtons,
-  signIn,
-} from '@/classNames/header/header';
-
 import { SidebarNavPaths } from '@/enums/nav-paths';
+
+import styles from './Header.module.scss';
 
 export const Header: FC = () => {
   const [inputValue, setInputValue] = useState<Value>('');
@@ -30,8 +21,8 @@ export const Header: FC = () => {
   };
 
   return (
-    <header className={header}>
-      <div className={headerContainer}>
+    <header className={styles['header']}>
+      <div className={styles['headerContainer']}>
         <Input
           icon="/icons/outlined-icons/search.svg"
           onChange={handleInputChange}
@@ -43,13 +34,13 @@ export const Header: FC = () => {
           name="search"
           placeholder="Search"
           classNames={{
-            input: searchInput,
-            container: searchContainer,
-            label: searchLabel,
+            input: styles['headerSearchInput'],
+            container: styles['headerSearchContainer'],
+            label: styles['headerSearchLabel'],
           }}
         />
-        <Container className={headerButtons}>
-          <Button type="button" className={notification}>
+        <Container className={styles['headerButtonsContainer']}>
+          <Button type="button" className={styles['headerNotification']}>
             <Image
               src="/icons/outlined-icons/notification.svg"
               alt="Notification Icon"
@@ -57,7 +48,7 @@ export const Header: FC = () => {
               height={24}
             />
           </Button>
-          <Button type="button" className={signIn}>
+          <Button type="button" className={styles['headerSignInButton']}>
             <Link href={SidebarNavPaths.MULTI_STEP_SIGN_IN}>
               <Image
                 src="/icons/outlined-icons/add-user.svg"

@@ -11,7 +11,7 @@ import {
   Section,
 } from '@/components/index/index';
 
-import { home, homeContainer } from '@/classNames/home/home';
+import styles from '@/styles/pages/home.module.scss';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom | Dashboard',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <Section className={home}>
-      <Container className={homeContainer}>
+    <Section className={styles['home']}>
+      <Container className={styles['homeContainer']}>
         <DashboardPanel />
         <Box>
           <Workload />

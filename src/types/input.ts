@@ -25,6 +25,7 @@ export interface InputProps {
   minLength?: number;
   classNames: InputClassNames;
   icon?: string;
+  onIconClick?: () => void;
 }
 
 export type InputTypes =
@@ -35,6 +36,7 @@ export type InputTypes =
   | 'checkbox'
   | 'radio'
   | 'date'
-  | 'time';
+  | 'time'
+  | 'tel';
 
 export type Value = string;

@@ -8,15 +8,10 @@ import { Button, Textarea } from '@/components/index';
 import Select, { SingleValue } from 'react-select';
 import selectStyles from '@/components/ui-components/Select/selectStyles';
 
-import {
-  selectLabel,
-  sendButton,
-  textarea,
-  textareaLabel,
-} from '@/classNames/home-modal/home-modal';
-
 import { options } from '@/static-data/request-options';
 import { Option } from '@/interfaces/select';
+
+import styles from './HomeModal.module.scss';
 
 interface HomeModalFieldsFormProps {
   selectedValue: string;
@@ -37,7 +32,7 @@ export const HomeModalFieldsForm: FC<HomeModalFieldsFormProps> = ({
 
   return (
     <form autoComplete="off">
-      <label className={selectLabel}>
+      <label className={styles['modalSelectLabel']}>
         Request Subject
         <Select
           options={options}
@@ -47,18 +42,18 @@ export const HomeModalFieldsForm: FC<HomeModalFieldsFormProps> = ({
         />
       </label>
       <Textarea
-        className={textarea}
+        className={styles['modalTextarea']}
         htmlFor={description}
         id={description}
         value={areaDescription}
         onChange={handleChangeAreaDescription}
-        labelClassName={textareaLabel}
+        labelClassName={styles['modalTextareaLabel']}
         name={description}
         placeholder="Add some description of the request"
       >
         Description
       </Textarea>
-      <Button type="button" className={sendButton}>
+      <Button type="button" className={styles['modalSendButton']}>
         Send Request
       </Button>
     </form>

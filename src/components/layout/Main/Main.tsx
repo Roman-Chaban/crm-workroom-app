@@ -4,9 +4,10 @@ import type { FC, ReactNode } from 'react';
 
 import { Header, Grid } from '@/components/index/index';
 
-import { main } from '@/classNames/main/main';
 import { usePathname } from 'next/navigation';
 import { SidebarNavPaths } from '@/enums/nav-paths';
+
+import styles from './Main.module.scss';
 
 interface MainProps {
   children: ReactNode;
@@ -20,7 +21,7 @@ export const Main: FC<MainProps> = ({ children }) => {
   return (
     <Grid gridTemplateRows="1fr" gap="50px">
       {!isHeaderRender && <Header />}
-      <main className={main}>{children}</main>
+      <main className={styles['main']}>{children}</main>
     </Grid>
   );
 };

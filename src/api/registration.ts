@@ -1,25 +1,28 @@
 import axios from 'axios';
-
 import { RegistrationUserData } from '@/types/reg';
 
 axios.defaults.baseURL =
-  'https://workflow-crm-server-staging.up.railway.app/api/auth/registration';
+  'https://workflow-crm-server-staging.up.railway.app/api/auth';
+axios.defaults.headers['Content-Type'] = 'application/json';
 
 export const registerUser = async (
   userData: RegistrationUserData
 ): Promise<RegistrationUserData> => {
   try {
     const response = await axios.post<RegistrationUserData>(
-      '/register',
+      '/registration',
       userData
     );
+    console.log('Response from server:', response.data);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      console.error('Error during registration:', error.response?.data);
-      throw new Error(error.response?.data?.message || 'Registration failed');
+      const errorMessage =
+        error.response?.data?.message || 'Registration failed';
+      console.error('Error during registration:', errorMessage);
+      throw new Error(errorMessage);
     }
-    console.error('Unknown error:', error);
+    console.error('Unknown error during registration:', error);
     throw new Error('Unknown error occurred during registration');
   }
 };

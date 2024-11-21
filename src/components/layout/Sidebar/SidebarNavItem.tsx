@@ -7,13 +7,7 @@ import { SidebarNavListItem } from '@/types/sidebar-nav';
 
 import classNames from 'classnames';
 
-import {
-  navListItem,
-  navListItemLink,
-  navListItemIcon,
-  isActiveLink,
-  isActiveColor,
-} from '@/classNames/sidebar/sidebar';
+import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 
 interface SidebarNavItemProps {
   item: SidebarNavListItem;
@@ -22,7 +16,11 @@ interface SidebarNavItemProps {
 
 export const SidebarNavItem: FC<SidebarNavItemProps> = ({ item, isActive }) => {
   return (
-    <li className={classNames(navListItem, { [isActiveLink]: isActive })}>
+    <li
+      className={classNames(styles['sidebarNavListItem'], {
+        [styles['sidebarNavListItemActive']]: isActive,
+      })}
+    >
       <Image
         src={isActive ? item.activeIcon : item.inactiveIcon}
         alt={item.label}
@@ -30,11 +28,13 @@ export const SidebarNavItem: FC<SidebarNavItemProps> = ({ item, isActive }) => {
         width={24}
         height={24}
         priority
-        className={navListItemIcon}
+        className={styles['sidebarNavListItemIcon']}
       />
       <Link
         href={item.href}
-        className={classNames(navListItemLink, { [isActiveColor]: isActive })}
+        className={classNames(styles['sidebarNavListItemLink'], {
+          [styles['activeColor']]: isActive,
+        })}
       >
         {item.label}
       </Link>

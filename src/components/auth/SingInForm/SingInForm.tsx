@@ -1,13 +1,8 @@
 'use client';
 
-import { FormEvent, useState, type FC } from 'react';
+import { useState, type FC } from 'react';
 
-import {
-  signFormContainer,
-  signInForm,
-  signInFormBlock,
-  signInFormBlockTitle,
-} from '@/classNames/signIn/signIn';
+import { useRouter } from 'next/navigation';
 
 import {
   SignInFormRemember,
@@ -15,15 +10,11 @@ import {
   SignInFormFields,
 } from '@/components/index/index';
 
-import { ErrorMessage, EventType, Remember } from '@/types/signIn';
+import { EventType, Remember } from '@/types/signIn';
 
 import { RegistrationUserData } from '@/types/reg';
 
-import { useMutation } from '@tanstack/react-query';
-
-import { registerUser } from '@/api/registration';
-import { useRouter } from 'next/navigation';
-import { SidebarNavPaths } from '@/enums/nav-paths';
+import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
 export const SignInForm: FC = () => {
   const router = useRouter();
@@ -36,23 +27,6 @@ export const SignInForm: FC = () => {
     });
 
   const [remember, setRemember] = useState<Remember>(false);
-  const [errorMessage, setErrorMessage] = useState<ErrorMessage>('');
-
-  const { mutate, isError, error, isSuccess } = useMutation({
-    mutationFn: registerUser,
-    onSuccess: (data) => {
-      router.push(SidebarNavPaths.DASHBOARD);
-    },
-    onError: (error: Error) => {
-      console.error('Registration failed', error);
-      setErrorMessage(error.message || 'An error occurred');
-    },
-  });
-
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    mutate(registrationData);
-  };
 
   const handleEmailChange = (event: EventType) => {
     setRegistrationData((prevData) => ({
@@ -73,10 +47,10 @@ export const SignInForm: FC = () => {
   };
 
   return (
-    <div className={signInFormBlock}>
-      <div className={signFormContainer}>
-        <h4 className={signInFormBlockTitle}>Sign In to Workroom</h4>
-        <form className={signInForm} onSubmit={handleSubmit}>
+    <div className={styles['signInFormBlock']}>
+      <div className={styles['signInFormBlockContainer']}>
+        <h4 className={styles['signInFormBlockTitle']}>Sign In to Workroom</h4>
+        <form className={styles['signInForm']}>
           <SignInFormFields
             email={registrationData.email}
             password={registrationData.password}

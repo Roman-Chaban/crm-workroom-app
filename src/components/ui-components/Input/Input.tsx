@@ -22,19 +22,21 @@ export const Input: FC<InputProps> = ({
   onChange,
   icon = '',
   checked,
+  onIconClick,
 }) => {
   return (
     <div className={classNames.container}>
       <label htmlFor={htmlFor} className={classNames.label}>
         {label}
       </label>
-      {icon && (
+      {icon && onIconClick && (
         <Image
           src={icon}
           width={24}
           height={24}
           alt="Icon"
           className={classNames.inputIcon}
+          onClick={onIconClick}
         />
       )}
       <input

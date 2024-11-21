@@ -1,19 +1,19 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import Image from 'next/image';
 
-import { logo, logoIcon } from '@/classNames/sidebar/sidebar';
+import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 
 export const SidebarLogo: FC = () => {
   return (
-    <div className={logo}>
+    <div className={styles['sidebarLogo']}>
       <Image
         src={'/icons/sidebar-icons/Logo.svg'}
         alt="Workroom Logo"
         width={50}
         height={50}
         priority
-        className={logoIcon}
+        className={styles['sidebarLogoIcon']}
       />
     </div>
   );

@@ -2,10 +2,7 @@ import { FC } from 'react';
 
 import Image from 'next/image';
 
-import {
-  modalBannerImage,
-  modalHeaderParagraph,
-} from '@/classNames/home-modal/home-modal';
+import styles from './HomeModal.module.scss';
 
 export const HomeModalIllustration: FC = () => {
   return (
@@ -15,9 +12,9 @@ export const HomeModalIllustration: FC = () => {
         src="/images/modal/modal-illustration.svg"
         width={464}
         height={192}
-        className={modalBannerImage}
+        className={styles['modalBannerImage']}
       />
-      <p className={modalHeaderParagraph}>
+      <p className={styles['modalHeaderParagraph']}>
         Describe your question and our specialists will answer you within 24
         hours.
       </p>

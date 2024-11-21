@@ -41,6 +41,12 @@
   }
 }
 
+@mixin disabledButton {
+  font-weight: 900;
+  box-shadow: none;
+  background: color.$background-switcher;
+}
+
 @mixin menuButton {
   width: 48px;
   height: 48px;
@@ -207,4 +213,28 @@
   font-size: size.$font-size-lg;
   font-weight: 400;
   background: inherit;
+}
+
+@mixin stepsTitleFigures {
+  text-transform: uppercase;
+  color: color.$background-support-primary;
+  font-size: size.$font-size-md;
+  font-weight: 700;
+}
+
+@mixin sentMessageTitle {
+  font-weight: 600;
+  color: color.$background-support-primary;
+  font-size: size.$font-size-md;
+  line-height: 157%;
+}
+
+@mixin confirmationButton {
+  width: 100%;
+  max-width: 58px;
+  height: 49px;
+  border-radius: 14px;
+  border: 1.5px solid color.$background-modal-light;
+  box-shadow: color.$shadow-modal;
+  background: color.$color-white-primary;
 }

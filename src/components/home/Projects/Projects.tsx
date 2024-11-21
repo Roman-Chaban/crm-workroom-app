@@ -1,12 +1,8 @@
 import type { FC } from 'react';
 
-import {
-  projects,
-  projectsContainer,
-  projectsItems,
-} from '@/classNames/projects/projects';
-
 import { NavView, ProjectItem } from '@/components/index/index';
+
+import styles from './Projects.module.scss';
 
 export const Projects: FC = () => {
   const projectsItemsList: Array<{ id: number; title: string }> = [
@@ -24,10 +20,10 @@ export const Projects: FC = () => {
     },
   ];
   return (
-    <div className={projects}>
-      <div className={projectsContainer}>
+    <div className={styles['projects']}>
+      <div className={styles['projectsContainer']}>
         <NavView props={{ link: 'View all', title: 'Projects' }} />
-        <ul className={projectsItems}>
+        <ul className={styles['projectsItems']}>
           {projectsItemsList.map((item) => (
             <ProjectItem key={item.id} item={item} />
           ))}
