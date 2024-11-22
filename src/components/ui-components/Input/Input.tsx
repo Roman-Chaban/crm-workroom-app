@@ -30,14 +30,9 @@ export const Input: FC<InputProps> = ({
         {label}
       </label>
       {icon && onIconClick && (
-        <Image
-          src={icon}
-          width={24}
-          height={24}
-          alt="Icon"
-          className={classNames.inputIcon}
-          onClick={onIconClick}
-        />
+        <div className={classNames.inputIcon} onClick={onIconClick}>
+          {icon}
+        </div>
       )}
       <input
         className={classNames.input}

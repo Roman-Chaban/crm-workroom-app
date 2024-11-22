@@ -48,7 +48,7 @@ export const MultiStepsSignUpEnteringMessage: FC<
       <div className={styles['multiMessageLabelContainer']}>
         <h5 className={styles['multiMessageLabel']}>Code from Email</h5>
         <MultiStepsSignUpEnteringMessageButtons
-          handleSmsCodeChange={() => handleSmsCodeChange}
+          handleSmsCodeChange={handleSmsCodeChange}
           smsCode={smsCode}
         />
       </div>

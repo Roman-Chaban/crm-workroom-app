@@ -45,12 +45,18 @@
 
   & .signInFormBlockInput {
     @include input;
+    @include inputHover;
+  }
+
+  & .signInFormBlockPhoneInputContainer {
+    max-width: 225px;
   }
 
   & .signInFormBlockViewIcon {
     position: absolute;
     bottom: 31px;
     right: 18px;
+    cursor: pointer;
   }
 
   & .signInFormBlockLabel {
@@ -63,6 +69,15 @@
     align-items: center;
     gap: 10px;
     flex-direction: column;
+  }
+
+  & .sendCodeButton {
+    @include Button;
+    position: static;
+    max-width: 200px;
+    &:disabled {
+      @include disabledButton;
+    }
   }
 
   & .stepFormSubmittedMessageBlock {
@@ -136,5 +151,13 @@
     @include selectLabel;
     font-weight: 400;
     text-align: center;
+  }
+
+  & .phoneInputContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 403px;
   }
 }

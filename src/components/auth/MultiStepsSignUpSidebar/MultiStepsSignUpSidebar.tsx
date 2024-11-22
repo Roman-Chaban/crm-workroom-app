@@ -6,7 +6,13 @@ import styles from './MultiStepsSignUpSidebar.module.scss';
 
 import { StepsList } from './StepsList';
 
-export const MultiStepsSignUpSidebar: FC = () => {
+interface MultiStepsSignUpSidebarProps {
+  currentStep: number;
+}
+
+export const MultiStepsSignUpSidebar: FC<MultiStepsSignUpSidebarProps> = ({
+  currentStep,
+}) => {
   return (
     <aside className={styles['sidebarSteps']}>
       <div className={styles['sidebarStepsContainer']}>
@@ -19,7 +25,7 @@ export const MultiStepsSignUpSidebar: FC = () => {
         />
         <div className={styles['sidebarStepsGetStarted']}>
           <h4 className={styles['sidebarStepsGetStartedTitle']}>Get started</h4>
-          <StepsList />
+          <StepsList currentStep={currentStep} />
         </div>
       </div>
     </aside>

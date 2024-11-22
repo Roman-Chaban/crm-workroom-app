@@ -76,3 +76,36 @@
     background: color.$color-white-primary !important;
   }
 }
+
+.activeText {
+  color: color.$color-white-primary !important;
+}
+
+@include respond-toWidth(large-medium) {
+  .sidebarSteps {
+    max-width: 300px;
+    &Container {
+      gap: 75px;
+      max-width: 300px;
+      padding: 30px 40px;
+    }
+
+    & .stepsListItem {
+      font-size: size.$font-size-md;
+
+      & .stepsListItemCircle {
+        max-width: 20px;
+        max-height: 20px;
+      }
+
+      & .stepsListItemCircle::before {
+        content: '';
+        max-height: 15px;
+      }
+    }
+
+    & .stepsList {
+      gap: 25px;
+    }
+  }
+}

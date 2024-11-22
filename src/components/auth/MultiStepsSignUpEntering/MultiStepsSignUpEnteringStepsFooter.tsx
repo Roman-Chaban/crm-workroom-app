@@ -1,25 +1,34 @@
 import type { FC } from 'react';
 
+import { useAppDispatch } from '@/hooks/useAppDispatch';
+
 import Image from 'next/image';
 
 import { Button } from '@/components/index';
 
+import { handleNextStep } from '@/store/slices/StepsSlice';
+
 import styles from './MultiStepsSignUpEntering.module.scss';
 
 interface MultiStepsSignUpEnteringStepsFooterProps {
-  handleSubmitConfirmationData: () => void;
   isNextButtonDisabled: boolean;
 }
 
 export const MultiStepsSignUpEnteringStepsFooter: FC<
   MultiStepsSignUpEnteringStepsFooterProps
-> = ({ handleSubmitConfirmationData, isNextButtonDisabled }) => {
+> = ({ isNextButtonDisabled }) => {
+  const dispatch = useAppDispatch();
+
+  const handleNextStepClick = () => {
+    dispatch(handleNextStep());
+  };
+
   return (
     <div className={styles['multiStepsFooter']}>
       <Button
         type="submit"
         className={styles['multiStepsNextButton']}
-        onClick={handleSubmitConfirmationData}
+        onClick={handleNextStepClick}
         disabled={isNextButtonDisabled}
       >
         Next Step

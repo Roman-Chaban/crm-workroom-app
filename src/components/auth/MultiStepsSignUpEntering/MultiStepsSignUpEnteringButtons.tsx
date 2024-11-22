@@ -1,27 +1,38 @@
 import type { FC } from 'react';
 
-import { SmsCode, SmsCodeProperties } from '@/types/reg';
+import { SmsCode } from '@/types/reg';
 
 import styles from './MultiStepsSignUpEntering.module.scss';
 
 interface MultiStepsSignUpEnteringMessageButtons {
   smsCode: SmsCode;
-  handleSmsCodeChange: ({ index, value }: SmsCodeProperties) => void;
+  handleSmsCodeChange: (index: number, value: string) => void;
 }
 
 export const MultiStepsSignUpEnteringMessageButtons: FC<
   MultiStepsSignUpEnteringMessageButtons
 > = ({ handleSmsCodeChange, smsCode }) => {
-  const handleKeyDown = (
+  const handleSmsCodeInputChange = (
+    index: number,
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    handleSmsCodeChange(index, event.target.value);
+  };
+
+  const handleSmsCodeInputKeyDown = (
     event: React.KeyboardEvent<HTMLInputElement>,
     index: number
   ) => {
     const target = event.target as HTMLInputElement;
 
-    if (event.key === 'Backspace' && !target.value) {
+    if (event.key === 'Backspace' && !target.value && index > 0) {
       const prev = target.previousElementSibling as HTMLInputElement | null;
       prev?.focus();
-    } else if (/\d/.test(event.key) && target.value) {
+    } else if (
+      /\d/.test(event.key) &&
+      target.value &&
+      index < smsCode.length - 1
+    ) {
       const next = target.nextElementSibling as HTMLInputElement | null;
       next?.focus();
     }
@@ -36,10 +47,8 @@ export const MultiStepsSignUpEnteringMessageButtons: FC<
           type="text"
           maxLength={1}
           value={value}
-          onChange={(event) =>
-            handleSmsCodeChange({ index, value: event.target.value })
-          }
-          onKeyDown={(event) => handleKeyDown(event, index)}
+          onChange={(event) => handleSmsCodeInputChange(index, event)}
+          onKeyDown={(event) => handleSmsCodeInputKeyDown(event, index)}
         />
       ))}
     </div>

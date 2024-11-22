@@ -8,11 +8,11 @@ export const initialState: InitialState = {
   error: null as string | null,
 };
 
-const AuthSlice = createSlice({
+const authSlice = createSlice({
   name: 'auth',
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {},
 });
 
-export default AuthSlice.reducer;
+export default authSlice.reducer;

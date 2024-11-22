@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties } from 'react';
+import { ChangeEvent, CSSProperties, ReactNode } from 'react';
 
 export interface InputClassNames {
   container: string;
@@ -24,7 +24,7 @@ export interface InputProps {
   maxLength?: number;
   minLength?: number;
   classNames: InputClassNames;
-  icon?: string;
+  icon?: ReactNode;
   onIconClick?: () => void;
 }
 

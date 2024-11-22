@@ -22,6 +22,7 @@ import {
   IsTimerActive,
   RegistrationUserData,
 } from '@/types/reg';
+import { useAppSelector } from '@/hooks/useAppSelector';
 
 interface MultiStepsSignUpEnteringFormProps {
   registrationData: RegistrationUserData;
@@ -40,6 +41,7 @@ export const MultiStepsSignUpEnteringForm: FC<
   handlePasswordChange,
   handleSubmitForm,
 }) => {
+  const currentStep = useAppSelector((state) => state.steps.currentStep);
   const [isTimerActive, setIsTimerActive] = useState<IsTimerActive>(false);
   const [isConfirmationMessageVisible, setIsConfirmationMessageVisible] =
     useState<IsConfirmationMessageVisible>(false);
@@ -53,7 +55,7 @@ export const MultiStepsSignUpEnteringForm: FC<
       setIsTimerActive(true);
       setIsConfirmationMessageVisible(true);
     } else {
-      toast('Please enter both email and password');
+      toast('Please enter email, password and phone number');
     }
   };
 
@@ -65,17 +67,16 @@ export const MultiStepsSignUpEnteringForm: FC<
   return (
     <form className={styles['stepForm']} onSubmit={handleSubmitForm}>
       <MultiStepsSignUpEnteringHeader
-        stepTitle="Step 1/4"
+        stepTitle={`Step ${currentStep}/4`}
         title="Valid your email"
       />
       <Container className={styles['stepFormMain']}>
         <MultiStepsSignUpEnteringFormFields
-          email={registrationData.email}
-          password={registrationData.password}
-          phoneNumber={registrationData.phoneNumber}
+          registrationData={registrationData}
           handleEmailChange={handleEmailChange}
           handlePasswordChange={handlePasswordChange}
           handlePhoneNumberChange={handlePhoneNumberChange}
+          handleSubmitConfirmationData={handleSubmitTimerStart}
         />
         {isConfirmationMessageVisible && (
           <MultiStepsSignUpEnteringMessage
@@ -85,7 +86,6 @@ export const MultiStepsSignUpEnteringForm: FC<
         )}
       </Container>
       <MultiStepsSignUpEnteringStepsFooter
-        handleSubmitConfirmationData={handleSubmitTimerStart}
         isNextButtonDisabled={isNextButtonDisabled}
       />
     </form>

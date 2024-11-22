@@ -19,10 +19,8 @@ export const registerUser = async (
     if (axios.isAxiosError(error)) {
       const errorMessage =
         error.response?.data?.message || 'Registration failed';
-      console.error('Error during registration:', errorMessage);
       throw new Error(errorMessage);
     }
-    console.error('Unknown error during registration:', error);
     throw new Error('Unknown error occurred during registration');
   }
 };

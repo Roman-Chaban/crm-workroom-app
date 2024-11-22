@@ -1,5 +1,3 @@
-export type UserStatuses = 'idle' | 'loading' | 'succeeded' | 'failed';
-
 export interface RegistrationUserData {
   email: string;
   password: string;
@@ -21,3 +19,5 @@ export type SmsCode = string[];
 export type IsConfirmationMessageVisible = boolean;
 export type IsTimerActive = boolean;
 export type SmsTimer = number;
+export type IsPasswordVisible = boolean;
+export type UserStatuses = 'idle' | 'loading' | 'succeeded' | 'failed';

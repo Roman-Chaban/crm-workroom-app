@@ -3,7 +3,7 @@ import { StepItem } from '@/types/steps-item';
 export const stepsList: Array<StepItem> = [
   {
     id: 1,
-    label: 'Valid your phone',
+    label: 'Valid your email',
   },
   {
     id: 2,
