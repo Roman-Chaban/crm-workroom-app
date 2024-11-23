@@ -7,14 +7,17 @@
   justify-content: space-between;
 }
 
-@include respond-toWidth(medium) {
-  .signInContainer {
-    flex-direction: column;
-  }
-}
-
 .signUpSteps {
   display: flex;
   gap: 30px;
   height: 100%;
+}
+
+@include respond-toWidth(medium) {
+  .signInContainer {
+    flex-direction: column;
+  }
+  .signUpSteps {
+    gap: 15px;
+  }
 }

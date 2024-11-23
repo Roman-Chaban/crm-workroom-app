@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { ChangeEvent, FC } from 'react';
 
 import { SmsCode } from '@/types/reg';
 
@@ -14,7 +14,7 @@ export const MultiStepsSignUpEnteringMessageButtons: FC<
 > = ({ handleSmsCodeChange, smsCode }) => {
   const handleSmsCodeInputChange = (
     index: number,
-    event: React.ChangeEvent<HTMLInputElement>
+    event: ChangeEvent<HTMLInputElement>
   ) => {
     handleSmsCodeChange(index, event.target.value);
   };

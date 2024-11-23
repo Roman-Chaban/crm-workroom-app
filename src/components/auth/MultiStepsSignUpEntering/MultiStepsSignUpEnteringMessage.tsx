@@ -4,7 +4,7 @@ import { useEffect, useState, type FC } from 'react';
 
 import Image from 'next/image';
 
-import { MultiStepsSignUpEnteringMessageButtons } from './MultiStepsSignUpEnteringButtons';
+import { MultiStepsSignUpEnteringMessageButtons } from '@/components/index/index';
 
 import { SmsCode, SmsTimer } from '@/types/reg';
 

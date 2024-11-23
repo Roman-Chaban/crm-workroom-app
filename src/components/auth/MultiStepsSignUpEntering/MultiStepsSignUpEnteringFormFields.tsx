@@ -6,7 +6,12 @@ import { EventType } from '@/types/signIn';
 
 import { Button, Container, Input } from '@/components/index';
 
-import { IsPasswordVisible, RegistrationUserData } from '@/types/reg';
+import {
+  IsPasswordVisible,
+  PhoneNumber,
+  RegistrationUserData,
+  SelectedCountryCode,
+} from '@/types/reg';
 
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -44,10 +49,9 @@ export const MultiStepsSignUpEnteringFormFields: FC<
 }) => {
   const [isPasswordVisible, setIsPasswordVisible] =
     useState<IsPasswordVisible>(false);
-  const [selectedCountryCode, setSelectedCountryCode] = useState(
-    countryOptions[0]
-  );
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [selectedCountryCode, setSelectedCountryCode] =
+    useState<SelectedCountryCode>(countryOptions[0]);
+  const [phoneNumber, setPhoneNumber] = useState<PhoneNumber>('');
 
   const handleCountryChange = (selectedOption: any) => {
     setSelectedCountryCode(selectedOption);
@@ -150,7 +154,7 @@ export const MultiStepsSignUpEnteringFormFields: FC<
           }}
           htmlFor="phoneNumber"
           id="phoneNumber"
-          label="Phone Number"
+          label="Mobile Number"
           name="phoneNumber"
           type="tel"
           placeholder="Enter your phone number"

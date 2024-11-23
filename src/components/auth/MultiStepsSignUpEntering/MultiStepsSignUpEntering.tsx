@@ -3,13 +3,15 @@
 import { FormEvent, useState, type FC } from 'react';
 import { useMutation } from '@tanstack/react-query';
 
-import { Container, Section } from '@/components/index';
+import {
+  Container,
+  Section,
+  MultiStepsSignUpEnteringForm,
+} from '@/components/index';
 
 import { ToastContainer } from 'react-toastify';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-import { MultiStepsSignUpEnteringForm } from './MultiStepsSignUpEnteringForm';
 
 import { RegistrationUserData } from '@/types/reg';
 
@@ -30,7 +32,7 @@ export const MultiStepSignUpEntering: FC = () => {
   const mutation = useMutation({
     mutationFn: registerUser,
     onSuccess: () => {
-      toast.success('Registration successful!');
+      toast.success(`Code was sent to **${registrationData.email}**`);
     },
     onError: (error: Error) => {
       toast.error(error.message || 'Registration failed');

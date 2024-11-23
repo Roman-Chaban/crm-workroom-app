@@ -32,4 +32,12 @@ export { SignInFormSubmit } from '@/components/auth/SingInForm/SignInFormSubmit'
 export { SignInFormRemember } from '@/components/auth/SingInForm/SignInFromRemember';
 export { SignInForm } from '@/components/auth/SingInForm/SingInForm';
 export { MultiStepsSignUpSidebar } from '@/components/auth/MultiStepsSignUpSidebar/MultiStepsSignUpSidebar';
+export { StepsList } from '@/components/auth/MultiStepsSignUpSidebar/StepsList';
+export { StepsListItem } from '@/components/auth/MultiStepsSignUpSidebar/StepsListItem';
 export { MultiStepSignUpEntering } from '@/components/auth/MultiStepsSignUpEntering/MultiStepsSignUpEntering';
+export { MultiStepsSignUpEnteringMessageButtons } from '@/components/auth/MultiStepsSignUpEntering/MultiStepsSignUpEnteringButtons';
+export { MultiStepsSignUpEnteringForm } from '@/components/auth/MultiStepsSignUpEntering/MultiStepsSignUpEnteringForm';
+export { MultiStepsSignUpEnteringFormFields } from '@/components/auth/MultiStepsSignUpEntering/MultiStepsSignUpEnteringFormFields';
+export { MultiStepsSignUpEnteringHeader } from '@/components/auth/MultiStepsSignUpEntering/MultiStepsSignUpEnteringHeader';
+export { MultiStepsSignUpEnteringMessage } from '@/components/auth/MultiStepsSignUpEntering/MultiStepsSignUpEnteringMessage';
+export { MultiStepsSignUpEnteringStepsFooter } from '@/components/auth/MultiStepsSignUpEntering/MultiStepsSignUpEnteringStepsFooter';

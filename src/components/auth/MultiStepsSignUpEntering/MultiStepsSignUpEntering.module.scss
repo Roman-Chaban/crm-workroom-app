@@ -149,8 +149,11 @@
   & .multiMessageConfirmationButton {
     @include confirmationButton;
     @include selectLabel;
-    font-weight: 400;
+    font-weight: 700;
+    font-size: size.$font-size-lg;
     text-align: center;
+    @include inputHover;
+    border-width: 2px;
   }
 
   & .phoneInputContainer {

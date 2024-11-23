@@ -39,6 +39,7 @@ const customSelectStyles: StylesConfig<CountryOption, false> = {
     backgroundColor: colors.colorWhitePrimary,
     ':hover': {
       borderColor: colors.backgroundSupportHover,
+      opacity: '0.5',
     },
     cursor: 'pointer',
   }),

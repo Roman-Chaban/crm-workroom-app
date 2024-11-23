@@ -152,7 +152,11 @@
 @mixin inputHover {
   transition: border-color 0.3s ease-in-out;
   &:hover {
+    border-color: rgba(color.$background-support-hover, 0.5);
+  }
+  &:focus {
     border-color: color.$background-support-hover;
+    outline: 3px solid rgba(color.$background-support-primary, 0.12);
   }
 }
 
@@ -190,6 +194,7 @@
   padding-inline: 18px;
   color: color.$color-gray-neutral;
   caret-color: color.$color-gray-light;
+  font-size: size.$font-size-md;
 }
 
 @mixin rememberLabel {
@@ -234,7 +239,7 @@
   max-width: 58px;
   height: 49px;
   border-radius: 14px;
-  border: 1.5px solid color.$background-modal-light;
+  border: 1px solid color.$background-modal-light;
   box-shadow: color.$shadow-modal;
   background: color.$color-white-primary;
 }

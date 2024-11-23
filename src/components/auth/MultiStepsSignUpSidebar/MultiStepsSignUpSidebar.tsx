@@ -2,9 +2,9 @@ import type { FC } from 'react';
 
 import Image from 'next/image';
 
-import styles from './MultiStepsSignUpSidebar.module.scss';
+import { StepsList } from '@/components/index/index';
 
-import { StepsList } from './StepsList';
+import styles from './MultiStepsSignUpSidebar.module.scss';
 
 interface MultiStepsSignUpSidebarProps {
   currentStep: number;
@@ -19,8 +19,8 @@ export const MultiStepsSignUpSidebar: FC<MultiStepsSignUpSidebarProps> = ({
         <Image
           src={'/images/auth/icons/signIn-logo.svg'}
           alt="Workroom Logo"
-          width={50}
-          height={50}
+          width={60}
+          height={60}
           priority
         />
         <div className={styles['sidebarStepsGetStarted']}>

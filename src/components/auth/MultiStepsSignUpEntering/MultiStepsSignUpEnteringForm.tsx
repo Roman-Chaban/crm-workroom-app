@@ -1,28 +1,27 @@
 'use client';
 
 import { useState, type FC, type FormEvent } from 'react';
+import { useAppSelector } from '@/hooks/useAppSelector';
 
-import { MultiStepsSignUpEnteringHeader } from './MultiStepsSignUpEnteringHeader';
+import {
+  MultiStepsSignUpEnteringHeader,
+  MultiStepsSignUpEnteringFormFields,
+  MultiStepsSignUpEnteringStepsFooter,
+  MultiStepsSignUpEnteringMessage,
+  Container,
+} from '@/components/index/index';
 
 import { EventType } from '@/types/signIn';
 
-import { MultiStepsSignUpEnteringFormFields } from './MultiStepsSignUpEnteringFormFields';
-
-import { MultiStepsSignUpEnteringStepsFooter } from './MultiStepsSignUpEnteringStepsFooter';
-
-import { MultiStepsSignUpEnteringMessage } from './MultiStepsSignUpEnteringMessage';
-
-import { Container } from '@/components/index';
-
 import { toast } from 'react-toastify';
 
-import styles from './MultiStepsSignUpEntering.module.scss';
 import {
   IsConfirmationMessageVisible,
   IsTimerActive,
   RegistrationUserData,
 } from '@/types/reg';
-import { useAppSelector } from '@/hooks/useAppSelector';
+
+import styles from './MultiStepsSignUpEntering.module.scss';
 
 interface MultiStepsSignUpEnteringFormProps {
   registrationData: RegistrationUserData;
@@ -62,7 +61,8 @@ export const MultiStepsSignUpEnteringForm: FC<
   const isNextButtonDisabled =
     !registrationData.email ||
     !registrationData.password ||
-    !registrationData.phoneNumber;
+    !registrationData.phoneNumber ||
+    !isTimerActive;
 
   return (
     <form className={styles['stepForm']} onSubmit={handleSubmitForm}>

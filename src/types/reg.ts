@@ -1,3 +1,5 @@
+import { CountryOption } from '@/static-data/country-options';
+
 export interface RegistrationUserData {
   email: string;
   password: string;
@@ -21,3 +23,5 @@ export type IsTimerActive = boolean;
 export type SmsTimer = number;
 export type IsPasswordVisible = boolean;
 export type UserStatuses = 'idle' | 'loading' | 'succeeded' | 'failed';
+export type SelectedCountryCode = CountryOption;
+export type PhoneNumber = string;
