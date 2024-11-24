@@ -13,11 +13,12 @@ import styles from './MultiStepsSignUpEntering.module.scss';
 interface MultiStepsSignUpEnteringMessageProps {
   userEmail: string;
   isTimerActive: boolean;
+  onSmsCodeComplete: (isComplete: boolean) => void;
 }
 
 export const MultiStepsSignUpEnteringMessage: FC<
   MultiStepsSignUpEnteringMessageProps
-> = ({ userEmail, isTimerActive }) => {
+> = ({ userEmail, isTimerActive, onSmsCodeComplete }) => {
   const [smsCode, setSmsCode] = useState<SmsCode>(['', '', '', '', '', '']);
   const [smsTimer, setSmsTimer] = useState<SmsTimer>(30);
 
@@ -32,6 +33,11 @@ export const MultiStepsSignUpEnteringMessage: FC<
       };
     }
   }, [isTimerActive, smsTimer]);
+
+  useEffect(() => {
+    const isCodeCompleted = smsCode.every((digit) => digit !== '');
+    onSmsCodeComplete(isCodeCompleted);
+  }, [smsCode, onSmsCodeComplete]);
 
   const handleSmsCodeChange = (index: number, value: string) => {
     if (/^\d?$/.test(value)) {

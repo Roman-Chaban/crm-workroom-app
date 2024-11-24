@@ -46,6 +46,7 @@
   & .signInFormBlockInput {
     @include input;
     @include inputHover;
+    font-weight: 500;
   }
 
   & .signInFormBlockPhoneInputContainer {

@@ -1,29 +1,29 @@
 'use client';
 
 import { useAppSelector } from '@/hooks/useAppSelector';
-import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 
 import {
   Container,
   MultiStepSignUpEntering,
+  MultiStepsSignUpAbout,
   MultiStepsSignUpSidebar,
 } from '@/components/index';
+
+import { STEPS } from '@/enums/steps';
 
 import styles from '@/styles/pages/signIn.module.scss';
 
 export default function MultiStepsSignUpPage() {
   const currentStep = useAppSelector((state) => state.steps.currentStep);
 
-  useDocumentTitle(`CRM | Registration ${currentStep}/4`);
-
   const renderRegistrationStepsContent = (): JSX.Element => {
     switch (currentStep) {
-      case 1:
-        return <MultiStepSignUpEntering />;
-      case 2:
-        return <div>Step 2</div>;
+      case STEPS.ENTER_STEP:
+        return <MultiStepSignUpEntering currentStep={currentStep} />;
+      case STEPS.ABOUT_STEP:
+        return <MultiStepsSignUpAbout />;
       default:
-        return <MultiStepSignUpEntering />;
+        return <MultiStepsSignUpAbout />;
     }
   };
 

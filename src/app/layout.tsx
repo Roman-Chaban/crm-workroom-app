@@ -8,8 +8,9 @@ import { BodyWrapper } from '@/components/index/index';
 
 import { SidebarRender } from '@/components/containers/SidebarRender/SidebarRender';
 
-import '@/styles/main/main.scss';
 import { MainRender } from '@/components/containers/MainRender/MainRender';
+
+import '@/styles/main/main.scss';
 
 const basicFont = Nunito_Sans({
   subsets: ['latin'],

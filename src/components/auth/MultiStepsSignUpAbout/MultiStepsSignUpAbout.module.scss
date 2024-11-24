@@ -1,0 +1,8 @@
+@use '../../../styles/abstracts/breakpoints/breakpoints' as *;
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+
+.MultiStepsSignUpAbout {
+  width: 100%;
+}

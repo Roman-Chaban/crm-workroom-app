@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, type FC, type FormEvent } from 'react';
+import { useMemo, useState, type FC, type FormEvent } from 'react';
 import { useAppSelector } from '@/hooks/useAppSelector';
 
 import {
@@ -44,6 +44,7 @@ export const MultiStepsSignUpEnteringForm: FC<
   const [isTimerActive, setIsTimerActive] = useState<IsTimerActive>(false);
   const [isConfirmationMessageVisible, setIsConfirmationMessageVisible] =
     useState<IsConfirmationMessageVisible>(false);
+  const [isSmsCompleted, setIsSmsCompleted] = useState<boolean>(false);
 
   const handleSubmitTimerStart = () => {
     if (
@@ -58,11 +59,23 @@ export const MultiStepsSignUpEnteringForm: FC<
     }
   };
 
-  const isNextButtonDisabled =
-    !registrationData.email ||
-    !registrationData.password ||
-    !registrationData.phoneNumber ||
-    !isTimerActive;
+  const handleSmsCodeCompleted = (isComplete: boolean) => {
+    setIsSmsCompleted(isComplete);
+  };
+
+  const isNextButtonDisabled = useMemo(() => {
+    return (
+      !registrationData.email ||
+      !registrationData.password ||
+      !registrationData.phoneNumber ||
+      !isTimerActive
+    );
+  }, [
+    registrationData.email,
+    registrationData.password,
+    registrationData.phoneNumber,
+    isTimerActive,
+  ]);
 
   return (
     <form className={styles['stepForm']} onSubmit={handleSubmitForm}>
@@ -82,11 +95,13 @@ export const MultiStepsSignUpEnteringForm: FC<
           <MultiStepsSignUpEnteringMessage
             userEmail={registrationData.email}
             isTimerActive={isTimerActive}
+            onSmsCodeComplete={handleSmsCodeCompleted}
           />
         )}
       </Container>
       <MultiStepsSignUpEnteringStepsFooter
-        isNextButtonDisabled={isNextButtonDisabled}
+        currentStep={currentStep}
+        isNextButtonDisabled={isNextButtonDisabled || !isSmsCompleted}
       />
     </form>
   );

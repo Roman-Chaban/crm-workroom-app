@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC } from 'react';
 
 import { useAppDispatch } from '@/hooks/useAppDispatch';
@@ -12,6 +14,7 @@ import styles from './MultiStepsSignUpEntering.module.scss';
 
 interface MultiStepsSignUpEnteringStepsFooterProps {
   isNextButtonDisabled: boolean;
+  currentStep: number;
 }
 
 export const MultiStepsSignUpEnteringStepsFooter: FC<

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, type FC } from 'react';
+import { useMemo, useState, type FC } from 'react';
 
 import { EventType } from '@/types/signIn';
 
@@ -26,6 +26,7 @@ import styles from './MultiStepsSignUpEntering.module.scss';
 
 import dynamic from 'next/dynamic';
 import countrySelectStyles from '@/constants/country-select';
+
 const Select = dynamic(() => import('react-select'), {
   ssr: false,
 }) as typeof import('react-select').default<CountryOption, false>;
@@ -86,11 +87,18 @@ export const MultiStepsSignUpEnteringFormFields: FC<
     setIsPasswordVisible((prevVisibleState) => !prevVisibleState);
   };
 
-  const isNextButtonDisabled =
-    !registrationData.email ||
-    !registrationData.password ||
-    !phoneNumber ||
-    !selectedCountryCode;
+  const isNextButtonDisabled = useMemo(() => {
+    return (
+      !registrationData.email ||
+      !registrationData.password ||
+      !phoneNumber ||
+      !selectedCountryCode
+    );
+  }, [
+    registrationData.email,
+    registrationData.password,
+    registrationData.phoneNumber,
+  ]);
 
   return (
     <Container className={styles['containerFields']}>

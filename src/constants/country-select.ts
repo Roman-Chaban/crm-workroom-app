@@ -1,6 +1,8 @@
 import { StylesConfig } from 'react-select';
 import { keyframes } from '@emotion/react';
+
 import { colors } from './colors';
+
 import { CountryOption } from '@/static-data/country-options';
 
 const fadeIn = keyframes`

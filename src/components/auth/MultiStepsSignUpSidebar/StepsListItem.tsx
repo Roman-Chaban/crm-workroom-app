@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { StepItem } from '@/types/steps-item';
 
 import styles from './MultiStepsSignUpSidebar.module.scss';
+import Image from 'next/image';
 
 interface StepsListItemProps {
   step: StepItem;
@@ -14,6 +15,7 @@ export const StepsListItem: FC<StepsListItemProps> = ({
   currentStep,
 }) => {
   const isActive = currentStep === step.id;
+  const isCompleted = currentStep > step.id;
   return (
     <li
       className={`${styles['stepsListItem']} ${
@@ -24,7 +26,17 @@ export const StepsListItem: FC<StepsListItemProps> = ({
         className={`${styles['stepsListItemCircle']} ${
           isActive ? styles['active'] : ''
         } `}
-      ></span>
+      >
+        {isCompleted && (
+          <Image
+            src={'/icons/sidebar-icons/done.svg'}
+            alt="Done Icon"
+            width={24}
+            height={24}
+            className={styles['doneIcon']}
+          />
+        )}
+      </span>
       {step.label}
     </li>
   );

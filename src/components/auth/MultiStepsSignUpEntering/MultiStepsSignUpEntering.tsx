@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useState, type FC } from 'react';
+import { FormEvent, useCallback, useEffect, useState, type FC } from 'react';
 import { useMutation } from '@tanstack/react-query';
 
 import {
@@ -21,7 +21,13 @@ import { registerUser } from '@/api/registration';
 
 import styles from './MultiStepsSignUpEntering.module.scss';
 
-export const MultiStepSignUpEntering: FC = () => {
+interface MultiStepSignUpEnteringProps {
+  currentStep: number;
+}
+
+export const MultiStepSignUpEntering: FC<MultiStepSignUpEnteringProps> = ({
+  currentStep,
+}) => {
   const [registrationData, setRegistrationData] =
     useState<RegistrationUserData>({
       email: '',
@@ -29,8 +35,9 @@ export const MultiStepSignUpEntering: FC = () => {
       phoneNumber: '',
     });
 
-  const mutation = useMutation({
-    mutationFn: registerUser,
+  const registerUserMutation = useMutation({
+    mutationFn: (userData: RegistrationUserData) =>
+      registerUser(userData, currentStep),
     onSuccess: () => {
       toast.success(`Code was sent to **${registrationData.email}**`);
     },
@@ -39,13 +46,33 @@ export const MultiStepSignUpEntering: FC = () => {
     },
   });
 
-  const handleRegistrationDataChange = (event: EventType) => {
+  useEffect(() => {
+    const savedRegistrationData = localStorage.getItem('registration');
+    if (savedRegistrationData) {
+      setRegistrationData(JSON.parse(savedRegistrationData));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (
+      registrationData.email ||
+      registrationData.password ||
+      registrationData.phoneNumber
+    ) {
+      localStorage.setItem(
+        'registrationData',
+        JSON.stringify(registrationData)
+      );
+    }
+  }, []);
+
+  const handleRegistrationDataChange = useCallback((event: EventType) => {
     const { name, value } = event.target;
     setRegistrationData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
-  };
+  }, []);
 
   const handleSubmitForm = (event: FormEvent) => {
     event.preventDefault();
@@ -53,7 +80,7 @@ export const MultiStepSignUpEntering: FC = () => {
       toast.error('Please fill in all fields!');
       return;
     }
-    mutation.mutate(registrationData);
+    registerUserMutation.mutate(registrationData);
   };
 
   return (

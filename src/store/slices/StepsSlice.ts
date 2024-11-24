@@ -5,7 +5,7 @@ interface InitialState {
 }
 
 const initialState: InitialState = {
-  currentStep: 1,
+  currentStep: parseInt(localStorage.getItem('currentStep') || '1', 5),
 };
 
 export const stepsSlice = createSlice({
@@ -14,12 +14,15 @@ export const stepsSlice = createSlice({
   reducers: {
     handleNextStep: (state) => {
       state.currentStep = Math.min(state.currentStep + 1, 4);
+      localStorage.setItem('currentStep', String(state.currentStep));
     },
     handlePrevStep: (state) => {
       state.currentStep = Math.max(state.currentStep - 1, 1);
+      localStorage.setItem('currentStep', String(state.currentStep));
     },
     handleSetStep: (state, action: PayloadAction<number>) => {
       state.currentStep = action.payload;
+      localStorage.setItem('currentStep', String(state.currentStep));
     },
   },
 });

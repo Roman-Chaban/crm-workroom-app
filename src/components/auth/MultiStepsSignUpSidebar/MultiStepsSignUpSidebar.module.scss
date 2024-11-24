@@ -66,6 +66,11 @@
       background: rgba(color.$color-white-primary, 0.5);
     }
   }
+  & .doneIcon {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
 }
 
 .active {
@@ -94,6 +99,11 @@
       font-size: size.$font-size-md;
 
       & .stepsListItemCircle {
+        max-width: 20px;
+        max-height: 20px;
+      }
+
+      & .doneIcon {
         max-width: 20px;
         max-height: 20px;
       }
