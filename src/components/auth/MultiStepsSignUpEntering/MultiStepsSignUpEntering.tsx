@@ -13,7 +13,7 @@ import { ToastContainer } from 'react-toastify';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { RegistrationUserData } from '@/types/reg';
+import { RegistrationUserData } from '@/types/registration';
 
 import { EventType } from '@/types/signIn';
 
@@ -59,10 +59,7 @@ export const MultiStepSignUpEntering: FC<MultiStepSignUpEnteringProps> = ({
       registrationData.password ||
       registrationData.phoneNumber
     ) {
-      localStorage.setItem(
-        'registrationData',
-        JSON.stringify(registrationData)
-      );
+      localStorage.setItem('registration', JSON.stringify(registrationData));
     }
   }, []);
 

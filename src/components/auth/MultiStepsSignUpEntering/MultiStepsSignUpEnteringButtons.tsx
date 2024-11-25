@@ -1,6 +1,6 @@
 import type { ChangeEvent, FC } from 'react';
 
-import { SmsCode } from '@/types/reg';
+import { SmsCode } from '@/types/registration';
 
 import styles from './MultiStepsSignUpEntering.module.scss';
 

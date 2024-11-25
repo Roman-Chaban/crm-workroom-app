@@ -11,7 +11,7 @@ import {
   PhoneNumber,
   RegistrationUserData,
   SelectedCountryCode,
-} from '@/types/reg';
+} from '@/types/registration';
 
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -118,6 +118,7 @@ export const MultiStepsSignUpEnteringFormFields: FC<
         placeholder="Enter your email address"
         value={registrationData.email}
         onChange={handleEmailChange}
+        isRequired
       />
       <Input
         classNames={{
@@ -135,6 +136,7 @@ export const MultiStepsSignUpEnteringFormFields: FC<
         value={registrationData.password}
         onChange={handlePasswordChange}
         onIconClick={togglePasswordVisibility}
+        isRequired
         icon={
           isPasswordVisible ? (
             <VisibilityIcon style={{ color: colors.colorGrayNeutral }} />
@@ -170,6 +172,7 @@ export const MultiStepsSignUpEnteringFormFields: FC<
           placeholder="Enter your phone number"
           value={phoneNumber}
           onChange={handlePhoneNumberInputChange}
+          isRequired
         />
       </div>
       <Button

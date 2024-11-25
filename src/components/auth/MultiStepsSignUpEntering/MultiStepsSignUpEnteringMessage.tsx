@@ -4,7 +4,7 @@ import { type FC, useEffect, useState } from 'react';
 
 import Image from 'next/image';
 
-import { SmsCode, SmsTimer } from '@/types/reg';
+import { SmsCode, SmsTimer } from '@/types/registration';
 
 import { toast } from 'react-toastify';
 

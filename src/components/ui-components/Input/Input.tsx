@@ -12,7 +12,6 @@ export const Input: FC<InputProps> = ({
   placeholder = '',
   style,
   name = '',
-  required = false,
   disabled = false,
   autoFocus = false,
   maxLength,
@@ -22,6 +21,7 @@ export const Input: FC<InputProps> = ({
   onChange,
   icon = '',
   checked,
+  isRequired = true,
   onIconClick,
 }) => {
   return (
@@ -43,7 +43,7 @@ export const Input: FC<InputProps> = ({
         onChange={onChange}
         placeholder={placeholder}
         style={style}
-        required={required}
+        required={isRequired}
         disabled={disabled}
         autoFocus={autoFocus}
         maxLength={maxLength}

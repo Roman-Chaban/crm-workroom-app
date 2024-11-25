@@ -19,6 +19,8 @@ const basicFont = Nunito_Sans({
 
 export const metadata: Metadata = {
   applicationName: 'CRM Workroom',
+  description:
+    'Workflow CRM is a powerful Customer Relationship Management system designed to streamline sales processes, enhance customer service, and facilitate project management.',
   title: 'CRM Workroom | Dashboard',
   icons: '/favicon/favicon.svg',
   authors: { name: 'Roman Chaban' },

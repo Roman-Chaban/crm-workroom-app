@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { RegistrationUserData } from '@/types/reg';
+import { RegistrationUserData } from '@/types/registration';
 import { REQUESTS_METHODS } from '@/enums/requests-methods';
 
 axios.defaults.baseURL =

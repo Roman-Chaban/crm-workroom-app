@@ -20,7 +20,7 @@ import {
   IsSmsCompleted,
   IsTimerActive,
   RegistrationUserData,
-} from '@/types/reg';
+} from '@/types/registration';
 
 import styles from './MultiStepsSignUpEntering.module.scss';
 

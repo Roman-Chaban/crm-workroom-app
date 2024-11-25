@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { InitialState, RegistrationUserData } from '@/types/reg';
+import { InitialState, RegistrationUserData } from '@/types/registration';
 
 export const initialState: InitialState = {
   user: null as RegistrationUserData | null,

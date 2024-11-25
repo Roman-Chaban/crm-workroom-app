@@ -12,7 +12,7 @@ import {
 
 import { EventType, Remember } from '@/types/signIn';
 
-import { RegistrationUserData } from '@/types/reg';
+import { RegistrationUserData } from '@/types/registration';
 
 import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 

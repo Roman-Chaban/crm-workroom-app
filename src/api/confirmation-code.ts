@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { ConfirmationPayload } from '@/types/reg';
+import { ConfirmationPayload } from '@/types/registration';
 
 import { REQUESTS_METHODS } from '@/enums/requests-methods';
 

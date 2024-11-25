@@ -25,6 +25,7 @@ export interface InputProps {
   minLength?: number;
   classNames: InputClassNames;
   icon?: ReactNode;
+  isRequired?: boolean;
   onIconClick?: () => void;
 }
 
