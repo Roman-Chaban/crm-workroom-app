@@ -22,10 +22,10 @@ import { colors } from '@/constants/colors';
 
 import { CountryOption, countryOptions } from '@/static-data/country-options';
 
-import styles from './MultiStepsSignUpEntering.module.scss';
-
 import dynamic from 'next/dynamic';
 import countrySelectStyles from '@/constants/country-select';
+
+import styles from './MultiStepsSignUpEntering.module.scss';
 
 const Select = dynamic(() => import('react-select'), {
   ssr: false,
@@ -37,6 +37,7 @@ interface MultiStepsSignUpEnteringFormFieldsProps {
   handleEmailChange: (event: EventType) => void;
   handlePasswordChange: (event: EventType) => void;
   handleSubmitConfirmationData: () => void;
+  isSubmitting: boolean;
 }
 
 export const MultiStepsSignUpEnteringFormFields: FC<
@@ -47,6 +48,7 @@ export const MultiStepsSignUpEnteringFormFields: FC<
   handlePasswordChange,
   handlePhoneNumberChange,
   handleSubmitConfirmationData,
+  isSubmitting,
 }) => {
   const [isPasswordVisible, setIsPasswordVisible] =
     useState<IsPasswordVisible>(false);
@@ -176,7 +178,8 @@ export const MultiStepsSignUpEnteringFormFields: FC<
         className={styles['sendCodeButton']}
         disabled={isNextButtonDisabled}
       >
-        Send Code <SendIcon fontSize="medium" className={styles['sendIcon']} />
+        {isSubmitting ? 'Submitting...' : 'Submit'}
+        <SendIcon fontSize="medium" className={styles['sendIcon']} />
       </Button>
     </Container>
   );

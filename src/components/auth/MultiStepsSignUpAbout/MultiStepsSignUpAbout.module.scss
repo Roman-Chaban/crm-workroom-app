@@ -5,4 +5,36 @@
 
 .MultiStepsSignUpAbout {
   width: 100%;
+
+  &Container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    padding-block-start: 75px;
+    @include whiteContainer(100%);
+  }
+
+  & .stepForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+
+    &Header {
+      display: flex;
+      align-items: center;
+      flex-flow: column nowrap;
+      gap: 6px;
+    }
+
+    &Header > .stepFormHeaderStepsFigures {
+      @include stepsTitleFigures;
+    }
+
+    &Header > .stepFormHeaderTitle {
+      @include boldTitle;
+    }
+  }
 }

@@ -17,6 +17,7 @@ import { toast } from 'react-toastify';
 
 import {
   IsConfirmationMessageVisible,
+  IsSmsCompleted,
   IsTimerActive,
   RegistrationUserData,
 } from '@/types/reg';
@@ -44,7 +45,8 @@ export const MultiStepsSignUpEnteringForm: FC<
   const [isTimerActive, setIsTimerActive] = useState<IsTimerActive>(false);
   const [isConfirmationMessageVisible, setIsConfirmationMessageVisible] =
     useState<IsConfirmationMessageVisible>(false);
-  const [isSmsCompleted, setIsSmsCompleted] = useState<boolean>(false);
+  const [isSmsCompleted, setIsSmsCompleted] = useState<IsSmsCompleted>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const handleSubmitTimerStart = () => {
     if (
@@ -55,11 +57,11 @@ export const MultiStepsSignUpEnteringForm: FC<
       setIsTimerActive(true);
       setIsConfirmationMessageVisible(true);
     } else {
-      toast('Please enter email, password and phone number');
+      toast('Please enter email, password, and phone number');
     }
   };
 
-  const handleSmsCodeCompleted = (isComplete: boolean) => {
+  const handleSmsCodeCompleted = (isComplete: IsSmsCompleted) => {
     setIsSmsCompleted(isComplete);
   };
 
@@ -68,13 +70,15 @@ export const MultiStepsSignUpEnteringForm: FC<
       !registrationData.email ||
       !registrationData.password ||
       !registrationData.phoneNumber ||
-      !isTimerActive
+      !isTimerActive ||
+      isSubmitting
     );
   }, [
     registrationData.email,
     registrationData.password,
     registrationData.phoneNumber,
     isTimerActive,
+    isSubmitting,
   ]);
 
   return (
@@ -82,6 +86,11 @@ export const MultiStepsSignUpEnteringForm: FC<
       <MultiStepsSignUpEnteringHeader
         stepTitle={`Step ${currentStep}/4`}
         title="Valid your email"
+        classNames={{
+          header: styles['stepFormHeader'],
+          headerTitle: styles['stepFormHeaderTitle'],
+          stepsFigures: styles['stepFormHeaderStepsFigures'],
+        }}
       />
       <Container className={styles['stepFormMain']}>
         <MultiStepsSignUpEnteringFormFields
@@ -90,12 +99,15 @@ export const MultiStepsSignUpEnteringForm: FC<
           handlePasswordChange={handlePasswordChange}
           handlePhoneNumberChange={handlePhoneNumberChange}
           handleSubmitConfirmationData={handleSubmitTimerStart}
+          isSubmitting={isSubmitting}
         />
         {isConfirmationMessageVisible && (
           <MultiStepsSignUpEnteringMessage
             userEmail={registrationData.email}
             isTimerActive={isTimerActive}
             onSmsCodeComplete={handleSmsCodeCompleted}
+            isSubmitting={isSubmitting}
+            setIsSubmitting={setIsSubmitting}
           />
         )}
       </Container>

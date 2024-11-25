@@ -17,6 +17,11 @@ export interface SmsCodeProperties {
   value: string;
 }
 
+export interface ConfirmationPayload {
+  email: string;
+  confirmationCode: string;
+}
+
 export type SmsCode = string[];
 export type IsConfirmationMessageVisible = boolean;
 export type IsTimerActive = boolean;
@@ -25,3 +30,4 @@ export type IsPasswordVisible = boolean;
 export type UserStatuses = 'idle' | 'loading' | 'succeeded' | 'failed';
 export type SelectedCountryCode = CountryOption;
 export type PhoneNumber = string;
+export type IsSmsCompleted = boolean;
