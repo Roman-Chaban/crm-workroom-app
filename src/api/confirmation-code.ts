@@ -7,7 +7,6 @@ import { REQUESTS_METHODS } from '@/enums/requests-methods';
 axios.defaults.baseURL =
   'https://workflow-crm-server-staging.up.railway.app/api/auth';
 axios.defaults.headers['Content-Type'] = 'application/json';
-
 axios.defaults.method = REQUESTS_METHODS.POST;
 
 export const confirmUserRegistration = async (

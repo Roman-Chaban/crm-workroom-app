@@ -11,8 +11,6 @@ import {
   Container,
 } from '@/components/index';
 
-import { modal, modalContainer } from '@/classNames/home-modal/home-modal';
-
 import { Option, SelectedValue } from '@/interfaces/select';
 
 import { AreaValue } from '@/types/textarea';

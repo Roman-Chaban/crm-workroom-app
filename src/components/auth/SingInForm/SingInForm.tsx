@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, type FC } from 'react';
-
+import { FormEvent, useState, type FC } from 'react';
+import { useMutation } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 
 import {
@@ -12,33 +12,46 @@ import {
 
 import { EventType, Remember } from '@/types/signIn';
 
-import { RegistrationUserData } from '@/types/registration';
+import { LoginData } from '@/types/login';
+import { LoginUser } from '@/api/login';
+
+import { SidebarNavPaths } from '@/enums/nav-paths';
+
+import { toast, ToastContainer } from 'react-toastify';
 
 import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
 export const SignInForm: FC = () => {
   const router = useRouter();
 
-  const [registrationData, setRegistrationData] =
-    useState<RegistrationUserData>({
-      email: '',
-      password: '',
-      phoneNumber: '',
-    });
+  const [loginData, setLoginData] = useState<LoginData>({
+    email: '',
+    password: '',
+  });
 
   const [remember, setRemember] = useState<Remember>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-  const handleEmailChange = (event: EventType) => {
-    setRegistrationData((prevData) => ({
-      ...prevData,
-      email: event.target.value,
-    }));
-  };
+  const loginMutation = useMutation({
+    mutationFn: LoginUser,
+    onSuccess: (data) => {
+      localStorage.setItem('authToken', data.token);
 
-  const handlePasswordChange = (event: EventType) => {
-    setRegistrationData((prevData) => ({
-      ...prevData,
-      password: event.target.value,
+      toast.success('Login successful!');
+
+      router.push(SidebarNavPaths.DASHBOARD);
+    },
+    onError: (error) => {
+      toast.error(error.message || 'Login failed');
+    },
+  });
+
+  const handleInputChange = (event: EventType) => {
+    const { name, value } = event.target;
+
+    setLoginData((prevLoginData) => ({
+      ...prevLoginData,
+      [name]: value,
     }));
   };
 
@@ -46,24 +59,34 @@ export const SignInForm: FC = () => {
     setRemember((prevRemember) => !prevRemember);
   };
 
+  const handleSubmitForm = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    loginMutation.mutate(loginData);
+  };
+
   return (
-    <div className={styles['signInFormBlock']}>
-      <div className={styles['signInFormBlockContainer']}>
-        <h4 className={styles['signInFormBlockTitle']}>Sign In to Workroom</h4>
-        <form className={styles['signInForm']}>
-          <SignInFormFields
-            email={registrationData.email}
-            password={registrationData.password}
-            handleEmailChange={handleEmailChange}
-            handlePasswordChange={handlePasswordChange}
-          />
-          <SignInFormRemember
-            remember={remember}
-            handleCheckedRemember={handleCheckedRemember}
-          />
-          <SignInFormSubmit />
-        </form>
+    <>
+      <ToastContainer />
+      <div className={styles['signInFormBlock']}>
+        <div className={styles['signInFormBlockContainer']}>
+          <h4 className={styles['signInFormBlockTitle']}>
+            Sign In to Workroom
+          </h4>
+          <form className={styles['signInForm']} onSubmit={handleSubmitForm}>
+            <SignInFormFields
+              email={loginData.email}
+              password={loginData.password}
+              handleInputChange={handleInputChange}
+            />
+            <SignInFormRemember
+              remember={remember}
+              handleCheckedRemember={handleCheckedRemember}
+            />
+            <SignInFormSubmit isSubmitting={isSubmitting} />
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };

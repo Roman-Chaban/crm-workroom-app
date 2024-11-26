@@ -1,7 +1,5 @@
 import type { FC } from 'react';
 
-import Image from 'next/image';
-
 import { InputProps } from '@/types/input';
 
 export const Input: FC<InputProps> = ({

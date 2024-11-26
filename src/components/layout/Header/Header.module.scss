@@ -43,7 +43,10 @@
   }
 
   &ButtonsContainer {
+    width: 100%;
+    max-width: 320px;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     gap: 24px;
   }
@@ -54,5 +57,17 @@
 
   &SignInButton {
     @include menuButton;
+  }
+
+  &UserLoginBanner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    @include whiteContainer(140px);
+    @include boldTitle;
+    font-size: size.$font-size-md;
+    border-radius: 14px;
   }
 }

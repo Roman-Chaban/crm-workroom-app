@@ -33,9 +33,7 @@ const Select = dynamic(() => import('react-select'), {
 
 interface MultiStepsSignUpEnteringFormFieldsProps {
   registrationData: RegistrationUserData;
-  handlePhoneNumberChange: (event: EventType) => void;
-  handleEmailChange: (event: EventType) => void;
-  handlePasswordChange: (event: EventType) => void;
+  handleInputChange: (event: EventType) => void;
   handleSubmitConfirmationData: () => void;
   isSubmitting: boolean;
 }
@@ -44,17 +42,15 @@ export const MultiStepsSignUpEnteringFormFields: FC<
   MultiStepsSignUpEnteringFormFieldsProps
 > = ({
   registrationData,
-  handleEmailChange,
-  handlePasswordChange,
-  handlePhoneNumberChange,
+  handleInputChange,
   handleSubmitConfirmationData,
   isSubmitting,
 }) => {
+  const [phoneNumber, setPhoneNumber] = useState<PhoneNumber>('');
   const [isPasswordVisible, setIsPasswordVisible] =
     useState<IsPasswordVisible>(false);
   const [selectedCountryCode, setSelectedCountryCode] =
     useState<SelectedCountryCode>(countryOptions[0]);
-  const [phoneNumber, setPhoneNumber] = useState<PhoneNumber>('');
 
   const handleCountryChange = (selectedOption: any) => {
     setSelectedCountryCode(selectedOption);
@@ -62,7 +58,7 @@ export const MultiStepsSignUpEnteringFormFields: FC<
     const countryCode = `+${selectedOption.value}`;
     if (!phoneNumber.startsWith(countryCode)) {
       setPhoneNumber(`${countryCode}`);
-      handlePhoneNumberChange({
+      handleInputChange({
         target: { name: 'phoneNumber', value: `${countryCode}` },
       } as EventType);
     }
@@ -80,7 +76,7 @@ export const MultiStepsSignUpEnteringFormFields: FC<
       setPhoneNumber(`${countryCode}${inputValue.replace(/^\+\d+/, '')}`);
     }
 
-    handlePhoneNumberChange({
+    handleInputChange({
       target: { name: 'phoneNumber', value: inputValue },
     } as EventType);
   };
@@ -117,7 +113,7 @@ export const MultiStepsSignUpEnteringFormFields: FC<
         type="email"
         placeholder="Enter your email address"
         value={registrationData.email}
-        onChange={handleEmailChange}
+        onChange={handleInputChange}
         isRequired
       />
       <Input
@@ -134,7 +130,7 @@ export const MultiStepsSignUpEnteringFormFields: FC<
         type={isPasswordVisible ? 'text' : 'password'}
         placeholder="Create a secure password"
         value={registrationData.password}
-        onChange={handlePasswordChange}
+        onChange={handleInputChange}
         onIconClick={togglePasswordVisibility}
         isRequired
         icon={

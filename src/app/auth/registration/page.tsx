@@ -12,17 +12,14 @@ import {
 import { STEPS } from '@/enums/steps';
 
 import styles from '@/styles/pages/signIn.module.scss';
-import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 
 export default function MultiStepsSignUpPage() {
   const currentStep = useAppSelector((state) => state.steps.currentStep);
 
-  useDocumentTitle(`CRM Workroom | Sign-Up Step ${currentStep}`);
-
   const renderRegistrationStepsContent = (): JSX.Element => {
     switch (currentStep) {
       case STEPS.ENTER_STEP:
-        return <MultiStepSignUpEntering currentStep={currentStep} />;
+        return <MultiStepSignUpEntering />;
       case STEPS.ABOUT_STEP:
         return <MultiStepsSignUpAbout />;
       default:

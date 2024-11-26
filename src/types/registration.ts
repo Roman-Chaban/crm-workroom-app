@@ -31,3 +31,4 @@ export type UserStatuses = 'idle' | 'loading' | 'succeeded' | 'failed';
 export type SelectedCountryCode = CountryOption;
 export type PhoneNumber = string;
 export type IsSmsCompleted = boolean;
+export type IsSubmitting = boolean;

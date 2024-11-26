@@ -1,19 +1,17 @@
 import axios from 'axios';
 import { RegistrationUserData } from '@/types/registration';
-import { REQUESTS_METHODS } from '@/enums/requests-methods';
 
-axios.defaults.baseURL =
-  'https://workflow-crm-server-staging.up.railway.app/api/auth';
-axios.defaults.headers['Content-Type'] = 'application/json';
-axios.defaults.method = REQUESTS_METHODS.POST;
+const apiClient = axios.create({
+  baseURL: 'https://workflow-crm-server-staging.up.railway.app/api/auth',
+  headers: { 'Content-Type': 'application/json' },
+});
 
 export const registerUser = async (
-  userData: RegistrationUserData,
-  currentStep: number
+  userData: RegistrationUserData
 ): Promise<RegistrationUserData> => {
   try {
-    const response = await axios.post<RegistrationUserData>(
-      `/registration?step=${currentStep}`,
+    const response = await apiClient.post<RegistrationUserData>(
+      `/registration`,
       userData
     );
     console.log('Response from server:', response.data);

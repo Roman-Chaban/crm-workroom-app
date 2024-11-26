@@ -9,15 +9,13 @@ import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 interface SignInFormFieldsProps {
   email: string;
   password: string;
-  handleEmailChange: (event: EventType) => void;
-  handlePasswordChange: (event: EventType) => void;
+  handleInputChange: (event: EventType) => void;
 }
 
 export const SignInFormFields: FC<SignInFormFieldsProps> = ({
   email,
   password,
-  handleEmailChange,
-  handlePasswordChange,
+  handleInputChange,
 }) => {
   return (
     <>
@@ -34,7 +32,7 @@ export const SignInFormFields: FC<SignInFormFieldsProps> = ({
         type="email"
         placeholder="youremail@gmail.com"
         value={email}
-        onChange={handleEmailChange}
+        onChange={handleInputChange}
       />
       <Input
         classNames={{
@@ -50,7 +48,7 @@ export const SignInFormFields: FC<SignInFormFieldsProps> = ({
         type="password"
         placeholder="••••••••"
         value={password}
-        onChange={handlePasswordChange}
+        onChange={handleInputChange}
         icon="/images/auth/icons/view-password.svg"
       />
     </>

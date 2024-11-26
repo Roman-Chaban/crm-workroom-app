@@ -37,7 +37,10 @@ export const MultiStepsSignUpEnteringMessage: FC<
 
   const confirmationCodeMutation = useMutation({
     mutationFn: async (confirmationCode: string) => {
-      return confirmUserRegistration({ email: userEmail, confirmationCode });
+      return confirmUserRegistration({
+        email: userEmail,
+        confirmationCode,
+      });
     },
     onSuccess: () => {
       toast.success(`Code was sent to **${userEmail}**`);
@@ -75,7 +78,7 @@ export const MultiStepsSignUpEnteringMessage: FC<
     if (isCodeCompleted && !isSubmitting) {
       handleSubmitSmsCode();
     }
-  }, [smsCode, isSubmitting, onSmsCodeComplete]);
+  }, [smsCode, isSubmitting, onSmsCodeComplete, smsTimer]);
 
   const handleSmsCodeChange = (index: number, value: string) => {
     if (/^\d?$/.test(value)) {
@@ -94,9 +97,16 @@ export const MultiStepsSignUpEnteringMessage: FC<
       toast.error('Invalid code. Please enter a 6-digit numeric code.');
       return;
     }
+    setIsSubmitting(true);
 
     confirmationCodeMutation.mutate(confirmationCode);
   };
+
+  const timerDisplay = isTimerActive
+    ? smsTimer > 0
+      ? `00:${smsTimer < 10 ? `0${smsTimer}` : smsTimer}`
+      : 'expired'
+    : 'waiting to start';
 
   return (
     <div className={styles['multiMessageBlock']}>
@@ -115,13 +125,8 @@ export const MultiStepsSignUpEnteringMessage: FC<
             width={24}
             height={24}
           />
-          An email was sent to **{userEmail}**. It will be valid for{' '}
-          {isTimerActive
-            ? smsTimer > 0
-              ? `00:${smsTimer < 10 ? `0${smsTimer}` : smsTimer}`
-              : 'expired'
-            : 'waiting to start'}
-          .
+          An email was sent to **{userEmail}**. It will be valid for
+          {timerDisplay}.
         </h4>
       </div>
     </div>

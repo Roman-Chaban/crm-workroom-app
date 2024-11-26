@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, useState, type FC } from 'react';
+import { ChangeEvent, useEffect, useMemo, useState, type FC } from 'react';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -15,10 +15,34 @@ import styles from './Header.module.scss';
 
 export const Header: FC = () => {
   const [inputValue, setInputValue] = useState<Value>('');
+  const [userName, setUserName] = useState<string | null>(null);
+  const [isRegistered, setIsRegistered] = useState<boolean>(false);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
+
+  useEffect(() => {
+    const sortedData = localStorage.getItem('registration');
+    if (sortedData) {
+      try {
+        const parsedData = JSON.parse(sortedData);
+        if (parsedData && parsedData.password) {
+          setUserName(parsedData.password || null);
+          setIsRegistered(true);
+        }
+      } catch {
+        console.error('Failed to parse registration data from localStorage.');
+      }
+    }
+  }, []);
+
+  const validateUserName = useMemo(() => {
+    if (userName) {
+      return userName.replace(/\./g, ' ').replace(/\d+/g, '');
+    }
+    return null;
+  }, [userName]);
 
   return (
     <header className={styles['header']}>
@@ -48,16 +72,23 @@ export const Header: FC = () => {
               height={24}
             />
           </Button>
-          <Button type="button" className={styles['headerSignInButton']}>
-            <Link href={SidebarNavPaths.MULTI_STEP_SIGN_IN}>
-              <Image
-                src="/icons/outlined-icons/add-user.svg"
-                alt="Notification Icon"
-                width={24}
-                height={24}
-              />
-            </Link>
-          </Button>
+          {!isRegistered && (
+            <Button type="button" className={styles['headerSignInButton']}>
+              <Link href={SidebarNavPaths.MULTI_STEP_SIGN_IN}>
+                <Image
+                  src="/icons/outlined-icons/add-user.svg"
+                  alt="Notification Icon"
+                  width={24}
+                  height={24}
+                />
+              </Link>
+            </Button>
+          )}
+          {validateUserName && (
+            <h5 className={styles['headerUserLoginBanner']}>
+              {validateUserName}
+            </h5>
+          )}
         </Container>
       </div>
     </header>

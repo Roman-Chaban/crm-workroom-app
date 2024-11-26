@@ -1,6 +1,13 @@
 'use client';
 
-import { FormEvent, useCallback, useEffect, useState, type FC } from 'react';
+import {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useState,
+  type FC,
+} from 'react';
 import { useMutation } from '@tanstack/react-query';
 
 import {
@@ -21,13 +28,7 @@ import { registerUser } from '@/api/registration';
 
 import styles from './MultiStepsSignUpEntering.module.scss';
 
-interface MultiStepSignUpEnteringProps {
-  currentStep: number;
-}
-
-export const MultiStepSignUpEntering: FC<MultiStepSignUpEnteringProps> = ({
-  currentStep,
-}) => {
+export const MultiStepSignUpEntering: FC = () => {
   const [registrationData, setRegistrationData] =
     useState<RegistrationUserData>({
       email: '',
@@ -36,10 +37,9 @@ export const MultiStepSignUpEntering: FC<MultiStepSignUpEnteringProps> = ({
     });
 
   const registerUserMutation = useMutation({
-    mutationFn: (userData: RegistrationUserData) =>
-      registerUser(userData, currentStep),
-    onSuccess: () => {
-      toast.success(`Code was sent to **${registrationData.email}**`);
+    mutationFn: (userData: RegistrationUserData) => registerUser(userData),
+    onSuccess: (response) => {
+      toast.success(`Code was sent to **${response.email}**`);
     },
     onError: (error: Error) => {
       toast.error(error.message || 'Registration failed');
@@ -61,19 +61,26 @@ export const MultiStepSignUpEntering: FC<MultiStepSignUpEnteringProps> = ({
     ) {
       localStorage.setItem('registration', JSON.stringify(registrationData));
     }
-  }, []);
+  }, [registrationData]);
 
-  const handleRegistrationDataChange = useCallback((event: EventType) => {
-    const { name, value } = event.target;
-    setRegistrationData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  }, []);
+  const handleRegistrationDataChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = event.target;
+      setRegistrationData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    },
+    []
+  );
 
   const handleSubmitForm = (event: FormEvent) => {
     event.preventDefault();
-    if (!registrationData.email || !registrationData.password) {
+    if (
+      !registrationData.email ||
+      !registrationData.password ||
+      !registrationData.phoneNumber
+    ) {
       toast.error('Please fill in all fields!');
       return;
     }
@@ -87,9 +94,7 @@ export const MultiStepSignUpEntering: FC<MultiStepSignUpEnteringProps> = ({
         <Container className={styles['multiStepsContainer']}>
           <MultiStepsSignUpEnteringForm
             registrationData={registrationData}
-            handleEmailChange={handleRegistrationDataChange}
-            handlePasswordChange={handleRegistrationDataChange}
-            handlePhoneNumberChange={handleRegistrationDataChange}
+            handleInputChange={handleRegistrationDataChange}
             handleSubmitForm={handleSubmitForm}
           />
         </Container>

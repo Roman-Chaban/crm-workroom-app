@@ -18,6 +18,7 @@ import { toast } from 'react-toastify';
 import {
   IsConfirmationMessageVisible,
   IsSmsCompleted,
+  IsSubmitting,
   IsTimerActive,
   RegistrationUserData,
 } from '@/types/registration';
@@ -26,27 +27,19 @@ import styles from './MultiStepsSignUpEntering.module.scss';
 
 interface MultiStepsSignUpEnteringFormProps {
   registrationData: RegistrationUserData;
-  handleEmailChange: (event: EventType) => void;
-  handlePasswordChange: (event: EventType) => void;
-  handlePhoneNumberChange: (event: EventType) => void;
+  handleInputChange: (event: EventType) => void;
   handleSubmitForm: (event: FormEvent) => void;
 }
 
 export const MultiStepsSignUpEnteringForm: FC<
   MultiStepsSignUpEnteringFormProps
-> = ({
-  registrationData,
-  handlePhoneNumberChange,
-  handleEmailChange,
-  handlePasswordChange,
-  handleSubmitForm,
-}) => {
+> = ({ registrationData, handleInputChange, handleSubmitForm }) => {
   const currentStep = useAppSelector((state) => state.steps.currentStep);
   const [isTimerActive, setIsTimerActive] = useState<IsTimerActive>(false);
+  const [isSmsCompleted, setIsSmsCompleted] = useState<IsSmsCompleted>(false);
+  const [isSubmitting, setIsSubmitting] = useState<IsSubmitting>(false);
   const [isConfirmationMessageVisible, setIsConfirmationMessageVisible] =
     useState<IsConfirmationMessageVisible>(false);
-  const [isSmsCompleted, setIsSmsCompleted] = useState<IsSmsCompleted>(false);
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const handleSubmitTimerStart = () => {
     if (
@@ -95,9 +88,7 @@ export const MultiStepsSignUpEnteringForm: FC<
       <Container className={styles['stepFormMain']}>
         <MultiStepsSignUpEnteringFormFields
           registrationData={registrationData}
-          handleEmailChange={handleEmailChange}
-          handlePasswordChange={handlePasswordChange}
-          handlePhoneNumberChange={handlePhoneNumberChange}
+          handleInputChange={handleInputChange}
           handleSubmitConfirmationData={handleSubmitTimerStart}
           isSubmitting={isSubmitting}
         />

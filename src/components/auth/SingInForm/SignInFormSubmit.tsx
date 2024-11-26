@@ -7,11 +7,17 @@ import { Button } from '@/components/index';
 
 import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
-export const SignInFormSubmit: FC = () => {
+interface SignInFormSubmitProps {
+  isSubmitting: boolean;
+}
+
+export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({
+  isSubmitting,
+}) => {
   return (
     <div className={styles['signInFormBlockSubmit']}>
-      <Button type="button" className={styles['signInFormBlockButton']}>
-        Sign In
+      <Button type="submit" className={styles['signInFormBlockButton']}>
+        {isSubmitting ? 'Logging in...' : 'Log In'}
         <Image
           src={'/images/auth/icons/arrow-right.svg'}
           alt="Arrow Right Icon"
