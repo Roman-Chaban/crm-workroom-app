@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { RegistrationUserData } from '@/types/registration';
+import { REQUESTS_METHODS } from '@/enums/requests-methods';
 
 const apiClient = axios.create({
   baseURL: 'https://workflow-crm-server-staging.up.railway.app/api/auth',
   headers: { 'Content-Type': 'application/json' },
+  method: REQUESTS_METHODS.POST,
 });
 
 export const registerUser = async (

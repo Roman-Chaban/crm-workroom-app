@@ -4,22 +4,20 @@ import { ConfirmationPayload } from '@/types/registration';
 
 import { REQUESTS_METHODS } from '@/enums/requests-methods';
 
-axios.defaults.baseURL =
-  'https://workflow-crm-server-staging.up.railway.app/api/auth';
-axios.defaults.headers['Content-Type'] = 'application/json';
-axios.defaults.method = REQUESTS_METHODS.POST;
+const apiClient = axios.create({
+  baseURL: 'https://workflow-crm-server-staging.up.railway.app/api/auth',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  method: REQUESTS_METHODS.POST,
+});
 
 export const confirmUserRegistration = async (
   payload: ConfirmationPayload
-): Promise<void> => {
+): Promise<ConfirmationPayload> => {
   try {
-    const response = await axios.post('/confirm-registration', payload);
-
-    if (response.status === 200) {
-      console.log('Registration confirmed successfully:', response.data);
-    } else {
-      throw new Error('Invalid code or registration failed.');
-    }
+    const response = await apiClient.post('/confirm-registration', payload);
+    return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
       const errorMessage =

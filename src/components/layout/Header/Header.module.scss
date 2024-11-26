@@ -43,10 +43,10 @@
   }
 
   &ButtonsContainer {
-    width: 100%;
-    max-width: 320px;
     display: flex;
     justify-content: flex-end;
+    width: 100%;
+    max-width: 250px;
     align-items: center;
     gap: 24px;
   }
@@ -59,15 +59,96 @@
     @include menuButton;
   }
 
-  &UserLoginBanner {
+  &UserLogout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 160px;
+    position: relative;
+  }
+
+  &UserLoginButton {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 48px;
-    @include whiteContainer(140px);
+    @include whiteContainer(160px);
+  }
+
+  &UserLoginBanner {
+    padding: 11px 12px;
     @include boldTitle;
     font-size: size.$font-size-md;
     border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    position: relative;
+
+    & #rotateIconContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & > .rotateIcon {
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+
+    & > .rotateIcon svg {
+      transition: transform 0.3s ease;
+      transform-origin: center;
+      transform: rotate(0deg);
+    }
+
+    & > .rotateIcon.rotate {
+      transform: rotate(180deg);
+    }
+  }
+
+  &UserLoginMenu {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    min-height: 48px;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &LogoutButton {
+    @include whiteContainer(100%);
+    min-height: 48px;
+    @include boldTitle;
+    font-size: size.$font-size-md;
+    position: relative;
+    transition: all 0.3s ease-in 0s;
+
+    &:hover {
+      background: color.$background-support-hover;
+      color: color.$color-white-primary;
+
+      &::before {
+        content: none;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent transparent color.$color-white-primary
+        transparent;
+      width: 0;
+      height: 0;
+      z-index: -10;
+    }
   }
 }

@@ -63,15 +63,13 @@ export const MultiStepsSignUpEnteringForm: FC<
       !registrationData.email ||
       !registrationData.password ||
       !registrationData.phoneNumber ||
-      !isTimerActive ||
-      isSubmitting
+      !isTimerActive
     );
   }, [
     registrationData.email,
     registrationData.password,
     registrationData.phoneNumber,
     isTimerActive,
-    isSubmitting,
   ]);
 
   return (

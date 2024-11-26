@@ -12,6 +12,7 @@ import { Value } from '@/types/input';
 import { SidebarNavPaths } from '@/enums/nav-paths';
 
 import styles from './Header.module.scss';
+import { LogoutCurrentUser } from '../LogoutCurrentUser/LogoutCurrentUser';
 
 export const Header: FC = () => {
   const [inputValue, setInputValue] = useState<Value>('');
@@ -84,11 +85,7 @@ export const Header: FC = () => {
               </Link>
             </Button>
           )}
-          {validateUserName && (
-            <h5 className={styles['headerUserLoginBanner']}>
-              {validateUserName}
-            </h5>
-          )}
+          <LogoutCurrentUser validateUserName={validateUserName} />
         </Container>
       </div>
     </header>
