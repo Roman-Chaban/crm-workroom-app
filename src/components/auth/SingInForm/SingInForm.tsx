@@ -11,6 +11,7 @@ import {
 } from '@/components/index/index';
 
 import { EventType, Remember } from '@/types/signIn';
+import { IsSubmitting } from '@/types/registration';
 
 import { LoginData } from '@/types/login';
 import { LoginUser } from '@/api/login';
@@ -30,7 +31,7 @@ export const SignInForm: FC = () => {
   });
 
   const [remember, setRemember] = useState<Remember>(false);
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<IsSubmitting>(false);
 
   const loginMutation = useMutation({
     mutationFn: LoginUser,

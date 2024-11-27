@@ -45,6 +45,7 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
     <>
       <ToastContainer />
       <div
+        title="Open menu"
         className={`${styles['headerUserLogout']} ${
           isVisibleMenu ? styles['visibleMenu'] : ''
         } `}
@@ -77,7 +78,7 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
               className={styles['headerLogoutButton']}
               onClick={handleLogoutUser}
             >
-              Logout <LogoutIcon fontSize="small" />
+              <LogoutIcon fontSize="small" /> Logout
             </Button>
           </div>
         )}

@@ -18,7 +18,7 @@ export const Main: FC<MainProps> = ({ children }) => {
   const isHeaderRender =
     pathname === NavPaths.SIGN_IN || pathname === NavPaths.MULTI_STEP_SIGN_IN;
   return (
-    <Grid gridTemplateRows="1fr" gap="50px">
+    <Grid gridTemplateRows="0fr" gap="50px">
       {!isHeaderRender && <Header />}
       <main className={styles['main']}>{children}</main>
     </Grid>

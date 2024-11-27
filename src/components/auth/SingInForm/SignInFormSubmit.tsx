@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Button } from '@/components/index';
 
 import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
+import { NavPaths } from '@/enums/nav-paths';
 
 interface SignInFormSubmitProps {
   isSubmitting: boolean;
@@ -27,7 +28,7 @@ export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({
         />
       </Button>
       <Button type="button" className={styles['signInFormBlockAccount']}>
-        <Link href={''}>Don’t have an account?</Link>
+        <Link href={NavPaths.MULTI_STEP_SIGN_IN}>Don’t have an account?</Link>
       </Button>
     </div>
   );

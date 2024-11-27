@@ -66,7 +66,11 @@ export const Header: FC = () => {
           }}
         />
         <Container className={styles['headerButtonsContainer']}>
-          <Button type="button" className={styles['headerNotification']}>
+          <Button
+            type="button"
+            className={styles['headerNotification']}
+            title="Your Notification"
+          >
             <Image
               src="/icons/outlined-icons/notification.svg"
               alt="Notification Icon"
