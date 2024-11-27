@@ -4,7 +4,7 @@ import { type FC, useEffect, useState } from 'react';
 
 import Image from 'next/image';
 
-import { SmsCode, SmsTimer } from '@/types/registration';
+import { ConfirmationResponse, SmsCode, SmsTimer } from '@/types/registration';
 
 import { toast } from 'react-toastify';
 
@@ -35,15 +35,25 @@ export const MultiStepsSignUpEnteringMessage: FC<
   const [smsCode, setSmsCode] = useState<SmsCode>(['', '', '', '', '', '']);
   const [smsTimer, setSmsTimer] = useState<SmsTimer>(30);
 
-  const confirmationCodeMutation = useMutation({
-    mutationFn: async (confirmationCode: string) => {
+  const confirmationCodeMutation = useMutation<
+    ConfirmationResponse,
+    Error,
+    [string, string, string]
+  >({
+    mutationFn: async ([confirmationCode, accessToken, refreshToken]) => {
       return confirmUserRegistration({
         email: userEmail,
         confirmationCode,
+        accessToken,
+        refreshToken,
       });
     },
-    onSuccess: () => {
-      toast.success(`Code was sent to **${userEmail}**`);
+    onSuccess: (response: ConfirmationResponse) => {
+      toast.success('Confirmation successful. Proceed to enter password.');
+      if (response.accessToken && response.refreshToken) {
+        localStorage.setItem('accessToken', response.accessToken);
+        localStorage.setItem('refreshToken', response.refreshToken);
+      }
     },
     onError: (error: Error) => {
       toast.error(error.message || 'Confirmation failed');
@@ -99,7 +109,14 @@ export const MultiStepsSignUpEnteringMessage: FC<
     }
     setIsSubmitting(true);
 
-    confirmationCodeMutation.mutate(confirmationCode);
+    const accessToken = localStorage.getItem('accessToken') || '';
+    const refreshToken = localStorage.getItem('refreshToken') || '';
+
+    confirmationCodeMutation.mutate([
+      confirmationCode,
+      accessToken,
+      refreshToken,
+    ]);
   };
 
   const timerDisplay = isTimerActive

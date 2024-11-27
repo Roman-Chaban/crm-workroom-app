@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { REQUESTS_METHODS } from '@/enums/requests-methods';
+import { API_ENDPOINTS } from '@/enums/apiEndpoints';
 
 const apiClient = axios.create({
   baseURL: 'https://workflow-crm-server-staging.up.railway.app/api/auth',
@@ -10,9 +11,9 @@ const apiClient = axios.create({
   method: REQUESTS_METHODS.DELETE,
 });
 
-export const LogoutUser = async () => {
+export const LogoutUser = async (): Promise<void> => {
   try {
-    const response = await apiClient.delete(`/logout`);
+    const response = await apiClient.delete(API_ENDPOINTS.LOGOUT);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

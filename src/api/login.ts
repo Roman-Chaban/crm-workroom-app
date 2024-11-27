@@ -1,6 +1,9 @@
-import { REQUESTS_METHODS } from '@/enums/requests-methods';
-import { LoginData } from '@/types/login';
 import axios from 'axios';
+
+import { LoginData } from '@/types/login';
+
+import { API_ENDPOINTS } from '@/enums/apiEndpoints';
+import { REQUESTS_METHODS } from '@/enums/requests-methods';
 
 const apiClient = axios.create({
   baseURL: 'https://workflow-crm-server-staging.up.railway.app/api/auth',
@@ -10,7 +13,7 @@ const apiClient = axios.create({
 
 export const LoginUser = async (loginData: LoginData) => {
   try {
-    const response = await apiClient.post('/login', loginData);
+    const response = await apiClient.post(API_ENDPOINTS.LOGIN, loginData);
 
     return response.data;
   } catch (error) {

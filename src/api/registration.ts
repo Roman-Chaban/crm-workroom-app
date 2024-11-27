@@ -3,6 +3,7 @@ import axios from 'axios';
 import { RegistrationUserData } from '@/types/registration';
 
 import { REQUESTS_METHODS } from '@/enums/requests-methods';
+import { API_ENDPOINTS } from '@/enums/apiEndpoints';
 
 const apiClient = axios.create({
   baseURL: 'https://workflow-crm-server-staging.up.railway.app/api/auth',
@@ -15,7 +16,7 @@ export const registerUser = async (
 ): Promise<RegistrationUserData> => {
   try {
     const response = await apiClient.post<RegistrationUserData>(
-      `/registration`,
+      API_ENDPOINTS.REGISTRATION,
       userData
     );
     console.log('Response from server:', response.data);

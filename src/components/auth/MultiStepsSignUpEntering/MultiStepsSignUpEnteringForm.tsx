@@ -103,6 +103,10 @@ export const MultiStepsSignUpEnteringForm: FC<
       <MultiStepsSignUpEnteringStepsFooter
         currentStep={currentStep}
         isNextButtonDisabled={isNextButtonDisabled || !isSmsCompleted}
+        classNames={{
+          container: styles['multiStepsFooter'],
+          nextBtn: styles['multiStepsNextButton'],
+        }}
       />
     </form>
   );

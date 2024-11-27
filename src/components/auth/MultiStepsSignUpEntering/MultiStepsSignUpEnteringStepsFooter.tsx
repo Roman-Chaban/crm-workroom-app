@@ -8,29 +8,54 @@ import Image from 'next/image';
 
 import { Button } from '@/components/index';
 
-import { handleNextStep } from '@/store/slices/StepsSlice';
-
-import styles from './MultiStepsSignUpEntering.module.scss';
+import { handleNextStep, handlePrevStep } from '@/store/slices/StepsSlice';
 
 interface MultiStepsSignUpEnteringStepsFooterProps {
   isNextButtonDisabled: boolean;
   currentStep: number;
+  classNames: {
+    container: string;
+    nextBtn: string;
+    prevBtn?: string;
+  };
 }
 
 export const MultiStepsSignUpEnteringStepsFooter: FC<
   MultiStepsSignUpEnteringStepsFooterProps
-> = ({ isNextButtonDisabled }) => {
+> = ({ isNextButtonDisabled, classNames, currentStep }) => {
   const dispatch = useAppDispatch();
 
   const handleNextStepClick = () => {
     dispatch(handleNextStep());
   };
 
+  const handlePrevStepClick = () => {
+    dispatch(handlePrevStep());
+  };
+
+  const renderPreviousButton = currentStep > 1;
+
   return (
-    <div className={styles['multiStepsFooter']}>
+    <div className={classNames.container}>
+      {renderPreviousButton && (
+        <Button
+          type="button"
+          className={classNames.prevBtn}
+          onClick={handlePrevStepClick}
+        >
+          <Image
+            src={'/images/auth/icons/arrow-previous.svg'}
+            alt="Arrow Right Icon"
+            width={24}
+            height={24}
+            priority
+          />
+          Previous
+        </Button>
+      )}
       <Button
         type="submit"
-        className={styles['multiStepsNextButton']}
+        className={classNames.nextBtn}
         onClick={handleNextStepClick}
         disabled={isNextButtonDisabled}
       >

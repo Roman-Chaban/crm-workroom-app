@@ -3,6 +3,7 @@ import axios from 'axios';
 import { ConfirmationPayload } from '@/types/registration';
 
 import { REQUESTS_METHODS } from '@/enums/requests-methods';
+import { API_ENDPOINTS } from '@/enums/apiEndpoints';
 
 const apiClient = axios.create({
   baseURL: 'https://workflow-crm-server-staging.up.railway.app/api/auth',
@@ -16,7 +17,10 @@ export const confirmUserRegistration = async (
   payload: ConfirmationPayload
 ): Promise<ConfirmationPayload> => {
   try {
-    const response = await apiClient.post('/confirm-registration', payload);
+    const response = await apiClient.post(
+      API_ENDPOINTS.CONFIRMATION_CODE,
+      payload
+    );
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

@@ -20,6 +20,13 @@ export interface SmsCodeProperties {
 export interface ConfirmationPayload {
   email: string;
   confirmationCode: string;
+  accessToken: string;
+  refreshToken: string;
+}
+
+export interface ConfirmationResponse {
+  accessToken: string;
+  refreshToken: string;
 }
 
 export type SmsCode = string[];

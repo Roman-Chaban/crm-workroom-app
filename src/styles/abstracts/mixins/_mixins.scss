@@ -45,6 +45,7 @@
   font-weight: 900;
   box-shadow: none;
   background: color.$background-switcher;
+  cursor: not-allowed;
 }
 
 @mixin menuButton {
