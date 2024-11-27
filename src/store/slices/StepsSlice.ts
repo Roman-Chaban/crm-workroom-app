@@ -5,7 +5,10 @@ interface InitialState {
 }
 
 const initialState: InitialState = {
-  currentStep: parseInt(localStorage.getItem('currentStep') || '1', 5),
+  currentStep:
+    typeof window !== 'undefined' && localStorage.getItem('currentStep')
+      ? parseInt(localStorage.getItem('currentStep') || '1', 5)
+      : 1,
 };
 
 export const stepsSlice = createSlice({
@@ -14,15 +17,21 @@ export const stepsSlice = createSlice({
   reducers: {
     handleNextStep: (state) => {
       state.currentStep = Math.min(state.currentStep + 1, 4);
-      localStorage.setItem('currentStep', String(state.currentStep));
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('currentStep', String(state.currentStep));
+      }
     },
     handlePrevStep: (state) => {
       state.currentStep = Math.max(state.currentStep - 1, 1);
-      localStorage.setItem('currentStep', String(state.currentStep));
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('currentStep', String(state.currentStep));
+      }
     },
     handleSetStep: (state, action: PayloadAction<number>) => {
       state.currentStep = action.payload;
-      localStorage.setItem('currentStep', String(state.currentStep));
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('currentStep', String(state.currentStep));
+      }
     },
   },
 });

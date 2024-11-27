@@ -24,7 +24,7 @@ export const Header: FC = () => {
     setInputValue(event.target.value);
   };
 
-  useEffect(() => {
+  const updateUserData = () => {
     const sortedData = localStorage.getItem('registration');
     if (sortedData) {
       try {
@@ -36,7 +36,20 @@ export const Header: FC = () => {
       } catch {
         console.error('Failed to parse registration data from localStorage.');
       }
+    } else {
+      setUserName(null);
+      setIsRegistered(false);
     }
+  };
+
+  useEffect(() => {
+    updateUserData();
+
+    window.addEventListener('storage', updateUserData);
+
+    return () => {
+      window.removeEventListener('storage', updateUserData);
+    };
   }, []);
 
   const validateUserName = useMemo(() => {

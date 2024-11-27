@@ -1,8 +1,16 @@
-import type { FC } from 'react';
+'use client';
+
+import { useState, type FC } from 'react';
 
 import { Input } from '@/components/index';
 
 import { EventType } from '@/types/signIn';
+import { IsPasswordVisible } from '@/types/registration';
+
+import { colors } from '@/constants/colors';
+
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
@@ -17,6 +25,23 @@ export const SignInFormFields: FC<SignInFormFieldsProps> = ({
   password,
   handleInputChange,
 }) => {
+  const [isPasswordVisible, setIsPasswordVisible] =
+    useState<IsPasswordVisible>(false);
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible((prevVisibleState) => !prevVisibleState);
+  };
+
+  const changeVisibleIcon = isPasswordVisible ? (
+    <VisibilityIcon
+      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+    />
+  ) : (
+    <VisibilityOffIcon
+      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+    />
+  );
+
   return (
     <>
       <Input
@@ -45,11 +70,12 @@ export const SignInFormFields: FC<SignInFormFieldsProps> = ({
         id="password"
         label="Password"
         name="password"
-        type="password"
+        type={isPasswordVisible ? 'text' : 'password'}
         placeholder="••••••••"
         value={password}
         onChange={handleInputChange}
-        icon="/images/auth/icons/view-password.svg"
+        onIconClick={togglePasswordVisibility}
+        icon={changeVisibleIcon}
       />
     </>
   );

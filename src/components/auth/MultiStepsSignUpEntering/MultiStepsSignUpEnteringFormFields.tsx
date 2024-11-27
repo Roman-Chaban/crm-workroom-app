@@ -98,6 +98,16 @@ export const MultiStepsSignUpEnteringFormFields: FC<
     registrationData.phoneNumber,
   ]);
 
+  const changeVisibleIcon = isPasswordVisible ? (
+    <VisibilityIcon
+      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+    />
+  ) : (
+    <VisibilityOffIcon
+      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+    />
+  );
+
   return (
     <Container className={styles['containerFields']}>
       <Input
@@ -133,13 +143,7 @@ export const MultiStepsSignUpEnteringFormFields: FC<
         onChange={handleInputChange}
         onIconClick={togglePasswordVisibility}
         isRequired
-        icon={
-          isPasswordVisible ? (
-            <VisibilityIcon style={{ color: colors.colorGrayNeutral }} />
-          ) : (
-            <VisibilityOffIcon style={{ color: colors.colorGrayNeutral }} />
-          )
-        }
+        icon={changeVisibleIcon}
       />
       <div className={styles['phoneInputContainer']}>
         <Select

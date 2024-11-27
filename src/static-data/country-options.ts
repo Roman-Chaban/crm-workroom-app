@@ -6,7 +6,7 @@ export interface CountryOption {
 export type CountryOptions = CountryOption[];
 
 export const countryOptions: CountryOptions = [
-  { label: '+380 (UA)', value: '380' },
+  { label: '+38 (UA)', value: '38' },
   { label: '+1 (USA)', value: '1' },
   { label: '+44 (UK)', value: '44' },
   { label: '+91 (India)', value: '91' },

@@ -31,6 +31,9 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
     mutationFn: LogoutUser,
     onSuccess: () => {
       toast.success('User is logout!');
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('refreshToken');
+      localStorage.removeItem('registration');
     },
     onError: (error) => {
       toast.error(error.message || 'An error occurred during logout');
