@@ -43,10 +43,9 @@
   }
 
   &ButtonsContainer {
+    width: 100%;
     display: flex;
     justify-content: flex-end;
-    width: 100%;
-    max-width: 250px;
     align-items: center;
     gap: 24px;
   }
@@ -120,15 +119,19 @@
   }
 
   &LogoutButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     @include whiteContainer(100%);
     min-height: 48px;
     @include boldTitle;
     font-size: size.$font-size-md;
     position: relative;
-    transition: all 0.3s ease-in 0s;
+    transition: all 0.4s ease-in 0s;
 
     &:hover {
-      background: color.$background-support-hover;
+      background: color.$background-support-primary;
       color: color.$color-white-primary;
 
       &::before {

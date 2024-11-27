@@ -1,8 +1,10 @@
 import type { FC } from 'react';
 
-import { Container, Section } from '@/components/index';
-
-import { MultiStepsSignUpAboutForm } from './MultiStepsSignUpAboutForm';
+import {
+  Container,
+  Section,
+  MultiStepsSignUpAboutForm,
+} from '@/components/index';
 
 import styles from './MultiStepsSignUpAbout.module.scss';
 

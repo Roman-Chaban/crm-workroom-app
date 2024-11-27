@@ -43,3 +43,4 @@ export { MultiStepsSignUpEnteringMessage } from '@/components/auth/MultiStepsSig
 export { MultiStepsSignUpEnteringStepsFooter } from '@/components/auth/MultiStepsSignUpEntering/MultiStepsSignUpEnteringStepsFooter';
 export { MultiStepsSignUpAbout } from '@/components/auth/MultiStepsSignUpAbout/MultiStepsSignUpAbout';
 export { MultiStepsSignUpAboutForm } from '@/components/auth/MultiStepsSignUpAbout/MultiStepsSignUpAboutForm';
+export { HeaderLogout } from '@/components/layout/HeaderLogout/HeaderLogout';

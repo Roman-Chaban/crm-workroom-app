@@ -1,5 +1,7 @@
 import axios from 'axios';
+
 import { RegistrationUserData } from '@/types/registration';
+
 import { REQUESTS_METHODS } from '@/enums/requests-methods';
 
 const apiClient = axios.create({

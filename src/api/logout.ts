@@ -10,10 +10,9 @@ const apiClient = axios.create({
   method: REQUESTS_METHODS.DELETE,
 });
 
-export const LogoutUser = async (userId: number, authToken: string) => {
+export const LogoutUser = async () => {
   try {
-    axios.defaults.headers['Authorization'] = `Bearer ${authToken}`;
-    const response = await apiClient.delete(`/logout/${userId}`);
+    const response = await apiClient.delete(`/logout`);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

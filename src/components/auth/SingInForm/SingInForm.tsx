@@ -15,7 +15,7 @@ import { EventType, Remember } from '@/types/signIn';
 import { LoginData } from '@/types/login';
 import { LoginUser } from '@/api/login';
 
-import { SidebarNavPaths } from '@/enums/nav-paths';
+import { NavPaths } from '@/enums/nav-paths';
 
 import { toast, ToastContainer } from 'react-toastify';
 
@@ -39,7 +39,7 @@ export const SignInForm: FC = () => {
 
       toast.success('Login successful!');
 
-      router.push(SidebarNavPaths.DASHBOARD);
+      router.push(NavPaths.DASHBOARD);
     },
     onError: (error) => {
       toast.error(error.message || 'Login failed');

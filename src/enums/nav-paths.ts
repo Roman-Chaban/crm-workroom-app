@@ -1,4 +1,4 @@
-export const enum SidebarNavPaths {
+export const enum NavPaths {
   DASHBOARD = '/',
   PROJECTS = '/projects',
   CALENDAR = '/calendar',

@@ -5,19 +5,20 @@ import { ChangeEvent, useEffect, useMemo, useState, type FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Button, Container, Input } from '@/components/index';
+import { Button, Container, Input, HeaderLogout } from '@/components/index';
 
 import { Value } from '@/types/input';
 
-import { SidebarNavPaths } from '@/enums/nav-paths';
+import { NavPaths } from '@/enums/nav-paths';
+
+import { IsRegistered, UserName } from '@/types/header';
 
 import styles from './Header.module.scss';
-import { LogoutCurrentUser } from '../LogoutCurrentUser/LogoutCurrentUser';
 
 export const Header: FC = () => {
   const [inputValue, setInputValue] = useState<Value>('');
-  const [userName, setUserName] = useState<string | null>(null);
-  const [isRegistered, setIsRegistered] = useState<boolean>(false);
+  const [userName, setUserName] = useState<UserName>(null);
+  const [isRegistered, setIsRegistered] = useState<IsRegistered>(false);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -75,7 +76,7 @@ export const Header: FC = () => {
           </Button>
           {!isRegistered && (
             <Button type="button" className={styles['headerSignInButton']}>
-              <Link href={SidebarNavPaths.MULTI_STEP_SIGN_IN}>
+              <Link href={NavPaths.SIGN_IN}>
                 <Image
                   src="/icons/outlined-icons/add-user.svg"
                   alt="Notification Icon"
@@ -85,7 +86,7 @@ export const Header: FC = () => {
               </Link>
             </Button>
           )}
-          <LogoutCurrentUser validateUserName={validateUserName} />
+          {isRegistered && <HeaderLogout validateUserName={validateUserName} />}
         </Container>
       </div>
     </header>
