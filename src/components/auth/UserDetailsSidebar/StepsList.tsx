@@ -4,7 +4,7 @@ import { StepsListItem } from '@/components/index/index';
 
 import { stepsList } from '@/staticData/stepsList';
 
-import styles from './MultiStepsSignUpSidebar.module.scss';
+import styles from './UserDetailsSidebar.module.scss';
 
 interface StepsListProps {
   currentStep: number;

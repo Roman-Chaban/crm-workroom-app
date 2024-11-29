@@ -1,8 +1,11 @@
 'use client';
 
 import { type FC, useEffect, useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
 
 import Image from 'next/image';
+
+import { UserDetailsConfirmation } from './UserDetailsConfirmation';
 
 import { ConfirmationResponse, SmsCode, SmsTimer } from '@/types/registration';
 
@@ -10,12 +13,9 @@ import { toast, Toaster } from 'react-hot-toast';
 
 import { confirmUserRegistration } from '@/api/confirmationCode';
 
-import { MultiStepsSignUpEnteringMessageButtons } from './MultiStepsSignUpEnteringButtons';
+import styles from './UserDetails.module.scss';
 
-import styles from './MultiStepsSignUpEntering.module.scss';
-import { useMutation } from '@tanstack/react-query';
-
-interface MultiStepsSignUpEnteringMessageProps {
+interface UserDetailsMessageProps {
   userEmail: string;
   isTimerActive: boolean;
   onSmsCodeComplete: (isComplete: boolean) => void;
@@ -23,9 +23,7 @@ interface MultiStepsSignUpEnteringMessageProps {
   setIsSubmitting: (value: boolean) => void;
 }
 
-export const MultiStepsSignUpEnteringMessage: FC<
-  MultiStepsSignUpEnteringMessageProps
-> = ({
+export const UserDetailsMessage: FC<UserDetailsMessageProps> = ({
   userEmail,
   isTimerActive,
   onSmsCodeComplete,
@@ -131,7 +129,7 @@ export const MultiStepsSignUpEnteringMessage: FC<
       <div className={styles['multiMessageBlock']}>
         <div className={styles['multiMessageLabelContainer']}>
           <h5 className={styles['multiMessageLabel']}>Code from Email</h5>
-          <MultiStepsSignUpEnteringMessageButtons
+          <UserDetailsConfirmation
             handleSmsCodeChange={handleSmsCodeChange}
             smsCode={smsCode}
           />

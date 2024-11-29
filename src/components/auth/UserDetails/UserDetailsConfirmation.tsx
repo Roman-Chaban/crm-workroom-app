@@ -2,16 +2,17 @@ import type { ChangeEvent, FC } from 'react';
 
 import { SmsCode } from '@/types/registration';
 
-import styles from './MultiStepsSignUpEntering.module.scss';
+import styles from './UserDetails.module.scss';
 
-interface MultiStepsSignUpEnteringMessageButtons {
+interface UserDetailsConfirmationProps {
   smsCode: SmsCode;
   handleSmsCodeChange: (index: number, value: string) => void;
 }
 
-export const MultiStepsSignUpEnteringMessageButtons: FC<
-  MultiStepsSignUpEnteringMessageButtons
-> = ({ handleSmsCodeChange, smsCode }) => {
+export const UserDetailsConfirmation: FC<UserDetailsConfirmationProps> = ({
+  handleSmsCodeChange,
+  smsCode,
+}) => {
   const handleSmsCodeInputChange = (
     index: number,
     event: ChangeEvent<HTMLInputElement>

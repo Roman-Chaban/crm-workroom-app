@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-interface MultiStepsSignUpEnteringHeaderProps {
+interface UserDetailsHeaderProps {
   stepTitle: string;
   title: string;
   classNames?: {
@@ -10,9 +10,11 @@ interface MultiStepsSignUpEnteringHeaderProps {
   };
 }
 
-export const MultiStepsSignUpEnteringHeader: FC<
-  MultiStepsSignUpEnteringHeaderProps
-> = ({ stepTitle, title, classNames }) => {
+export const UserDetailsHeader: FC<UserDetailsHeaderProps> = ({
+  stepTitle,
+  title,
+  classNames,
+}) => {
   return (
     <div className={classNames?.header}>
       <h5 className={classNames?.stepsFigures}>{stepTitle}</h5>

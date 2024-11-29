@@ -7,9 +7,7 @@ import { API_ENDPOINTS } from '@/enums/apiEndpoints';
 
 const apiClient = axios.create({
   baseURL: 'https://workflow-crm-server-staging.up.railway.app/api',
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  headers: { 'Content-Type': 'application/json' },
   method: REQUESTS_METHODS.POST,
 });
 
@@ -17,7 +15,7 @@ export const getServicesDetails = async (
   serviceDetails: ServicesDetails
 ): Promise<ServicesDetails> => {
   try {
-    const response = await apiClient.post(
+    const response = await apiClient.post<ServicesDetails>(
       API_ENDPOINTS.SERVICE_DETAILS,
       serviceDetails
     );

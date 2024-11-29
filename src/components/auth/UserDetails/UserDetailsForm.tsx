@@ -4,11 +4,11 @@ import { useMemo, useState, type FC, type FormEvent } from 'react';
 import { useAppSelector } from '@/hooks/useAppSelector';
 
 import {
-  MultiStepsSignUpEnteringHeader,
-  MultiStepsSignUpEnteringFormFields,
-  MultiStepsSignUpEnteringStepsFooter,
-  MultiStepsSignUpEnteringMessage,
+  UserDetailsNav,
+  UserDetailsMessage,
   Container,
+  UserDetailsHeader,
+  UserDetailsFields,
 } from '@/components/index/index';
 
 import { EventType } from '@/types/signIn';
@@ -23,17 +23,19 @@ import {
   RegistrationUserData,
 } from '@/types/registration';
 
-import styles from './MultiStepsSignUpEntering.module.scss';
+import styles from './UserDetails.module.scss';
 
-interface MultiStepsSignUpEnteringFormProps {
+interface UserDetailsFormProps {
   registrationData: RegistrationUserData;
   handleInputChange: (event: EventType) => void;
   handleSubmitForm: (event: FormEvent) => void;
 }
 
-export const MultiStepsSignUpEnteringForm: FC<
-  MultiStepsSignUpEnteringFormProps
-> = ({ registrationData, handleInputChange, handleSubmitForm }) => {
+export const UserDetailsForm: FC<UserDetailsFormProps> = ({
+  registrationData,
+  handleInputChange,
+  handleSubmitForm,
+}) => {
   const currentStep = useAppSelector((state) => state.steps.currentStep);
   const [isTimerActive, setIsTimerActive] = useState<IsTimerActive>(false);
   const [isSmsCompleted, setIsSmsCompleted] = useState<IsSmsCompleted>(false);
@@ -76,7 +78,7 @@ export const MultiStepsSignUpEnteringForm: FC<
     <>
       <Toaster />
       <form className={styles['stepForm']} onSubmit={handleSubmitForm}>
-        <MultiStepsSignUpEnteringHeader
+        <UserDetailsHeader
           stepTitle={`Step ${currentStep}/4`}
           title="Valid your email"
           classNames={{
@@ -86,14 +88,14 @@ export const MultiStepsSignUpEnteringForm: FC<
           }}
         />
         <Container className={styles['stepFormMain']}>
-          <MultiStepsSignUpEnteringFormFields
+          <UserDetailsFields
             registrationData={registrationData}
             handleInputChange={handleInputChange}
             handleSubmitConfirmationData={handleSubmitTimerStart}
             isSubmitting={isSubmitting}
           />
           {isConfirmationMessageVisible && (
-            <MultiStepsSignUpEnteringMessage
+            <UserDetailsMessage
               userEmail={registrationData.email}
               isTimerActive={isTimerActive}
               onSmsCodeComplete={handleSmsCodeCompleted}
@@ -102,7 +104,7 @@ export const MultiStepsSignUpEnteringForm: FC<
             />
           )}
         </Container>
-        <MultiStepsSignUpEnteringStepsFooter
+        <UserDetailsNav
           currentStep={currentStep}
           isNextButtonDisabled={isNextButtonDisabled || !isSmsCompleted}
           classNames={{

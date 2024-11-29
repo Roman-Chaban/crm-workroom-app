@@ -6,7 +6,6 @@ import styles from '@/styles/pages/signIn.module.scss';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom | Sign In',
-  icons: '/favicon/favicon.svg',
 };
 
 export default function SignInPage() {

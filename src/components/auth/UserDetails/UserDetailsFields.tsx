@@ -25,22 +25,20 @@ import { CountryOption, countryOptions } from '@/staticData/countryOptions';
 import dynamic from 'next/dynamic';
 import countrySelectStyles from '@/constants/country-select';
 
-import styles from './MultiStepsSignUpEntering.module.scss';
+import styles from './UserDetails.module.scss';
 
 const Select = dynamic(() => import('react-select'), {
   ssr: false,
 }) as typeof import('react-select').default<CountryOption, false>;
 
-interface MultiStepsSignUpEnteringFormFieldsProps {
+interface UserDetailsFieldsProps {
   registrationData: RegistrationUserData;
   handleInputChange: (event: EventType) => void;
   handleSubmitConfirmationData: () => void;
   isSubmitting: boolean;
 }
 
-export const MultiStepsSignUpEnteringFormFields: FC<
-  MultiStepsSignUpEnteringFormFieldsProps
-> = ({
+export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
   registrationData,
   handleInputChange,
   handleSubmitConfirmationData,

@@ -4,10 +4,7 @@ import { FormEvent, useState, type FC } from 'react';
 import { useAppSelector } from '@/hooks/useAppSelector';
 import { useMutation } from '@tanstack/react-query';
 
-import {
-  MultiStepsSignUpEnteringHeader,
-  MultiStepsSignUpEnteringStepsFooter,
-} from '@/components/index';
+import { UserDetailsHeader, UserDetailsNav } from '@/components/index';
 
 import { getServicesDetails } from '@/api/servicesDetails';
 
@@ -22,22 +19,16 @@ import {
 
 import { toast } from 'react-hot-toast';
 
-import styles from './MultiStepsSignUpAbout.module.scss';
+import styles from './ServiceSelection.module.scss';
 
-export const MultiStepsSignUpAboutForm: FC = () => {
+export const ServiceSelectionForm: FC = () => {
   const currentStep = useAppSelector((state) => state.steps.currentStep);
 
   const [selectedForWhyOption, setSelectForWhyOption] =
-    useState<ServicesOption | null>(
-      optionsForWhy.find((option) => option.value === 'work') || null
-    );
+    useState<ServicesOption | null>(null);
 
   const [selectedDescriptionOption, setSelectedDescriptionOption] =
-    useState<ServicesOption | null>(
-      optionsForDescription.find(
-        (option) => option.value === 'business_owner'
-      ) || null
-    );
+    useState<ServicesOption | null>(null);
 
   const serviceDetailsMutation = useMutation({
     mutationFn: getServicesDetails,
@@ -63,15 +54,13 @@ export const MultiStepsSignUpAboutForm: FC = () => {
               teamPeopleRange,
             })
           );
-          console.log({ usagePurpose, personBestDescriptor });
         }
       } catch (error) {
         console.error('Error saving to localStorage:', error);
       }
     },
     onError: (error) => {
-      toast.error('Error fetching service details');
-      console.error('Error:', error);
+      toast.error(`Error fetching service details ${error.message}`);
     },
   });
 
@@ -87,7 +76,12 @@ export const MultiStepsSignUpAboutForm: FC = () => {
     event.preventDefault();
 
     if (selectedForWhyOption && selectedDescriptionOption) {
+      const registrationData = JSON.parse(
+        localStorage.getItem('registration') || '{}'
+      );
+
       const serviceDetails = {
+        id: registrationData.id,
         usagePurpose: selectedForWhyOption.value,
         personBestDescriptor: selectedDescriptionOption.value,
         companyName: '',
@@ -100,12 +94,12 @@ export const MultiStepsSignUpAboutForm: FC = () => {
   };
 
   const isNextButtonDisabled =
-    !selectedForWhyOption || !selectedDescriptionOption;
+    !selectedForWhyOption?.value || !selectedDescriptionOption?.value;
 
   return (
     <>
       <form className={styles['stepForm']} onSubmit={handleSubmitAboutForm}>
-        <MultiStepsSignUpEnteringHeader
+        <UserDetailsHeader
           title="Tell about yourself"
           stepTitle={`Step ${currentStep}/4`}
           classNames={{
@@ -117,9 +111,9 @@ export const MultiStepsSignUpAboutForm: FC = () => {
         <label className={styles['servicesLabel']}>
           Why will you use the service?
           <Select
+            placeholder={optionsForWhy[0].label}
             styles={customServicesSelect}
             options={optionsForWhy}
-            defaultValue={selectedForWhyOption}
             value={selectedForWhyOption}
             onChange={handleChangeServicesForWhyOption}
           />
@@ -127,23 +121,23 @@ export const MultiStepsSignUpAboutForm: FC = () => {
         <label className={styles['servicesLabel']}>
           What describes you best?
           <Select
+            placeholder={optionsForDescription[0].label}
             styles={customServicesSelect}
             options={optionsForDescription}
-            defaultValue={selectedDescriptionOption}
             value={selectedDescriptionOption}
             onChange={handleChangeDescriptionOption}
           />
         </label>
+        <UserDetailsNav
+          classNames={{
+            container: styles['multiStepsFooter'],
+            nextBtn: styles['multiStepsNextButton'],
+            prevBtn: styles['multiStepsPreviousButton'],
+          }}
+          currentStep={currentStep}
+          isNextButtonDisabled={isNextButtonDisabled}
+        />
       </form>
-      <MultiStepsSignUpEnteringStepsFooter
-        classNames={{
-          container: styles['multiStepsFooter'],
-          nextBtn: styles['multiStepsNextButton'],
-          prevBtn: styles['multiStepsPreviousButton'],
-        }}
-        currentStep={currentStep}
-        isNextButtonDisabled={isNextButtonDisabled}
-      />
     </>
   );
 };

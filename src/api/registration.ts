@@ -19,7 +19,6 @@ export const registerUser = async (
       API_ENDPOINTS.REGISTRATION,
       userData
     );
-    console.log('Response from server:', response.data);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

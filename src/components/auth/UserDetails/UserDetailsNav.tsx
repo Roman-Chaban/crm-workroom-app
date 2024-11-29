@@ -10,7 +10,7 @@ import { Button } from '@/components/index';
 
 import { handleNextStep, handlePrevStep } from '@/store/slices/StepsSlice';
 
-interface MultiStepsSignUpEnteringStepsFooterProps {
+interface UserDetailsNavProps {
   isNextButtonDisabled: boolean;
   currentStep: number;
   classNames: {
@@ -20,9 +20,11 @@ interface MultiStepsSignUpEnteringStepsFooterProps {
   };
 }
 
-export const MultiStepsSignUpEnteringStepsFooter: FC<
-  MultiStepsSignUpEnteringStepsFooterProps
-> = ({ isNextButtonDisabled, classNames, currentStep }) => {
+export const UserDetailsNav: FC<UserDetailsNavProps> = ({
+  isNextButtonDisabled,
+  classNames,
+  currentStep,
+}) => {
   const dispatch = useAppDispatch();
 
   const handleNextStepClick = () => {

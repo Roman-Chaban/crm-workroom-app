@@ -8,13 +8,10 @@ import {
   useState,
   type FC,
 } from 'react';
+
 import { useMutation } from '@tanstack/react-query';
 
-import {
-  Container,
-  Section,
-  MultiStepsSignUpEnteringForm,
-} from '@/components/index';
+import { Container, Section, UserDetailsForm } from '@/components/index';
 
 import { toast, Toaster } from 'react-hot-toast';
 
@@ -22,11 +19,16 @@ import { RegistrationUserData } from '@/types/registration';
 
 import { registerUser } from '@/api/registration';
 
-import styles from './MultiStepsSignUpEntering.module.scss';
+import { nanoid } from 'nanoid';
 
-export const MultiStepSignUpEntering: FC = () => {
+import styles from './UserDetails.module.scss';
+
+export const UserDetails: FC = () => {
+  const registrationDataId = nanoid();
+
   const [registrationData, setRegistrationData] =
     useState<RegistrationUserData>({
+      id: registrationDataId,
       email: '',
       password: '',
       phoneNumber: '',
@@ -51,6 +53,7 @@ export const MultiStepSignUpEntering: FC = () => {
 
   useEffect(() => {
     if (
+      registrationData.id ||
       registrationData.email ||
       registrationData.password ||
       registrationData.phoneNumber
@@ -88,7 +91,7 @@ export const MultiStepSignUpEntering: FC = () => {
       <Toaster />
       <Section className={styles['multiSteps']}>
         <Container className={styles['multiStepsContainer']}>
-          <MultiStepsSignUpEnteringForm
+          <UserDetailsForm
             registrationData={registrationData}
             handleInputChange={handleRegistrationDataChange}
             handleSubmitForm={handleSubmitForm}

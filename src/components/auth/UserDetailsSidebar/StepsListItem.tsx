@@ -2,8 +2,9 @@ import type { FC } from 'react';
 
 import { StepItem } from '@/types/stepItem';
 
-import styles from './MultiStepsSignUpSidebar.module.scss';
 import Image from 'next/image';
+
+import styles from './UserDetailsSidebar.module.scss';
 
 interface StepsListItemProps {
   step: StepItem;
