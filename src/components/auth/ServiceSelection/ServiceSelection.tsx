@@ -1,4 +1,8 @@
+'use client';
+
 import type { FC } from 'react';
+
+import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 
 import { Container, Section, ServiceSelectionForm } from '@/components/index';
 
@@ -11,6 +15,8 @@ interface ServiceSelectionProps {
 }
 
 export const ServiceSelection: FC<ServiceSelectionProps> = ({}) => {
+  useDocumentTitle('Registration | Service Selection');
+
   return (
     <Section className={styles['MultiStepsSignUpAbout']}>
       <Toaster />

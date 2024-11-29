@@ -44,3 +44,4 @@ export { UserDetailsNav } from '@/components/auth/UserDetails/UserDetailsNav';
 export { ServiceSelection } from '@/components/auth/ServiceSelection/ServiceSelection';
 export { ServiceSelectionForm } from '@/components/auth/ServiceSelection/ServiceSelectionForm';
 export { HeaderLogout } from '@/components/layout/HeaderLogout/HeaderLogout';
+export { ServiceDetails } from '@/components/auth/ServiceDetails/ServiceDetails';

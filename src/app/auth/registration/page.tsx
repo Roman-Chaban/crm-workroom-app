@@ -8,12 +8,12 @@ import {
   UserDetails,
   ServiceSelection,
   UserDetailsSidebar,
+  ServiceDetails,
 } from '@/components/index';
 
 import { STEPS } from '@/enums/steps';
 
 import styles from '@/styles/pages/signIn.module.scss';
-import { ServiceDetails } from '@/components/auth/ServiceDetails/ServiceDetails';
 
 export default function MultiStepsSignUpPage() {
   const currentStep = useAppSelector((state) => state.steps.currentStep);

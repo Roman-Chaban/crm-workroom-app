@@ -4,7 +4,11 @@ import { FormEvent, useState, type FC } from 'react';
 import { useAppSelector } from '@/hooks/useAppSelector';
 import { useMutation } from '@tanstack/react-query';
 
-import { UserDetailsHeader, UserDetailsNav } from '@/components/index';
+import {
+  Container,
+  UserDetailsHeader,
+  UserDetailsNav,
+} from '@/components/index';
 
 import { getServicesDetails } from '@/api/servicesDetails';
 
