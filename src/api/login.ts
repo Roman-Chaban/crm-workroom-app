@@ -11,9 +11,15 @@ const apiClient = axios.create({
   method: REQUESTS_METHODS.POST,
 });
 
-export const LoginUser = async (loginData: LoginData) => {
+export const LoginUser = async (
+  loginData: LoginData,
+  queryParams: Record<string, string | number | boolean>
+) => {
   try {
-    const response = await apiClient.post(API_ENDPOINTS.LOGIN, loginData);
+    const response = await apiClient.post(
+      `${API_ENDPOINTS.LOGIN}?remember=${queryParams.remember}`,
+      loginData
+    );
 
     const { email, id, isAccountVerified, refreshToken } = response.data;
 

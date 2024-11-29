@@ -37,7 +37,8 @@ export const SignInForm: FC = () => {
   const [isSubmitting, setIsSubmitting] = useState<IsSubmitting>(false);
 
   const loginMutation = useMutation({
-    mutationFn: LoginUser,
+    mutationFn: () => LoginUser(loginData, { remember: remember ? 1 : 0 }),
+
     onSuccess: (response) => {
       const userData = {
         id: response.id,
@@ -78,7 +79,7 @@ export const SignInForm: FC = () => {
 
     setIsSubmitting(true);
 
-    loginMutation.mutate(loginData);
+    loginMutation.mutate();
   };
 
   const isButtonDisabled = !loginData.email || !loginData.password;

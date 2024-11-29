@@ -23,6 +23,11 @@ import { nanoid } from 'nanoid';
 
 import styles from './UserDetails.module.scss';
 
+interface MutationPayload {
+  userData: RegistrationUserData;
+  queryParams: Record<string, string | number | boolean>;
+}
+
 export const UserDetails: FC = () => {
   const registrationDataId = nanoid();
 
@@ -35,7 +40,8 @@ export const UserDetails: FC = () => {
     });
 
   const registerUserMutation = useMutation({
-    mutationFn: (userData: RegistrationUserData) => registerUser(userData),
+    mutationFn: ({ userData, queryParams }: MutationPayload) =>
+      registerUser(userData, queryParams),
     onSuccess: (response) => {
       toast.success(`Code was sent to **${response.email}**`);
     },
@@ -83,7 +89,17 @@ export const UserDetails: FC = () => {
       toast.error('Please fill in all fields!');
       return;
     }
-    registerUserMutation.mutate(registrationData);
+    const queryParams = {
+      step: 1,
+      email: registrationData.email,
+      password: registrationData.password,
+      phoneNumber: registrationData.phoneNumber,
+    };
+
+    registerUserMutation.mutate({
+      userData: registrationData,
+      queryParams,
+    });
   };
 
   return (

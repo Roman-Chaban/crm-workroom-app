@@ -10,9 +10,7 @@ interface ServiceSelectionProps {
   currentStep: number;
 }
 
-export const ServiceSelection: FC<ServiceSelectionProps> = ({
-  currentStep,
-}) => {
+export const ServiceSelection: FC<ServiceSelectionProps> = ({}) => {
   return (
     <Section className={styles['MultiStepsSignUpAbout']}>
       <Toaster />

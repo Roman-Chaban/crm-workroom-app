@@ -13,6 +13,7 @@ import {
 import { STEPS } from '@/enums/steps';
 
 import styles from '@/styles/pages/signIn.module.scss';
+import { ServiceDetails } from '@/components/auth/ServiceDetails/ServiceDetails';
 
 export default function MultiStepsSignUpPage() {
   const currentStep = useAppSelector((state) => state.steps.currentStep);
@@ -20,8 +21,11 @@ export default function MultiStepsSignUpPage() {
   useDocumentTitle('Registration | User Details');
 
   const stepComponents: Record<string, JSX.Element> = {
-    [STEPS.ENTER_STEP]: <UserDetails />,
-    [STEPS.ABOUT_STEP]: <ServiceSelection currentStep={currentStep} />,
+    [STEPS.USER_DETAILS_STEP]: <UserDetails />,
+    [STEPS.SERVICE_SELECTION_STEP]: (
+      <ServiceSelection currentStep={currentStep} />
+    ),
+    [STEPS.SERVICE_DETAILS_STEP]: <ServiceDetails />,
   };
 
   const CurrentStepComponent = stepComponents[currentStep] || (
