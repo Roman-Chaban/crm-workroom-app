@@ -5,19 +5,26 @@ import Image from 'next/image';
 
 import { Button } from '@/components/index';
 
+import { NavPaths } from '@/enums/navPaths';
+
 import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
-import { NavPaths } from '@/enums/nav-paths';
 
 interface SignInFormSubmitProps {
   isSubmitting: boolean;
+  isButtonDisabled: boolean;
 }
 
 export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({
   isSubmitting,
+  isButtonDisabled,
 }) => {
   return (
     <div className={styles['signInFormBlockSubmit']}>
-      <Button type="submit" className={styles['signInFormBlockButton']}>
+      <Button
+        type="submit"
+        className={styles['signInFormBlockButton']}
+        disabled={isButtonDisabled}
+      >
         {isSubmitting ? 'Logging in...' : 'Log In'}
         <Image
           src={'/images/auth/icons/arrow-right.svg'}

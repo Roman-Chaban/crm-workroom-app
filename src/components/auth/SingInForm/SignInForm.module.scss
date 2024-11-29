@@ -42,6 +42,7 @@
 
   &Input {
     @include input;
+    @include inputHover;
   }
 
   &ViewIcon {
@@ -73,9 +74,11 @@
 
   &RememberCheckbox {
     @include checkboxInput(22px, 22px);
+    position: relative;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
     &:checked {
       background-color: color.$color-white-primary;
-      position: relative;
 
       &::after {
         content: '';
@@ -89,7 +92,21 @@
         border-width: 0 2px 2px 0;
         display: block;
         border-radius: 0.5px;
+        transition: transform 0.3s ease, width 0.2s ease, height 0.2s ease;
       }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      transform: translate(-50%, -50%) rotate(0deg);
+      border: solid transparent;
+      border-width: 0 0 0 0;
+      transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
     }
   }
 
@@ -113,6 +130,9 @@
     @include Button;
     position: static;
     max-width: 170px;
+    &:disabled {
+      @include disabledButton;
+    }
   }
 
   &Account {
@@ -120,6 +140,14 @@
     & > a {
       color: color.$background-support-primary;
       font-weight: 600;
+      transition: color 0.5s ease-in-out 0s;
+      &:hover {
+        color: color.$background-support-hover;
+      }
+
+      &:active {
+        color: color.$background-support-active;
+      }
     }
   }
 }

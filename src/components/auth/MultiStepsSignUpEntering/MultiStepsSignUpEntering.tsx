@@ -16,13 +16,9 @@ import {
   MultiStepsSignUpEnteringForm,
 } from '@/components/index';
 
-import { ToastContainer } from 'react-toastify';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast, Toaster } from 'react-hot-toast';
 
 import { RegistrationUserData } from '@/types/registration';
-
-import { EventType } from '@/types/signIn';
 
 import { registerUser } from '@/api/registration';
 
@@ -89,7 +85,7 @@ export const MultiStepSignUpEntering: FC = () => {
 
   return (
     <>
-      <ToastContainer />
+      <Toaster />
       <Section className={styles['multiSteps']}>
         <Container className={styles['multiStepsContainer']}>
           <MultiStepsSignUpEnteringForm

@@ -15,7 +15,7 @@ import { Option, SelectedValue } from '@/interfaces/select';
 
 import { AreaValue } from '@/types/textarea';
 
-import { options } from '@/static-data/request-options';
+import { options } from '@/staticData/requestOptions';
 
 import styles from './HomeModal.module.scss';
 

@@ -6,9 +6,9 @@ import Image from 'next/image';
 
 import { ConfirmationResponse, SmsCode, SmsTimer } from '@/types/registration';
 
-import { toast } from 'react-toastify';
+import { toast, Toaster } from 'react-hot-toast';
 
-import { confirmUserRegistration } from '@/api/confirmation-code';
+import { confirmUserRegistration } from '@/api/confirmationCode';
 
 import { MultiStepsSignUpEnteringMessageButtons } from './MultiStepsSignUpEnteringButtons';
 
@@ -126,26 +126,29 @@ export const MultiStepsSignUpEnteringMessage: FC<
     : 'waiting to start';
 
   return (
-    <div className={styles['multiMessageBlock']}>
-      <div className={styles['multiMessageLabelContainer']}>
-        <h5 className={styles['multiMessageLabel']}>Code from Email</h5>
-        <MultiStepsSignUpEnteringMessageButtons
-          handleSmsCodeChange={handleSmsCodeChange}
-          smsCode={smsCode}
-        />
-      </div>
-      <div className={styles['stepFormSubmittedMessageBlock']}>
-        <h4 className={styles['stepFormSubmittedMessage']}>
-          <Image
-            src="/images/auth/icons/hint.svg"
-            alt="Hint Icon"
-            width={24}
-            height={24}
+    <>
+      <Toaster />
+      <div className={styles['multiMessageBlock']}>
+        <div className={styles['multiMessageLabelContainer']}>
+          <h5 className={styles['multiMessageLabel']}>Code from Email</h5>
+          <MultiStepsSignUpEnteringMessageButtons
+            handleSmsCodeChange={handleSmsCodeChange}
+            smsCode={smsCode}
           />
-          An email was sent to **{userEmail}**. It will be valid for
-          {timerDisplay}.
-        </h4>
+        </div>
+        <div className={styles['stepFormSubmittedMessageBlock']}>
+          <h4 className={styles['stepFormSubmittedMessage']}>
+            <Image
+              src="/images/auth/icons/hint.svg"
+              alt="Hint Icon"
+              width={24}
+              height={24}
+            />
+            An email was sent to **{userEmail}**. It will be valid for
+            {timerDisplay}.
+          </h4>
+        </div>
       </div>
-    </div>
+    </>
   );
 };

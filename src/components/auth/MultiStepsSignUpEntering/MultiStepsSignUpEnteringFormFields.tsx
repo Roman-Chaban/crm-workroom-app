@@ -20,7 +20,7 @@ import SendIcon from '@mui/icons-material/Send';
 
 import { colors } from '@/constants/colors';
 
-import { CountryOption, countryOptions } from '@/static-data/country-options';
+import { CountryOption, countryOptions } from '@/staticData/countryOptions';
 
 import dynamic from 'next/dynamic';
 import countrySelectStyles from '@/constants/country-select';

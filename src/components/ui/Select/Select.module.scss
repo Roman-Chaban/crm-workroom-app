@@ -1,0 +1,38 @@
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+
+.select {
+  @include select;
+}
+
+.selectContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 7px;
+  margin-block-start: 32px;
+  position: relative;
+
+  &::after {
+    content: '';
+    background: url('/images/modal/arrow-down.svg') no-repeat center center;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 40px;
+    bottom: 12px;
+    pointer-events: none;
+  }
+}
+
+.selectLabel {
+  @include selectLabel;
+}
+
+.selectDefaultOption {
+  display: none;
+}
+
+.selectOption {
+  padding: 10px;
+}

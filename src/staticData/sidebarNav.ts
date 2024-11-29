@@ -1,6 +1,6 @@
-import { SidebarNav } from '@/types/sidebar-nav';
+import { SidebarNav } from '@/types/sidebarNav';
 
-import { NavPaths } from '@/enums/nav-paths';
+import { NavPaths } from '@/enums/navPaths';
 
 export const sidebarNav: SidebarNav = [
   {

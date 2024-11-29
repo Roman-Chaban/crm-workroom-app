@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { StepItem } from '@/types/step-item';
+import { StepItem } from '@/types/stepItem';
 
 import styles from './MultiStepsSignUpSidebar.module.scss';
 import Image from 'next/image';

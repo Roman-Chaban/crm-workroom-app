@@ -1,4 +1,4 @@
-import { CountryOption } from '@/static-data/country-options';
+import { CountryOption } from '@/staticData/countryOptions';
 
 export interface RegistrationUserData {
   email: string;

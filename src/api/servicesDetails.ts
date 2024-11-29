@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-import { ServicesDetails } from '@/types/services-details';
+import { ServicesDetails } from '@/types/servicesDetails';
 
-import { REQUESTS_METHODS } from '@/enums/requests-methods';
+import { REQUESTS_METHODS } from '@/enums/requestsMethods';
 import { API_ENDPOINTS } from '@/enums/apiEndpoints';
 
 const apiClient = axios.create({

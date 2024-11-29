@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { SidebarNavListItem } from '@/types/sidebar-nav';
+import { SidebarNavListItem } from '@/types/sidebarNav';
 
 import classNames from 'classnames';
 

@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 
 import { HomeClient } from '../HomeClient/HomeClient';
 
-import { NavPaths } from '@/enums/nav-paths';
+import { NavPaths } from '@/enums/navPaths';
 
 export const SidebarRender = () => {
   const pathname = usePathname();

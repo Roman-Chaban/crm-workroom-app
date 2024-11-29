@@ -9,7 +9,7 @@ import { Button, Container, Input, HeaderLogout } from '@/components/index';
 
 import { Value } from '@/types/input';
 
-import { NavPaths } from '@/enums/nav-paths';
+import { NavPaths } from '@/enums/navPaths';
 
 import { IsRegistered, UserName } from '@/types/header';
 
@@ -29,8 +29,8 @@ export const Header: FC = () => {
     if (sortedData) {
       try {
         const parsedData = JSON.parse(sortedData);
-        if (parsedData && parsedData.password) {
-          setUserName(parsedData.password || null);
+        if (parsedData && parsedData.email) {
+          setUserName(parsedData.email || null);
           setIsRegistered(true);
         }
       } catch {
@@ -45,16 +45,27 @@ export const Header: FC = () => {
   useEffect(() => {
     updateUserData();
 
-    window.addEventListener('storage', updateUserData);
+    const handleStorageChange = () => {
+      updateUserData();
+    };
+
+    window.addEventListener('storage', handleStorageChange);
 
     return () => {
-      window.removeEventListener('storage', updateUserData);
+      window.removeEventListener('storage', handleStorageChange);
     };
   }, []);
 
   const validateUserName = useMemo(() => {
     if (userName) {
-      return userName.replace(/\./g, ' ').replace(/\d+/g, '');
+      const namePart = userName.split('@')[0];
+      const [firstName, lastName] = namePart
+        .split('.')
+        .map((part: string) => part.replace(/\d+/g, '').trim());
+      return [firstName, lastName]
+        .filter(Boolean)
+        .map((name) => name.charAt(0).toUpperCase() + name.slice(1))
+        .join(' ');
     }
     return null;
   }, [userName]);
@@ -71,7 +82,7 @@ export const Header: FC = () => {
           id="search"
           type="search"
           name="search"
-          placeholder="Search"
+          placeholder="Search..."
           classNames={{
             input: styles['headerSearchInput'],
             container: styles['headerSearchContainer'],

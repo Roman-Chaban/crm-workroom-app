@@ -8,6 +8,7 @@ import {
 } from '@/components/index';
 
 import styles from './MultiStepsSignUpAbout.module.scss';
+import { Toaster } from 'react-hot-toast';
 
 interface MultiStepsSignUpAboutProps {
   currentStep: number;
@@ -18,17 +19,9 @@ export const MultiStepsSignUpAbout: FC<MultiStepsSignUpAboutProps> = ({
 }) => {
   return (
     <Section className={styles['MultiStepsSignUpAbout']}>
+      <Toaster />
       <Container className={styles['MultiStepsSignUpAboutContainer']}>
         <MultiStepsSignUpAboutForm />
-        <MultiStepsSignUpEnteringStepsFooter
-          classNames={{
-            container: styles['multiStepsFooter'],
-            nextBtn: styles['multiStepsNextButton'],
-            prevBtn: styles['multiStepsPreviousButton'],
-          }}
-          currentStep={currentStep}
-          isNextButtonDisabled
-        />
       </Container>
     </Section>
   );

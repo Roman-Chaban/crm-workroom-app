@@ -13,7 +13,7 @@ import {
 
 import { EventType } from '@/types/signIn';
 
-import { toast } from 'react-toastify';
+import { toast, Toaster } from 'react-hot-toast';
 
 import {
   IsConfirmationMessageVisible,
@@ -73,41 +73,44 @@ export const MultiStepsSignUpEnteringForm: FC<
   ]);
 
   return (
-    <form className={styles['stepForm']} onSubmit={handleSubmitForm}>
-      <MultiStepsSignUpEnteringHeader
-        stepTitle={`Step ${currentStep}/4`}
-        title="Valid your email"
-        classNames={{
-          header: styles['stepFormHeader'],
-          headerTitle: styles['stepFormHeaderTitle'],
-          stepsFigures: styles['stepFormHeaderStepsFigures'],
-        }}
-      />
-      <Container className={styles['stepFormMain']}>
-        <MultiStepsSignUpEnteringFormFields
-          registrationData={registrationData}
-          handleInputChange={handleInputChange}
-          handleSubmitConfirmationData={handleSubmitTimerStart}
-          isSubmitting={isSubmitting}
+    <>
+      <Toaster />
+      <form className={styles['stepForm']} onSubmit={handleSubmitForm}>
+        <MultiStepsSignUpEnteringHeader
+          stepTitle={`Step ${currentStep}/4`}
+          title="Valid your email"
+          classNames={{
+            header: styles['stepFormHeader'],
+            headerTitle: styles['stepFormHeaderTitle'],
+            stepsFigures: styles['stepFormHeaderStepsFigures'],
+          }}
         />
-        {isConfirmationMessageVisible && (
-          <MultiStepsSignUpEnteringMessage
-            userEmail={registrationData.email}
-            isTimerActive={isTimerActive}
-            onSmsCodeComplete={handleSmsCodeCompleted}
+        <Container className={styles['stepFormMain']}>
+          <MultiStepsSignUpEnteringFormFields
+            registrationData={registrationData}
+            handleInputChange={handleInputChange}
+            handleSubmitConfirmationData={handleSubmitTimerStart}
             isSubmitting={isSubmitting}
-            setIsSubmitting={setIsSubmitting}
           />
-        )}
-      </Container>
-      <MultiStepsSignUpEnteringStepsFooter
-        currentStep={currentStep}
-        isNextButtonDisabled={isNextButtonDisabled || !isSmsCompleted}
-        classNames={{
-          container: styles['multiStepsFooter'],
-          nextBtn: styles['multiStepsNextButton'],
-        }}
-      />
-    </form>
+          {isConfirmationMessageVisible && (
+            <MultiStepsSignUpEnteringMessage
+              userEmail={registrationData.email}
+              isTimerActive={isTimerActive}
+              onSmsCodeComplete={handleSmsCodeCompleted}
+              isSubmitting={isSubmitting}
+              setIsSubmitting={setIsSubmitting}
+            />
+          )}
+        </Container>
+        <MultiStepsSignUpEnteringStepsFooter
+          currentStep={currentStep}
+          isNextButtonDisabled={isNextButtonDisabled || !isSmsCompleted}
+          classNames={{
+            container: styles['multiStepsFooter'],
+            nextBtn: styles['multiStepsNextButton'],
+          }}
+        />
+      </form>
+    </>
   );
 };

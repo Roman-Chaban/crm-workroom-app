@@ -3,7 +3,7 @@ import axios from 'axios';
 import { LoginData } from '@/types/login';
 
 import { API_ENDPOINTS } from '@/enums/apiEndpoints';
-import { REQUESTS_METHODS } from '@/enums/requests-methods';
+import { REQUESTS_METHODS } from '@/enums/requestsMethods';
 
 const apiClient = axios.create({
   baseURL: 'https://workflow-crm-server-staging.up.railway.app/api/auth',
@@ -15,7 +15,9 @@ export const LoginUser = async (loginData: LoginData) => {
   try {
     const response = await apiClient.post(API_ENDPOINTS.LOGIN, loginData);
 
-    return response.data;
+    const { email, id, isAccountVerified, refreshToken } = response.data;
+
+    return { email, id, isAccountVerified, refreshToken };
   } catch (error) {
     if (axios.isAxiosError(error)) {
       const errorMessage =

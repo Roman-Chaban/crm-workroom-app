@@ -10,7 +10,7 @@ import { Button } from '@/components/index';
 
 import { LogoutUser } from '@/api/logout';
 
-import { toast, ToastContainer } from 'react-toastify';
+import { toast, Toaster } from 'react-hot-toast';
 
 import { IsVisibleMenu, UserName } from '@/types/header';
 
@@ -46,7 +46,7 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
 
   return (
     <>
-      <ToastContainer />
+      <Toaster />
       <div
         title="Open menu"
         className={`${styles['headerUserLogout']} ${
@@ -75,7 +75,7 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
           </Button>
         )}
         {isVisibleMenu && (
-          <div className={styles['headerUserLoginMenu']}>
+          <div title="Logout" className={styles['headerUserLoginMenu']}>
             <Button
               type="button"
               className={styles['headerLogoutButton']}

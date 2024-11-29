@@ -1,26 +1,16 @@
 'use client';
 
-import { useEffect, useState, type FC } from 'react';
+import type { FC } from 'react';
+
+import { useParsedUserName } from '@/hooks/useParsedUserName';
 
 import { Container } from '@/components/index/index';
 
 import styles from './DashboardPanel.module.scss';
 
 export const DashboardPanel: FC = () => {
-  const [userName, setUserName] = useState<string | null>(null);
-
-  useEffect(() => {
-    const sortedData = localStorage.getItem('registration');
-    if (sortedData) {
-      const parsedUserName = JSON.parse(sortedData);
-      if (parsedUserName && parsedUserName.password) {
-        const validUserName = parsedUserName.password
-          .replace(/\./g, ' ')
-          .replace(/\d+/g, '');
-        setUserName(validUserName || null);
-      }
-    }
-  }, []);
+  const sortedData = localStorage.getItem('registration');
+  const userName = useParsedUserName(sortedData);
 
   return (
     <div className={styles['dashboard']}>

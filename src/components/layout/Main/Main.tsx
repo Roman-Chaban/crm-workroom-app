@@ -5,7 +5,7 @@ import type { FC, ReactNode } from 'react';
 import { Header, Grid } from '@/components/index/index';
 
 import { usePathname } from 'next/navigation';
-import { NavPaths } from '@/enums/nav-paths';
+import { NavPaths } from '@/enums/navPaths';
 
 import styles from './Main.module.scss';
 

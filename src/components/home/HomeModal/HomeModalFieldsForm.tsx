@@ -6,9 +6,9 @@ import { ChangeEvent } from 'react';
 import { Button, Textarea } from '@/components/index';
 
 import Select, { SingleValue } from 'react-select';
-import selectStyles from '@/components/ui-components/Select/selectStyles';
+import selectStyles from '@/components/ui/Select/selectStyles';
 
-import { options } from '@/static-data/request-options';
+import { options } from '@/staticData/requestOptions';
 import { Option } from '@/interfaces/select';
 
 import styles from './HomeModal.module.scss';

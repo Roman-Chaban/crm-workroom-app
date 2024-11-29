@@ -11,8 +11,8 @@ type IsOpenModal = boolean;
 type ModalRef = null;
 
 export const HomeClient = () => {
-  const [isOpenModal, setIsOpenModal] = useState<IsOpenModal>(false);
   const modalRef = useRef<ModalRef>(null);
+  const [isOpenModal, setIsOpenModal] = useState<IsOpenModal>(false);
 
   useBodyOverflow(isOpenModal);
 

@@ -16,9 +16,9 @@ import { IsSubmitting } from '@/types/registration';
 import { LoginData } from '@/types/login';
 import { LoginUser } from '@/api/login';
 
-import { NavPaths } from '@/enums/nav-paths';
+import { NavPaths } from '@/enums/navPaths';
 
-import { toast, ToastContainer } from 'react-toastify';
+import { toast, Toaster } from 'react-hot-toast';
 
 import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
@@ -28,6 +28,9 @@ export const SignInForm: FC = () => {
   const [loginData, setLoginData] = useState<LoginData>({
     email: '',
     password: '',
+    id: '',
+    isAccountVerified: false,
+    refreshToken: '',
   });
 
   const [remember, setRemember] = useState<Remember>(false);
@@ -35,8 +38,18 @@ export const SignInForm: FC = () => {
 
   const loginMutation = useMutation({
     mutationFn: LoginUser,
-    onSuccess: (data) => {
-      localStorage.setItem('authToken', data.token);
+    onSuccess: (response) => {
+      const userData = {
+        id: response.id,
+        email: response.email,
+        isAccountVerified: response.isAccountVerified,
+        refreshToken: response.refreshToken,
+      };
+
+      localStorage.setItem('registration', JSON.stringify(userData));
+
+      const storageEvent = new Event('storage');
+      window.dispatchEvent(storageEvent);
 
       toast.success('Login successful!');
 
@@ -62,13 +75,17 @@ export const SignInForm: FC = () => {
 
   const handleSubmitForm = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     setIsSubmitting(true);
+
     loginMutation.mutate(loginData);
   };
 
+  const isButtonDisabled = !loginData.email || !loginData.password;
+
   return (
     <>
-      <ToastContainer />
+      <Toaster />
       <div className={styles['signInFormBlock']}>
         <div className={styles['signInFormBlockContainer']}>
           <h4 className={styles['signInFormBlockTitle']}>
@@ -84,7 +101,10 @@ export const SignInForm: FC = () => {
               remember={remember}
               handleCheckedRemember={handleCheckedRemember}
             />
-            <SignInFormSubmit isSubmitting={isSubmitting} />
+            <SignInFormSubmit
+              isSubmitting={isSubmitting}
+              isButtonDisabled={isButtonDisabled}
+            />
           </form>
         </div>
       </div>

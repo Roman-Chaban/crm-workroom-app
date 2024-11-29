@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 import { usePathname } from 'next/navigation';
 
-import { sidebarNav } from '@/static-data/sidebar-nav';
+import { sidebarNav } from '@/staticData/sidebarNav';
 
 import { SidebarNavItem } from '@/components/index/index';
 

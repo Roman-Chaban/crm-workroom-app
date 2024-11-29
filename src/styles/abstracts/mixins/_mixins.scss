@@ -106,15 +106,18 @@
     content: '';
     position: absolute;
     bottom: -2px;
+    left: 50%;
     width: 0;
     height: 2px;
     background: color.$background-support-primary;
     border-radius: 1px;
-    transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+    transform: translateX(-50%);
   }
 
   &:hover::before {
-    width: 76px;
+    width: 100%;
+    left: 50%;
   }
 }
 

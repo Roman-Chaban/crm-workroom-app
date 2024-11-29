@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { StepsListItem } from '@/components/index/index';
 
-import { stepsList } from '@/static-data/steps-list';
+import { stepsList } from '@/staticData/stepsList';
 
 import styles from './MultiStepsSignUpSidebar.module.scss';
 

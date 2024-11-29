@@ -15,26 +15,13 @@
   }
 
   &SearchContainer {
-    display: flex;
-    align-items: center;
-    gap: 11px;
     width: 100%;
-    max-width: 412px;
-    min-height: 48px;
-    background: color.$color-white-primary;
-    border-radius: 14px;
   }
 
   &SearchInput {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background: transparent;
-    padding: 12px 19px;
-    padding-inline-start: 0;
-    @include listItem;
-    caret-color: color.$color-gray-neutral;
-    font-weight: 400;
+    @include input;
+    @include inputHover;
+    border: 1.5px solid transparent;
 
     &::placeholder {
       @include listItem;
@@ -47,7 +34,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 5px;
+    gap: 15px;
   }
 
   &Notification {
@@ -119,35 +106,19 @@
   }
 
   &LogoutButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    @include whiteContainer(100%);
-    min-height: 48px;
-    @include boldTitle;
-    font-size: size.$font-size-md;
-    position: relative;
-    transition: all 0.4s ease-in 0s;
-
-    &:hover {
-      background: color.$background-support-primary;
-      color: color.$color-white-primary;
-
-      &::before {
-        content: none;
-      }
-    }
+    @include Button;
+    position: absolute;
+    top: 0;
 
     &::before {
       content: '';
       position: absolute;
-      top: -18px;
+      top: -16px;
       left: 50%;
       transform: translateX(-50%);
       border-width: 10px;
       border-style: solid;
-      border-color: transparent transparent color.$color-white-primary
+      border-color: transparent transparent color.$background-support-primary
         transparent;
       width: 0;
       height: 0;

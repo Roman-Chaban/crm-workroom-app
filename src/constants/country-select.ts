@@ -3,7 +3,7 @@ import { keyframes } from '@emotion/react';
 
 import { colors } from './colors';
 
-import { CountryOption } from '@/static-data/country-options';
+import { CountryOption } from '@/staticData/countryOptions';
 
 const fadeIn = keyframes`
   from {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { REQUESTS_METHODS } from '@/enums/requests-methods';
+import { REQUESTS_METHODS } from '@/enums/requestsMethods';
 import { API_ENDPOINTS } from '@/enums/apiEndpoints';
 
 const apiClient = axios.create({
@@ -14,6 +14,15 @@ const apiClient = axios.create({
 export const LogoutUser = async (): Promise<void> => {
   try {
     const response = await apiClient.delete(API_ENDPOINTS.LOGOUT);
+
+    if (response.status === 200) {
+      console.log('User logged out successfully');
+      localStorage.removeItem('registration');
+      sessionStorage.clear();
+    } else {
+      console.warn('Logout completed with unexpected status:', response.status);
+    }
+
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
