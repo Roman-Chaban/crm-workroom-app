@@ -34,7 +34,7 @@ export const ServiceSelectionForm: FC = () => {
 
   const serviceDetailsMutation = useMutation({
     mutationFn: getServicesDetails,
-    onSuccess: (response) => {
+    onSuccess: () => {
       toast.success('Service details successfully chosen');
     },
     onError: (error) => {
