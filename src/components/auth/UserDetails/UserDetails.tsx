@@ -20,16 +20,8 @@ import { RegistrationUserData } from '@/types/registration';
 import { registerUser } from '@/api/registration';
 
 import styles from './UserDetails.module.scss';
-import { useAppSelector } from '@/hooks/useAppSelector';
-
-interface MutationPayload {
-  userData: RegistrationUserData;
-  queryParams: Record<string, string | number | boolean>;
-}
 
 export const UserDetails: FC = () => {
-  const currentStep = useAppSelector((state) => state.steps.currentStep);
-
   const [registrationData, setRegistrationData] =
     useState<RegistrationUserData>({
       id: '',
@@ -39,10 +31,15 @@ export const UserDetails: FC = () => {
     });
 
   const registerUserMutation = useMutation({
-    mutationFn: ({ userData, queryParams }: MutationPayload) =>
-      registerUser(userData, queryParams),
+    mutationFn: registerUser,
     onSuccess: (response) => {
       toast.success(`Code was sent to **${response.email}**`);
+      if (response.id) {
+        setRegistrationData((prevData) => ({
+          ...prevData,
+          id: response.id,
+        }));
+      }
     },
     onError: (error: Error) => {
       toast.error(error.message || 'Registration failed');
@@ -58,7 +55,6 @@ export const UserDetails: FC = () => {
 
   useEffect(() => {
     if (
-      registrationData.id ||
       registrationData.email ||
       registrationData.password ||
       registrationData.phoneNumber
@@ -81,7 +77,6 @@ export const UserDetails: FC = () => {
   const handleSubmitForm = (event: FormEvent) => {
     event.preventDefault();
     if (
-      !registrationData.id ||
       !registrationData.email ||
       !registrationData.password ||
       !registrationData.phoneNumber
@@ -89,17 +84,8 @@ export const UserDetails: FC = () => {
       toast.error('Please fill in all fields!');
       return;
     }
-    const queryParams = {
-      step: currentStep,
-      email: registrationData.email,
-      password: registrationData.password,
-      phoneNumber: registrationData.phoneNumber,
-    };
 
-    registerUserMutation.mutate({
-      userData: registrationData,
-      queryParams,
-    });
+    registerUserMutation.mutate(registrationData);
   };
 
   return (

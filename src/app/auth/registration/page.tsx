@@ -22,14 +22,12 @@ export default function MultiStepsSignUpPage() {
 
   const stepComponents: Record<string, JSX.Element> = {
     [STEPS.USER_DETAILS_STEP]: <UserDetails />,
-    [STEPS.SERVICE_SELECTION_STEP]: (
-      <ServiceSelection currentStep={currentStep} />
-    ),
+    [STEPS.SERVICE_SELECTION_STEP]: <ServiceSelection />,
     [STEPS.SERVICE_DETAILS_STEP]: <ServiceDetails />,
   };
 
   const CurrentStepComponent = stepComponents[currentStep] || (
-    <ServiceSelection currentStep={currentStep} />
+    <ServiceSelection />
   );
 
   return (

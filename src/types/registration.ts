@@ -7,10 +7,6 @@ export interface RegistrationUserData {
   phoneNumber: string;
 }
 
-export interface ExtendedRegistrationUserData extends RegistrationUserData {
-  queryParams?: Record<string, string | number | boolean>;
-}
-
 export interface InitialState {
   user: RegistrationUserData | null;
   status: UserStatuses;

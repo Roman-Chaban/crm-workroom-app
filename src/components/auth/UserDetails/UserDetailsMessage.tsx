@@ -18,8 +18,8 @@ import styles from './UserDetails.module.scss';
 interface UserDetailsMessageProps {
   userEmail: string;
   isTimerActive: boolean;
-  onSmsCodeComplete: (isComplete: boolean) => void;
   isSubmitting: boolean;
+  onSmsCodeComplete: (isComplete: boolean) => void;
   setIsSubmitting: (value: boolean) => void;
 }
 

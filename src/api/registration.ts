@@ -12,16 +12,12 @@ const apiClient = axios.create({
 });
 
 export const registerUser = async (
-  userData: RegistrationUserData,
-  queryParams: Record<string, string | number | boolean> = {}
+  userData: RegistrationUserData
 ): Promise<RegistrationUserData> => {
   try {
     const response = await apiClient.post<RegistrationUserData>(
       API_ENDPOINTS.REGISTRATION,
-      userData,
-      {
-        params: queryParams,
-      }
+      userData
     );
     return response.data;
   } catch (error) {

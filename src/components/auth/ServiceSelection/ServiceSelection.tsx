@@ -10,11 +10,7 @@ import { Toaster } from 'react-hot-toast';
 
 import styles from './ServiceSelection.module.scss';
 
-interface ServiceSelectionProps {
-  currentStep: number;
-}
-
-export const ServiceSelection: FC<ServiceSelectionProps> = ({}) => {
+export const ServiceSelection: FC = ({}) => {
   useDocumentTitle('Registration | Service Selection');
 
   return (

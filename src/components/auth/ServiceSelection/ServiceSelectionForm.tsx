@@ -50,7 +50,7 @@ export const ServiceSelectionForm: FC = () => {
     setSelectedDescriptionOption(option);
   };
 
-  const handleSubmitAboutForm = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmitAboutForm = (event: FormEvent) => {
     event.preventDefault();
 
     if (!selectedForWhyOption || !selectedDescriptionOption) {
