@@ -1,38 +1,46 @@
-# CRM Workroom Project Documentation
+# CRM Workroom: Comprehensive Project Documentation
 
-## Project Overview
-CRM Workroom is a feature-rich Customer Relationship Management (CRM) system designed to help teams efficiently manage projects, track interactions, and streamline communication. It provides essential CRM features such as user authentication (registration, login, and logout), project management (creating and organizing projects), and interactive features like drag-and-drop functionality. Built with modern technologies and a focus on performance, CRM Workroom aims to enhance productivity and collaboration for businesses of all sizes.
+## Overview
+
+**CRM Workroom** is an advanced, feature-rich **Customer Relationship Management (CRM)** system designed to streamline project management, team collaboration, and client relationship tracking. The platform enables businesses to create, manage, and organize projects while providing essential tools such as user authentication, task management, drag-and-drop capabilities, and real-time updates. The primary objective of CRM Workroom is to enhance team productivity, communication, and overall business efficiency in a modern, secure, and scalable environment.
 
 ### Key Features
-- **User Authentication**: Users can register, log in, and log out securely.
-- **Project Management**: Create and manage projects, assign tasks, and track progress.
-- **Drag-and-Drop**: An intuitive drag-and-drop interface to organize projects, tasks, and documents.
-- **Interactive UI**: Clean, responsive, and intuitive design with seamless user experience.
-- **Real-time Updates**: Integration with state management for real-time synchronization and updates.
-- **User Roles**: Role-based access control for managing permissions across the platform.
-- **Notifications**: Alerts and notifications for project updates and changes.
+- **User Authentication**: Secure user registration, login, and logout workflows with JWT-based authentication for safe access control.
+- **Project Management**: Seamlessly create, organize, and manage projects. Track task progress, set deadlines, and assign team members for optimized workflow management.
+- **Drag-and-Drop Interface**: Intuitive drag-and-drop functionality for reordering tasks, managing project stages, and enhancing user interaction.
+- **Real-Time Updates**: Dynamic updates for all team members, ensuring synchronized project information and seamless collaboration.
+- **Role-Based Access Control**: Customizable user roles with granular permission settings to maintain secure access at different levels of the system.
+- **Notifications**: Instant, in-app notifications for critical project updates, task completions, and other essential events.
+- **Responsive Design**: Fully responsive user interface ensuring a seamless experience on desktop, tablet, and mobile devices.
 
-## Technologies Used
-The CRM Workroom project leverages a variety of modern technologies to ensure performance, scalability, and maintainability. Below is an overview of the key dependencies:
+## Technologies and Dependencies
 
-### **Frontend Libraries**
-- **React**: React (v18.3.1) is the core JavaScript library for building user interfaces, providing a fast and scalable solution for our CRM system.
-- **Next.js**: Next.js (v15.0.3) is used for server-side rendering and building static websites, allowing for fast, SEO-friendly pages and great user experience.
-- **React-Redux**: React-Redux (v9.1.2) helps manage the state of the application with a predictable and scalable pattern.
-- **@mui/material** & **@mui/icons-material**: Material-UI (v6.1.8) provides a set of components and icons for building responsive and consistent UI elements quickly.
-- **React-Select**: A flexible, customizable select input control used to enhance form elements, especially for large lists or filtering.
-- **React-Hot-Toast**: A small, customizable notification library that provides real-time feedback to users for various events (e.g., success, error messages).
-- **Classnames**: A simple utility for conditionally joining class names to style components efficiently.
+CRM Workroom utilizes modern and efficient web technologies to create a high-performance, scalable, and maintainable CRM solution. Below is an overview of the key libraries and frameworks utilized in the project:
 
-### **State Management & Data Fetching**
-- **Redux Toolkit**: Redux Toolkit (v2.3.0) simplifies the Redux flow, making state management more efficient and easy to set up, ensuring smooth interaction and data consistency across components.
-- **React Query**: React Query (v5.60.5) simplifies data fetching, caching, synchronization, and pagination, which helps keep the data consistent between server and client side.
-- **Axios**: Axios (v1.7.7) is used for making HTTP requests and fetching data from external APIs, providing a simple API to manage promises and responses.
+### **Core Frontend Libraries**
+- **React (v18.3.1)**: A declarative, efficient, and flexible JavaScript library for building user interfaces. React powers the dynamic rendering of CRM Workroom, ensuring a fast and interactive experience.
+- **Next.js (v15.0.3)**: A powerful React framework for server-side rendering (SSR), static site generation (SSG), and optimized performance. Next.js provides SEO-friendly pages and enables fast loading times.
+- **Material-UI (v6.1.8)**: A comprehensive React UI framework that offers pre-designed components and icons for building modern, responsive user interfaces with minimal configuration.
+- **@mui/icons-material (v6.1.8)**: A set of icons optimized for Material-UI components, used to improve visual consistency and enhance the user experience.
+
+### **State Management & Data Handling**
+- **Redux Toolkit (v2.3.0)**: The official, recommended Redux library that simplifies state management and improves the development experience with a set of built-in utilities for common tasks, such as managing asynchronous logic and reducing boilerplate code.
+- **React-Redux (v9.1.2)**: A library that connects React components to a Redux store, enabling state management across the application.
+- **React Query (v5.60.5)**: A data-fetching and caching library that simplifies data synchronization, retrieval, and state management between the client and server. It enhances the user experience by handling background data updates and optimizing performance.
+- **Axios (v1.7.7)**: A promise-based HTTP client for making API requests, ensuring easy and efficient data fetching from both local and remote sources.
 
 ### **Styling & Theming**
-- **@emotion/react** & **@emotion/styled**: These packages (v11.13.5) are used for CSS-in-JS styling, allowing for more dynamic and reusable components while supporting theming and customization.
+- **@emotion/react (v11.13.5)** and **@emotion/styled (v11.13.5)**: Powerful libraries for CSS-in-JS styling, allowing dynamic styling solutions that are modular, scalable, and easily customizable. The integration of Emotion ensures an efficient styling pipeline with built-in support for theming and CSS variables.
+- **Classnames (v2.5.1)**: A simple utility for conditionally applying class names to components, streamlining the UI styling process and ensuring optimal CSS management.
+
+### **User Interface Enhancements**
+- **React-Select (v5.8.3)**: A highly customizable and accessible select input control for improved user interactions in forms, allowing easy selection of options from large lists or hierarchical data structures.
+- **React-Hot-Toast (v2.4.1)**: A minimal yet powerful notification library that enables the display of real-time user feedback, such as success or error messages, throughout the CRM Workroom interface.
 
 ## Installation Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/crm-workroom.git
+
+To set up and run CRM Workroom locally, follow these steps:
+
+### 1. Clone the Repository:
+```bash
+git clone https://github.com/your-username/crm-workroom.git
