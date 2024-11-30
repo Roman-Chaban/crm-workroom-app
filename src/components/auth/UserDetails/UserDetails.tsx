@@ -19,9 +19,8 @@ import { RegistrationUserData } from '@/types/registration';
 
 import { registerUser } from '@/api/registration';
 
-import { nanoid } from 'nanoid';
-
 import styles from './UserDetails.module.scss';
+import { useAppSelector } from '@/hooks/useAppSelector';
 
 interface MutationPayload {
   userData: RegistrationUserData;
@@ -29,11 +28,11 @@ interface MutationPayload {
 }
 
 export const UserDetails: FC = () => {
-  const registrationDataId = nanoid();
+  const currentStep = useAppSelector((state) => state.steps.currentStep);
 
   const [registrationData, setRegistrationData] =
     useState<RegistrationUserData>({
-      id: registrationDataId,
+      id: '',
       email: '',
       password: '',
       phoneNumber: '',
@@ -82,6 +81,7 @@ export const UserDetails: FC = () => {
   const handleSubmitForm = (event: FormEvent) => {
     event.preventDefault();
     if (
+      !registrationData.id ||
       !registrationData.email ||
       !registrationData.password ||
       !registrationData.phoneNumber
@@ -90,7 +90,7 @@ export const UserDetails: FC = () => {
       return;
     }
     const queryParams = {
-      step: 1,
+      step: currentStep,
       email: registrationData.email,
       password: registrationData.password,
       phoneNumber: registrationData.phoneNumber,

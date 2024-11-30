@@ -4,11 +4,7 @@ import { FormEvent, useState, type FC } from 'react';
 import { useAppSelector } from '@/hooks/useAppSelector';
 import { useMutation } from '@tanstack/react-query';
 
-import {
-  Container,
-  UserDetailsHeader,
-  UserDetailsNav,
-} from '@/components/index';
+import { UserDetailsHeader, UserDetailsNav } from '@/components/index';
 
 import { getServicesDetails } from '@/api/servicesDetails';
 
@@ -21,7 +17,9 @@ import {
   ServicesOption,
 } from '@/interfaces/servicesSelect';
 
-import { toast } from 'react-hot-toast';
+import { ServicesDetails } from '@/types/servicesDetails';
+
+import { toast, Toaster } from 'react-hot-toast';
 
 import styles from './ServiceSelection.module.scss';
 
@@ -38,30 +36,6 @@ export const ServiceSelectionForm: FC = () => {
     mutationFn: getServicesDetails,
     onSuccess: (response) => {
       toast.success('Service details successfully chosen');
-
-      const {
-        usagePurpose,
-        personBestDescriptor,
-        companyName,
-        businessDirection,
-        teamPeopleRange,
-      } = response;
-      try {
-        if (response && usagePurpose && personBestDescriptor) {
-          localStorage.setItem(
-            'service-details',
-            JSON.stringify({
-              usagePurpose,
-              personBestDescriptor,
-              companyName,
-              businessDirection,
-              teamPeopleRange,
-            })
-          );
-        }
-      } catch (error) {
-        console.error('Error saving to localStorage:', error);
-      }
     },
     onError: (error) => {
       toast.error(`Error fetching service details ${error.message}`);
@@ -79,21 +53,45 @@ export const ServiceSelectionForm: FC = () => {
   const handleSubmitAboutForm = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (selectedForWhyOption && selectedDescriptionOption) {
-      const registrationData = JSON.parse(
-        localStorage.getItem('registration') || '{}'
-      );
+    if (!selectedForWhyOption || !selectedDescriptionOption) {
+      toast.error('Please select all the required options');
+      return;
+    }
 
-      const serviceDetails = {
-        id: registrationData.id,
+    const registrationData = JSON.parse(
+      localStorage.getItem('registration') || '{}'
+    );
+
+    if (!registrationData.id) {
+      toast.error('Registration data is missing');
+      return;
+    }
+
+    const serviceDetails: ServicesDetails = {
+      id: registrationData.id,
+      usagePurpose: selectedForWhyOption.value,
+      personBestDescriptor: selectedDescriptionOption.value,
+      companyName: '',
+      businessDirection: '',
+      teamPeopleRange: '',
+    };
+
+    serviceDetailsMutation.mutate(serviceDetails);
+
+    try {
+      const serviceDetailsToSave = {
         usagePurpose: selectedForWhyOption.value,
         personBestDescriptor: selectedDescriptionOption.value,
         companyName: '',
         businessDirection: '',
         teamPeopleRange: '',
       };
-
-      serviceDetailsMutation.mutate(serviceDetails);
+      localStorage.setItem(
+        'service-details',
+        JSON.stringify(serviceDetailsToSave)
+      );
+    } catch (error) {
+      console.error('Error saving to localStorage:', error);
     }
   };
 
@@ -102,6 +100,7 @@ export const ServiceSelectionForm: FC = () => {
 
   return (
     <>
+      <Toaster />
       <form className={styles['stepForm']} onSubmit={handleSubmitAboutForm}>
         <UserDetailsHeader
           title="Tell about yourself"
