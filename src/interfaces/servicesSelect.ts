@@ -1,9 +1,11 @@
-export interface ServicesOption {
+export interface ServiceOption {
   value: string;
   label: string;
 }
 
-export const optionsForWhy: ServicesOption[] = [
+export type ServiceOptions = ServiceOption[];
+
+export const optionsForWhy: ServiceOptions = [
   { value: 'work', label: 'Work' },
   { value: 'education', label: 'Education' },
   { value: 'personal', label: 'Personal Use' },
@@ -12,7 +14,7 @@ export const optionsForWhy: ServicesOption[] = [
   { value: 'other', label: 'Other' },
 ];
 
-export const optionsForDescription: ServicesOption[] = [
+export const optionsForDescription: ServiceOptions = [
   { value: 'business_owner', label: 'Business Owner' },
   { value: 'student', label: 'Student' },
   { value: 'freelancer', label: 'Freelancer' },

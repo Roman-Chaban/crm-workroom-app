@@ -14,8 +14,14 @@ interface StepsListItemProps {
 export const StepsListItem: FC<StepsListItemProps> = ({ step, currentStep }) => {
   const isActive = currentStep === step.id;
   const isCompleted = currentStep > step.id;
+  const isFirstStepActive = isActive && step.id === 1;
+
   return (
-    <li className={`${styles['stepsListItem']} ${isCompleted ? styles['activeText'] : ''} `}>
+    <li
+      className={`${styles['stepsListItem']} ${
+        isCompleted ? styles['completed'] : ''
+      } ${isFirstStepActive ? styles['firstStepActive'] : ''}`}
+    >
       <span
         className={`${styles['stepsListItemCircle']} ${
           isActive ? styles['active'] : ''

@@ -7,7 +7,7 @@ import Select, { SingleValue } from 'react-select';
 import { Input, SignInNav } from '@/components/index';
 import customStyles from '@/components/ui/Select/selectStyles';
 
-import { ServicesOption } from '@/interfaces/servicesSelect';
+import { ServiceOption } from '@/interfaces/servicesSelect';
 import { serviceBusinessOptions } from '@/constants/service-business';
 import { ServiceDetailsFormButtons } from './ServiceDetailsFormButtons';
 import { ServicesDetails } from '@/types/servicesDetails';
@@ -33,7 +33,7 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({ currentStep })
     dispatch(setCompanyName(event.target.value));
   };
 
-  const handleBusinessDirectionChange = (selectedOption: SingleValue<ServicesOption>) => {
+  const handleBusinessDirectionChange = (selectedOption: SingleValue<ServiceOption>) => {
     if (selectedOption) {
       dispatch(setSelectedBusinessDirection(selectedOption));
     }

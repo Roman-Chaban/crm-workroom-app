@@ -22,7 +22,10 @@ export const Projects: FC = () => {
   return (
     <div className={styles['projects']}>
       <div className={styles['projectsContainer']}>
-        <NavView props={{ link: 'View all', title: 'Projects' }} />
+        <NavView
+          link={'View all'}
+          title={'Projects'}
+        />
         <ul className={styles['projectsItems']}>
           {projectsItemsList.map((item) => (
             <ProjectItem

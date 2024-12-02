@@ -45,6 +45,19 @@
     gap: 21px;
     position: relative;
 
+    &.firstStepActive {
+      color: color.$color-white-primary;
+
+      .stepsListItemCircle {
+        outline-color: color.$color-white-primary;
+        background: rgba(color.$color-white-primary, 0.4);
+
+        &::before {
+          background: color.$color-white-primary;
+        }
+      }
+    }
+
     &:last-child > .stepsListItemCircle::before {
       content: none;
     }

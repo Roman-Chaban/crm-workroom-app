@@ -10,7 +10,7 @@ import { Container, SignInNav } from '@/components/index';
 
 import Select, { SingleValue } from 'react-select';
 
-import { optionsForWhy, optionsForDescription, ServicesOption } from '@/interfaces/servicesSelect';
+import { optionsForWhy, optionsForDescription, ServiceOption } from '@/interfaces/servicesSelect';
 
 import { toast, Toaster } from 'react-hot-toast';
 
@@ -31,14 +31,14 @@ export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({ currentSte
 
   const { usagePurpose, personBestDescriptor } = useAppSelector((state) => state.serviceSelection);
 
-  const handleChangeServicesForWhyOption = (newValue: SingleValue<ServicesOption>) => {
+  const handleChangeServicesForWhyOption = (newValue: SingleValue<ServiceOption>) => {
     if (newValue) {
       dispatch(setUsagePurpose(newValue.value));
       saveToLocalStorage('usagePurpose', newValue.value);
     }
   };
 
-  const handleChangeDescriptionOption = (newValue: SingleValue<ServicesOption>) => {
+  const handleChangeDescriptionOption = (newValue: SingleValue<ServiceOption>) => {
     if (newValue) {
       dispatch(setPersonDescriptor(newValue.value));
       saveToLocalStorage('personBestDescriptor', newValue.value);

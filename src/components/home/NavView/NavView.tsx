@@ -6,21 +6,19 @@ import Image from 'next/image';
 import styles from './NavView.module.scss';
 
 interface NavViewProps {
-  props: {
-    title: string;
-    link: string;
-  };
+  title: string;
+  link: string;
 }
 
-export const NavView: FC<NavViewProps> = ({ props }) => {
+export const NavView: FC<NavViewProps> = ({ title, link }) => {
   return (
     <div className={styles['NavViewContainer']}>
-      <h2 className={styles['NavViewTitle']}>{props.title}</h2>
+      <h2 className={styles['NavViewTitle']}>{title}</h2>
       <Link
         href={'/'}
         className={styles['NavViewLink']}
       >
-        {props.link}{' '}
+        {link}{' '}
         <Image
           src={'/icons/projects-icons/arrow-right.svg'}
           alt="Arrow Icon"
