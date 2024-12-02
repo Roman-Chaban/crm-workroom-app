@@ -247,3 +247,13 @@
   box-shadow: color.$shadow-modal;
   background: color.$color-white-primary;
 }
+
+@mixin serviceDetailButton {
+  border: 2px solid color.$background-modal-light;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 89px;
+  min-height: 48px;
+  background: color.$color-white-primary;
+  box-shadow: color.$shadow-box-light;
+}

@@ -119,7 +119,7 @@ export const UserDetailsMessage: FC<UserDetailsMessageProps> = ({
 
   const timerDisplay = isTimerActive
     ? smsTimer > 0
-      ? `00:${smsTimer < 10 ? `0${smsTimer}` : smsTimer}`
+      ? `00:${smsTimer < 10 ? `0${smsTimer}` : smsTimer} `
       : 'expired'
     : 'waiting to start';
 
@@ -142,7 +142,7 @@ export const UserDetailsMessage: FC<UserDetailsMessageProps> = ({
               width={24}
               height={24}
             />
-            An email was sent to **{userEmail}**. It will be valid for
+            An email was sent to **{userEmail}**. It will be valid for{' '}
             {timerDisplay}.
           </h4>
         </div>

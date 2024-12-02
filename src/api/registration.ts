@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 
 import { RegistrationUserData } from '@/types/registration';
 
@@ -6,26 +6,48 @@ import { REQUESTS_METHODS } from '@/enums/requestsMethods';
 import { API_ENDPOINTS } from '@/enums/apiEndpoints';
 
 const apiClient = axios.create({
-  baseURL: 'https://workflow-crm-server-staging.up.railway.app/api/auth',
+  baseURL: `https://workflow-crm-server-staging.up.railway.app/api/auth`,
   headers: { 'Content-Type': 'application/json' },
-  method: REQUESTS_METHODS.POST,
 });
 
-export const registerUser = async (
-  userData: RegistrationUserData
-): Promise<RegistrationUserData> => {
+const apiRequest = async <T>(
+  method: REQUESTS_METHODS,
+  endpoint: string,
+  data: any = null,
+  headers: AxiosRequestConfig['headers'] = {}
+): Promise<T> => {
   try {
-    const response = await apiClient.post<RegistrationUserData>(
-      API_ENDPOINTS.REGISTRATION,
-      userData
-    );
+    const config: AxiosRequestConfig = {
+      method,
+      url: endpoint,
+      data,
+      headers: { ...headers },
+    };
+
+    console.log(`Making request to ${endpoint} with method ${method}`, data);
+
+    const response = await apiClient(config);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
       const errorMessage =
-        error.response?.data?.message || 'Registration failed';
+        error.response?.data?.message ||
+        error.message ||
+        'An error occurred while making the request';
+      console.error('Axios error:', errorMessage);
       throw new Error(errorMessage);
     }
-    throw new Error('Unknown error occurred during registration');
+    console.error('Unknown error:', error);
+    throw new Error('Unknown error occurred during request');
   }
+};
+
+export const registerUser = async (
+  userData: RegistrationUserData
+): Promise<RegistrationUserData> => {
+  return apiRequest<RegistrationUserData>(
+    REQUESTS_METHODS.POST,
+    API_ENDPOINTS.REGISTRATION,
+    userData
+  );
 };

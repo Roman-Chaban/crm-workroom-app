@@ -1,19 +1,28 @@
 'use client';
 
-import { useMemo, useState, type FC, type FormEvent } from 'react';
+import {
+  ChangeEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type FC,
+  type FormEvent,
+} from 'react';
+
 import { useAppSelector } from '@/hooks/useAppSelector';
+import { useMutation } from '@tanstack/react-query';
 
 import {
-  UserDetailsNav,
   UserDetailsMessage,
   Container,
-  UserDetailsHeader,
   UserDetailsFields,
+  SignInNav,
 } from '@/components/index/index';
 
-import { EventType } from '@/types/signIn';
+import { toast } from 'react-hot-toast';
 
-import { toast, Toaster } from 'react-hot-toast';
+import { registerUser } from '@/api/registration';
 
 import {
   IsConfirmationMessageVisible,
@@ -25,17 +34,14 @@ import {
 
 import styles from './UserDetails.module.scss';
 
-interface UserDetailsFormProps {
-  registrationData: RegistrationUserData;
-  handleInputChange: (event: EventType) => void;
-  handleSubmitForm: (event: FormEvent) => void;
-}
+export const UserDetailsForm: FC = () => {
+  const [registrationData, setRegistrationData] =
+    useState<RegistrationUserData>({
+      email: '',
+      password: '',
+      phoneNumber: '',
+    });
 
-export const UserDetailsForm: FC<UserDetailsFormProps> = ({
-  registrationData,
-  handleInputChange,
-  handleSubmitForm,
-}) => {
   const currentStep = useAppSelector((state) => state.steps.currentStep);
   const [isTimerActive, setIsTimerActive] = useState<IsTimerActive>(false);
   const [isSmsCompleted, setIsSmsCompleted] = useState<IsSmsCompleted>(false);
@@ -74,45 +80,91 @@ export const UserDetailsForm: FC<UserDetailsFormProps> = ({
     isTimerActive,
   ]);
 
+  const registerUserMutation = useMutation({
+    mutationFn: registerUser,
+    onSuccess: (response) => {
+      toast.success(`Code was sent to **${response.email}**`);
+      if (response.id) {
+        setRegistrationData((prevData) => ({
+          ...prevData,
+          id: response.id,
+        }));
+      }
+    },
+    onError: (error: Error) => {
+      toast.error(error.message || 'Registration failed');
+    },
+  });
+
+  useEffect(() => {
+    const savedRegistrationData = localStorage.getItem('registration');
+    if (savedRegistrationData) {
+      setRegistrationData(JSON.parse(savedRegistrationData));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (
+      registrationData.email ||
+      registrationData.password ||
+      registrationData.phoneNumber
+    ) {
+      localStorage.setItem('registration', JSON.stringify(registrationData));
+    }
+  }, [registrationData]);
+
+  const handleRegistrationDataChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = event.target;
+      setRegistrationData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    },
+    []
+  );
+
+  const handleSubmitForm = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (
+      !registrationData.email ||
+      !registrationData.password ||
+      !registrationData.phoneNumber
+    ) {
+      toast.error('Please fill in all fields!');
+      return;
+    }
+
+    registerUserMutation.mutate(registrationData);
+  };
+
   return (
-    <>
-      <Toaster />
-      <form className={styles['stepForm']} onSubmit={handleSubmitForm}>
-        <UserDetailsHeader
-          stepTitle={`Step ${currentStep}/4`}
-          title="Valid your email"
-          classNames={{
-            header: styles['stepFormHeader'],
-            headerTitle: styles['stepFormHeaderTitle'],
-            stepsFigures: styles['stepFormHeaderStepsFigures'],
-          }}
+    <form className={styles['stepForm']} onSubmit={handleSubmitForm}>
+      <Container className={styles['stepFormMain']}>
+        <UserDetailsFields
+          registrationData={registrationData}
+          handleInputChange={handleRegistrationDataChange}
+          handleSubmitConfirmationData={handleSubmitTimerStart}
+          isSubmitting={isSubmitting}
         />
-        <Container className={styles['stepFormMain']}>
-          <UserDetailsFields
-            registrationData={registrationData}
-            handleInputChange={handleInputChange}
-            handleSubmitConfirmationData={handleSubmitTimerStart}
+        {isConfirmationMessageVisible && (
+          <UserDetailsMessage
+            userEmail={registrationData.email}
+            isTimerActive={isTimerActive}
+            onSmsCodeComplete={handleSmsCodeCompleted}
             isSubmitting={isSubmitting}
+            setIsSubmitting={setIsSubmitting}
           />
-          {isConfirmationMessageVisible && (
-            <UserDetailsMessage
-              userEmail={registrationData.email}
-              isTimerActive={isTimerActive}
-              onSmsCodeComplete={handleSmsCodeCompleted}
-              isSubmitting={isSubmitting}
-              setIsSubmitting={setIsSubmitting}
-            />
-          )}
-        </Container>
-        <UserDetailsNav
-          currentStep={currentStep}
-          isNextButtonDisabled={isNextButtonDisabled || !isSmsCompleted}
-          classNames={{
-            container: styles['multiStepsFooter'],
-            nextBtn: styles['multiStepsNextButton'],
-          }}
-        />
-      </form>
-    </>
+        )}
+      </Container>
+      <SignInNav
+        currentStep={currentStep}
+        isNextButtonDisabled={isNextButtonDisabled || !isSmsCompleted}
+        classNames={{
+          container: styles['multiStepsFooter'],
+          nextBtn: styles['multiStepsNextButton'],
+        }}
+      />
+    </form>
   );
 };

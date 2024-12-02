@@ -9,7 +9,7 @@ import { colors } from '@/constants/colors';
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-15px);
   }
   to {
     opacity: 1;
@@ -20,6 +20,8 @@ const fadeIn = keyframes`
 const customStyles: StylesConfig<Option, false> = {
   container: (base) => ({
     ...base,
+    width: '100%',
+    maxWidth: '403px',
     display: 'flex',
     flexDirection: 'column',
     marginBlockStart: 0,
@@ -36,6 +38,7 @@ const customStyles: StylesConfig<Option, false> = {
     transition: 'all 0.3s',
     ':hover': {
       borderColor: colors.backgroundSupportHover,
+      outline: `2px solid rgba(${colors.backgroundSupportPrimary}, 0.11)`,
     },
   }),
   placeholder: (base) => ({
@@ -59,37 +62,21 @@ const customStyles: StylesConfig<Option, false> = {
     overflowY: 'auto',
     scrollbarWidth: 'none',
   }),
-  menuList: (base) => ({
-    ...base,
-    padding: 0,
-  }),
+
   option: (base) => ({
     ...base,
-    padding: '11px',
-    color: colors.colorGrayNeutral,
-    fontSize: 16,
-    margin: 10,
-    fontWeight: 400,
-    maxHeight: 46,
-    maxWidth: '95%',
-    borderRadius: 14,
-    lineHeight: '171%',
-    background: colors.colorWhitePrimary,
     cursor: 'pointer',
-    transition: 'background-color 0.3s, color 0.3s',
+    fontWeight: 500,
     ':hover': {
-      backgroundColor: colors.optionBackground,
-      color: colors.colorBlackDeep,
       fontWeight: 700,
-    },
-    ':active': {
-      backgroundColor: colors.backgroundSupportActive,
-      color: colors.colorWhitePrimary,
+      color: colors.colorBlackDeep,
     },
   }),
   singleValue: (base) => ({
     ...base,
     color: colors.colorGrayNeutral,
+    fontWeight: 400,
+    paddingInlineStart: 10,
     animation: `${fadeIn} 0.3s ease-in-out`,
   }),
   indicatorSeparator: (base) => ({
@@ -103,6 +90,16 @@ const customStyles: StylesConfig<Option, false> = {
   dropdownIndicator: (base) => ({
     ...base,
     color: colors.colorGrayNeutral,
+    transition: 'transform 0.3s ease, color 0.3s ease',
+    ':hover': {
+      color: colors.backgroundSupportHover,
+      transform: 'rotate(180deg)',
+    },
+  }),
+
+  input: (base) => ({
+    ...base,
+    display: 'none',
   }),
 };
 

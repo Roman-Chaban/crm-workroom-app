@@ -10,7 +10,7 @@ import { Button } from '@/components/index';
 
 import { handleNextStep, handlePrevStep } from '@/store/slices/StepsSlice';
 
-interface UserDetailsNavProps {
+interface SignInNavProps {
   isNextButtonDisabled: boolean;
   currentStep: number;
   classNames: {
@@ -20,7 +20,7 @@ interface UserDetailsNavProps {
   };
 }
 
-export const UserDetailsNav: FC<UserDetailsNavProps> = ({
+export const SignInNav: FC<SignInNavProps> = ({
   isNextButtonDisabled,
   classNames,
   currentStep,
@@ -41,7 +41,7 @@ export const UserDetailsNav: FC<UserDetailsNavProps> = ({
     <div className={classNames.container}>
       {renderPreviousButton && (
         <Button
-          type="button"
+          type={'button'}
           className={classNames.prevBtn}
           onClick={handlePrevStepClick}
         >
@@ -56,7 +56,7 @@ export const UserDetailsNav: FC<UserDetailsNavProps> = ({
         </Button>
       )}
       <Button
-        type="submit"
+        type="button"
         className={classNames.nextBtn}
         onClick={handleNextStepClick}
         disabled={isNextButtonDisabled}

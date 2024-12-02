@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-interface UserDetailsHeaderProps {
+interface SignInHeaderProps {
   stepTitle: string;
   title: string;
   classNames?: {
@@ -10,7 +10,7 @@ interface UserDetailsHeaderProps {
   };
 }
 
-export const UserDetailsHeader: FC<UserDetailsHeaderProps> = ({
+export const SignInHeader: FC<SignInHeaderProps> = ({
   stepTitle,
   title,
   classNames,

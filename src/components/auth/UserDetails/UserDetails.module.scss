@@ -8,7 +8,8 @@
 
   &Container {
     display: flex;
-    justify-content: center;
+    flex-flow: column nowrap;
+    gap: 30px;
     width: 100%;
     @include whiteContainer(100%);
   }
@@ -19,14 +20,16 @@
     align-items: center;
     gap: 30px;
     width: 100%;
-    padding-block-start: 75px;
+    flex: 1 1 auto;
   }
 
   & .stepFormHeader {
+    width: 100%;
     display: flex;
     align-items: center;
     flex-flow: column nowrap;
     gap: 6px;
+    padding-block-start: 75px;
   }
 
   & .stepFormHeader > .stepFormHeaderStepsFigures {

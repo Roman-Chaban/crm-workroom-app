@@ -6,6 +6,7 @@
 .sidebarSteps {
   width: 100%;
   max-width: 346px;
+
   &Container {
     display: flex;
     flex-flow: column nowrap;
@@ -17,6 +18,7 @@
     background: color.$background-support-primary;
     padding: 60px 40px;
   }
+
   &GetStarted {
     display: flex;
     flex-direction: column;
@@ -41,18 +43,30 @@
     display: flex;
     align-items: center;
     gap: 21px;
+    position: relative;
 
     &:last-child > .stepsListItemCircle::before {
       content: none;
     }
 
+    &.completed {
+      outline: none;
+    }
+
     & .stepsListItemCircle {
       display: inline-block;
-      width: 24px;
-      height: 24px;
+      width: 21.5px;
+      height: 21.5px;
       border-radius: 50%;
       outline: 2.5px solid rgba(color.$color-white-primary, 0.5);
       position: relative;
+      &.completed {
+        outline: none;
+      }
+
+      &.completed::before {
+        background: color.$color-white-primary;
+      }
     }
 
     & .stepsListItemCircle::before {
@@ -62,60 +76,29 @@
       width: 2px;
       height: 26px;
       top: 120%;
-      left: 45%;
+      left: 10px;
       background: rgba(color.$color-white-primary, 0.5);
     }
-  }
-  & .doneIcon {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-}
 
-.active {
-  outline-color: color.$color-white-primary !important;
-  background: rgba(color.$color-white-primary, 0.3);
-
-  &::before {
-    background: color.$color-white-primary !important;
-  }
-}
-
-.activeText {
-  color: color.$color-white-primary !important;
-}
-
-@include respond-toWidth(large-medium) {
-  .sidebarSteps {
-    max-width: 300px;
-    &Container {
-      gap: 75px;
-      max-width: 300px;
-      padding: 30px 40px;
+    & .doneIcon {
+      position: relative;
+      left: 0;
+      top: 0;
     }
 
-    & .stepsListItem {
-      font-size: size.$font-size-md;
-
+    &.active {
       & .stepsListItemCircle {
-        max-width: 20px;
-        max-height: 20px;
-      }
+        outline-color: color.$color-white-primary !important;
+        background: rgba(color.$color-white-primary, 0.3);
 
-      & .doneIcon {
-        max-width: 20px;
-        max-height: 20px;
-      }
-
-      & .stepsListItemCircle::before {
-        content: '';
-        max-height: 15px;
+        &::before {
+          background: color.$color-white-primary !important;
+        }
       }
     }
 
-    & .stepsList {
-      gap: 25px;
+    &.activeText {
+      color: color.$color-white-primary !important;
     }
   }
 }

@@ -179,7 +179,7 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
         className={styles['sendCodeButton']}
         disabled={isNextButtonDisabled}
       >
-        {isSubmitting ? 'Submitting...' : 'Submit'}
+        {isSubmitting ? 'Sending...' : 'Send code'}
         <SendIcon fontSize="medium" className={styles['sendIcon']} />
       </Button>
     </Container>

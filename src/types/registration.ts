@@ -1,7 +1,7 @@
 import { CountryOption } from '@/staticData/countryOptions';
 
 export interface RegistrationUserData {
-  id: string;
+  id?: string;
   email: string;
   password: string;
   phoneNumber: string;

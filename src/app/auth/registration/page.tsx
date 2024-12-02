@@ -27,7 +27,7 @@ export default function MultiStepsSignUpPage() {
   };
 
   const CurrentStepComponent = stepComponents[currentStep] || (
-    <ServiceSelection />
+    <div>Step number: 4</div>
   );
 
   return (

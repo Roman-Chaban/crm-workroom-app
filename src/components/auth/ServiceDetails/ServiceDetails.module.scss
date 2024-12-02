@@ -1,0 +1,129 @@
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+
+.serviceDetails {
+  @include whiteContainer(100%);
+
+  &Container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    min-height: 100%;
+  }
+
+  & .stepFormHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    gap: 6px;
+    padding-block-start: 75px;
+  }
+
+  & .stepFormHeader > .stepFormHeaderStepsFigures {
+    @include stepsTitleFigures;
+  }
+
+  & .stepFormHeader > .stepFormHeaderTitle {
+    @include boldTitle;
+  }
+
+  & .serviceDetailsForm {
+    width: 100%;
+    display: flex;
+    gap: 19px;
+    align-items: center;
+    flex-flow: column nowrap;
+    min-height: 100%;
+    flex: 1 1 auto;
+  }
+
+  & .serviceDetailsInputContainer {
+    width: 100%;
+    max-width: 403px;
+    min-height: 102px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 7px;
+  }
+
+  & .serviceDetailsLabel {
+    @include selectLabel;
+  }
+
+  & .serviceDetailsInput {
+    @include input;
+    @include inputHover;
+    font-weight: 500;
+  }
+
+  & .businessDirectionLabel {
+    @include label;
+    @include selectLabel;
+    min-height: 102px;
+  }
+
+  & .serviceDetailsButtons {
+    width: 100%;
+    max-width: 403px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 7px;
+  }
+
+  & .serviceDetailsButtonsContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  & .serviceDetailsButton {
+    @include serviceDetailButton;
+    @include selectLabel;
+    font-weight: 400;
+  }
+  & .activeButton {
+    background: color.$background-support-primary;
+    color: color.$color-white-primary;
+    font-weight: 600;
+  }
+
+  & .multiStepsFooter {
+    width: 100%;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 41px;
+    border-top: 1.5px solid color.$border-light;
+  }
+
+  & .multiStepsNextButton {
+    @include Button;
+    position: static;
+    max-width: 145px;
+
+    &:disabled {
+      @include disabledButton;
+    }
+  }
+
+  & .multiStepsPreviousButton {
+    background: inherit;
+    width: 100%;
+    max-width: 132px;
+    min-height: 48px;
+    color: color.$background-support-primary;
+    font-weight: 600;
+    font-size: size.$font-size-md;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    &:disabled {
+      @include disabledButton;
+    }
+  }
+}

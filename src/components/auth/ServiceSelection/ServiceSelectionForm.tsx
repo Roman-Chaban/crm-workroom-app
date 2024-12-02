@@ -1,59 +1,67 @@
 'use client';
 
-import { FormEvent, useState, type FC } from 'react';
+import { FC, FormEvent } from 'react';
+
+import { useSaveLocalStorage } from '@/hooks/useSaveLocalStorage';
 import { useAppSelector } from '@/hooks/useAppSelector';
-import { useMutation } from '@tanstack/react-query';
+import { useAppDispatch } from '@/hooks/useAppDispatch';
 
-import { UserDetailsHeader, UserDetailsNav } from '@/components/index';
+import { Container, SignInNav } from '@/components/index';
 
-import { getServicesDetails } from '@/api/servicesDetails';
+import Select, { SingleValue } from 'react-select';
 
-import Select from 'react-select';
-
-import { customServicesSelect } from '@/constants/services-select';
 import {
   optionsForWhy,
   optionsForDescription,
   ServicesOption,
 } from '@/interfaces/servicesSelect';
 
-import { ServicesDetails } from '@/types/servicesDetails';
-
 import { toast, Toaster } from 'react-hot-toast';
+
+import customStyles from '@/components/ui/Select/selectStyles';
+
+import {
+  setPersonDescriptor,
+  setUsagePurpose,
+} from '@/store/slices/ServiceSelectionSlice';
 
 import styles from './ServiceSelection.module.scss';
 
-export const ServiceSelectionForm: FC = () => {
-  const currentStep = useAppSelector((state) => state.steps.currentStep);
+interface ServiceSelectionFormProps {
+  currentStep: number;
+}
 
-  const [selectedForWhyOption, setSelectForWhyOption] =
-    useState<ServicesOption | null>(null);
+export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({
+  currentStep,
+}) => {
+  const { usagePurpose, personBestDescriptor } = useAppSelector(
+    (state) => state.serviceSelection
+  );
+  const dispatch = useAppDispatch();
+  const { saveToLocalStorage } = useSaveLocalStorage();
 
-  const [selectedDescriptionOption, setSelectedDescriptionOption] =
-    useState<ServicesOption | null>(null);
-
-  const serviceDetailsMutation = useMutation({
-    mutationFn: getServicesDetails,
-    onSuccess: () => {
-      toast.success('Service details successfully chosen');
-    },
-    onError: (error) => {
-      toast.error(`Error fetching service details ${error.message}`);
-    },
-  });
-
-  const handleChangeServicesForWhyOption = (option: ServicesOption | null) => {
-    setSelectForWhyOption(option);
+  const handleChangeServicesForWhyOption = (
+    newValue: SingleValue<ServicesOption>
+  ) => {
+    if (newValue) {
+      dispatch(setUsagePurpose(newValue.value));
+      saveToLocalStorage('usagePurpose', newValue.value);
+    }
   };
 
-  const handleChangeDescriptionOption = (option: ServicesOption | null) => {
-    setSelectedDescriptionOption(option);
+  const handleChangeDescriptionOption = (
+    newValue: SingleValue<ServicesOption>
+  ) => {
+    if (newValue) {
+      dispatch(setPersonDescriptor(newValue.value));
+      saveToLocalStorage('personBestDescriptor', newValue.value);
+    }
   };
 
-  const handleSubmitAboutForm = (event: FormEvent) => {
+  const handleSubmitAboutForm = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!selectedForWhyOption || !selectedDescriptionOption) {
+    if (!usagePurpose || !personBestDescriptor) {
       toast.error('Please select all the required options');
       return;
     }
@@ -61,63 +69,48 @@ export const ServiceSelectionForm: FC = () => {
     const registrationData = JSON.parse(
       localStorage.getItem('registration') || '{}'
     );
-
     if (!registrationData.id) {
-      toast.error('Registration data is missing');
+      toast.error('User not found. Please complete the registration process.');
       return;
     }
 
-    const serviceDetails: ServicesDetails = {
-      id: registrationData.id,
-      usagePurpose: selectedForWhyOption.value,
-      personBestDescriptor: selectedDescriptionOption.value,
-      companyName: '',
-      businessDirection: '',
-      teamPeopleRange: '',
+    const existingServiceDetails = JSON.parse(
+      localStorage.getItem('service-details') || '{}'
+    );
+    const updatedServiceDetails = {
+      ...existingServiceDetails,
+      usagePurpose,
+      personBestDescriptor,
     };
 
-    serviceDetailsMutation.mutate(serviceDetails);
-
     try {
-      const serviceDetailsToSave = {
-        usagePurpose: selectedForWhyOption.value,
-        personBestDescriptor: selectedDescriptionOption.value,
-        companyName: '',
-        businessDirection: '',
-        teamPeopleRange: '',
-      };
       localStorage.setItem(
         'service-details',
-        JSON.stringify(serviceDetailsToSave)
+        JSON.stringify(updatedServiceDetails)
       );
+      toast.success('Service details updated successfully');
     } catch (error) {
       console.error('Error saving to localStorage:', error);
+      toast.error('Error saving service details');
     }
   };
 
-  const isNextButtonDisabled =
-    !selectedForWhyOption?.value || !selectedDescriptionOption?.value;
+  const isNextButtonDisabled = !usagePurpose || !personBestDescriptor;
 
   return (
     <>
       <Toaster />
       <form className={styles['stepForm']} onSubmit={handleSubmitAboutForm}>
-        <UserDetailsHeader
-          title="Tell about yourself"
-          stepTitle={`Step ${currentStep}/4`}
-          classNames={{
-            header: styles['stepFormHeader'],
-            headerTitle: styles['stepFormHeaderTitle'],
-            stepsFigures: styles['stepFormHeaderStepsFigures'],
-          }}
-        />
         <label className={styles['servicesLabel']}>
           Why will you use the service?
           <Select
             placeholder={optionsForWhy[0].label}
-            styles={customServicesSelect}
             options={optionsForWhy}
-            value={selectedForWhyOption}
+            value={{
+              value: usagePurpose,
+              label: usagePurpose || optionsForWhy[0].label,
+            }}
+            styles={customStyles}
             onChange={handleChangeServicesForWhyOption}
           />
         </label>
@@ -125,13 +118,18 @@ export const ServiceSelectionForm: FC = () => {
           What describes you best?
           <Select
             placeholder={optionsForDescription[0].label}
-            styles={customServicesSelect}
             options={optionsForDescription}
-            value={selectedDescriptionOption}
+            value={{
+              value: personBestDescriptor,
+              label: personBestDescriptor || optionsForDescription[0].label,
+            }}
+            styles={customStyles}
             onChange={handleChangeDescriptionOption}
           />
         </label>
-        <UserDetailsNav
+      </form>
+      <Container className={styles['multiStepsFooterContainer']}>
+        <SignInNav
           classNames={{
             container: styles['multiStepsFooter'],
             nextBtn: styles['multiStepsNextButton'],
@@ -140,7 +138,7 @@ export const ServiceSelectionForm: FC = () => {
           currentStep={currentStep}
           isNextButtonDisabled={isNextButtonDisabled}
         />
-      </form>
+      </Container>
     </>
   );
 };

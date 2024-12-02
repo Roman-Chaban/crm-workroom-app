@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
-import { StepItem } from '@/types/stepItem';
-
 import Image from 'next/image';
+
+import { StepItem } from '@/types/stepItem';
 
 import styles from './UserDetailsSidebar.module.scss';
 
@@ -20,13 +20,13 @@ export const StepsListItem: FC<StepsListItemProps> = ({
   return (
     <li
       className={`${styles['stepsListItem']} ${
-        isActive ? styles['activeText'] : ''
+        isCompleted ? styles['activeText'] : ''
       } `}
     >
       <span
         className={`${styles['stepsListItemCircle']} ${
           isActive ? styles['active'] : ''
-        } `}
+        } ${isCompleted ? styles['completed'] : ''}`}
       >
         {isCompleted && (
           <Image
