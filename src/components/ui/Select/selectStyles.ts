@@ -1,10 +1,10 @@
-import { StylesConfig } from 'react-select';
+import { StylesConfig } from "react-select";
 
-import { keyframes } from '@emotion/react';
+import { keyframes } from "@emotion/react";
 
-import { Option } from '@/interfaces/select';
+import { Option } from "@/interfaces/select";
 
-import { colors } from '@/constants/colors';
+import { colors } from "@/constants/colors";
 
 const fadeIn = keyframes`
   from {
@@ -20,12 +20,12 @@ const fadeIn = keyframes`
 const customStyles: StylesConfig<Option, false> = {
   container: (base) => ({
     ...base,
-    width: '100%',
-    maxWidth: '403px',
-    display: 'flex',
-    flexDirection: 'column',
+    width: "100%",
+    maxWidth: "403px",
+    display: "flex",
+    flexDirection: "column",
     marginBlockStart: 0,
-    position: 'relative',
+    position: "relative",
     animation: `${fadeIn} 0.3s ease-in-out`,
   }),
   control: (base) => ({
@@ -34,9 +34,9 @@ const customStyles: StylesConfig<Option, false> = {
     boxShadow: colors.shadowModal,
     borderRadius: 14,
     minHeight: 49,
-    cursor: 'pointer',
-    transition: 'all 0.3s',
-    ':hover': {
+    cursor: "pointer",
+    transition: "all 0.3s",
+    ":hover": {
       borderColor: colors.backgroundSupportHover,
       outline: `2px solid rgba(${colors.backgroundSupportPrimary}, 0.11)`,
     },
@@ -45,29 +45,29 @@ const customStyles: StylesConfig<Option, false> = {
     ...base,
     color: colors.colorGrayNeutral,
     fontSize: 14,
-    lineHeight: '171%',
-    transition: 'opacity 0.3s',
+    lineHeight: "171%",
+    transition: "opacity 0.3s",
     fontWeight: 400,
   }),
   menu: (base) => ({
     ...base,
     animation: `${fadeIn} 0.3s ease-in-out`,
     opacity: 0,
-    animationFillMode: 'forwards',
+    animationFillMode: "forwards",
     borderRadius: 14,
     boxShadow: colors.shadowBoxLight,
     background: colors.colorWhitePrimary,
     border: `2px solid ${colors.backgroundModalLight}`,
-    maxHeight: '240px',
-    overflowY: 'auto',
-    scrollbarWidth: 'none',
+    maxHeight: "240px",
+    overflowY: "auto",
+    scrollbarWidth: "none",
   }),
 
   option: (base) => ({
     ...base,
-    cursor: 'pointer',
+    cursor: "pointer",
     fontWeight: 500,
-    ':hover': {
+    ":hover": {
       fontWeight: 700,
       color: colors.colorBlackDeep,
     },
@@ -81,7 +81,7 @@ const customStyles: StylesConfig<Option, false> = {
   }),
   indicatorSeparator: (base) => ({
     ...base,
-    display: 'none',
+    display: "none",
   }),
   indicatorsContainer: (base) => ({
     ...base,
@@ -90,16 +90,16 @@ const customStyles: StylesConfig<Option, false> = {
   dropdownIndicator: (base) => ({
     ...base,
     color: colors.colorGrayNeutral,
-    transition: 'transform 0.3s ease, color 0.3s ease',
-    ':hover': {
+    transition: "transform 0.3s ease, color 0.3s ease",
+    ":hover": {
       color: colors.backgroundSupportHover,
-      transform: 'rotate(180deg)',
+      transform: "rotate(180deg)",
     },
   }),
 
   input: (base) => ({
     ...base,
-    display: 'none',
+    display: "none",
   }),
 };
 

@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { FC, ReactNode } from "react";
 
 interface BoxProps {
   children: ReactNode;
@@ -7,11 +7,11 @@ interface BoxProps {
 
 export const Box: FC<BoxProps> = ({ children, className }) => {
   const boxCSSProperties = {
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    gap: '30px',
-    justifyContent: 'space-between',
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    gap: "30px",
+    justifyContent: "space-between",
   };
   return (
     <div style={boxCSSProperties} className={className}>

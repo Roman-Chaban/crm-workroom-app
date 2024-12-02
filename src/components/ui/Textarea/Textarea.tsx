@@ -1,6 +1,6 @@
-import type { FC } from 'react';
+import type { FC } from "react";
 
-import { TextareaType } from '@/types/textarea';
+import { TextareaType } from "@/types/textarea";
 
 export const Textarea: FC<TextareaType> = ({
   className,
@@ -12,7 +12,7 @@ export const Textarea: FC<TextareaType> = ({
   onChange,
   labelClassName,
   placeholder,
-  htmlFor = '',
+  htmlFor = "",
   ref,
 }) => {
   return (

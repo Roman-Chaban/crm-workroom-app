@@ -35,26 +35,25 @@ import {
 import styles from './UserDetails.module.scss';
 
 export const UserDetailsForm: FC = () => {
-  const [registrationData, setRegistrationData] =
-    useState<RegistrationUserData>({
-      email: '',
-      password: '',
-      phoneNumber: '',
-    });
-
   const currentStep = useAppSelector((state) => state.steps.currentStep);
+
+  const [registrationData, setRegistrationData] = useState<RegistrationUserData>({
+    email: '',
+    password: '',
+    phoneNumber: '',
+  });
+
   const [isTimerActive, setIsTimerActive] = useState<IsTimerActive>(false);
+
   const [isSmsCompleted, setIsSmsCompleted] = useState<IsSmsCompleted>(false);
+
   const [isSubmitting, setIsSubmitting] = useState<IsSubmitting>(false);
+
   const [isConfirmationMessageVisible, setIsConfirmationMessageVisible] =
     useState<IsConfirmationMessageVisible>(false);
 
   const handleSubmitTimerStart = () => {
-    if (
-      registrationData.email &&
-      registrationData.password &&
-      registrationData.phoneNumber
-    ) {
+    if (registrationData.email && registrationData.password && registrationData.phoneNumber) {
       setIsTimerActive(true);
       setIsConfirmationMessageVisible(true);
     } else {
@@ -104,33 +103,22 @@ export const UserDetailsForm: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (
-      registrationData.email ||
-      registrationData.password ||
-      registrationData.phoneNumber
-    ) {
+    if (registrationData.email || registrationData.password || registrationData.phoneNumber) {
       localStorage.setItem('registration', JSON.stringify(registrationData));
     }
   }, [registrationData]);
 
-  const handleRegistrationDataChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      const { name, value } = event.target;
-      setRegistrationData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
-    },
-    []
-  );
+  const handleRegistrationDataChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setRegistrationData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  }, []);
 
   const handleSubmitForm = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (
-      !registrationData.email ||
-      !registrationData.password ||
-      !registrationData.phoneNumber
-    ) {
+    if (!registrationData.email || !registrationData.password || !registrationData.phoneNumber) {
       toast.error('Please fill in all fields!');
       return;
     }
@@ -139,7 +127,10 @@ export const UserDetailsForm: FC = () => {
   };
 
   return (
-    <form className={styles['stepForm']} onSubmit={handleSubmitForm}>
+    <form
+      className={styles['stepForm']}
+      onSubmit={handleSubmitForm}
+    >
       <Container className={styles['stepFormMain']}>
         <UserDetailsFields
           registrationData={registrationData}
@@ -147,6 +138,7 @@ export const UserDetailsForm: FC = () => {
           handleSubmitConfirmationData={handleSubmitTimerStart}
           isSubmitting={isSubmitting}
         />
+
         {isConfirmationMessageVisible && (
           <UserDetailsMessage
             userEmail={registrationData.email}
@@ -157,6 +149,7 @@ export const UserDetailsForm: FC = () => {
           />
         )}
       </Container>
+
       <SignInNav
         currentStep={currentStep}
         isNextButtonDisabled={isNextButtonDisabled || !isSmsCompleted}

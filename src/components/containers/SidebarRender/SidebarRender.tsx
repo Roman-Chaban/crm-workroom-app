@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 
-import { HomeClient } from '../HomeClient/HomeClient';
+import { HomeClient } from "../HomeClient/HomeClient";
 
-import { NavPaths } from '@/enums/navPaths';
+import { NavPaths } from "@/enums/navPaths";
 
 export const SidebarRender = () => {
   const pathname = usePathname();

@@ -86,7 +86,7 @@ h6 {
   font-weight: 400;
 }
 
-input[type='search' i]:enabled:read-write:-webkit-any(
+input[type="search" i]:enabled:read-write:-webkit-any(
     :focus,
     :hover
   )::-webkit-search-cancel-button {

@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import type { FC, ReactNode } from 'react';
+import type { FC, ReactNode } from "react";
 
-import { Header, Grid } from '@/components/index/index';
+import { Header, Grid } from "@/components/index/index";
 
-import { usePathname } from 'next/navigation';
-import { NavPaths } from '@/enums/navPaths';
+import { usePathname } from "next/navigation";
+import { NavPaths } from "@/enums/navPaths";
 
-import styles from './Main.module.scss';
+import styles from "./Main.module.scss";
 
 interface MainProps {
   children: ReactNode;
@@ -20,7 +20,7 @@ export const Main: FC<MainProps> = ({ children }) => {
   return (
     <Grid gap="50px">
       {!isHeaderRender && <Header />}
-      <main className={styles['main']}>{children}</main>
+      <main className={styles["main"]}>{children}</main>
     </Grid>
   );
 };

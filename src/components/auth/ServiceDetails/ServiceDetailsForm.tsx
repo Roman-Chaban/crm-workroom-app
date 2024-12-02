@@ -1,31 +1,26 @@
-import { ChangeEvent, FormEvent, FC } from 'react';
+import { ChangeEvent, FormEvent, FC } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { useAppSelector } from "@/hooks/useAppSelector";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
 
-import { useMutation } from '@tanstack/react-query';
-import { useAppSelector } from '@/hooks/useAppSelector';
-import { useAppDispatch } from '@/hooks/useAppDispatch';
+import Select, { SingleValue } from "react-select";
+import { Input, SignInNav } from "@/components/index";
+import customStyles from "@/components/ui/Select/selectStyles";
 
-import Select, { SingleValue } from 'react-select';
-import { Input, SignInNav } from '@/components/index';
-import customStyles from '@/components/ui/Select/selectStyles';
+import { ServicesOption } from "@/interfaces/servicesSelect";
+import { serviceBusinessOptions } from "@/constants/service-business";
+import { ServiceDetailsFormButtons } from "./ServiceDetailsFormButtons";
+import { ServicesDetails } from "@/types/servicesDetails";
+import { getServicesDetails } from "@/api/servicesDetails";
 
-import { ServicesOption } from '@/interfaces/servicesSelect';
-
-import { serviceBusinessOptions } from '@/constants/service-business';
-
-import { ServiceDetailsFormButtons } from './ServiceDetailsFormButtons';
-
-import { ServicesDetails } from '@/types/servicesDetails';
-
-import { getServicesDetails } from '@/api/servicesDetails';
-
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 import {
   setCompanyName,
   setSelectedBusinessDirection,
-} from '@/store/slices/ServiceDetailsSlice';
+} from "@/store/slices/ServiceDetailsSlice";
 
-import styles from './ServiceDetails.module.scss';
+import styles from "./ServiceDetails.module.scss";
 
 interface ServiceDetailsFormProps {
   currentStep: number;
@@ -38,40 +33,40 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
   const { companyName, selectedTeamSize, selectedBusinessDirection } =
     useAppSelector((state) => state.serviceDetails);
 
-  const handleChangeCompanyName = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleCompanyNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setCompanyName(event.target.value));
   };
 
-  const handleChangeBusinessDescriptionOption = (
-    newValue: SingleValue<ServicesOption>
+  const handleBusinessDirectionChange = (
+    selectedOption: SingleValue<ServicesOption>
   ) => {
-    if (newValue) {
-      dispatch(setSelectedBusinessDirection(newValue));
+    if (selectedOption) {
+      dispatch(setSelectedBusinessDirection(selectedOption));
     }
   };
 
-  const serviceDetailsMutation = useMutation({
+  const submitServiceDetailsMutation = useMutation({
     mutationFn: getServicesDetails,
     onSuccess: () => {
-      toast.success('Service details successfully chosen');
+      toast.success("Service details successfully saved.");
     },
     onError: (error: Error) => {
-      toast.error(`Error fetching service details: ${error.message}`);
+      toast.error(`Failed to save service details: ${error.message}`);
     },
   });
 
-  const handleSubmitServiceDetailsForm = (
+  const handleServiceDetailsFormSubmit = (
     event: FormEvent<HTMLFormElement>
   ) => {
     event.preventDefault();
 
     if (!companyName || !selectedTeamSize || !selectedBusinessDirection) {
-      toast.error('Please select all the required options');
+      toast.error("Please fill in all the required fields.");
       return;
     }
 
     const existingServiceDetails = JSON.parse(
-      localStorage.getItem('service-details') || '{}'
+      localStorage.getItem("service-details") || "{}"
     );
 
     const updatedServiceDetails = {
@@ -83,69 +78,74 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
 
     try {
       localStorage.setItem(
-        'service-details',
+        "service-details",
         JSON.stringify(updatedServiceDetails)
       );
-      toast.success('Service details saved successfully');
+      toast.success("Service details saved successfully.");
     } catch (error) {
-      console.error('Error saving to localStorage:', error);
-      toast.error('Error saving service details');
+      console.error("Failed to save service details to localStorage:", error);
+      toast.error("An error occurred while saving.");
     }
 
     const serviceDetails: ServicesDetails = {
-      usagePurpose: existingServiceDetails.usagePurpose || '',
-      personBestDescriptor: existingServiceDetails.personBestDescriptor || '',
+      usagePurpose: existingServiceDetails.usagePurpose || "",
+      personBestDescriptor: existingServiceDetails.personBestDescriptor || "",
       companyName,
       businessDirection: selectedBusinessDirection.value,
       teamPeopleRange: selectedTeamSize,
     };
 
-    serviceDetailsMutation.mutate(serviceDetails);
+    submitServiceDetailsMutation.mutate(serviceDetails);
   };
 
-  const isNextButtonDisabled =
+  const isNextStepDisabled =
     !companyName || !selectedTeamSize || !selectedBusinessDirection;
 
   return (
     <form
-      className={styles['serviceDetailsForm']}
-      onSubmit={handleSubmitServiceDetailsForm}
+      className={styles["serviceDetailsForm"]}
+      onSubmit={handleServiceDetailsFormSubmit}
     >
       <Input
-        htmlFor="Your Company’s Name"
-        label="Your Company’s Name"
-        name="Your Company’s Name"
-        id="Your Company’s Name"
-        placeholder="Company’s Name"
+        htmlFor="companyName"
+        label="Company Name"
+        name="companyName"
+        id="companyName"
+        placeholder="Enter your company's name"
         type="text"
         classNames={{
-          input: styles['serviceDetailsInput'],
-          container: styles['serviceDetailsInputContainer'],
-          label: styles['serviceDetailsLabel'],
+          input: styles["serviceDetailsInput"],
+          container: styles["serviceDetailsInputContainer"],
+          label: styles["serviceDetailsLabel"],
         }}
         value={companyName}
-        onChange={handleChangeCompanyName}
+        onChange={handleCompanyNameChange}
       />
-      <label className={styles['businessDirectionLabel']}>
+
+      <label className={styles["businessDirectionLabel"]}>
         Business Direction
         <Select
           styles={customStyles}
           options={serviceBusinessOptions}
           value={selectedBusinessDirection}
-          onChange={handleChangeBusinessDescriptionOption}
+          onChange={handleBusinessDirectionChange}
         />
       </label>
+
       <ServiceDetailsFormButtons selectedTeamSize={selectedTeamSize} />
+
       <SignInNav
         currentStep={currentStep}
-        isNextButtonDisabled={isNextButtonDisabled}
+        isNextButtonDisabled={isNextStepDisabled}
         classNames={{
-          container: styles['multiStepsFooter'],
-          nextBtn: styles['multiStepsNextButton'],
-          prevBtn: styles['multiStepsPreviousButton'],
+          container: styles["multiStepsFooter"],
+          nextBtn: styles["multiStepsNextButton"],
+          prevBtn: styles["multiStepsPreviousButton"],
         }}
       />
-      <button type="submit">Save Changes</button>
+      <button type="submit" className={styles["saveButton"]}>
+        Save Changes
+      </button>
     </form>
   );
 };

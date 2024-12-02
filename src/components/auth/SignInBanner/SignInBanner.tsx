@@ -17,11 +17,12 @@ export const SignInBanner: FC = () => {
             priority
             className={styles['signInBannerLogoIcon']}
           />
+
           <h3 className={styles['signInBannerTitle']}>Workroom</h3>
         </div>
-        <p className={styles['signInBannerSubtitle']}>
-          Your place to work Plan. Create. Control.
-        </p>
+
+        <p className={styles['signInBannerSubtitle']}>Your place to work Plan. Create. Control.</p>
+
         <Image
           src={'/images/auth/signIn-banner.svg'}
           alt="Illustration Image"

@@ -1,23 +1,23 @@
-'use client';
+"use client";
 
-import { ChangeEvent, ForwardedRef, forwardRef, useState } from 'react';
+import { ChangeEvent, ForwardedRef, forwardRef, useState } from "react";
 
-import { SingleValue } from 'react-select';
+import { SingleValue } from "react-select";
 
 import {
   HomeModalHeader,
   HomeModalIllustration,
   HomeModalFieldsForm,
   Container,
-} from '@/components/index';
+} from "@/components/index";
 
-import { Option, SelectedValue } from '@/interfaces/select';
+import { Option, SelectedValue } from "@/interfaces/select";
 
-import { AreaValue } from '@/types/textarea';
+import { AreaValue } from "@/types/textarea";
 
-import { options } from '@/staticData/requestOptions';
+import { options } from "@/staticData/requestOptions";
 
-import styles from './HomeModal.module.scss';
+import styles from "./HomeModal.module.scss";
 
 interface HomeModalProps {
   onCloseModal: () => void;
@@ -26,9 +26,9 @@ interface HomeModalProps {
 export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
   ({ onCloseModal }, ref: ForwardedRef<HTMLDivElement>) => {
     const [selectedValue, setSelectedValue] = useState<SelectedValue>(
-      options[0].label
+      options[0].label,
     );
-    const [areaDescription, setAreaDescription] = useState<AreaValue>('');
+    const [areaDescription, setAreaDescription] = useState<AreaValue>("");
 
     const handleSelectChange = (selectValue: SingleValue<Option>) => {
       if (selectValue) {
@@ -37,14 +37,14 @@ export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
     };
 
     const handleChangeAreaDescription = (
-      event: ChangeEvent<HTMLTextAreaElement>
+      event: ChangeEvent<HTMLTextAreaElement>,
     ) => {
       setAreaDescription(event.target.value);
     };
 
     return (
-      <div className={styles['modal']}>
-        <Container className={styles['modalContainer']} ref={ref}>
+      <div className={styles["modal"]}>
+        <Container className={styles["modalContainer"]} ref={ref}>
           <HomeModalHeader onCloseModal={onCloseModal} />
           <HomeModalIllustration />
           <HomeModalFieldsForm
@@ -56,7 +56,7 @@ export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
         </Container>
       </div>
     );
-  }
+  },
 );
 
-HomeModal.displayName = 'HomeModal';
+HomeModal.displayName = "HomeModal";

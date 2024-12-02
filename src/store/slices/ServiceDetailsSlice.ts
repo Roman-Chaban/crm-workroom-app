@@ -1,5 +1,5 @@
-import { ServicesOption } from '@/interfaces/servicesSelect';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ServicesOption } from "@/interfaces/servicesSelect";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface ServiceDetailsState {
   companyName: string;
@@ -8,13 +8,13 @@ interface ServiceDetailsState {
 }
 
 const initialState: ServiceDetailsState = {
-  companyName: '',
-  selectedTeamSize: '',
-  selectedBusinessDirection: { value: '', label: '' },
+  companyName: "",
+  selectedTeamSize: "",
+  selectedBusinessDirection: { value: "", label: "" },
 };
 
 const serviceDetailsSlice = createSlice({
-  name: 'serviceDetails',
+  name: "serviceDetails",
   initialState,
   reducers: {
     setCompanyName: (state, action: PayloadAction<string>) => {
@@ -25,7 +25,7 @@ const serviceDetailsSlice = createSlice({
     },
     setSelectedBusinessDirection: (
       state,
-      action: PayloadAction<ServicesOption>
+      action: PayloadAction<ServicesOption>,
     ) => {
       state.selectedBusinessDirection = action.payload;
     },

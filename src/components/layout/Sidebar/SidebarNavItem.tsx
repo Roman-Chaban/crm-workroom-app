@@ -1,13 +1,13 @@
-import type { FC } from 'react';
+import type { FC } from "react";
 
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
-import { SidebarNavListItem } from '@/types/sidebarNav';
+import { SidebarNavListItem } from "@/types/sidebarNav";
 
-import classNames from 'classnames';
+import classNames from "classnames";
 
-import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
+import styles from "@/components/layout/Sidebar/Sidebar.module.scss";
 
 interface SidebarNavItemProps {
   item: SidebarNavListItem;
@@ -17,8 +17,8 @@ interface SidebarNavItemProps {
 export const SidebarNavItem: FC<SidebarNavItemProps> = ({ item, isActive }) => {
   return (
     <li
-      className={classNames(styles['sidebarNavListItem'], {
-        [styles['sidebarNavListItemActive']]: isActive,
+      className={classNames(styles["sidebarNavListItem"], {
+        [styles["sidebarNavListItemActive"]]: isActive,
       })}
     >
       <Image
@@ -28,12 +28,12 @@ export const SidebarNavItem: FC<SidebarNavItemProps> = ({ item, isActive }) => {
         width={24}
         height={24}
         priority
-        className={styles['sidebarNavListItemIcon']}
+        className={styles["sidebarNavListItemIcon"]}
       />
       <Link
         href={item.href}
-        className={classNames(styles['sidebarNavListItemLink'], {
-          [styles['activeColor']]: isActive,
+        className={classNames(styles["sidebarNavListItemLink"], {
+          [styles["activeColor"]]: isActive,
         })}
       >
         {item.label}

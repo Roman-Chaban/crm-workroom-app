@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'CRM Workroom | Projects',
-  icons: '/favicon/favicon.svg',
+  title: "CRM Workroom | Projects",
+  icons: "/favicon/favicon.svg",
 };
 
 export default function ProjectsPage() {

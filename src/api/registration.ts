@@ -13,8 +13,8 @@ const apiClient = axios.create({
 const apiRequest = async <T>(
   method: REQUESTS_METHODS,
   endpoint: string,
-  data: any = null,
-  headers: AxiosRequestConfig['headers'] = {}
+  data: unknown = null,
+  headers: AxiosRequestConfig['headers'] = {},
 ): Promise<T> => {
   try {
     const config: AxiosRequestConfig = {
@@ -43,11 +43,11 @@ const apiRequest = async <T>(
 };
 
 export const registerUser = async (
-  userData: RegistrationUserData
+  userData: RegistrationUserData,
 ): Promise<RegistrationUserData> => {
   return apiRequest<RegistrationUserData>(
     REQUESTS_METHODS.POST,
     API_ENDPOINTS.REGISTRATION,
-    userData
+    userData,
   );
 };

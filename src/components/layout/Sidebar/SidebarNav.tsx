@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import type { FC } from 'react';
+import type { FC } from "react";
 
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 
-import { sidebarNav } from '@/staticData/sidebarNav';
+import { sidebarNav } from "@/staticData/sidebarNav";
 
-import { SidebarNavItem } from '@/components/index/index';
+import { SidebarNavItem } from "@/components/index/index";
 
-import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
+import styles from "@/components/layout/Sidebar/Sidebar.module.scss";
 
 export const SidebarNav: FC = () => {
   const pathname = usePathname();
 
   return (
-    <nav className={styles['sidebarNav']}>
-      <ul className={styles['sidebarNavList']}>
+    <nav className={styles["sidebarNav"]}>
+      <ul className={styles["sidebarNavList"]}>
         {sidebarNav.map((item) => {
           const isActive = pathname === item.href;
           return (

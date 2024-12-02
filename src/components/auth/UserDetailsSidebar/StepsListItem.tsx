@@ -1,10 +1,10 @@
-import type { FC } from 'react';
+import type { FC } from "react";
 
-import Image from 'next/image';
+import Image from "next/image";
 
-import { StepItem } from '@/types/stepItem';
+import { StepItem } from "@/types/stepItem";
 
-import styles from './UserDetailsSidebar.module.scss';
+import styles from "./UserDetailsSidebar.module.scss";
 
 interface StepsListItemProps {
   step: StepItem;
@@ -19,22 +19,22 @@ export const StepsListItem: FC<StepsListItemProps> = ({
   const isCompleted = currentStep > step.id;
   return (
     <li
-      className={`${styles['stepsListItem']} ${
-        isCompleted ? styles['activeText'] : ''
+      className={`${styles["stepsListItem"]} ${
+        isCompleted ? styles["activeText"] : ""
       } `}
     >
       <span
-        className={`${styles['stepsListItemCircle']} ${
-          isActive ? styles['active'] : ''
-        } ${isCompleted ? styles['completed'] : ''}`}
+        className={`${styles["stepsListItemCircle"]} ${
+          isActive ? styles["active"] : ""
+        } ${isCompleted ? styles["completed"] : ""}`}
       >
         {isCompleted && (
           <Image
-            src={'/icons/sidebar-icons/done.svg'}
+            src={"/icons/sidebar-icons/done.svg"}
             alt="Done Icon"
             width={24}
             height={24}
-            className={styles['doneIcon']}
+            className={styles["doneIcon"]}
           />
         )}
       </span>

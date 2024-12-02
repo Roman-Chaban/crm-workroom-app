@@ -12,23 +12,18 @@ const apiClient = axios.create({
 });
 
 export const getServicesDetails = async (
-  serviceDetails: ServicesDetails
+  serviceDetails: ServicesDetails,
 ): Promise<ServicesDetails> => {
   try {
     const response = await apiClient.post<ServicesDetails>(
       API_ENDPOINTS.SERVICE_DETAILS,
-      serviceDetails
+      serviceDetails,
     );
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      console.error(
-        'Error fetching service details:',
-        error.response?.data || error.message
-      );
-      throw new Error(
-        error.response?.data?.message || 'Failed to fetch service details.'
-      );
+      console.error('Error fetching service details:', error.response?.data || error.message);
+      throw new Error(error.response?.data?.message || 'Failed to fetch service details.');
     } else {
       throw new Error('An unexpected error occurred.');
     }

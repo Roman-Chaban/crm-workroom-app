@@ -1,10 +1,10 @@
-import type { FC } from 'react';
+import type { FC } from "react";
 
-import Image from 'next/image';
+import Image from "next/image";
 
-import { Button } from '@/components/index/index';
+import { Button } from "@/components/index/index";
 
-import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
+import styles from "@/components/layout/Sidebar/Sidebar.module.scss";
 
 interface SidebarLogoutProps {
   onOpenModal: () => void;
@@ -12,10 +12,10 @@ interface SidebarLogoutProps {
 
 export const SidebarLogout: FC<SidebarLogoutProps> = ({ onOpenModal }) => {
   return (
-    <div className={styles['sidebarLogout']}>
-      <div className={styles['sidebarLogoutBlock']}>
+    <div className={styles["sidebarLogout"]}>
+      <div className={styles["sidebarLogoutBlock"]}>
         <Image
-          src={'/images/sidebar/support.svg'}
+          src={"/images/sidebar/support.svg"}
           alt="Support Image"
           width={168}
           height={214}
@@ -23,25 +23,25 @@ export const SidebarLogout: FC<SidebarLogoutProps> = ({ onOpenModal }) => {
         />
         <Button
           type="button"
-          className={styles['sidebarSupportButton']}
+          className={styles["sidebarSupportButton"]}
           onClick={onOpenModal}
         >
           <Image
-            src={'/icons/sidebar-icons/chat-icon.svg'}
+            src={"/icons/sidebar-icons/chat-icon.svg"}
             alt="Support Image"
             width={24}
             height={24}
-          />{' '}
+          />{" "}
           Support
         </Button>
       </div>
-      <Button type="button" className={styles['sidebarLogoutButton']}>
+      <Button type="button" className={styles["sidebarLogoutButton"]}>
         <Image
-          src={'/icons/sidebar-icons/logout.svg'}
+          src={"/icons/sidebar-icons/logout.svg"}
           alt="Logout Icon"
           width={24}
           height={24}
-        />{' '}
+        />{" "}
         Logout
       </Button>
     </div>

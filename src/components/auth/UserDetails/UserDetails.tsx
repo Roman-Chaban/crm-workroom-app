@@ -1,31 +1,14 @@
 'use client';
 
-import {
-  ChangeEvent,
-  FormEvent,
-  useCallback,
-  useEffect,
-  useState,
-  type FC,
-} from 'react';
+import { type FC } from 'react';
 
-import { useMutation } from '@tanstack/react-query';
+import { useAppSelector } from '@/hooks/useAppSelector';
 
-import {
-  Container,
-  Section,
-  SignInHeader,
-  UserDetailsForm,
-} from '@/components/index';
+import { Container, Section, SignInHeader, UserDetailsForm } from '@/components/index';
 
-import { toast, Toaster } from 'react-hot-toast';
-
-import { RegistrationUserData } from '@/types/registration';
-
-import { registerUser } from '@/api/registration';
+import { Toaster } from 'react-hot-toast';
 
 import styles from './UserDetails.module.scss';
-import { useAppSelector } from '@/hooks/useAppSelector';
 
 export const UserDetails: FC = () => {
   const currentStep = useAppSelector((state) => state.steps.currentStep);
@@ -43,6 +26,7 @@ export const UserDetails: FC = () => {
               stepsFigures: styles['stepFormHeaderStepsFigures'],
             }}
           />
+
           <UserDetailsForm />
         </Container>
       </Section>

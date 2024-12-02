@@ -1,4 +1,4 @@
-import { ChangeEventHandler, CSSProperties, ReactNode, RefObject } from 'react';
+import { ChangeEventHandler, CSSProperties, ReactNode, RefObject } from "react";
 
 export type TextareaType = {
   className: string;

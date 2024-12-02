@@ -1,7 +1,6 @@
-@use '../../../styles/abstracts/mixins/mixins' as *;
-@use '../../../styles/base/colors/colors' as color;
-@use '../../../styles/base/globals/globals' as size;
-
+@use "../../../styles/abstracts/mixins/mixins" as *;
+@use "../../../styles/base/colors/colors" as color;
+@use "../../../styles/base/globals/globals" as size;
 
 .nearestEvents {
   @include whiteContainer(339px);
@@ -10,6 +9,4 @@
   &Container {
     @include containerPadding;
   }
-
-
 }

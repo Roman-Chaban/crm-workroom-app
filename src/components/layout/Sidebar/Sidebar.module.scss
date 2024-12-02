@@ -1,6 +1,6 @@
-@use '../../../styles/abstracts/mixins/mixins' as *;
-@use '../../../styles/base/colors/colors' as color;
-@use '../../../styles/base/globals/globals' as size;
+@use "../../../styles/abstracts/mixins/mixins" as *;
+@use "../../../styles/base/colors/colors" as color;
+@use "../../../styles/base/globals/globals" as size;
 
 .sidebar {
   width: 100%;
@@ -86,7 +86,7 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       background: color.$background-support-primary;
       border-radius: 2px;
       width: 4px;

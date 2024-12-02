@@ -1,15 +1,15 @@
-import type { FC } from 'react';
+import type { FC } from "react";
 
-import { InputProps } from '@/types/input';
+import { InputProps } from "@/types/input";
 
 export const Input: FC<InputProps> = ({
-  htmlFor = '',
-  type = 'text',
+  htmlFor = "",
+  type = "text",
   label,
-  id = '',
-  placeholder = '',
+  id = "",
+  placeholder = "",
   style,
-  name = '',
+  name = "",
   disabled = false,
   autoFocus = false,
   maxLength,
@@ -17,7 +17,7 @@ export const Input: FC<InputProps> = ({
   classNames,
   value,
   onChange,
-  icon = '',
+  icon = "",
   checked,
   isRequired = true,
   onIconClick,

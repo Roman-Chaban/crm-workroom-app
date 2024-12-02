@@ -1,6 +1,6 @@
-@use '../../../styles/abstracts/mixins/mixins' as *;
-@use '../../../styles/base/colors/colors' as color;
-@use '../../../styles/base/globals/globals' as size;
+@use "../../../styles/abstracts/mixins/mixins" as *;
+@use "../../../styles/base/colors/colors" as color;
+@use "../../../styles/base/globals/globals" as size;
 
 .header {
   width: 100%;
@@ -111,7 +111,7 @@
     top: 0;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: -16px;
       left: 50%;

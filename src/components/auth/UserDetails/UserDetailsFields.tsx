@@ -1,35 +1,36 @@
-'use client';
+"use client";
 
-import { useMemo, useState, type FC } from 'react';
+import { useMemo, useState, type FC } from "react";
 
-import { EventType } from '@/types/signIn';
+import { EventType } from "@/types/signIn";
 
-import { Button, Container, Input } from '@/components/index';
+import { Button, Container, Input } from "@/components/index";
 
 import {
   IsPasswordVisible,
   PhoneNumber,
   RegistrationUserData,
   SelectedCountryCode,
-} from '@/types/registration';
+} from "@/types/registration";
 
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
-import SendIcon from '@mui/icons-material/Send';
+import SendIcon from "@mui/icons-material/Send";
 
-import { colors } from '@/constants/colors';
+import { colors } from "@/constants/colors";
 
-import { CountryOption, countryOptions } from '@/staticData/countryOptions';
+import { CountryOption, countryOptions } from "@/staticData/countryOptions";
 
-import dynamic from 'next/dynamic';
-import countrySelectStyles from '@/constants/country-select';
+import dynamic from "next/dynamic";
 
-import styles from './UserDetails.module.scss';
+import countrySelectStyles from "@/constants/country-select";
 
-const Select = dynamic(() => import('react-select'), {
+import styles from "./UserDetails.module.scss";
+
+const Select = dynamic(() => import("react-select"), {
   ssr: false,
-}) as typeof import('react-select').default<CountryOption, false>;
+}) as typeof import("react-select").default<CountryOption, false>;
 
 interface UserDetailsFieldsProps {
   registrationData: RegistrationUserData;
@@ -44,9 +45,11 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
   handleSubmitConfirmationData,
   isSubmitting,
 }) => {
-  const [phoneNumber, setPhoneNumber] = useState<PhoneNumber>('');
+  const [phoneNumber, setPhoneNumber] = useState<PhoneNumber>("");
+
   const [isPasswordVisible, setIsPasswordVisible] =
     useState<IsPasswordVisible>(false);
+
   const [selectedCountryCode, setSelectedCountryCode] =
     useState<SelectedCountryCode>(countryOptions[0]);
 
@@ -57,13 +60,13 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
     if (!phoneNumber.startsWith(countryCode)) {
       setPhoneNumber(`${countryCode}`);
       handleInputChange({
-        target: { name: 'phoneNumber', value: `${countryCode}` },
+        target: { name: "phoneNumber", value: `${countryCode}` },
       } as EventType);
     }
   };
 
   const handlePhoneNumberInputChange = (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const inputValue = event.target.value;
     const countryCode = `+${selectedCountryCode.value}`;
@@ -71,11 +74,11 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
     if (inputValue.startsWith(countryCode)) {
       setPhoneNumber(inputValue);
     } else {
-      setPhoneNumber(`${countryCode}${inputValue.replace(/^\+\d+/, '')}`);
+      setPhoneNumber(`${countryCode}${inputValue.replace(/^\+\d+/, "")}`);
     }
 
     handleInputChange({
-      target: { name: 'phoneNumber', value: inputValue },
+      target: { name: "phoneNumber", value: inputValue },
     } as EventType);
   };
 
@@ -98,21 +101,21 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
 
   const changeVisibleIcon = isPasswordVisible ? (
     <VisibilityIcon
-      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+      style={{ color: colors.colorGrayNeutral, cursor: "pointer" }}
     />
   ) : (
     <VisibilityOffIcon
-      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+      style={{ color: colors.colorGrayNeutral, cursor: "pointer" }}
     />
   );
 
   return (
-    <Container className={styles['containerFields']}>
+    <Container className={styles["containerFields"]}>
       <Input
         classNames={{
-          input: styles['signInFormBlockInput'],
-          container: styles['signInFormBlockInputContainer'],
-          label: styles['signInFormBlockLabel'],
+          input: styles["signInFormBlockInput"],
+          container: styles["signInFormBlockInputContainer"],
+          label: styles["signInFormBlockLabel"],
         }}
         htmlFor="email"
         id="email"
@@ -124,18 +127,19 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
         onChange={handleInputChange}
         isRequired
       />
+
       <Input
         classNames={{
-          input: styles['signInFormBlockInput'],
-          container: styles['signInFormBlockInputContainer'],
-          label: styles['signInFormBlockLabel'],
-          inputIcon: styles['signInFormBlockViewIcon'],
+          input: styles["signInFormBlockInput"],
+          container: styles["signInFormBlockInputContainer"],
+          label: styles["signInFormBlockLabel"],
+          inputIcon: styles["signInFormBlockViewIcon"],
         }}
         htmlFor="password"
         id="password"
         label="Password"
         name="password"
-        type={isPasswordVisible ? 'text' : 'password'}
+        type={isPasswordVisible ? "text" : "password"}
         placeholder="Create a secure password"
         value={registrationData.password}
         onChange={handleInputChange}
@@ -143,24 +147,26 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
         isRequired
         icon={changeVisibleIcon}
       />
-      <div className={styles['phoneInputContainer']}>
+
+      <div className={styles["phoneInputContainer"]}>
         <Select
           options={countryOptions}
           value={selectedCountryCode}
           onChange={handleCountryChange}
           inputId="country-code-select"
           instanceId="country-code-instance"
-          className={styles['countryCodeSelect']}
+          className={styles["countryCodeSelect"]}
           placeholder="Select country code"
           getOptionLabel={(event: CountryOption) => event.label}
           getOptionValue={(event: CountryOption) => event.value}
           styles={countrySelectStyles}
         />
+
         <Input
           classNames={{
-            input: `${styles['signInFormBlockInput']} ${styles['signInFormBlockPhoneInputContainer']} `,
-            container: `${styles['signInFormBlockInputContainer']} ${styles['signInFormBlockPhoneInputContainer']}`,
-            label: styles['signInFormBlockLabel'],
+            input: `${styles["signInFormBlockInput"]} ${styles["signInFormBlockPhoneInputContainer"]} `,
+            container: `${styles["signInFormBlockInputContainer"]} ${styles["signInFormBlockPhoneInputContainer"]}`,
+            label: styles["signInFormBlockLabel"],
           }}
           htmlFor="phoneNumber"
           id="phoneNumber"
@@ -173,14 +179,15 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
           isRequired
         />
       </div>
+
       <Button
         type="submit"
         onClick={handleSubmitConfirmationData}
-        className={styles['sendCodeButton']}
+        className={styles["sendCodeButton"]}
         disabled={isNextButtonDisabled}
       >
-        {isSubmitting ? 'Sending...' : 'Send code'}
-        <SendIcon fontSize="medium" className={styles['sendIcon']} />
+        {isSubmitting ? "Sending..." : "Send code"}
+        <SendIcon fontSize="medium" className={styles["sendIcon"]} />
       </Button>
     </Container>
   );
