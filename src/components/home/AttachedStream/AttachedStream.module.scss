@@ -1,0 +1,21 @@
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/globals/globals' as size;
+@use '../../../styles/base/colors/colors' as color;
+
+.attachedStream {
+  width: 100%;
+  &Container {
+    @include updatedContainer;
+    min-height: 54px;
+  }
+
+  &Icon {
+    max-width: 24px;
+    max-height: 24px;
+    object-fit: cover;
+  }
+
+  &Title {
+    @include updatedTitle;
+  }
+}

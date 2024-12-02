@@ -1,0 +1,20 @@
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/globals/globals' as size;
+@use '../../../styles/base/colors/colors' as color;
+
+.updatedStream {
+  width: 100%;
+  &Container {
+    @include updatedContainer;
+  }
+
+  &Icon {
+    max-width: 24px;
+    max-height: 24px;
+    object-fit: cover;
+  }
+
+  &Title {
+    @include updatedTitle;
+  }
+}

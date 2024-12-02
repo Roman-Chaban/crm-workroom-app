@@ -8,7 +8,10 @@ export const Workload: FC = () => {
   return (
     <div className={styles['workload']}>
       <div className={styles['workloadContainer']}>
-        <NavView props={{ link: 'View all', title: 'Workload' }} />
+        <NavView
+          link={'View all'}
+          title={'Workload'}
+        />
       </div>
     </div>
   );

@@ -8,7 +8,10 @@ export const NearestEvents: FC = () => {
   return (
     <div className={styles['nearestEvents']}>
       <div className={styles['nearestEventsContainer']}>
-        <NavView props={{ link: 'View all', title: 'Nearest Events' }} />
+        <NavView
+          link={'View all'}
+          title={'Nearest Events'}
+        />
       </div>
     </div>
   );

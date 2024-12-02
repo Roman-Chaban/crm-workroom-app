@@ -259,3 +259,22 @@
   background: color.$color-white-primary;
   box-shadow: color.$shadow-box-light;
 }
+
+@mixin updatedContainer {
+  width: 100%;
+  max-width: 291px;
+  min-height: 78px;
+  border-radius: 14px;
+  background: color.$background-main-light;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@mixin updatedTitle {
+  width: 100%;
+  max-width: 200px;
+  line-height: 150%;
+  color: color.$color-black-deep;
+}
