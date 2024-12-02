@@ -1,13 +1,13 @@
-import axios from "axios";
+import axios from 'axios';
 
-import { LoginData } from "@/types/login";
+import { LoginData } from '@/types/login';
 
-import { API_ENDPOINTS } from "@/enums/apiEndpoints";
-import { REQUESTS_METHODS } from "@/enums/requestsMethods";
+import { API_ENDPOINTS } from '@/enums/apiEndpoints';
+import { REQUESTS_METHODS } from '@/enums/requestsMethods';
 
 const apiClient = axios.create({
-  baseURL: "https://workflow-crm-server-staging.up.railway.app/api/auth",
-  headers: { "Content-Type": "application/json" },
+  baseURL: 'https://workflow-crm-server-staging.up.railway.app/api/auth',
+  headers: { 'Content-Type': 'application/json' },
   method: REQUESTS_METHODS.POST,
 });
 
@@ -26,10 +26,9 @@ export const LoginUser = async (
     return { email, id, isAccountVerified, refreshToken };
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      const errorMessage =
-        error.response?.data?.message || "Registration failed";
+      const errorMessage = error.response?.data?.message || 'Registration failed';
       throw new Error(errorMessage);
     }
-    throw new Error("Unknown error occurred during registration");
+    throw new Error('Unknown error occurred during registration');
   }
 };

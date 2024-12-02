@@ -1,16 +1,18 @@
-import type { Metadata } from "next";
+import React from 'react';
 
-import { Section, SignInBanner, SignInForm } from "@/components/index/index";
+import type { Metadata } from 'next';
 
-import styles from "@/styles/pages/signIn.module.scss";
+import { Section, SignInBanner, SignInForm } from '@/components/index/index';
+
+import styles from '@/styles/pages/signIn.module.scss';
 
 export const metadata: Metadata = {
-  title: "CRM Workroom | Sign In",
+  title: 'CRM Workroom | Sign In',
 };
 
 export default function SignInPage() {
   return (
-    <Section className={styles["signInContainer"]}>
+    <Section className={styles['signInContainer']}>
       <SignInBanner />
       <SignInForm />
     </Section>

@@ -1,45 +1,39 @@
-import { ChangeEvent, FormEvent, FC } from "react";
-import { useMutation } from "@tanstack/react-query";
-import { useAppSelector } from "@/hooks/useAppSelector";
-import { useAppDispatch } from "@/hooks/useAppDispatch";
+import React, { ChangeEvent, FormEvent, FC } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import { useAppSelector } from '@/hooks/useAppSelector';
+import { useAppDispatch } from '@/hooks/useAppDispatch';
 
-import Select, { SingleValue } from "react-select";
-import { Input, SignInNav } from "@/components/index";
-import customStyles from "@/components/ui/Select/selectStyles";
+import Select, { SingleValue } from 'react-select';
+import { Input, SignInNav } from '@/components/index';
+import customStyles from '@/components/ui/Select/selectStyles';
 
-import { ServicesOption } from "@/interfaces/servicesSelect";
-import { serviceBusinessOptions } from "@/constants/service-business";
-import { ServiceDetailsFormButtons } from "./ServiceDetailsFormButtons";
-import { ServicesDetails } from "@/types/servicesDetails";
-import { getServicesDetails } from "@/api/servicesDetails";
+import { ServicesOption } from '@/interfaces/servicesSelect';
+import { serviceBusinessOptions } from '@/constants/service-business';
+import { ServiceDetailsFormButtons } from './ServiceDetailsFormButtons';
+import { ServicesDetails } from '@/types/servicesDetails';
+import { getServicesDetails } from '@/api/servicesDetails';
 
-import toast from "react-hot-toast";
+import toast from 'react-hot-toast';
 
-import {
-  setCompanyName,
-  setSelectedBusinessDirection,
-} from "@/store/slices/ServiceDetailsSlice";
+import { setCompanyName, setSelectedBusinessDirection } from '@/store/slices/ServiceDetailsSlice';
 
-import styles from "./ServiceDetails.module.scss";
+import styles from './ServiceDetails.module.scss';
 
 interface ServiceDetailsFormProps {
   currentStep: number;
 }
 
-export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
-  currentStep,
-}) => {
+export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({ currentStep }) => {
   const dispatch = useAppDispatch();
-  const { companyName, selectedTeamSize, selectedBusinessDirection } =
-    useAppSelector((state) => state.serviceDetails);
+  const { companyName, selectedTeamSize, selectedBusinessDirection } = useAppSelector(
+    (state) => state.serviceDetails,
+  );
 
   const handleCompanyNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setCompanyName(event.target.value));
   };
 
-  const handleBusinessDirectionChange = (
-    selectedOption: SingleValue<ServicesOption>
-  ) => {
+  const handleBusinessDirectionChange = (selectedOption: SingleValue<ServicesOption>) => {
     if (selectedOption) {
       dispatch(setSelectedBusinessDirection(selectedOption));
     }
@@ -48,26 +42,22 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
   const submitServiceDetailsMutation = useMutation({
     mutationFn: getServicesDetails,
     onSuccess: () => {
-      toast.success("Service details successfully saved.");
+      toast.success('Service details successfully saved.');
     },
     onError: (error: Error) => {
       toast.error(`Failed to save service details: ${error.message}`);
     },
   });
 
-  const handleServiceDetailsFormSubmit = (
-    event: FormEvent<HTMLFormElement>
-  ) => {
+  const handleServiceDetailsFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!companyName || !selectedTeamSize || !selectedBusinessDirection) {
-      toast.error("Please fill in all the required fields.");
+      toast.error('Please fill in all the required fields.');
       return;
     }
 
-    const existingServiceDetails = JSON.parse(
-      localStorage.getItem("service-details") || "{}"
-    );
+    const existingServiceDetails = JSON.parse(localStorage.getItem('service-details') || '{}');
 
     const updatedServiceDetails = {
       ...existingServiceDetails,
@@ -77,19 +67,16 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
     };
 
     try {
-      localStorage.setItem(
-        "service-details",
-        JSON.stringify(updatedServiceDetails)
-      );
-      toast.success("Service details saved successfully.");
+      localStorage.setItem('service-details', JSON.stringify(updatedServiceDetails));
+      toast.success('Service details saved successfully.');
     } catch (error) {
-      console.error("Failed to save service details to localStorage:", error);
-      toast.error("An error occurred while saving.");
+      console.error('Failed to save service details to localStorage:', error);
+      toast.error('An error occurred while saving.');
     }
 
     const serviceDetails: ServicesDetails = {
-      usagePurpose: existingServiceDetails.usagePurpose || "",
-      personBestDescriptor: existingServiceDetails.personBestDescriptor || "",
+      usagePurpose: existingServiceDetails.usagePurpose || '',
+      personBestDescriptor: existingServiceDetails.personBestDescriptor || '',
       companyName,
       businessDirection: selectedBusinessDirection.value,
       teamPeopleRange: selectedTeamSize,
@@ -98,12 +85,11 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
     submitServiceDetailsMutation.mutate(serviceDetails);
   };
 
-  const isNextStepDisabled =
-    !companyName || !selectedTeamSize || !selectedBusinessDirection;
+  const isNextStepDisabled = !companyName || !selectedTeamSize || !selectedBusinessDirection;
 
   return (
     <form
-      className={styles["serviceDetailsForm"]}
+      className={styles['serviceDetailsForm']}
       onSubmit={handleServiceDetailsFormSubmit}
     >
       <Input
@@ -114,15 +100,15 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
         placeholder="Enter your company's name"
         type="text"
         classNames={{
-          input: styles["serviceDetailsInput"],
-          container: styles["serviceDetailsInputContainer"],
-          label: styles["serviceDetailsLabel"],
+          input: styles['serviceDetailsInput'],
+          container: styles['serviceDetailsInputContainer'],
+          label: styles['serviceDetailsLabel'],
         }}
         value={companyName}
         onChange={handleCompanyNameChange}
       />
 
-      <label className={styles["businessDirectionLabel"]}>
+      <label className={styles['businessDirectionLabel']}>
         Business Direction
         <Select
           styles={customStyles}
@@ -138,12 +124,15 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
         currentStep={currentStep}
         isNextButtonDisabled={isNextStepDisabled}
         classNames={{
-          container: styles["multiStepsFooter"],
-          nextBtn: styles["multiStepsNextButton"],
-          prevBtn: styles["multiStepsPreviousButton"],
+          container: styles['multiStepsFooter'],
+          nextBtn: styles['multiStepsNextButton'],
+          prevBtn: styles['multiStepsPreviousButton'],
         }}
       />
-      <button type="submit" className={styles["saveButton"]}>
+      <button
+        type="submit"
+        className={styles['saveButton']}
+      >
         Save Changes
       </button>
     </form>

@@ -1,8 +1,8 @@
-import type { FC } from "react";
+import React, { type FC } from 'react';
 
-import { Option, Select as SelectProps } from "@/interfaces/select";
+import { Option, Select as SelectProps } from '@/interfaces/select';
 
-import styles from "./Select.module.scss";
+import styles from './Select.module.scss';
 
 export const Select: FC<SelectProps> = ({
   options,
@@ -14,21 +14,30 @@ export const Select: FC<SelectProps> = ({
   onChange,
 }) => {
   return (
-    <div className={styles["selectContainer"]}>
-      <label htmlFor={htmlFor} className={styles["selectLabel"]}>
+    <div className={styles['selectContainer']}>
+      <label
+        htmlFor={htmlFor}
+        className={styles['selectLabel']}
+      >
         {label}
       </label>
       <select
         name={name}
         id={id}
         onChange={onChange}
-        className={styles["select"]}
+        className={styles['select']}
       >
-        <option disabled className={styles["selectDefaultOption"]}>
+        <option
+          disabled
+          className={styles['selectDefaultOption']}
+        >
           {defaultValue}
         </option>
         {options.map((option: Option) => (
-          <option className={styles["selectOption"]} key={option.value}>
+          <option
+            className={styles['selectOption']}
+            key={option.value}
+          >
             {option.label}
           </option>
         ))}

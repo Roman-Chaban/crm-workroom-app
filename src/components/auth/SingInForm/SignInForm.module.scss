@@ -75,7 +75,9 @@
   &RememberCheckbox {
     @include checkboxInput(22px, 22px);
     position: relative;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
 
     &:checked {
       background-color: color.$color-white-primary;
@@ -92,7 +94,10 @@
         border-width: 0 2px 2px 0;
         display: block;
         border-radius: 0.5px;
-        transition: transform 0.3s ease, width 0.2s ease, height 0.2s ease;
+        transition:
+          transform 0.3s ease,
+          width 0.2s ease,
+          height 0.2s ease;
       }
     }
 
@@ -106,7 +111,10 @@
       transform: translate(-50%, -50%) rotate(0deg);
       border: solid transparent;
       border-width: 0 0 0 0;
-      transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+      transition:
+        transform 0.3s ease,
+        width 0.3s ease,
+        height 0.3s ease;
     }
   }
 

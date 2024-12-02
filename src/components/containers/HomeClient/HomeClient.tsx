@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useRef, useState, type FC } from "react";
+import React, { useRef, useState } from 'react';
 
-import { useClickOutside } from "@/hooks/useClickOutside";
-import { useBodyOverflow } from "@/hooks/useBodyOverflow";
+import { useClickOutside } from '@/hooks/useClickOutside';
+import { useBodyOverflow } from '@/hooks/useBodyOverflow';
 
-import { Sidebar, HomeModal } from "@/components/index";
+import { Sidebar, HomeModal } from '@/components/index';
 
 type IsOpenModal = boolean;
 type ModalRef = null;
@@ -28,7 +28,10 @@ export const HomeClient = () => {
     <>
       <Sidebar onOpenModal={handleToggleModal} />
       {isOpenModal && (
-        <HomeModal onCloseModal={handleToggleModal} ref={modalRef} />
+        <HomeModal
+          onCloseModal={handleToggleModal}
+          ref={modalRef}
+        />
       )}
     </>
   );

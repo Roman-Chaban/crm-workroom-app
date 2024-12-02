@@ -1,8 +1,8 @@
-import { FC } from "react";
+import React, { type FC } from 'react';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import styles from "./HomeModal.module.scss";
+import styles from './HomeModal.module.scss';
 
 export const HomeModalIllustration: FC = () => {
   return (
@@ -12,11 +12,10 @@ export const HomeModalIllustration: FC = () => {
         src="/images/modal/modal-illustration.svg"
         width={464}
         height={192}
-        className={styles["modalBannerImage"]}
+        className={styles['modalBannerImage']}
       />
-      <p className={styles["modalHeaderParagraph"]}>
-        Describe your question and our specialists will answer you within 24
-        hours.
+      <p className={styles['modalHeaderParagraph']}>
+        Describe your question and our specialists will answer you within 24 hours.
       </p>
     </>
   );

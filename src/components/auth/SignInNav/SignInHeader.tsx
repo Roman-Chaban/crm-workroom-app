@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import React, { type FC } from 'react';
 
 interface SignInHeaderProps {
   stepTitle: string;
@@ -10,11 +10,7 @@ interface SignInHeaderProps {
   };
 }
 
-export const SignInHeader: FC<SignInHeaderProps> = ({
-  stepTitle,
-  title,
-  classNames,
-}) => {
+export const SignInHeader: FC<SignInHeaderProps> = ({ stepTitle, title, classNames }) => {
   return (
     <div className={classNames?.header}>
       <h5 className={classNames?.stepsFigures}>{stepTitle}</h5>

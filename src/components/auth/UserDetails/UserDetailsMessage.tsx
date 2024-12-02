@@ -1,6 +1,6 @@
 'use client';
 
-import { type FC, useEffect, useState } from 'react';
+import React, { type FC, useEffect, useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 
 import Image from 'next/image';

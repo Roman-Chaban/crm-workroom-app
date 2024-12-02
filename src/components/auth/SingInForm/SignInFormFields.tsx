@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import { useState, type FC } from "react";
+import React, { useState, type FC } from 'react';
 
-import { Input } from "@/components/index";
+import { Input } from '@/components/index';
 
-import { EventType } from "@/types/signIn";
-import { IsPasswordVisible } from "@/types/registration";
+import { EventType } from '@/types/signIn';
+import { IsPasswordVisible } from '@/types/registration';
 
-import { colors } from "@/constants/colors";
+import { colors } from '@/constants/colors';
 
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
-import styles from "@/components/auth/SingInForm/SignInForm.module.scss";
+import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
 interface SignInFormFieldsProps {
   email: string;
@@ -25,30 +25,25 @@ export const SignInFormFields: FC<SignInFormFieldsProps> = ({
   password,
   handleInputChange,
 }) => {
-  const [isPasswordVisible, setIsPasswordVisible] =
-    useState<IsPasswordVisible>(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState<IsPasswordVisible>(false);
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevVisibleState) => !prevVisibleState);
   };
 
   const changeVisibleIcon = isPasswordVisible ? (
-    <VisibilityIcon
-      style={{ color: colors.colorGrayNeutral, cursor: "pointer" }}
-    />
+    <VisibilityIcon style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }} />
   ) : (
-    <VisibilityOffIcon
-      style={{ color: colors.colorGrayNeutral, cursor: "pointer" }}
-    />
+    <VisibilityOffIcon style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }} />
   );
 
   return (
     <>
       <Input
         classNames={{
-          input: styles["signInFormBlockInput"],
-          container: styles["signInFormBlockInputContainer"],
-          label: styles["signInFormBlockLabel"],
+          input: styles['signInFormBlockInput'],
+          container: styles['signInFormBlockInputContainer'],
+          label: styles['signInFormBlockLabel'],
         }}
         htmlFor="email"
         id="email"
@@ -62,16 +57,16 @@ export const SignInFormFields: FC<SignInFormFieldsProps> = ({
 
       <Input
         classNames={{
-          input: styles["signInFormBlockInput"],
-          container: styles["signInFormBlockInputContainer"],
-          label: styles["signInFormBlockLabel"],
-          inputIcon: styles["signInFormBlockViewIcon"],
+          input: styles['signInFormBlockInput'],
+          container: styles['signInFormBlockInputContainer'],
+          label: styles['signInFormBlockLabel'],
+          inputIcon: styles['signInFormBlockViewIcon'],
         }}
         htmlFor="password"
         id="password"
         label="Password"
         name="password"
-        type={isPasswordVisible ? "text" : "password"}
+        type={isPasswordVisible ? 'text' : 'password'}
         placeholder="Create a secure password"
         value={password}
         onChange={handleInputChange}

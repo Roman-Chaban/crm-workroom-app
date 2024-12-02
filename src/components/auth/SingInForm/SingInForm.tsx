@@ -1,36 +1,32 @@
-"use client";
+'use client';
 
-import { FormEvent, useState, type FC } from "react";
-import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
+import React, { FormEvent, useState, type FC } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import { useRouter } from 'next/navigation';
 
-import {
-  SignInFormRemember,
-  SignInFormSubmit,
-  SignInFormFields,
-} from "@/components/index/index";
+import { SignInFormRemember, SignInFormSubmit, SignInFormFields } from '@/components/index/index';
 
-import { EventType, Remember } from "@/types/signIn";
-import { IsSubmitting } from "@/types/registration";
+import { EventType, Remember } from '@/types/signIn';
+import { IsSubmitting } from '@/types/registration';
 
-import { LoginData } from "@/types/login";
-import { LoginUser } from "@/api/login";
+import { LoginData } from '@/types/login';
+import { LoginUser } from '@/api/login';
 
-import { NavPaths } from "@/enums/navPaths";
+import { NavPaths } from '@/enums/navPaths';
 
-import { toast, Toaster } from "react-hot-toast";
+import { toast, Toaster } from 'react-hot-toast';
 
-import styles from "@/components/auth/SingInForm/SignInForm.module.scss";
+import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
 export const SignInForm: FC = () => {
   const router = useRouter();
 
   const [loginData, setLoginData] = useState<LoginData>({
-    email: "",
-    password: "",
-    id: "",
+    email: '',
+    password: '',
+    id: '',
     isAccountVerified: false,
-    refreshToken: "",
+    refreshToken: '',
   });
 
   const [remember, setRemember] = useState<Remember>(false);
@@ -47,17 +43,17 @@ export const SignInForm: FC = () => {
         refreshToken: response.refreshToken,
       };
 
-      localStorage.setItem("registration", JSON.stringify(userData));
+      localStorage.setItem('registration', JSON.stringify(userData));
 
-      const storageEvent = new Event("storage");
+      const storageEvent = new Event('storage');
       window.dispatchEvent(storageEvent);
 
-      toast.success("Login successful!");
+      toast.success('Login successful!');
 
       router.push(NavPaths.DASHBOARD);
     },
     onError: (error) => {
-      toast.error(error.message || "Login failed");
+      toast.error(error.message || 'Login failed');
     },
   });
 
@@ -87,12 +83,13 @@ export const SignInForm: FC = () => {
   return (
     <>
       <Toaster />
-      <div className={styles["signInFormBlock"]}>
-        <div className={styles["signInFormBlockContainer"]}>
-          <h4 className={styles["signInFormBlockTitle"]}>
-            Sign In to Workroom
-          </h4>
-          <form className={styles["signInForm"]} onSubmit={handleSubmitForm}>
+      <div className={styles['signInFormBlock']}>
+        <div className={styles['signInFormBlockContainer']}>
+          <h4 className={styles['signInFormBlockTitle']}>Sign In to Workroom</h4>
+          <form
+            className={styles['signInForm']}
+            onSubmit={handleSubmitForm}
+          >
             <SignInFormFields
               email={loginData.email}
               password={loginData.password}

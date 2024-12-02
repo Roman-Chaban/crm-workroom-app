@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, ReactNode } from "react";
+import { ChangeEvent, CSSProperties, ReactNode } from 'react';
 
 export interface InputClassNames {
   container: string;
@@ -30,14 +30,14 @@ export interface InputProps {
 }
 
 export type InputTypes =
-  | "text"
-  | "email"
-  | "search"
-  | "password"
-  | "checkbox"
-  | "radio"
-  | "date"
-  | "time"
-  | "tel";
+  | 'text'
+  | 'email'
+  | 'search'
+  | 'password'
+  | 'checkbox'
+  | 'radio'
+  | 'date'
+  | 'time'
+  | 'tel';
 
 export type Value = string;

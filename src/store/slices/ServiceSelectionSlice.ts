@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface ServiceSelectionState {
   usagePurpose: string;
@@ -6,12 +6,12 @@ interface ServiceSelectionState {
 }
 
 const initialState: ServiceSelectionState = {
-  usagePurpose: "",
-  personBestDescriptor: "",
+  usagePurpose: '',
+  personBestDescriptor: '',
 };
 
 const serviceSelectionSlice = createSlice({
-  name: "serviceSelection",
+  name: 'serviceSelection',
   initialState,
   reducers: {
     setUsagePurpose: (state, action: PayloadAction<string>) => {
@@ -23,7 +23,6 @@ const serviceSelectionSlice = createSlice({
   },
 });
 
-export const { setUsagePurpose, setPersonDescriptor } =
-  serviceSelectionSlice.actions;
+export const { setUsagePurpose, setPersonDescriptor } = serviceSelectionSlice.actions;
 
 export default serviceSelectionSlice.reducer;

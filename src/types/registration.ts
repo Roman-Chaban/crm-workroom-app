@@ -1,4 +1,4 @@
-import { CountryOption } from "@/staticData/countryOptions";
+import { CountryOption } from '@/staticData/countryOptions';
 
 export interface RegistrationUserData {
   id?: string;
@@ -35,7 +35,7 @@ export type IsConfirmationMessageVisible = boolean;
 export type IsTimerActive = boolean;
 export type SmsTimer = number;
 export type IsPasswordVisible = boolean;
-export type UserStatuses = "idle" | "loading" | "succeeded" | "failed";
+export type UserStatuses = 'idle' | 'loading' | 'succeeded' | 'failed';
 export type SelectedCountryCode = CountryOption;
 export type PhoneNumber = string;
 export type IsSmsCompleted = boolean;

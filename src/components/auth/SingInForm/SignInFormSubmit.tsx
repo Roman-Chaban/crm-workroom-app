@@ -1,34 +1,31 @@
-import type { FC } from "react";
+import React, { type FC } from 'react';
 
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
-import { Button } from "@/components/index";
+import { Button } from '@/components/index';
 
-import { NavPaths } from "@/enums/navPaths";
+import { NavPaths } from '@/enums/navPaths';
 
-import styles from "@/components/auth/SingInForm/SignInForm.module.scss";
+import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
 interface SignInFormSubmitProps {
   isSubmitting: boolean;
   isButtonDisabled: boolean;
 }
 
-export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({
-  isSubmitting,
-  isButtonDisabled,
-}) => {
+export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({ isSubmitting, isButtonDisabled }) => {
   return (
-    <div className={styles["signInFormBlockSubmit"]}>
+    <div className={styles['signInFormBlockSubmit']}>
       <Button
         type="submit"
-        className={styles["signInFormBlockButton"]}
+        className={styles['signInFormBlockButton']}
         disabled={isButtonDisabled}
       >
-        {isSubmitting ? "Logging in..." : "Log In"}
+        {isSubmitting ? 'Logging in...' : 'Log In'}
 
         <Image
-          src={"/images/auth/icons/arrow-right.svg"}
+          src={'/images/auth/icons/arrow-right.svg'}
           alt="Arrow Right Icon"
           width={24}
           height={24}
@@ -36,7 +33,10 @@ export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({
         />
       </Button>
 
-      <Button type="button" className={styles["signInFormBlockAccount"]}>
+      <Button
+        type="button"
+        className={styles['signInFormBlockAccount']}
+      >
         <Link href={NavPaths.MULTI_STEP_SIGN_IN}>Don’t have an account?</Link>
       </Button>
     </div>

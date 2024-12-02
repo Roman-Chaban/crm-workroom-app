@@ -1,4 +1,4 @@
-import { type FC, type ReactNode, type CSSProperties } from "react";
+import React, { type FC, type ReactNode, type CSSProperties } from 'react';
 
 interface GridProps {
   width?: string;
@@ -13,26 +13,26 @@ interface GridProps {
   backgroundColor?: string;
   borderRadius?: string;
   boxShadow?: string;
-  tag?: "table" | "div" | "section" | "article";
-  position?: "static" | "relative" | "absolute" | "fixed" | "sticky";
+  tag?: 'table' | 'div' | 'section' | 'article';
+  position?: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky';
   className?: string;
 }
 
 export const Grid: FC<GridProps> = ({
-  display = "grid",
-  height = "",
-  width = "100%",
-  maxWidth = "100%",
-  gap = "",
-  tag = "div",
-  gridTemplateColumns = "repeat(12, 1fr)",
-  gridTemplateRows = "",
+  display = 'grid',
+  height = '',
+  width = '100%',
+  maxWidth = '100%',
+  gap = '',
+  tag = 'div',
+  gridTemplateColumns = 'repeat(12, 1fr)',
+  gridTemplateRows = '',
   children,
-  backgroundColor = "",
-  boxShadow = "",
-  borderRadius = "",
+  backgroundColor = '',
+  boxShadow = '',
+  borderRadius = '',
   isSection = false,
-  position = "static",
+  position = 'static',
   className,
 }) => {
   const gridStyles: CSSProperties = {
@@ -49,10 +49,13 @@ export const Grid: FC<GridProps> = ({
     position,
   };
 
-  const Tag = tag || (isSection ? "section" : "div");
+  const Tag = tag || (isSection ? 'section' : 'div');
 
   return (
-    <Tag style={gridStyles} className={className}>
+    <Tag
+      style={gridStyles}
+      className={className}
+    >
       {children}
     </Tag>
   );

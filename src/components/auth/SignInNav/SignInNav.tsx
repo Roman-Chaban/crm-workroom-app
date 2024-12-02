@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import type { FC } from "react";
+import React, { type FC } from 'react';
 
-import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppDispatch } from '@/hooks/useAppDispatch';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import { Button } from "@/components/index";
+import { Button } from '@/components/index';
 
-import { handleNextStep, handlePrevStep } from "@/store/slices/StepsSlice";
+import { handleNextStep, handlePrevStep } from '@/store/slices/StepsSlice';
 
 interface SignInNavProps {
   isNextButtonDisabled: boolean;
@@ -41,12 +41,12 @@ export const SignInNav: FC<SignInNavProps> = ({
     <div className={classNames.container}>
       {renderPreviousButton && (
         <Button
-          type={"button"}
+          type={'button'}
           className={classNames.prevBtn}
           onClick={handlePrevStepClick}
         >
           <Image
-            src={"/images/auth/icons/arrow-previous.svg"}
+            src={'/images/auth/icons/arrow-previous.svg'}
             alt="Arrow Right Icon"
             width={24}
             height={24}
@@ -64,7 +64,7 @@ export const SignInNav: FC<SignInNavProps> = ({
       >
         Next Step
         <Image
-          src={"/images/auth/icons/arrow-right.svg"}
+          src={'/images/auth/icons/arrow-right.svg'}
           alt="Arrow Right Icon"
           width={24}
           height={24}

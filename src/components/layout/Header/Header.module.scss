@@ -1,6 +1,6 @@
-@use "../../../styles/abstracts/mixins/mixins" as *;
-@use "../../../styles/base/colors/colors" as color;
-@use "../../../styles/base/globals/globals" as size;
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
 
 .header {
   width: 100%;
@@ -111,15 +111,14 @@
     top: 0;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: -16px;
       left: 50%;
       transform: translateX(-50%);
       border-width: 10px;
       border-style: solid;
-      border-color: transparent transparent color.$background-support-primary
-        transparent;
+      border-color: transparent transparent color.$background-support-primary transparent;
       width: 0;
       height: 0;
       z-index: -10;

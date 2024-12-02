@@ -1,6 +1,6 @@
-@use "../../../styles/abstracts/mixins/mixins" as *;
-@use "../../../styles/base/colors/colors" as color;
-@use "../../../styles/base/globals/globals" as size;
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
 
 .select {
   @include select;
@@ -14,8 +14,8 @@
   position: relative;
 
   &::after {
-    content: "";
-    background: url("/images/modal/arrow-down.svg") no-repeat center center;
+    content: '';
+    background: url('/images/modal/arrow-down.svg') no-repeat center center;
     width: 24px;
     height: 24px;
     position: absolute;
