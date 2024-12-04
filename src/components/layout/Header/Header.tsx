@@ -12,16 +12,20 @@ import { Value } from '@/types/input';
 
 import { NavPaths } from '@/enums/navPaths';
 
-import { IsRegistered, UserName } from '@/types/header';
+import { IsAnimating, IsNotification, IsRegistered, UserName } from '@/types/header';
 
 import styles from './Header.module.scss';
 
 export const Header: FC = () => {
   const [inputValue, setInputValue] = useState<Value>('');
+
   const [userName, setUserName] = useState<UserName>(null);
+
   const [isRegistered, setIsRegistered] = useState<IsRegistered>(false);
-  const [isNotification, setIsNotification] = useState<boolean>(false);
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+
+  const [isNotification, setIsNotification] = useState<IsNotification>(false);
+
+  const [isAnimating, setIsAnimating] = useState<IsAnimating>(false);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);

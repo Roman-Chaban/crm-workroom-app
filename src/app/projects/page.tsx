@@ -1,8 +1,8 @@
 import React from 'react';
 
 import type { Metadata } from 'next';
-import { Section } from '@/components/index';
-import { Nav } from '@/components/ui/Nav/Nav';
+
+import { Section, Nav } from '@/components/index';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom | Projects',

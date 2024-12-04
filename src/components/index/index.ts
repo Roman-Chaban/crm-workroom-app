@@ -49,3 +49,5 @@ export { Heading } from '@/components/ui/Heading/Heading';
 export { ViewLink } from '@/components/ui/ViewLink/ViewLink';
 export { AttachedStream } from '@/components/home/AttachedStream/AttachedStream';
 export { UpdatedStream } from '@/components/home/UpdatedStream/UpdatedStream';
+export { Notifications } from '@/components/home/Notification/Notification';
+export { Nav } from '@/components/ui/Nav/Nav';

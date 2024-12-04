@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Section } from '@/components/index';
-import { Nav } from '@/components/ui/Nav/Nav';
+import { Section, Nav } from '@/components/index';
 
 export default function InfoPortalPage() {
   return (
