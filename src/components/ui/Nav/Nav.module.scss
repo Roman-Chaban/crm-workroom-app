@@ -1,0 +1,22 @@
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+
+.nav {
+  width: 100%;
+  &Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &Title {
+    @include navTitle;
+  }
+
+  &Button {
+    @include Button;
+    position: static;
+    max-width: 158px;
+  }
+}

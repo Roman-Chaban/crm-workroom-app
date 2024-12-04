@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { Button, Container, Input, HeaderLogout } from '@/components/index';
+import { Notifications } from '@/components/home/Notification/Notification';
 
 import { Value } from '@/types/input';
 
@@ -19,9 +20,16 @@ export const Header: FC = () => {
   const [inputValue, setInputValue] = useState<Value>('');
   const [userName, setUserName] = useState<UserName>(null);
   const [isRegistered, setIsRegistered] = useState<IsRegistered>(false);
+  const [isNotification, setIsNotification] = useState<boolean>(false);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
+  };
+
+  const toggleNotification = () => {
+    setIsNotification((prevNotificationState) => !prevNotificationState);
+    setIsAnimating(true);
   };
 
   const updateUserData = () => {
@@ -94,6 +102,7 @@ export const Header: FC = () => {
             type="button"
             className={styles['headerNotification']}
             title="Your Notification"
+            onClick={toggleNotification}
           >
             <Image
               src="/icons/outlined-icons/notification.svg"
@@ -117,7 +126,15 @@ export const Header: FC = () => {
               </Link>
             </Button>
           )}
+
           {isRegistered && <HeaderLogout validateUserName={validateUserName} />}
+
+          {(isNotification || isAnimating) && (
+            <Notifications
+              isOpen={isNotification}
+              onCloseNotifications={toggleNotification}
+            />
+          )}
         </Container>
       </div>
     </header>

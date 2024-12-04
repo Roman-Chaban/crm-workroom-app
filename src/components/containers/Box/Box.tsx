@@ -1,11 +1,12 @@
-import React, { type FC, ReactNode } from 'react';
+import React, { type FC, ReactNode, TransitionEventHandler } from 'react';
 
 interface BoxProps {
   children: ReactNode;
   className?: string;
+  onTransitionEnd?: TransitionEventHandler<HTMLDivElement>;
 }
 
-export const Box: FC<BoxProps> = ({ children, className }) => {
+export const Box: FC<BoxProps> = ({ children, className, onTransitionEnd }) => {
   const boxCSSProperties = {
     width: '100%',
     height: '100%',
@@ -17,6 +18,7 @@ export const Box: FC<BoxProps> = ({ children, className }) => {
     <div
       style={boxCSSProperties}
       className={className}
+      onTransitionEnd={onTransitionEnd}
     >
       {children}
     </div>

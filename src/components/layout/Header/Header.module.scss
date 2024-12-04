@@ -5,7 +5,8 @@
 .header {
   width: 100%;
   grid-column: span 12;
-  height: auto;
+  height: 48px;
+  position: relative;
 
   &Container {
     width: 100%;
@@ -92,6 +93,39 @@
 
     & > .rotateIcon.rotate {
       transform: rotate(180deg);
+    }
+  }
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: color.$color-white-primary;
+    box-shadow: color.$shadow-box-light;
+    width: 100%;
+    margin-top: 10px;
+    z-index: 100;
+    border-radius: 14px;
+    padding: 10px 0;
+  }
+
+  .dropdownItem {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    font-size: size.$font-size-lg;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: color.$color-black-deep;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: color.$background-main-light;
+      color: color.$background-support-hover;
     }
   }
 

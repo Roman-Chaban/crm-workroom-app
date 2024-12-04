@@ -7,6 +7,7 @@ import styled, { css } from 'styled-components';
 import Image from 'next/image';
 
 import { colors } from '@/constants/colors';
+import { Button } from '../Button/Button';
 
 const ViewLinkContainer = styled.div`
   display: flex;
@@ -15,6 +16,7 @@ const ViewLinkContainer = styled.div`
   justify-content: center;
   gap: 1px;
 `;
+
 const ViewLinkIconWrapper = styled.div`
   width: 24px;
   height: 24px;
@@ -28,6 +30,7 @@ const ViewLinkIconWrapper = styled.div`
     object-fit: cover;
   }
 `;
+
 const viewLinkMixin = css`
   display: flex;
   align-items: center;
@@ -47,7 +50,7 @@ const viewLinkMixin = css`
   }
 `;
 
-const ViewLinkItem = styled.a`
+const ViewLinkItem = styled.a<{ $primary?: boolean }>`
   ${viewLinkMixin}
 `;
 
@@ -63,7 +66,17 @@ export const ViewLink: FC = () => {
           loading="lazy"
         />
       </ViewLinkIconWrapper>
-      <ViewLinkItem href={'/'}>View more</ViewLinkItem>
+      <Button
+        type="button"
+        style={{ background: 'inherit' }}
+      >
+        <ViewLinkItem
+          $primary
+          href={'/'}
+        >
+          View more
+        </ViewLinkItem>
+      </Button>
     </ViewLinkContainer>
   );
 };

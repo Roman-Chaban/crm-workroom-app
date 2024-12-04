@@ -5,6 +5,7 @@ import { useMutation } from '@tanstack/react-query';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LogoutIcon from '@mui/icons-material/Logout';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 import { Button } from '@/components/index';
 
@@ -75,16 +76,23 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
           </Button>
         )}
         {isVisibleMenu && (
-          <div
-            title="Logout"
-            className={styles['headerUserLoginMenu']}
-          >
+          <div className={styles['dropdownMenu']}>
             <Button
+              title="Profile"
               type="button"
-              className={styles['headerLogoutButton']}
+              className={styles['dropdownItem']}
+            >
+              <AccountBoxIcon />
+              Profile
+            </Button>
+            <Button
+              title="Logout"
+              type="button"
+              className={styles['dropdownItem']}
               onClick={handleLogoutUser}
             >
-              <LogoutIcon fontSize="small" /> Logout
+              <LogoutIcon />
+              Logout
             </Button>
           </div>
         )}

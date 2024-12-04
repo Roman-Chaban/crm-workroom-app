@@ -1,6 +1,6 @@
-import { ServiceOption } from '@/interfaces/servicesSelect';
+import { ServiceOptions } from '@/interfaces/servicesSelect';
 
-export const serviceBusinessOptions: ServiceOption[] = [
+export const serviceBusinessOptions: ServiceOptions = [
   {
     label: 'IT and Programming',
     value: 'it and programming',

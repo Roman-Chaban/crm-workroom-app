@@ -4,7 +4,7 @@ import { useAppSelector } from '@/hooks/useAppSelector';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
 
 import Select, { SingleValue } from 'react-select';
-import { Input, SignInNav } from '@/components/index';
+import { Container, Input, SignInNav } from '@/components/index';
 import customStyles from '@/components/ui/Select/selectStyles';
 
 import { ServiceOption } from '@/interfaces/servicesSelect';
@@ -92,33 +92,35 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({ currentStep })
       className={styles['serviceDetailsForm']}
       onSubmit={handleServiceDetailsFormSubmit}
     >
-      <Input
-        htmlFor="companyName"
-        label="Company Name"
-        name="companyName"
-        id="companyName"
-        placeholder="Enter your company's name"
-        type="text"
-        classNames={{
-          input: styles['serviceDetailsInput'],
-          container: styles['serviceDetailsInputContainer'],
-          label: styles['serviceDetailsLabel'],
-        }}
-        value={companyName}
-        onChange={handleCompanyNameChange}
-      />
-
-      <label className={styles['businessDirectionLabel']}>
-        Business Direction
-        <Select
-          styles={customStyles}
-          options={serviceBusinessOptions}
-          value={selectedBusinessDirection}
-          onChange={handleBusinessDirectionChange}
+      <Container className={styles['serviceDetailsFormMain']}>
+        <Input
+          htmlFor="companyName"
+          label="Company Name"
+          name="companyName"
+          id="companyName"
+          placeholder="Enter your company's name"
+          type="text"
+          classNames={{
+            input: styles['serviceDetailsInput'],
+            container: styles['serviceDetailsInputContainer'],
+            label: styles['serviceDetailsLabel'],
+          }}
+          value={companyName}
+          onChange={handleCompanyNameChange}
         />
-      </label>
 
-      <ServiceDetailsFormButtons selectedTeamSize={selectedTeamSize} />
+        <label className={styles['businessDirectionLabel']}>
+          Business Direction
+          <Select
+            styles={customStyles}
+            options={serviceBusinessOptions}
+            value={selectedBusinessDirection}
+            onChange={handleBusinessDirectionChange}
+          />
+        </label>
+
+        <ServiceDetailsFormButtons selectedTeamSize={selectedTeamSize} />
+      </Container>
 
       <SignInNav
         currentStep={currentStep}
@@ -129,12 +131,6 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({ currentStep })
           prevBtn: styles['multiStepsPreviousButton'],
         }}
       />
-      <button
-        type="submit"
-        className={styles['saveButton']}
-      >
-        Save Changes
-      </button>
     </form>
   );
 };

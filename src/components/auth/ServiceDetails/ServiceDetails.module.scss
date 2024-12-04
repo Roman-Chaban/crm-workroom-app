@@ -31,10 +31,19 @@
     @include boldTitle;
   }
 
+  &FormMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 auto;
+    gap: 19px;
+    padding-bottom: 30px;
+  }
+
   & .serviceDetailsForm {
     width: 100%;
     display: flex;
-    gap: 19px;
     align-items: center;
     flex-flow: column nowrap;
     min-height: 100%;

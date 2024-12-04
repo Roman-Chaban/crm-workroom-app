@@ -24,8 +24,6 @@ const apiRequest = async <T>(
       headers: { ...headers },
     };
 
-    console.log(`Making request to ${endpoint} with method ${method}`, data);
-
     const response = await apiClient(config);
     return response.data;
   } catch (error) {

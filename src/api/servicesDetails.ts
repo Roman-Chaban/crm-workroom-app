@@ -22,7 +22,6 @@ export const getServicesDetails = async (
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      console.error('Error fetching service details:', error.response?.data || error.message);
       throw new Error(error.response?.data?.message || 'Failed to fetch service details.');
     } else {
       throw new Error('An unexpected error occurred.');

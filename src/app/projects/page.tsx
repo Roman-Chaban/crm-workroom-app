@@ -1,6 +1,8 @@
 import React from 'react';
 
 import type { Metadata } from 'next';
+import { Section } from '@/components/index';
+import { Nav } from '@/components/ui/Nav/Nav';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom | Projects',
@@ -8,5 +10,13 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  return <div>Projects Page</div>;
+  return (
+    <Section className="">
+      <Nav
+        title="Projects"
+        buttonLabel="Add Project"
+        isRenderBackLink={false}
+      />
+    </Section>
+  );
 }

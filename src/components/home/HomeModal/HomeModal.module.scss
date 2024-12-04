@@ -78,7 +78,10 @@
   }
 
   &BannerImage {
+    width: 100%;
     margin-block-start: 20px;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
   }
 
   &HeaderParagraph {
@@ -88,6 +91,10 @@
     width: 100%;
     max-width: 435px;
     margin-top: 30px;
+  }
+
+  & .modalSelect {
+    max-width: 100%;
   }
 
   &Textarea {
@@ -121,6 +128,10 @@
     position: static;
     margin-block-start: 51px;
     margin-left: auto;
+
+    &:disabled {
+      @include disabledButton;
+    }
   }
 
   &SelectLabel {

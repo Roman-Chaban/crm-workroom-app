@@ -37,6 +37,8 @@ export const SignInNav: FC<SignInNavProps> = ({
 
   const renderPreviousButton = currentStep > 1;
 
+  const lastStepSubmit = currentStep === 3;
+
   return (
     <div className={classNames.container}>
       {renderPreviousButton && (
@@ -57,7 +59,7 @@ export const SignInNav: FC<SignInNavProps> = ({
       )}
 
       <Button
-        type="button"
+        type={lastStepSubmit ? 'submit' : 'button'}
         className={classNames.nextBtn}
         onClick={handleNextStepClick}
         disabled={isNextButtonDisabled}

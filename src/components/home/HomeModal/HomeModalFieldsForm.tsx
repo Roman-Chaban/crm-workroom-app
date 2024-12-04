@@ -28,11 +28,14 @@ export const HomeModalFieldsForm: FC<HomeModalFieldsFormProps> = ({
 }) => {
   const description = 'description';
 
+  const isSendButtonDisabled = !selectedValue || !areaDescription;
+
   return (
     <form autoComplete="off">
       <label className={styles['modalSelectLabel']}>
         Request Subject
         <Select
+          className={styles['modalSelect']}
           options={options}
           placeholder={selectedValue}
           styles={selectStyles}
@@ -54,6 +57,7 @@ export const HomeModalFieldsForm: FC<HomeModalFieldsFormProps> = ({
       <Button
         type="button"
         className={styles['modalSendButton']}
+        disabled={isSendButtonDisabled}
       >
         Send Request
       </Button>

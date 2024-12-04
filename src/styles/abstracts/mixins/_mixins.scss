@@ -278,3 +278,19 @@
   line-height: 150%;
   color: color.$color-black-deep;
 }
+
+@mixin navTitle {
+  font-size: size.$font-size-4xxl;
+  color: color.$color-black-deep;
+  font-weight: 700;
+}
+
+@mixin closeNotificationButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: color.$background-main-light;
+}
