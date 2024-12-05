@@ -15,7 +15,7 @@ import {
 import styles from '@/styles/pages/home.module.scss';
 
 export const metadata: Metadata = {
-  title: 'CRM Workroom | Dashboard',
+  title: 'CRM Workroom - Dashboard',
   icons: '/favicon/favicon.svg',
 };
 

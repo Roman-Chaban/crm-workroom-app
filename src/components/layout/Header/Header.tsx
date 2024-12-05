@@ -10,7 +10,7 @@ import { Notifications } from '@/components/home/Notification/Notification';
 
 import { Value } from '@/types/input';
 
-import { NavPaths } from '@/enums/navPaths';
+import { NAV_PATHS } from '@/enums/navPaths';
 
 import { IsAnimating, IsNotification, IsRegistered, UserName } from '@/types/header';
 
@@ -120,7 +120,7 @@ export const Header: FC = () => {
               type="button"
               className={styles['headerSignInButton']}
             >
-              <Link href={NavPaths.SIGN_IN}>
+              <Link href={NAV_PATHS.SIGN_IN}>
                 <Image
                   src="/icons/outlined-icons/add-user.svg"
                   alt="Notification Icon"

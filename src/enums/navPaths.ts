@@ -1,4 +1,4 @@
-export const enum NavPaths {
+export const enum NAV_PATHS {
   DASHBOARD = '/',
   PROJECTS = '/projects',
   CALENDAR = '/calendar',
@@ -8,4 +8,6 @@ export const enum NavPaths {
   INFO_PORTAL = '/info-portal',
   SIGN_IN = '/auth/signIn',
   MULTI_STEP_SIGN_IN = '/auth/registration',
+  PROFILE = '/profile',
+  NEAREST_EVENTS = '/nearest-events',
 }

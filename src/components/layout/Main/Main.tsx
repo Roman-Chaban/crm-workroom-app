@@ -5,7 +5,7 @@ import React, { FC, ReactNode } from 'react';
 import { Header, Grid } from '@/components/index/index';
 
 import { usePathname } from 'next/navigation';
-import { NavPaths } from '@/enums/navPaths';
+import { NAV_PATHS } from '@/enums/navPaths';
 
 import styles from './Main.module.scss';
 
@@ -15,7 +15,8 @@ interface MainProps {
 
 export const Main: FC<MainProps> = ({ children }) => {
   const pathname = usePathname();
-  const isHeaderRender = pathname === NavPaths.SIGN_IN || pathname === NavPaths.MULTI_STEP_SIGN_IN;
+  const isHeaderRender =
+    pathname === NAV_PATHS.SIGN_IN || pathname === NAV_PATHS.MULTI_STEP_SIGN_IN;
   return (
     <Grid
       gap="50px"

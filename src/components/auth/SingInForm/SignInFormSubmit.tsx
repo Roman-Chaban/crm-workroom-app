@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import { Button } from '@/components/index';
 
-import { NavPaths } from '@/enums/navPaths';
+import { NAV_PATHS } from '@/enums/navPaths';
 
 import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
@@ -37,7 +37,7 @@ export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({ isSubmitting, isBu
         type="button"
         className={styles['signInFormBlockAccount']}
       >
-        <Link href={NavPaths.MULTI_STEP_SIGN_IN}>Don’t have an account?</Link>
+        <Link href={NAV_PATHS.MULTI_STEP_SIGN_IN}>Don’t have an account?</Link>
       </Button>
     </div>
   );

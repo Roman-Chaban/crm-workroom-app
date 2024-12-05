@@ -12,7 +12,7 @@ import { IsSubmitting } from '@/types/registration';
 import { LoginData } from '@/types/login';
 import { LoginUser } from '@/api/login';
 
-import { NavPaths } from '@/enums/navPaths';
+import { NAV_PATHS } from '@/enums/navPaths';
 
 import { toast, Toaster } from 'react-hot-toast';
 
@@ -50,7 +50,7 @@ export const SignInForm: FC = () => {
 
       toast.success('Login successful!');
 
-      router.push(NavPaths.DASHBOARD);
+      router.push(NAV_PATHS.DASHBOARD);
     },
     onError: (error) => {
       toast.error(error.message || 'Login failed');

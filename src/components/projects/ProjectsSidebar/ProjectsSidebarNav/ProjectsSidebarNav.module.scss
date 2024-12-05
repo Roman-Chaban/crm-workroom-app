@@ -1,0 +1,29 @@
+@use '../../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../../styles/base/colors/colors' as color;
+@use '../../../../styles/base/globals/globals' as size;
+
+.sidebar {
+  width: 100%;
+
+  &Container {
+    padding: 8px 24px;
+  }
+
+  &List {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+
+    &Item {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 4px;
+      min-height: 40px;
+      @include listItemTitle;
+    }
+
+    &ItemCode {
+      @include listItemCode;
+    }
+  }
+}

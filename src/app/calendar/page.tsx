@@ -1,8 +1,15 @@
+import { Metadata } from 'next';
+
 import React from 'react';
 
 import { Section, Nav } from '@/components/index';
 
 import styles from '@/styles/pages/calendar.module.scss';
+
+export const metadata: Metadata = {
+  title: 'CRM Workroom - Calendar',
+  icons: '/favicon/favicon.svg',
+};
 
 export default function CalendarPage() {
   return (

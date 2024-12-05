@@ -20,7 +20,7 @@ import styles from '@/styles/pages/signIn.module.scss';
 export default function MultiStepsSignUpPage() {
   const currentStep = useAppSelector((state) => state.steps.currentStep);
 
-  useDocumentTitle('Registration | User Details');
+  useDocumentTitle('Registration - User Details');
 
   const stepComponents: Record<string, JSX.Element> = {
     [STEPS.USER_DETAILS_STEP]: <UserDetails />,

@@ -106,6 +106,17 @@
     z-index: 100;
     border-radius: 14px;
     padding: 10px 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -11px;
+      right: 16.5px;
+      border-width: 6.5px;
+      border-style: solid;
+      border-color: transparent transparent color.$color-white-primary transparent;
+      z-index: 110;
+    }
   }
 
   .dropdownItem {
@@ -127,6 +138,10 @@
       background-color: color.$background-main-light;
       color: color.$background-support-hover;
     }
+  }
+
+  & .profileLink {
+    color: inherit;
   }
 
   &UserLoginMenu {

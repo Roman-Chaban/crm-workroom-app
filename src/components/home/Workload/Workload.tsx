@@ -9,6 +9,7 @@ export const Workload: FC = () => {
     <div className={styles['workload']}>
       <div className={styles['workloadContainer']}>
         <NavView
+          href=""
           link={'View all'}
           title={'Workload'}
         />

@@ -3,6 +3,7 @@
 @use '../../../styles/base/globals/globals' as size;
 
 .nav {
+  grid-column: span 12;
   width: 100%;
   &Container {
     display: flex;

@@ -35,18 +35,6 @@ export const SidebarLogout: FC<SidebarLogoutProps> = ({ onOpenModal }) => {
           Support
         </Button>
       </div>
-      <Button
-        type="button"
-        className={styles['sidebarLogoutButton']}
-      >
-        <Image
-          src={'/icons/sidebar-icons/logout.svg'}
-          alt="Logout Icon"
-          width={24}
-          height={24}
-        />{' '}
-        Logout
-      </Button>
     </div>
   );
 };

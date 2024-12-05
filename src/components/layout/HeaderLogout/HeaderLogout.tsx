@@ -1,7 +1,9 @@
 'use client';
 
-import React, { useState, type FC } from 'react';
+import React, { useEffect, useState, type FC } from 'react';
 import { useMutation } from '@tanstack/react-query';
+
+import Link from 'next/link';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -15,6 +17,8 @@ import { toast, Toaster } from 'react-hot-toast';
 
 import { IsVisibleMenu, UserName } from '@/types/header';
 
+import { NAV_PATHS } from '@/enums/navPaths';
+
 import styles from '@/components/layout/Header/Header.module.scss';
 
 interface HeaderLogoutProps {
@@ -24,8 +28,19 @@ interface HeaderLogoutProps {
 export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
   const [isVisibleMenu, setIsVisibleMenu] = useState<IsVisibleMenu>(false);
 
+  useEffect(() => {
+    const storedState = localStorage.getItem('isOpen');
+    if (storedState) {
+      setIsVisibleMenu(JSON.parse(storedState));
+    }
+  }, []);
+
   const handleShowMenu = () => {
-    setIsVisibleMenu((prevVisibleState) => !prevVisibleState);
+    setIsVisibleMenu((prevVisibleState) => {
+      const newState = !prevVisibleState;
+      localStorage.setItem('isOpen', JSON.stringify(newState));
+      return newState;
+    });
   };
 
   const userLogoutMutation = useMutation({
@@ -35,6 +50,7 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
       localStorage.removeItem('accessToken');
       localStorage.removeItem('refreshToken');
       localStorage.removeItem('registration');
+      localStorage.removeItem('isOpen');
 
       window.location.reload();
     },
@@ -83,7 +99,12 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
               className={styles['dropdownItem']}
             >
               <AccountBoxIcon />
-              Profile
+              <Link
+                href={NAV_PATHS.PROFILE}
+                className={styles['profileLink']}
+              >
+                Profile
+              </Link>
             </Button>
             <Button
               title="Logout"

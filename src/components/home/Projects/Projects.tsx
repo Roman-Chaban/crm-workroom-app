@@ -23,6 +23,7 @@ export const Projects: FC = () => {
     <div className={styles['projects']}>
       <div className={styles['projectsContainer']}>
         <NavView
+          href=""
           link={'View all'}
           title={'Projects'}
         />

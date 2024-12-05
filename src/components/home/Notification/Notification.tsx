@@ -1,3 +1,5 @@
+'use client';
+
 import React, { TransitionEventHandler, useEffect, useState, type FC } from 'react';
 
 import Image from 'next/image';

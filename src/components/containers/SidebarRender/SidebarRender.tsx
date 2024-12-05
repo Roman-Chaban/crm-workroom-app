@@ -6,10 +6,11 @@ import { usePathname } from 'next/navigation';
 
 import { HomeClient } from '../HomeClient/HomeClient';
 
-import { NavPaths } from '@/enums/navPaths';
+import { NAV_PATHS } from '@/enums/navPaths';
 
 export const SidebarRender = () => {
   const pathname = usePathname();
-  const isSidebarRender = pathname === NavPaths.SIGN_IN || pathname === NavPaths.MULTI_STEP_SIGN_IN;
+  const isSidebarRender =
+    pathname === NAV_PATHS.SIGN_IN || pathname === NAV_PATHS.MULTI_STEP_SIGN_IN;
   return <>{!isSidebarRender && <HomeClient />}</>;
 };

@@ -8,14 +8,15 @@ import styles from './NavView.module.scss';
 interface NavViewProps {
   title: string;
   link: string;
+  href: string;
 }
 
-export const NavView: FC<NavViewProps> = ({ title, link }) => {
+export const NavView: FC<NavViewProps> = ({ title, link, href }) => {
   return (
     <div className={styles['NavViewContainer']}>
       <h2 className={styles['NavViewTitle']}>{title}</h2>
       <Link
-        href={'/'}
+        href={href}
         className={styles['NavViewLink']}
       >
         {link}{' '}

@@ -131,6 +131,7 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({ currentStep })
           prevBtn: styles['multiStepsPreviousButton'],
         }}
       />
+      <button type="submit">Submit</button>
     </form>
   );
 };
