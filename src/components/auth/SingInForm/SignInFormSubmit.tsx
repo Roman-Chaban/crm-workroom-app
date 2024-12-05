@@ -14,7 +14,10 @@ interface SignInFormSubmitProps {
   isButtonDisabled: boolean;
 }
 
-export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({ isSubmitting, isButtonDisabled }) => {
+export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({
+  isSubmitting,
+  isButtonDisabled,
+}) => {
   return (
     <div className={styles['signInFormBlockSubmit']}>
       <Button

@@ -47,11 +47,11 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
 }) => {
   const [phoneNumber, setPhoneNumber] = useState<PhoneNumber>('');
 
-  const [isPasswordVisible, setIsPasswordVisible] = useState<IsPasswordVisible>(false);
+  const [isPasswordVisible, setIsPasswordVisible] =
+    useState<IsPasswordVisible>(false);
 
-  const [selectedCountryCode, setSelectedCountryCode] = useState<SelectedCountryCode>(
-    countryOptions[0],
-  );
+  const [selectedCountryCode, setSelectedCountryCode] =
+    useState<SelectedCountryCode>(countryOptions[0]);
 
   const handleCountryChange = (selectedOption: CountryOption) => {
     if (selectedOption) {
@@ -67,7 +67,9 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
     }
   };
 
-  const handlePhoneNumberInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePhoneNumberInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const inputValue = event.target.value;
     const countryCode = `+${selectedCountryCode.value}`;
 
@@ -88,14 +90,25 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
 
   const isNextButtonDisabled = useMemo(() => {
     return (
-      !registrationData.email || !registrationData.password || !phoneNumber || !selectedCountryCode
+      !registrationData.email ||
+      !registrationData.password ||
+      !phoneNumber ||
+      !selectedCountryCode
     );
-  }, [registrationData.email, registrationData.password, registrationData.phoneNumber]);
+  }, [
+    registrationData.email,
+    registrationData.password,
+    registrationData.phoneNumber,
+  ]);
 
   const changeVisibleIcon = isPasswordVisible ? (
-    <VisibilityIcon style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }} />
+    <VisibilityIcon
+      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+    />
   ) : (
-    <VisibilityOffIcon style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }} />
+    <VisibilityOffIcon
+      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+    />
   );
 
   return (

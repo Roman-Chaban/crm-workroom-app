@@ -25,16 +25,21 @@ export const SignInFormFields: FC<SignInFormFieldsProps> = ({
   password,
   handleInputChange,
 }) => {
-  const [isPasswordVisible, setIsPasswordVisible] = useState<IsPasswordVisible>(false);
+  const [isPasswordVisible, setIsPasswordVisible] =
+    useState<IsPasswordVisible>(false);
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevVisibleState) => !prevVisibleState);
   };
 
   const changeVisibleIcon = isPasswordVisible ? (
-    <VisibilityIcon style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }} />
+    <VisibilityIcon
+      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+    />
   ) : (
-    <VisibilityOffIcon style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }} />
+    <VisibilityOffIcon
+      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+    />
   );
 
   return (

@@ -18,7 +18,9 @@ export const customServicesSelect: StylesConfig<ServiceOption, false> = {
       ? `0 0 0 4px rgba(${colors.backgroundSupportPrimary}, 0.2)`
       : colors.shadowModal,
     border: `1.5px solid ${
-      state.isFocused ? colors.backgroundSupportHover : colors.backgroundModalLight
+      state.isFocused
+        ? colors.backgroundSupportHover
+        : colors.backgroundModalLight
     }`,
     borderRadius: 14,
     height: '49px',
@@ -82,7 +84,10 @@ export const customServicesSelect: StylesConfig<ServiceOption, false> = {
       : state.isFocused
         ? colors.backgroundSupportHover
         : 'transparent',
-    color: state.isSelected || state.isFocused ? colors.colorWhitePrimary : colors.colorGrayNeutral,
+    color:
+      state.isSelected || state.isFocused
+        ? colors.colorWhitePrimary
+        : colors.colorGrayNeutral,
     ':hover': {
       backgroundColor: colors.backgroundSupportHover,
       color: colors.colorWhitePrimary,

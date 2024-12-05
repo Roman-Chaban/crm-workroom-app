@@ -23,6 +23,7 @@ const serviceSelectionSlice = createSlice({
   },
 });
 
-export const { setUsagePurpose, setPersonDescriptor } = serviceSelectionSlice.actions;
+export const { setUsagePurpose, setPersonDescriptor } =
+  serviceSelectionSlice.actions;
 
 export default serviceSelectionSlice.reducer;

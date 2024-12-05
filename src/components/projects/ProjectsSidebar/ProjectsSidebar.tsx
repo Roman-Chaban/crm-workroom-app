@@ -14,7 +14,9 @@ import { selectStyles } from '@/styles/selectsStyles/projectsSelect';
 import styles from './ProjectsSidebar.module.scss';
 
 export const ProjectsSidebar: FC = () => {
-  const [selectedProjects, setSelectedProjects] = useState<ProjectsOption>(projectsSelect[0]);
+  const [selectedProjects, setSelectedProjects] = useState<ProjectsOption>(
+    projectsSelect[0],
+  );
 
   const handleSelectProjectsOption = (option: ProjectsOption | null) => {
     if (option) {

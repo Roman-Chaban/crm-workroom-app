@@ -17,14 +17,20 @@ export const confirmUserRegistration = async (
   payload: ConfirmationPayload,
 ): Promise<ConfirmationPayload> => {
   try {
-    const response = await apiClient.post(API_ENDPOINTS.CONFIRMATION_CODE, payload);
+    const response = await apiClient.post(
+      API_ENDPOINTS.CONFIRMATION_CODE,
+      payload,
+    );
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      const errorMessage = error.response?.data?.message || 'Invalid code or registration failed.';
+      const errorMessage =
+        error.response?.data?.message || 'Invalid code or registration failed.';
       console.error('Error during registration confirmation:', errorMessage);
       throw new Error(errorMessage);
     }
-    throw new Error('An unknown error occurred during registration confirmation');
+    throw new Error(
+      'An unknown error occurred during registration confirmation',
+    );
   }
 };

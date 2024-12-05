@@ -17,7 +17,9 @@ interface HomeModalFieldsFormProps {
   selectedValue: string;
   areaDescription: string;
   handleSelectChange: (newValue: SingleValue<Option>) => void;
-  handleChangeAreaDescription: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  handleChangeAreaDescription: (
+    event: ChangeEvent<HTMLTextAreaElement>,
+  ) => void;
 }
 
 export const HomeModalFieldsForm: FC<HomeModalFieldsFormProps> = ({

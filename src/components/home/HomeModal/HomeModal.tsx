@@ -25,7 +25,9 @@ interface HomeModalProps {
 
 export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
   ({ onCloseModal }, ref: ForwardedRef<HTMLDivElement>) => {
-    const [selectedValue, setSelectedValue] = useState<SelectedValue>(options[0].label);
+    const [selectedValue, setSelectedValue] = useState<SelectedValue>(
+      options[0].label,
+    );
     const [areaDescription, setAreaDescription] = useState<AreaValue>('');
 
     const handleSelectChange = (selectValue: SingleValue<Option>) => {
@@ -34,7 +36,9 @@ export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
       }
     };
 
-    const handleChangeAreaDescription = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const handleChangeAreaDescription = (
+      event: ChangeEvent<HTMLTextAreaElement>,
+    ) => {
       setAreaDescription(event.target.value);
     };
 

@@ -16,7 +16,9 @@ export const DashboardPanel: FC = () => {
     <div className={styles['dashboard']}>
       <Container className={styles['dashboardContainer']}>
         {userName && (
-          <span className={styles['dashboardGreetTitle']}>Welcome back, {userName}!</span>
+          <span className={styles['dashboardGreetTitle']}>
+            Welcome back, {userName}!
+          </span>
         )}
         <h1 className={styles['dashboardTitle']}>Dashboard</h1>
       </Container>

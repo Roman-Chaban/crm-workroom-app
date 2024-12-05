@@ -28,7 +28,9 @@ export default function MultiStepsSignUpPage() {
     [STEPS.SERVICE_DETAILS_STEP]: <ServiceDetails />,
   };
 
-  const CurrentStepComponent = stepComponents[currentStep] || <div>Step number: 4</div>;
+  const CurrentStepComponent = stepComponents[currentStep] || (
+    <div>Step number: 4</div>
+  );
 
   return (
     <Container className={styles['signUpSteps']}>

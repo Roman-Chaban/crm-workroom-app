@@ -16,7 +16,9 @@ export const AttachedStream: FC = () => {
           loading="lazy"
           className={styles['attachedStreamIcon']}
         />
-        <h4 className={styles['attachedStreamTitle']}>Attached files to the task</h4>
+        <h4 className={styles['attachedStreamTitle']}>
+          Attached files to the task
+        </h4>
       </div>
     </div>
   );

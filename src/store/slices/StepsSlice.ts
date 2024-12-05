@@ -36,6 +36,7 @@ export const stepsSlice = createSlice({
   },
 });
 
-export const { handleNextStep, handlePrevStep, handleSetStep } = stepsSlice.actions;
+export const { handleNextStep, handlePrevStep, handleSetStep } =
+  stepsSlice.actions;
 
 export default stepsSlice.reducer;

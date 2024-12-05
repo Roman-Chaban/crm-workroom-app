@@ -16,7 +16,9 @@ export const ProjectsSidebarNav: FC = () => {
               key={listItem.id}
               className={styles['sidebarListItem']}
             >
-              <span className={styles['sidebarListItemCode']}>{listItem.code}</span>
+              <span className={styles['sidebarListItemCode']}>
+                {listItem.code}
+              </span>
               {listItem.title}
             </li>
           ))}

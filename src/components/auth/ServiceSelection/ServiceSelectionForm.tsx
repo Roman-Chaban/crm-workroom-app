@@ -10,13 +10,20 @@ import { Container, SignInNav } from '@/index/index';
 
 import Select, { SingleValue } from 'react-select';
 
-import { optionsForWhy, optionsForDescription, ServiceOption } from '@/interfaces/servicesSelect';
+import {
+  optionsForWhy,
+  optionsForDescription,
+  ServiceOption,
+} from '@/interfaces/servicesSelect';
 
 import { toast, Toaster } from 'react-hot-toast';
 
 import customStyles from '@/components/ui/Select/selectStyles';
 
-import { setPersonDescriptor, setUsagePurpose } from '@/store/slices/ServiceSelectionSlice';
+import {
+  setPersonDescriptor,
+  setUsagePurpose,
+} from '@/store/slices/ServiceSelectionSlice';
 
 import styles from './ServiceSelection.module.scss';
 
@@ -24,21 +31,29 @@ interface ServiceSelectionFormProps {
   currentStep: number;
 }
 
-export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({ currentStep }) => {
+export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({
+  currentStep,
+}) => {
   const dispatch = useAppDispatch();
 
   const { saveToLocalStorage } = useSaveLocalStorage();
 
-  const { usagePurpose, personBestDescriptor } = useAppSelector((state) => state.serviceSelection);
+  const { usagePurpose, personBestDescriptor } = useAppSelector(
+    (state) => state.serviceSelection,
+  );
 
-  const handleChangeServicesForWhyOption = (newValue: SingleValue<ServiceOption>) => {
+  const handleChangeServicesForWhyOption = (
+    newValue: SingleValue<ServiceOption>,
+  ) => {
     if (newValue) {
       dispatch(setUsagePurpose(newValue.value));
       saveToLocalStorage('usagePurpose', newValue.value);
     }
   };
 
-  const handleChangeDescriptionOption = (newValue: SingleValue<ServiceOption>) => {
+  const handleChangeDescriptionOption = (
+    newValue: SingleValue<ServiceOption>,
+  ) => {
     if (newValue) {
       dispatch(setPersonDescriptor(newValue.value));
       saveToLocalStorage('personBestDescriptor', newValue.value);
@@ -53,13 +68,17 @@ export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({ currentSte
       return;
     }
 
-    const registrationData = JSON.parse(localStorage.getItem('registration') || '{}');
+    const registrationData = JSON.parse(
+      localStorage.getItem('registration') || '{}',
+    );
     if (!registrationData.id) {
       toast.error('User not found. Please complete the registration process.');
       return;
     }
 
-    const existingServiceDetails = JSON.parse(localStorage.getItem('service-details') || '{}');
+    const existingServiceDetails = JSON.parse(
+      localStorage.getItem('service-details') || '{}',
+    );
     const updatedServiceDetails = {
       ...existingServiceDetails,
       usagePurpose,
@@ -67,7 +86,10 @@ export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({ currentSte
     };
 
     try {
-      localStorage.setItem('service-details', JSON.stringify(updatedServiceDetails));
+      localStorage.setItem(
+        'service-details',
+        JSON.stringify(updatedServiceDetails),
+      );
       toast.success('Service details updated successfully');
     } catch (error) {
       console.error('Error saving to localStorage:', error);

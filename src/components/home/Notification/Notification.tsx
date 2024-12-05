@@ -1,6 +1,11 @@
 'use client';
 
-import React, { TransitionEventHandler, useEffect, useState, type FC } from 'react';
+import React, {
+  TransitionEventHandler,
+  useEffect,
+  useState,
+  type FC,
+} from 'react';
 
 import Image from 'next/image';
 
@@ -13,9 +18,14 @@ interface NotificationsProps {
   isOpen: boolean;
 }
 
-export const Notifications: FC<NotificationsProps> = ({ onCloseNotifications, isOpen }) => {
+export const Notifications: FC<NotificationsProps> = ({
+  onCloseNotifications,
+  isOpen,
+}) => {
   const [showNotification, setShowNotification] = useState(false);
-  const [animationState, setAnimationState] = useState<'entering' | 'exiting' | 'none'>('none');
+  const [animationState, setAnimationState] = useState<
+    'entering' | 'exiting' | 'none'
+  >('none');
 
   useEffect(() => {
     if (isOpen) {
@@ -26,7 +36,9 @@ export const Notifications: FC<NotificationsProps> = ({ onCloseNotifications, is
     }
   }, [isOpen]);
 
-  const handleTransitionEnd: TransitionEventHandler<HTMLDivElement> = (event) => {
+  const handleTransitionEnd: TransitionEventHandler<HTMLDivElement> = (
+    event,
+  ) => {
     if (event.propertyName === 'transform' && animationState === 'exiting') {
       setShowNotification(false);
     }

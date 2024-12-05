@@ -54,6 +54,7 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
 
       window.location.reload();
     },
+
     onError: (error) => {
       toast.error(error.message || 'An error occurred during logout');
     },

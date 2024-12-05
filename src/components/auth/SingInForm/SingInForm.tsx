@@ -4,7 +4,11 @@ import React, { FormEvent, useState, type FC } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 
-import { SignInFormRemember, SignInFormSubmit, SignInFormFields } from '@/index/index';
+import {
+  SignInFormRemember,
+  SignInFormSubmit,
+  SignInFormFields,
+} from '@/index/index';
 
 import { EventType, Remember } from '@/types/signIn';
 import { IsSubmitting } from '@/types/registration';
@@ -85,7 +89,9 @@ export const SignInForm: FC = () => {
       <Toaster />
       <div className={styles['signInFormBlock']}>
         <div className={styles['signInFormBlockContainer']}>
-          <h4 className={styles['signInFormBlockTitle']}>Sign In to Workroom</h4>
+          <h4 className={styles['signInFormBlockTitle']}>
+            Sign In to Workroom
+          </h4>
           <form
             className={styles['signInForm']}
             onSubmit={handleSubmitForm}

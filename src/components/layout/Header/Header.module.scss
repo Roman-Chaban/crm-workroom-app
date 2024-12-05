@@ -114,7 +114,8 @@
       right: 16.5px;
       border-width: 6.5px;
       border-style: solid;
-      border-color: transparent transparent color.$color-white-primary transparent;
+      border-color: transparent transparent color.$color-white-primary
+        transparent;
       z-index: 110;
     }
   }
@@ -167,7 +168,8 @@
       transform: translateX(-50%);
       border-width: 10px;
       border-style: solid;
-      border-color: transparent transparent color.$background-support-primary transparent;
+      border-color: transparent transparent color.$background-support-primary
+        transparent;
       width: 0;
       height: 0;
       z-index: -10;

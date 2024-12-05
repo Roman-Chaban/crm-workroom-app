@@ -10,7 +10,9 @@ interface UserDetailsSidebarProps {
   currentStep: number;
 }
 
-export const UserDetailsSidebar: FC<UserDetailsSidebarProps> = ({ currentStep }) => {
+export const UserDetailsSidebar: FC<UserDetailsSidebarProps> = ({
+  currentStep,
+}) => {
   return (
     <aside className={styles['sidebarSteps']}>
       <div className={styles['sidebarStepsContainer']}>

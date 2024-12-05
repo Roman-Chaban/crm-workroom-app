@@ -7,7 +7,12 @@ interface ContainerProps {
   style?: CSSProperties;
 }
 
-export const Container: FC<ContainerProps> = ({ children, className, ref, style }) => {
+export const Container: FC<ContainerProps> = ({
+  children,
+  className,
+  ref,
+  style,
+}) => {
   return (
     <div
       className={className}

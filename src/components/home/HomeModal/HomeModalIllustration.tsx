@@ -15,7 +15,8 @@ export const HomeModalIllustration: FC = () => {
         className={styles['modalBannerImage']}
       />
       <p className={styles['modalHeaderParagraph']}>
-        Describe your question and our specialists will answer you within 24 hours.
+        Describe your question and our specialists will answer you within 24
+        hours.
       </p>
     </>
   );

@@ -26,7 +26,8 @@ export const LoginUser = async (
     return { email, id, isAccountVerified, refreshToken };
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      const errorMessage = error.response?.data?.message || 'Registration failed';
+      const errorMessage =
+        error.response?.data?.message || 'Registration failed';
       throw new Error(errorMessage);
     }
     throw new Error('Unknown error occurred during registration');

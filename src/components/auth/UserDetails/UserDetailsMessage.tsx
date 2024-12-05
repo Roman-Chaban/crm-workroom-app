@@ -110,7 +110,11 @@ export const UserDetailsMessage: FC<UserDetailsMessageProps> = ({
     const accessToken = localStorage.getItem('accessToken') || '';
     const refreshToken = localStorage.getItem('refreshToken') || '';
 
-    confirmationCodeMutation.mutate([confirmationCode, accessToken, refreshToken]);
+    confirmationCodeMutation.mutate([
+      confirmationCode,
+      accessToken,
+      refreshToken,
+    ]);
   };
 
   const timerDisplay = isTimerActive
@@ -140,7 +144,8 @@ export const UserDetailsMessage: FC<UserDetailsMessageProps> = ({
               width={24}
               height={24}
             />
-            An email was sent to **{userEmail}**. It will be valid for {timerDisplay}.
+            An email was sent to **{userEmail}**. It will be valid for{' '}
+            {timerDisplay}.
           </h4>
         </div>
       </div>

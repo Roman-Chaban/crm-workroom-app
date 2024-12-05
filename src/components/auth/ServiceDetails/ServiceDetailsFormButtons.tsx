@@ -25,7 +25,9 @@ export const ServiceDetailsFormButtons: FC<ServiceDetailsFormButtonsProps> = ({
 
   return (
     <div className={styles['serviceDetailsButtons']}>
-      <label className={styles['serviceDetailsLabel']}>How many people in your team?</label>
+      <label className={styles['serviceDetailsLabel']}>
+        How many people in your team?
+      </label>
       <div className={styles['serviceDetailsButtonsContainer']}>
         {serviceDetailsButtons.map((button) => (
           <Button

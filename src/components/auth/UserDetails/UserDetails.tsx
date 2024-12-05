@@ -4,7 +4,12 @@ import React, { type FC } from 'react';
 
 import { useAppSelector } from '@/hooks/useAppSelector';
 
-import { Container, Section, SignInHeader, UserDetailsForm } from '@/index/index';
+import {
+  Container,
+  Section,
+  SignInHeader,
+  UserDetailsForm,
+} from '@/index/index';
 
 import { Toaster } from 'react-hot-toast';
 

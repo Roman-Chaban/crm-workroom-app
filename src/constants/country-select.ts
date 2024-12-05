@@ -1,9 +1,9 @@
-import { StylesConfig } from "react-select";
-import { keyframes } from "@emotion/react";
+import { StylesConfig } from 'react-select';
+import { keyframes } from '@emotion/react';
 
-import { colors } from "./colors";
+import { colors } from './colors';
 
-import { CountryOption } from "@/staticData/countryOptions";
+import { CountryOption } from '@/staticData/countryOptions';
 
 const fadeIn = keyframes`
   from {
@@ -20,10 +20,10 @@ const customSelectStyles: StylesConfig<CountryOption, false> = {
   container: (base) => ({
     ...base,
     marginBlockStart: 11,
-    display: "flex",
-    flexDirection: "column",
-    width: "100%",
-    maxWidth: "150px",
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    maxWidth: '150px',
   }),
   control: (base, state) => ({
     ...base,
@@ -37,18 +37,18 @@ const customSelectStyles: StylesConfig<CountryOption, false> = {
       ? `0 4px 10px ${colors.shadowBoxSupport}`
       : colors.shadowModal,
     borderRadius: 12,
-    transition: "all 0.3s ease",
+    transition: 'all 0.3s ease',
     backgroundColor: colors.colorWhitePrimary,
-    ":hover": {
+    ':hover': {
       borderColor: colors.backgroundSupportHover,
-      opacity: "0.5",
+      opacity: '0.5',
     },
-    cursor: "pointer",
+    cursor: 'pointer',
   }),
   placeholder: (base) => ({
     ...base,
     color: colors.colorGrayNeutral,
-    fontSize: "14px",
+    fontSize: '14px',
     fontWeight: 400,
   }),
   menu: (base) => ({
@@ -58,32 +58,32 @@ const customSelectStyles: StylesConfig<CountryOption, false> = {
     backgroundColor: colors.colorWhitePrimary,
     animation: `${fadeIn} 0.3s ease-in-out`,
     marginTop: 8,
-    overflow: "hidden",
-    padding: "10px 5px",
+    overflow: 'hidden',
+    padding: '10px 5px',
     border: `2px solid ${colors.backgroundModalOverlay}`,
   }),
   menuList: (base) => ({
     ...base,
-    maxHeight: "260px",
-    overflowY: "auto",
-    padding: "8px 0",
-    "::-webkit-scrollbar": {
-      width: "6px",
+    maxHeight: '260px',
+    overflowY: 'auto',
+    padding: '8px 0',
+    '::-webkit-scrollbar': {
+      width: '6px',
     },
-    "::-webkit-scrollbar-thumb": {
+    '::-webkit-scrollbar-thumb': {
       backgroundColor: colors.colorGrayNeutral,
-      borderRadius: "4px",
+      borderRadius: '4px',
     },
-    display: "flex",
-    flexFlow: "column nowrap",
+    display: 'flex',
+    flexFlow: 'column nowrap',
     gap: 10,
   }),
   option: (base, { isFocused, isSelected }) => ({
     ...base,
-    padding: "12px",
-    fontSize: "14px",
+    padding: '12px',
+    fontSize: '14px',
     fontWeight: isSelected ? 600 : 400,
-    borderRadius: "6px",
+    borderRadius: '6px',
     backgroundColor: isSelected
       ? colors.backgroundSupportActive
       : isFocused
@@ -93,28 +93,28 @@ const customSelectStyles: StylesConfig<CountryOption, false> = {
       isSelected || isFocused
         ? colors.colorWhitePrimary
         : colors.colorGrayNeutral,
-    cursor: "pointer",
-    ":hover": {
+    cursor: 'pointer',
+    ':hover': {
       backgroundColor: colors.backgroundSupportHover,
       color: colors.colorWhitePrimary,
     },
-    maxWidth: "95%",
+    maxWidth: '95%',
   }),
   singleValue: (base) => ({
     ...base,
     color: colors.colorGrayNeutral,
-    fontSize: "14px",
+    fontSize: '14px',
     fontWeight: 500,
   }),
   indicatorSeparator: () => ({
-    display: "none",
+    display: 'none',
   }),
   dropdownIndicator: (base, state) => ({
     ...base,
     color: state.isFocused
       ? colors.backgroundSupportPrimary
       : colors.colorGrayNeutral,
-    ":hover": {
+    ':hover': {
       color: colors.backgroundSupportHover,
     },
   }),
@@ -124,7 +124,7 @@ const customSelectStyles: StylesConfig<CountryOption, false> = {
   }),
   input: (base) => ({
     ...base,
-    display: "none",
+    display: 'none',
   }),
 };
 
