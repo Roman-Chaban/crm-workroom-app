@@ -4,7 +4,7 @@ import { useMutation } from '@tanstack/react-query';
 import { useAppSelector } from '@/hooks/useAppSelector';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
 
-import { Container, Input, SignInNav } from '@/components/index';
+import { Container, Input, SignInNav } from '@/index/index';
 
 import Select, { SingleValue } from 'react-select';
 import customStyles from '@/components/ui/Select/selectStyles';

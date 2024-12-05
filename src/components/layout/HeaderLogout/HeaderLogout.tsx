@@ -9,7 +9,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
-import { Button } from '@/components/index';
+import { Button } from '@/index/index';
 
 import { LogoutUser } from '@/api/logout';
 

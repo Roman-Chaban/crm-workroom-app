@@ -1,6 +1,6 @@
 import React, { type FC } from 'react';
 
-import { SidebarNav, Container, SidebarLogout, SidebarLogo } from '@/components/index/index';
+import { SidebarNav, Container, SidebarLogout, SidebarLogo } from '@/index/index';
 
 import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 

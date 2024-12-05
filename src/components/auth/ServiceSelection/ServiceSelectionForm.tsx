@@ -6,7 +6,7 @@ import { useSaveLocalStorage } from '@/hooks/useSaveLocalStorage';
 import { useAppSelector } from '@/hooks/useAppSelector';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
 
-import { Container, SignInNav } from '@/components/index';
+import { Container, SignInNav } from '@/index/index';
 
 import Select, { SingleValue } from 'react-select';
 

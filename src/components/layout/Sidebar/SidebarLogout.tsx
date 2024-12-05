@@ -2,7 +2,7 @@ import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
-import { Button } from '@/components/index/index';
+import { Button } from '@/index/index';
 
 import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 

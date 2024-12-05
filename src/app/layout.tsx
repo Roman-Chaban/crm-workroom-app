@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 import { Nunito_Sans } from 'next/font/google';
 
-import { BodyWrapper } from '@/components/index/index';
+import { BodyWrapper } from '@/index/index';
 
 import { SidebarRender } from '@/components/containers/SidebarRender/SidebarRender';
 

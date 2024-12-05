@@ -3,7 +3,7 @@ import React, { type FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Button } from '@/components/index';
+import { Button } from '@/index/index';
 
 import { NAV_PATHS } from '@/enums/navPaths';
 

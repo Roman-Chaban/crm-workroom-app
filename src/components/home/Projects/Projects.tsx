@@ -1,6 +1,6 @@
 import React, { type FC } from 'react';
 
-import { NavView, ProjectItem } from '@/components/index/index';
+import { NavView, ProjectItem } from '@/index/index';
 
 import styles from './Projects.module.scss';
 

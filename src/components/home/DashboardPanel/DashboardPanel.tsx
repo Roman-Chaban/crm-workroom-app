@@ -4,7 +4,7 @@ import React, { type FC } from 'react';
 
 import { useParsedUserName } from '@/hooks/useParsedUserName';
 
-import { Container } from '@/components/index/index';
+import { Container } from '@/index/index';
 
 import styles from './DashboardPanel.module.scss';
 

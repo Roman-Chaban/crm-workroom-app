@@ -1,13 +1,6 @@
 import React, { type FC } from 'react';
 
-import {
-  Box,
-  Container,
-  Heading,
-  UpdatedStream,
-  AttachedStream,
-  ViewLink,
-} from '@/components/index';
+import { Box, Container, Heading, UpdatedStream, AttachedStream, ViewLink } from '@/index/index';
 
 import styles from './ActivityStream.module.scss';
 

@@ -9,7 +9,7 @@ import {
   HomeModalIllustration,
   HomeModalFieldsForm,
   Container,
-} from '@/components/index';
+} from '@/index/index';
 
 import { Option, SelectedValue } from '@/interfaces/select';
 

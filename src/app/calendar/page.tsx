@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import React from 'react';
 
-import { Section, Nav } from '@/components/index';
+import { Section, Nav } from '@/index/index';
 
 import styles from '@/styles/pages/calendar.module.scss';
 

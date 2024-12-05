@@ -4,7 +4,7 @@ import React, { useMemo, useState, type FC } from 'react';
 
 import { EventType } from '@/types/signIn';
 
-import { Button, Container, Input } from '@/components/index';
+import { Button, Container, Input } from '@/index/index';
 
 import {
   IsPasswordVisible,

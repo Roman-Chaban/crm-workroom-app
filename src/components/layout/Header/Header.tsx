@@ -5,7 +5,7 @@ import React, { ChangeEvent, useEffect, useMemo, useState, type FC } from 'react
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Button, Container, Input, HeaderLogout } from '@/components/index';
+import { Button, Container, Input, HeaderLogout } from '@/index/index';
 import { Notifications } from '@/components/home/Notification/Notification';
 
 import { Value } from '@/types/input';

@@ -5,7 +5,7 @@ import React, { type FC } from 'react';
 import { useAppSelector } from '@/hooks/useAppSelector';
 import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 
-import { Container, Section, SignInHeader } from '@/components/index';
+import { Container, Section, SignInHeader } from '@/index/index';
 
 import { ServiceDetailsForm } from './ServiceDetailsForm';
 

@@ -4,7 +4,7 @@ import React, { useState, type FC } from 'react';
 
 import Select from 'react-select';
 
-import { Container, Aside, ProjectsSidebarNav } from '@/components/index';
+import { Container, Aside, ProjectsSidebarNav } from '@/index/index';
 
 import { ProjectsOption } from '@/interfaces/projects';
 import { projectsSelect } from '@/staticData/projectsOptions';

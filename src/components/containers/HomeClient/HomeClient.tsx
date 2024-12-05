@@ -5,7 +5,7 @@ import React, { useRef, useState } from 'react';
 import { useClickOutside } from '@/hooks/useClickOutside';
 import { useBodyOverflow } from '@/hooks/useBodyOverflow';
 
-import { Sidebar, HomeModal } from '@/components/index';
+import { Sidebar, HomeModal } from '@/index/index';
 
 type IsOpenModal = boolean;
 type ModalRef = null;

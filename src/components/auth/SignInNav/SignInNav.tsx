@@ -6,7 +6,7 @@ import { useAppDispatch } from '@/hooks/useAppDispatch';
 
 import Image from 'next/image';
 
-import { Button } from '@/components/index';
+import { Button } from '@/index/index';
 
 import { handleNextStep, handlePrevStep } from '@/store/slices/StepsSlice';
 

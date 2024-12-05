@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { Metadata } from 'next';
 
-import { Section, SignInBanner, SignInForm } from '@/components/index/index';
+import { Section, SignInBanner, SignInForm } from '@/index/index';
 
 import styles from '@/styles/pages/signIn.module.scss';
 

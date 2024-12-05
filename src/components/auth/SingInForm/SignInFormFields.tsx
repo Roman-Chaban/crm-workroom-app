@@ -2,7 +2,7 @@
 
 import React, { useState, type FC } from 'react';
 
-import { Input } from '@/components/index';
+import { Input } from '@/index/index';
 
 import { EventType } from '@/types/signIn';
 import { IsPasswordVisible } from '@/types/registration';

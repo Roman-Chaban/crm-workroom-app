@@ -13,12 +13,7 @@ import React, {
 import { useAppSelector } from '@/hooks/useAppSelector';
 import { useMutation } from '@tanstack/react-query';
 
-import {
-  UserDetailsMessage,
-  Container,
-  UserDetailsFields,
-  SignInNav,
-} from '@/components/index/index';
+import { UserDetailsMessage, Container, UserDetailsFields, SignInNav } from '@/index/index';
 
 import { toast } from 'react-hot-toast';
 

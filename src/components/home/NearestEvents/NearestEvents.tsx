@@ -1,6 +1,6 @@
 import React, { type FC } from 'react';
 
-import { NavView } from '@/components/index/index';
+import { NavView } from '@/index/index';
 
 import { NAV_PATHS } from '@/enums/navPaths';
 

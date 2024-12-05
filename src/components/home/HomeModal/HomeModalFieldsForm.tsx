@@ -3,7 +3,7 @@
 import React, { type FC } from 'react';
 import { ChangeEvent } from 'react';
 
-import { Button, Textarea } from '@/components/index';
+import { Button, Textarea } from '@/index/index';
 
 import Select, { SingleValue } from 'react-select';
 import selectStyles from '@/components/ui/Select/selectStyles';

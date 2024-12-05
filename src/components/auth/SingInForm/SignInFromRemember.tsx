@@ -2,7 +2,7 @@ import React, { type FC } from 'react';
 
 import Link from 'next/link';
 
-import { Button, Input } from '@/components/index';
+import { Button, Input } from '@/index/index';
 
 import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 

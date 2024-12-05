@@ -1,6 +1,6 @@
 import React, { type FC } from 'react';
 
-import { Container } from '@/components/index';
+import { Container } from '@/index/index';
 
 import { projectsNavList } from '@/staticData/projectsNav';
 

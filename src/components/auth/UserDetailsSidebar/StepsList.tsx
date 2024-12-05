@@ -1,6 +1,6 @@
 import React, { type FC } from 'react';
 
-import { StepsListItem } from '@/components/index/index';
+import { StepsListItem } from '@/index/index';
 
 import { stepsList } from '@/staticData/stepsList';
 

@@ -2,7 +2,7 @@
 
 import React, { FC, ReactNode } from 'react';
 
-import { Header, Grid } from '@/components/index/index';
+import { Header, Grid } from '@/index/index';
 
 import { usePathname } from 'next/navigation';
 import { NAV_PATHS } from '@/enums/navPaths';

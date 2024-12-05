@@ -4,7 +4,7 @@ import { useAppDispatch } from '@/hooks/useAppDispatch';
 
 import { serviceDetailsButtons } from '@/constants/service-buttons';
 
-import { Button } from '@/components/index';
+import { Button } from '@/index/index';
 
 import { setSelectedTeamSize } from '@/store/slices/ServiceDetailsSlice';
 

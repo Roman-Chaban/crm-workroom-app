@@ -11,7 +11,7 @@ import {
   ServiceSelection,
   UserDetailsSidebar,
   ServiceDetails,
-} from '@/components/index';
+} from '@/index/index';
 
 import { STEPS } from '@/enums/steps';
 

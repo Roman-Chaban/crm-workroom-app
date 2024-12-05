@@ -4,7 +4,7 @@ import React, { TransitionEventHandler, useEffect, useState, type FC } from 'rea
 
 import Image from 'next/image';
 
-import { Box, Button, Container, Heading } from '@/components/index';
+import { Box, Button, Container, Heading } from '@/index/index';
 
 import styles from './Notification.module.scss';
 

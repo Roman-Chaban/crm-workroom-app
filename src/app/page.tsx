@@ -10,7 +10,7 @@ import {
   Projects,
   ActivityStream,
   Section,
-} from '@/components/index/index';
+} from '@/index/index';
 
 import styles from '@/styles/pages/home.module.scss';
 

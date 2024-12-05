@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 
 import { sidebarNav } from '@/staticData/sidebarNav';
 
-import { SidebarNavItem } from '@/components/index/index';
+import { SidebarNavItem } from '@/index/index';
 
 import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 

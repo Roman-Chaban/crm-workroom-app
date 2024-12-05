@@ -1,6 +1,6 @@
 import React, { type FC } from 'react';
 
-import { Button } from '@/components/index';
+import { Button } from '@/index/index';
 
 import Image from 'next/image';
 
