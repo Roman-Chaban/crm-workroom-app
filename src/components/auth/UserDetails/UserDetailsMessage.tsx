@@ -11,7 +11,7 @@ import { ConfirmationResponse, SmsCode, SmsTimer } from '@/types/registration';
 
 import { toast, Toaster } from 'react-hot-toast';
 
-import { confirmUserRegistration } from '@/api/confirmationCode';
+import { confirmUserRegistration } from '@/api/confirmation';
 
 import styles from './UserDetails.module.scss';
 

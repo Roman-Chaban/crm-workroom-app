@@ -51,3 +51,6 @@ export { AttachedStream } from '@/components/home/AttachedStream/AttachedStream'
 export { UpdatedStream } from '@/components/home/UpdatedStream/UpdatedStream';
 export { Notifications } from '@/components/home/Notification/Notification';
 export { Nav } from '@/components/ui/Nav/Nav';
+export { ProjectsSidebar } from '@/components/projects/ProjectsSidebar/ProjectsSidebar';
+export { ProjectsSidebarNav } from '@/components/projects/ProjectsSidebarNav/ProjectsSidebarNav';
+export { Aside } from '@/components/ui/Aside/Aside';

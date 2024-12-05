@@ -1,17 +1,19 @@
 import React, { ChangeEvent, FormEvent, FC } from 'react';
+
 import { useMutation } from '@tanstack/react-query';
 import { useAppSelector } from '@/hooks/useAppSelector';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
 
-import Select, { SingleValue } from 'react-select';
 import { Container, Input, SignInNav } from '@/components/index';
+
+import Select, { SingleValue } from 'react-select';
 import customStyles from '@/components/ui/Select/selectStyles';
 
 import { ServiceOption } from '@/interfaces/servicesSelect';
 import { serviceBusinessOptions } from '@/constants/service-business';
 import { ServiceDetailsFormButtons } from './ServiceDetailsFormButtons';
 import { ServicesDetails } from '@/types/servicesDetails';
-import { getServicesDetails } from '@/api/servicesDetails';
+import { getServicesDetails } from '@/api/services';
 
 import toast from 'react-hot-toast';
 

@@ -2,8 +2,7 @@ import React from 'react';
 
 import type { Metadata } from 'next';
 
-import { Nav, Grid, Container } from '@/components/index';
-import { ProjectsSidebar } from '@/components/projects/ProjectsSidebar/ProjectsSidebar';
+import { Nav, Grid, Container, ProjectsSidebar } from '@/components/index';
 
 import styles from '@/styles/pages/projects.module.scss';
 

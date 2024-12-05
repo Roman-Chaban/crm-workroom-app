@@ -4,14 +4,12 @@ import React, { useState, type FC } from 'react';
 
 import Select from 'react-select';
 
-import { Container } from '@/components/index';
-import { Aside } from '@/components/ui/Aside/Aside';
+import { Container, Aside, ProjectsSidebarNav } from '@/components/index';
 
 import { ProjectsOption } from '@/interfaces/projects';
 import { projectsSelect } from '@/staticData/projectsOptions';
 
 import { selectStyles } from '@/styles/selectsStyles/projectsSelect';
-import { ProjectsSidebarNav } from './ProjectsSidebarNav/ProjectsSidebarNav';
 
 import styles from './ProjectsSidebar.module.scss';
 
