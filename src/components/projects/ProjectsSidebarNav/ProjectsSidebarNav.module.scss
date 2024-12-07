@@ -1,18 +1,14 @@
-@use '../../../../styles/abstracts/mixins/mixins' as *;
-@use '../../../../styles/base/colors/colors' as color;
-@use '../../../../styles/base/globals/globals' as size;
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
 
 .sidebar {
   width: 100%;
-
-  &Container {
-    padding: 8px 24px;
-  }
+  height: 100%;
 
   &List {
     display: flex;
     flex-flow: column nowrap;
-    gap: 16px;
 
     &Item {
       display: flex;
@@ -20,10 +16,44 @@
       gap: 4px;
       min-height: 40px;
       @include listItemTitle;
+      margin-inline: 24px;
+      margin-block: 8px 16px;
+      cursor: pointer;
     }
 
     &ItemCode {
       @include listItemCode;
     }
+  }
+  & .activeListItem {
+    font-weight: 700;
+    border-radius: 14px;
+    background: color.$background-main-light;
+    padding: 14px 16px;
+    margin: 8px 12px;
+    position: relative;
+
+    &::before {
+      content: '';
+      height: 100%;
+      width: 4px;
+      background: color.$background-support-primary;
+      position: absolute;
+      right: -12px;
+      top: 0;
+      border-radius: 2px;
+    }
+  }
+
+  & .viewDetailsButton {
+    display: flex;
+    align-items: center;
+    font-size: size.$font-size-lg;
+    color: color.$background-support-primary;
+    font-weight: 600;
+    position: relative;
+
+    transition: color 0.5s ease-in-out 0s;
+    background: transparent;
   }
 }

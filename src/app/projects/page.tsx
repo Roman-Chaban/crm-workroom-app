@@ -2,7 +2,9 @@ import React from 'react';
 
 import type { Metadata } from 'next';
 
-import { Nav, Grid, Container, ProjectsSidebar } from '@/index/index';
+import { Nav, Grid, ProjectsSidebar, Section, Container } from '@/index/index';
+
+import { ProjectsTasksNav } from '@/components/projects/ProjectsTasksNav/ProjectsTasksNav';
 
 import styles from '@/styles/pages/projects.module.scss';
 
@@ -22,9 +24,12 @@ export default function ProjectsPage() {
         buttonLabel="Add Project"
         isRenderBackLink={false}
       />
-      <Container className={styles['projectsContainer']}>
+      <Section className={styles['projects']}>
         <ProjectsSidebar />
-      </Container>
+        <Container className={styles['projectsContainer']}>
+          <ProjectsTasksNav />
+        </Container>
+      </Section>
     </Grid>
   );
 }

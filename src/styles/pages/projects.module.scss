@@ -1,5 +1,11 @@
-.projectsContainer {
+.projects {
   width: 100%;
   min-height: 100vh;
   grid-column: span 12;
+  display: flex;
+  gap: 30px;
+
+  &Container {
+    width: 100%;
+  }
 }

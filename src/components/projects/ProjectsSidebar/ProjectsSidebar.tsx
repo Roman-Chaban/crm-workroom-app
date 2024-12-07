@@ -18,6 +18,8 @@ export const ProjectsSidebar: FC = () => {
     projectsSelect[0],
   );
 
+  const [activeListItem, setActiveListItem] = useState<number>(1);
+
   const handleSelectProjectsOption = (option: ProjectsOption | null) => {
     if (option) {
       setSelectedProjects(option);
@@ -35,7 +37,10 @@ export const ProjectsSidebar: FC = () => {
           styles={selectStyles}
           instanceId="projects-select"
         />
-        <ProjectsSidebarNav />
+        <ProjectsSidebarNav
+          activeListItem={activeListItem}
+          setActiveListItem={setActiveListItem}
+        />
       </Container>
     </Aside>
   );
