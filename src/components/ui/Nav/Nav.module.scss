@@ -7,8 +7,14 @@
   width: 100%;
   &Container {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
+  }
+
+  &Top {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
   }
 
   &Title {
@@ -19,5 +25,30 @@
     @include Button;
     position: static;
     max-width: 158px;
+  }
+
+  &BackButton {
+    width: auto;
+    background: inherit;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    &::before {
+      content: '';
+      background: url('/icons/outlined-icons/arrow-back.svg') no-repeat center
+        center;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 0;
+      top: -2.5px;
+    }
+  }
+
+  &BackLink {
+    margin-inline-start: 28px;
+    font-weight: 600;
+    color: color.$background-support-primary;
   }
 }

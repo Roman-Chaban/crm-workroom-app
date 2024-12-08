@@ -2,12 +2,14 @@ import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
+import { Div, Heading } from '@/index';
+
 import styles from './UpdatedStream.module.scss';
 
 export const UpdatedStream: FC = () => {
   return (
-    <div className={styles['updatedStream']}>
-      <div className={styles['updatedStreamContainer']}>
+    <Div className={styles['updatedStream']}>
+      <Div className={styles['updatedStreamContainer']}>
         <Image
           src={'/icons/activity-stream-icons/upload-icon.svg'}
           alt="Upload Icon"
@@ -17,10 +19,13 @@ export const UpdatedStream: FC = () => {
           loading="lazy"
         />
 
-        <h4 className={styles['updatedStreamTitle']}>
+        <Heading
+          tag="h4"
+          className={styles['updatedStreamTitle']}
+        >
           Updated the status of Mind Map task to In Progress
-        </h4>
-      </div>
-    </div>
+        </Heading>
+      </Div>
+    </Div>
   );
 };

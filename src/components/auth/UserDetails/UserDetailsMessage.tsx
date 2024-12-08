@@ -14,6 +14,7 @@ import { toast, Toaster } from 'react-hot-toast';
 import { confirmUserRegistration } from '@/api/confirmation';
 
 import styles from './UserDetails.module.scss';
+import { Div, Heading } from '@/index';
 
 interface UserDetailsMessageProps {
   userEmail: string;
@@ -126,18 +127,26 @@ export const UserDetailsMessage: FC<UserDetailsMessageProps> = ({
   return (
     <>
       <Toaster />
-      <div className={styles['multiMessageBlock']}>
-        <div className={styles['multiMessageLabelContainer']}>
-          <h5 className={styles['multiMessageLabel']}>Code from Email</h5>
+      <Div className={styles['multiMessageBlock']}>
+        <Div className={styles['multiMessageLabelContainer']}>
+          <Heading
+            tag="h5"
+            className={styles['multiMessageLabel']}
+          >
+            Code from Email
+          </Heading>
 
           <UserDetailsConfirmation
             handleSmsCodeChange={handleSmsCodeChange}
             smsCode={smsCode}
           />
-        </div>
+        </Div>
 
-        <div className={styles['stepFormSubmittedMessageBlock']}>
-          <h4 className={styles['stepFormSubmittedMessage']}>
+        <Div className={styles['stepFormSubmittedMessageBlock']}>
+          <Heading
+            tag="h4"
+            className={styles['stepFormSubmittedMessage']}
+          >
             <Image
               src="/images/auth/icons/hint.svg"
               alt="Hint Icon"
@@ -146,9 +155,9 @@ export const UserDetailsMessage: FC<UserDetailsMessageProps> = ({
             />
             An email was sent to **{userEmail}**. It will be valid for{' '}
             {timerDisplay}.
-          </h4>
-        </div>
-      </div>
+          </Heading>
+        </Div>
+      </Div>
     </>
   );
 };

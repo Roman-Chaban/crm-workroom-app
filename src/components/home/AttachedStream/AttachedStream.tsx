@@ -2,12 +2,14 @@ import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
+import { Div, Heading } from '@/index';
+
 import styles from './AttachedStream.module.scss';
 
 export const AttachedStream: FC = () => {
   return (
-    <div className={styles['attachedStream']}>
-      <div className={styles['attachedStreamContainer']}>
+    <Div className={styles['attachedStream']}>
+      <Div className={styles['attachedStreamContainer']}>
         <Image
           src={'/icons/activity-stream-icons/attach-icon.svg'}
           alt="Attach Icon"
@@ -16,10 +18,13 @@ export const AttachedStream: FC = () => {
           loading="lazy"
           className={styles['attachedStreamIcon']}
         />
-        <h4 className={styles['attachedStreamTitle']}>
+        <Heading
+          tag="h4"
+          className={styles['attachedStreamTitle']}
+        >
           Attached files to the task
-        </h4>
-      </div>
-    </div>
+        </Heading>
+      </Div>
+    </Div>
   );
 };

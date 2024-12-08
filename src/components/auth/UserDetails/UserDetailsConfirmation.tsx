@@ -2,6 +2,8 @@ import React, { ChangeEvent, type FC } from 'react';
 
 import { SmsCode } from '@/types/registration';
 
+import { Div } from '@/index';
+
 import styles from './UserDetails.module.scss';
 
 interface UserDetailsConfirmationProps {
@@ -40,7 +42,7 @@ export const UserDetailsConfirmation: FC<UserDetailsConfirmationProps> = ({
   };
 
   return (
-    <div className={styles['multiMessageButtonsContainer']}>
+    <Div className={styles['multiMessageButtonsContainer']}>
       {smsCode.map((value, index) => (
         <input
           key={index}
@@ -52,6 +54,6 @@ export const UserDetailsConfirmation: FC<UserDetailsConfirmationProps> = ({
           onKeyDown={(event) => handleSmsCodeInputKeyDown(event, index)}
         />
       ))}
-    </div>
+    </Div>
   );
 };

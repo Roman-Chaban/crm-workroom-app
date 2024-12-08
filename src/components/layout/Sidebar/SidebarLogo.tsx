@@ -3,13 +3,15 @@ import React, { type FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Div } from '@/index';
+
 import { NAV_PATHS } from '@/enums/navPaths';
 
 import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 
 export const SidebarLogo: FC = () => {
   return (
-    <div className={styles['sidebarLogo']}>
+    <Div className={styles['sidebarLogo']}>
       <Link href={NAV_PATHS.DASHBOARD}>
         <Image
           src={'/icons/sidebar-icons/Logo.svg'}
@@ -20,6 +22,6 @@ export const SidebarLogo: FC = () => {
           className={styles['sidebarLogoIcon']}
         />
       </Link>
-    </div>
+    </Div>
   );
 };

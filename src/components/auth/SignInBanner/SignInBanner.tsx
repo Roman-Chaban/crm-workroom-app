@@ -2,13 +2,15 @@ import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
+import { Div, Heading } from '@/index';
+
 import styles from '@/components/auth/SignInBanner/SignInBanner.module.scss';
 
 export const SignInBanner: FC = () => {
   return (
-    <div className={styles['signInBanner']}>
-      <div className={styles['signInBannerContainer']}>
-        <div className={styles['signInBannerLogo']}>
+    <Div className={styles['signInBanner']}>
+      <Div className={styles['signInBannerContainer']}>
+        <Div className={styles['signInBannerLogo']}>
           <Image
             src={'/images/auth/icons/signIn-logo.svg'}
             alt="Workroom Logo"
@@ -18,8 +20,13 @@ export const SignInBanner: FC = () => {
             className={styles['signInBannerLogoIcon']}
           />
 
-          <h3 className={styles['signInBannerTitle']}>Workroom</h3>
-        </div>
+          <Heading
+            tag="h3"
+            className={styles['signInBannerTitle']}
+          >
+            Workroom
+          </Heading>
+        </Div>
 
         <p className={styles['signInBannerSubtitle']}>
           Your place to work Plan. Create. Control.
@@ -33,7 +40,7 @@ export const SignInBanner: FC = () => {
           priority
           className={styles['signInBannerIllustration']}
         />
-      </div>
-    </div>
+      </Div>
+    </Div>
   );
 };

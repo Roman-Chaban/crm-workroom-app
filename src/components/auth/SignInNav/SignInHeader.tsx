@@ -1,9 +1,10 @@
+import { Div, Heading } from '@/index';
 import React, { type FC } from 'react';
 
 interface SignInHeaderProps {
   stepTitle: string;
   title: string;
-  classNames?: {
+  classNames: {
     header: string;
     stepsFigures: string;
     headerTitle: string;
@@ -16,9 +17,19 @@ export const SignInHeader: FC<SignInHeaderProps> = ({
   classNames,
 }) => {
   return (
-    <div className={classNames?.header}>
-      <h5 className={classNames?.stepsFigures}>{stepTitle}</h5>
-      <h3 className={classNames?.headerTitle}>{title}</h3>
-    </div>
+    <Div className={classNames?.header}>
+      <Heading
+        tag="h5"
+        className={classNames?.stepsFigures}
+      >
+        {stepTitle}
+      </Heading>
+      <Heading
+        tag="h3"
+        className={classNames?.headerTitle}
+      >
+        {title}
+      </Heading>
+    </Div>
   );
 };

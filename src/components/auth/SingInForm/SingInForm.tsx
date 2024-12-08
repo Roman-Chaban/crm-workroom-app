@@ -4,7 +4,13 @@ import React, { FormEvent, useState, type FC } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 
-import { SignInFormRemember, SignInFormSubmit, SignInFormFields } from '@/index/index';
+import {
+  SignInFormRemember,
+  SignInFormSubmit,
+  SignInFormFields,
+  Div,
+  Heading,
+} from '@/index/index';
 
 import { EventType, Remember } from '@/types/signIn';
 import { IsSubmitting } from '@/types/registration';
@@ -30,6 +36,7 @@ export const SignInForm: FC = () => {
   });
 
   const [remember, setRemember] = useState<Remember>(false);
+
   const [isSubmitting, setIsSubmitting] = useState<IsSubmitting>(false);
 
   const loginMutation = useMutation({
@@ -83,9 +90,14 @@ export const SignInForm: FC = () => {
   return (
     <>
       <Toaster />
-      <div className={styles['signInFormBlock']}>
-        <div className={styles['signInFormBlockContainer']}>
-          <h4 className={styles['signInFormBlockTitle']}>Sign In to Workroom</h4>
+      <Div className={styles['signInFormBlock']}>
+        <Div className={styles['signInFormBlockContainer']}>
+          <Heading
+            tag="h4"
+            className={styles['signInFormBlockTitle']}
+          >
+            Sign In to Workroom
+          </Heading>
           <form
             className={styles['signInForm']}
             onSubmit={handleSubmitForm}
@@ -106,8 +118,8 @@ export const SignInForm: FC = () => {
               isButtonDisabled={isButtonDisabled}
             />
           </form>
-        </div>
-      </div>
+        </Div>
+      </Div>
     </>
   );
 };

@@ -2,7 +2,7 @@ import React, { type FC } from 'react';
 
 import Link from 'next/link';
 
-import { Button, Input } from '@/index/index';
+import { Button, Div, Input } from '@/index/index';
 
 import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
@@ -16,7 +16,7 @@ export const SignInFormRemember: FC<SignInFormRememberProps> = ({
   handleCheckedRemember,
 }) => {
   return (
-    <div className={styles['signInFormBlockRemember']}>
+    <Div className={styles['signInFormBlockRemember']}>
       <Input
         htmlFor="remember"
         type="checkbox"
@@ -39,6 +39,6 @@ export const SignInFormRemember: FC<SignInFormRememberProps> = ({
       >
         <Link href={''}>Forgot Password?</Link>
       </Button>
-    </div>
+    </Div>
   );
 };

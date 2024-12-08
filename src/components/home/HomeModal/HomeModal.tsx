@@ -1,6 +1,14 @@
 'use client';
 
-import React, { ChangeEvent, ForwardedRef, forwardRef, useState } from 'react';
+import React, {
+  ChangeEvent,
+  ForwardedRef,
+  forwardRef,
+  useEffect,
+  useState,
+} from 'react';
+
+import { createPortal } from 'react-dom';
 
 import { SingleValue } from 'react-select';
 
@@ -9,6 +17,7 @@ import {
   HomeModalIllustration,
   HomeModalFieldsForm,
   Container,
+  Div,
 } from '@/index/index';
 
 import { Option, SelectedValue } from '@/interfaces/select';
@@ -30,6 +39,28 @@ export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
     );
     const [areaDescription, setAreaDescription] = useState<AreaValue>('');
 
+    const [portalContainer, setPortalContainer] = useState<Element | null>(
+      null,
+    );
+
+    useEffect(() => {
+      const modalRoot = document.getElementById('modal-root');
+      if (!modalRoot) {
+        const newModalRoot = document.createElement('div');
+        newModalRoot.setAttribute('id', 'modal-root');
+        document.body.appendChild(newModalRoot);
+        setPortalContainer(newModalRoot);
+      } else {
+        setPortalContainer(modalRoot);
+      }
+
+      return () => {
+        if (!document.getElementById('modal-root') && portalContainer) {
+          portalContainer.remove();
+        }
+      };
+    }, []);
+
     const handleSelectChange = (selectValue: SingleValue<Option>) => {
       if (selectValue) {
         setSelectedValue(selectValue.label);
@@ -42,8 +73,10 @@ export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
       setAreaDescription(event.target.value);
     };
 
-    return (
-      <div className={styles['modal']}>
+    if (!portalContainer) return null;
+
+    return createPortal(
+      <Div className={styles['modal']}>
         <Container
           className={styles['modalContainer']}
           ref={ref}
@@ -57,7 +90,8 @@ export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
             handleChangeAreaDescription={handleChangeAreaDescription}
           />
         </Container>
-      </div>
+      </Div>,
+      portalContainer,
     );
   },
 );

@@ -4,7 +4,7 @@ import React, { type FC } from 'react';
 
 import { useParsedUserName } from '@/hooks/useParsedUserName';
 
-import { Container } from '@/index/index';
+import { Container, Div, Heading } from '@/index/index';
 
 import styles from './DashboardPanel.module.scss';
 
@@ -13,15 +13,20 @@ export const DashboardPanel: FC = () => {
   const userName = useParsedUserName(sortedData);
 
   return (
-    <div className={styles['dashboard']}>
+    <Div className={styles['dashboard']}>
       <Container className={styles['dashboardContainer']}>
         {userName && (
           <span className={styles['dashboardGreetTitle']}>
             Welcome back, {userName}!
           </span>
         )}
-        <h1 className={styles['dashboardTitle']}>Dashboard</h1>
+        <Heading
+          tag="h1"
+          className={styles['dashboardTitle']}
+        >
+          Dashboard
+        </Heading>
       </Container>
-    </div>
+    </Div>
   );
 };

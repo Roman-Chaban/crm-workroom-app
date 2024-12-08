@@ -54,3 +54,7 @@ export { Nav } from '@/components/ui/Nav/Nav';
 export { ProjectsSidebar } from '@/components/projects/ProjectsSidebar/ProjectsSidebar';
 export { ProjectsSidebarNav } from '@/components/projects/ProjectsSidebarNav/ProjectsSidebarNav';
 export { Aside } from '@/components/ui/Aside/Aside';
+export { Div } from '@/components/ui/Div/Div';
+export { List } from '@/components/ui/List/List';
+export { InfoPortalFolders } from '@/components/info-portal/InfoPortalFolders/InfoPortalFolders';
+export { InfoPortalMain } from '@/components/info-portal/InfoPortalMain/InfoPortalMain';

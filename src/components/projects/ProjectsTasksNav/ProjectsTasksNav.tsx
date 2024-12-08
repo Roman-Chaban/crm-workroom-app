@@ -4,8 +4,7 @@ import React, { useState, type FC } from 'react';
 
 import Image from 'next/image';
 
-import { Button, Container, Heading } from '@/index';
-import { List } from '@/components/ui/List/List';
+import { Button, Container, Heading, List } from '@/index';
 
 import { tasksNavButtons } from '@/staticData/tasksNav';
 import { ActiveNavButton } from '@/interfaces/tasksNav';

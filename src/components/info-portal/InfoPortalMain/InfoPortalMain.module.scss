@@ -1,0 +1,138 @@
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+
+.infoPortalMain {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 30px;
+
+  &Container {
+    width: 100%;
+  }
+
+  &Banner {
+    @include infoPortalBanner(855px, 186px, 24px);
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      background: url('/images/info-portal/info-illustration.svg') no-repeat
+        center center;
+      width: 291px;
+      height: 100%;
+      right: 69px;
+      top: 0;
+      background-size: cover;
+    }
+  }
+
+  &SecondBanner {
+    @include infoPortalBanner(265px, 186px, 24px);
+  }
+
+  &SecondBannerContainer {
+    padding: 24px 32px;
+  }
+
+  &BannerInfo {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+    width: 100%;
+    max-width: 360px;
+    margin: 44px 0 0 44px;
+  }
+
+  &BannerTitle {
+    @include boldTitle;
+  }
+
+  &BannerSubtitle {
+    @include graySubtitle(150%, color.$color-black-deep, 0.7);
+  }
+
+  & .projectsTitle {
+    @include selectLabel;
+  }
+
+  &SecondBannerContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+    height: 100%;
+  }
+
+  & .projectsStatistic {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 97px;
+      height: 44px;
+      background: url('/images/info-portal/statistics.svg') no-repeat center
+        center;
+      right: 0;
+      top: 14px;
+    }
+
+    &Subtitle {
+      color: color.$color-gray-neutral;
+      font-size: size.$font-size-sm;
+      margin-top: 6px;
+    }
+  }
+
+  & .projectsStatisticTitle {
+    color: color.$color-black-deep;
+    font-size: size.$font-size-6xxl;
+    line-height: 107%;
+  }
+
+  & .projectsStatisticGrowth {
+    font-weight: 600;
+    color: color.$color-priority-low;
+    font-size: size.$font-size-md;
+  }
+}
+
+.infoPortalList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  &Item {
+    @include infoPortalBanner(265px, 186px, 24px);
+    padding: 28px;
+  }
+
+  &Info {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 32px;
+  }
+
+  &SubInfo {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+
+    &Title {
+      font-weight: 700;
+      font-size: size.$font-size-xl;
+      color: color.$color-black-deep;
+    }
+
+    &Subtitle {
+      color: color.$color-gray-neutral;
+      font-size: size.$font-size-md;
+    }
+  }
+}

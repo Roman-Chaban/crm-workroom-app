@@ -2,7 +2,7 @@ import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
-import { Button } from '@/index/index';
+import { Button, Div } from '@/index/index';
 
 import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 
@@ -12,8 +12,8 @@ interface SidebarLogoutProps {
 
 export const SidebarLogout: FC<SidebarLogoutProps> = ({ onOpenModal }) => {
   return (
-    <div className={styles['sidebarLogout']}>
-      <div className={styles['sidebarLogoutBlock']}>
+    <Div className={styles['sidebarLogout']}>
+      <Div className={styles['sidebarLogoutBlock']}>
         <Image
           src={'/images/sidebar/support.svg'}
           alt="Support Image"
@@ -34,7 +34,7 @@ export const SidebarLogout: FC<SidebarLogoutProps> = ({ onOpenModal }) => {
           />{' '}
           Support
         </Button>
-      </div>
-    </div>
+      </Div>
+    </Div>
   );
 };

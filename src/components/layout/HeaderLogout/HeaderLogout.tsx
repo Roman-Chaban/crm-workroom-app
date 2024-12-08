@@ -9,7 +9,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
-import { Button } from '@/index/index';
+import { Button, Div } from '@/index/index';
 
 import { LogoutUser } from '@/api/logout';
 
@@ -67,7 +67,7 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
   return (
     <>
       <Toaster />
-      <div
+      <Div
         title="Open menu"
         className={`${styles['headerUserLogout']} ${isVisibleMenu ? styles['visibleMenu'] : ''} `}
       >
@@ -93,7 +93,7 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
           </Button>
         )}
         {isVisibleMenu && (
-          <div className={styles['dropdownMenu']}>
+          <Div className={styles['dropdownMenu']}>
             <Button
               title="Profile"
               type="button"
@@ -116,9 +116,9 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
               <LogoutIcon />
               Logout
             </Button>
-          </div>
+          </Div>
         )}
-      </div>
+      </Div>
     </>
   );
 };

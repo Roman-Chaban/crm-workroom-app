@@ -2,7 +2,7 @@ import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
-import { StepsList } from '@/index/index';
+import { Aside, Div, Heading, StepsList } from '@/index/index';
 
 import styles from './UserDetailsSidebar.module.scss';
 
@@ -14,8 +14,8 @@ export const UserDetailsSidebar: FC<UserDetailsSidebarProps> = ({
   currentStep,
 }) => {
   return (
-    <aside className={styles['sidebarSteps']}>
-      <div className={styles['sidebarStepsContainer']}>
+    <Aside className={styles['sidebarSteps']}>
+      <Div className={styles['sidebarStepsContainer']}>
         <Image
           src={'/images/auth/icons/signIn-logo.svg'}
           alt="Workroom Logo"
@@ -24,11 +24,16 @@ export const UserDetailsSidebar: FC<UserDetailsSidebarProps> = ({
           priority
         />
 
-        <div className={styles['sidebarStepsGetStarted']}>
-          <h4 className={styles['sidebarStepsGetStartedTitle']}>Get started</h4>
+        <Div className={styles['sidebarStepsGetStarted']}>
+          <Heading
+            tag="h4"
+            className={styles['sidebarStepsGetStartedTitle']}
+          >
+            Get started
+          </Heading>
           <StepsList currentStep={currentStep} />
-        </div>
-      </div>
-    </aside>
+        </Div>
+      </Div>
+    </Aside>
   );
 };

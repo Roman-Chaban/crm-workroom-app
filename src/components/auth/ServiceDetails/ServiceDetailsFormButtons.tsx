@@ -4,7 +4,7 @@ import { useAppDispatch } from '@/hooks/useAppDispatch';
 
 import { serviceDetailsButtons } from '@/constants/service-buttons';
 
-import { Button } from '@/index/index';
+import { Button, Div } from '@/index/index';
 
 import { setSelectedTeamSize } from '@/store/slices/ServiceDetailsSlice';
 
@@ -24,11 +24,11 @@ export const ServiceDetailsFormButtons: FC<ServiceDetailsFormButtonsProps> = ({
   };
 
   return (
-    <div className={styles['serviceDetailsButtons']}>
+    <Div className={styles['serviceDetailsButtons']}>
       <label className={styles['serviceDetailsLabel']}>
         How many people in your team?
       </label>
-      <div className={styles['serviceDetailsButtonsContainer']}>
+      <Div className={styles['serviceDetailsButtonsContainer']}>
         {serviceDetailsButtons.map((button) => (
           <Button
             onClick={() => handleSelectTeamSize(button.label)}
@@ -41,7 +41,7 @@ export const ServiceDetailsFormButtons: FC<ServiceDetailsFormButtonsProps> = ({
             {button.label}
           </Button>
         ))}
-      </div>
-    </div>
+      </Div>
+    </Div>
   );
 };

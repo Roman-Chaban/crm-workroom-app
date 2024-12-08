@@ -3,7 +3,7 @@ import React, { type FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Button } from '@/index/index';
+import { Button, Div } from '@/index/index';
 
 import { NAV_PATHS } from '@/enums/navPaths';
 
@@ -14,9 +14,12 @@ interface SignInFormSubmitProps {
   isButtonDisabled: boolean;
 }
 
-export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({ isSubmitting, isButtonDisabled }) => {
+export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({
+  isSubmitting,
+  isButtonDisabled,
+}) => {
   return (
-    <div className={styles['signInFormBlockSubmit']}>
+    <Div className={styles['signInFormBlockSubmit']}>
       <Button
         type="submit"
         className={styles['signInFormBlockButton']}
@@ -39,6 +42,6 @@ export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({ isSubmitting, isBu
       >
         <Link href={NAV_PATHS.MULTI_STEP_SIGN_IN}>Don’t have an account?</Link>
       </Button>
-    </div>
+    </Div>
   );
 };

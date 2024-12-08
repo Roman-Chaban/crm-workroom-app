@@ -2,7 +2,9 @@ import { Metadata } from 'next';
 
 import React from 'react';
 
-import { Section, Nav } from '@/index/index';
+import { Section, Nav, InfoPortalMain } from '@/index/index';
+
+import styles from '@/styles/pages/info-portal.module.scss';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom - Info Portal',
@@ -11,12 +13,13 @@ export const metadata: Metadata = {
 
 export default function InfoPortalPage() {
   return (
-    <Section className="">
+    <Section className={styles['infoPortal']}>
       <Nav
         title="Info Portal"
         buttonLabel="Add Folder"
         isRenderBackLink={false}
       />
+      <InfoPortalMain />
     </Section>
   );
 }

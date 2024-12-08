@@ -1,9 +1,9 @@
 import React, { type FC } from 'react';
 
-import { Button, Container } from '@/index/index';
-
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { Button, Container, Div } from '@/index/index';
 
 import styles from './Nav.module.scss';
 
@@ -28,15 +28,23 @@ export const Nav: FC<NavProps> = ({
   return (
     <nav className={styles['nav']}>
       <Container className={styles['navContainer']}>
-        {isRenderBackLink && (
-          <Button
-            type="button"
-            onClick={onBackClick}
-          >
-            <Link href={backButton.linkPath}>{backButton.linkLabel}</Link>
-          </Button>
-        )}
-        <h1 className={styles['navTitle']}>{title}</h1>
+        <Div className={styles['navTop']}>
+          {isRenderBackLink && (
+            <Button
+              type="button"
+              onClick={onBackClick}
+              className={styles['navBackButton']}
+            >
+              <Link
+                href={backButton.linkPath}
+                className={styles['navBackLink']}
+              >
+                {backButton.linkLabel}
+              </Link>
+            </Button>
+          )}
+          <h1 className={styles['navTitle']}>{title}</h1>
+        </Div>
         <Button
           type="button"
           className={styles['navButton']}

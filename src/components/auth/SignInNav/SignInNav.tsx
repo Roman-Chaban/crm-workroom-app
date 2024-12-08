@@ -6,7 +6,7 @@ import { useAppDispatch } from '@/hooks/useAppDispatch';
 
 import Image from 'next/image';
 
-import { Button } from '@/index/index';
+import { Button, Div } from '@/index/index';
 
 import { handleNextStep, handlePrevStep } from '@/store/slices/StepsSlice';
 
@@ -40,7 +40,7 @@ export const SignInNav: FC<SignInNavProps> = ({
   const lastStepSubmit = currentStep === 3;
 
   return (
-    <div className={classNames.container}>
+    <Div className={classNames.container}>
       {renderPreviousButton && (
         <Button
           type={'button'}
@@ -73,6 +73,6 @@ export const SignInNav: FC<SignInNavProps> = ({
           priority
         />
       </Button>
-    </div>
+    </Div>
   );
 };

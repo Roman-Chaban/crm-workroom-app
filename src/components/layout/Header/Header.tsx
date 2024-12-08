@@ -1,18 +1,29 @@
 'use client';
 
-import React, { ChangeEvent, useEffect, useMemo, useState, type FC } from 'react';
+import React, {
+  ChangeEvent,
+  useEffect,
+  useMemo,
+  useState,
+  type FC,
+} from 'react';
 
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Button, Container, Input, HeaderLogout } from '@/index/index';
+import { Button, Container, Input, HeaderLogout, Div } from '@/index/index';
 import { Notifications } from '@/components/home/Notification/Notification';
 
 import { Value } from '@/types/input';
 
 import { NAV_PATHS } from '@/enums/navPaths';
 
-import { IsAnimating, IsNotification, IsRegistered, UserName } from '@/types/header';
+import {
+  IsAnimating,
+  IsNotification,
+  IsRegistered,
+  UserName,
+} from '@/types/header';
 
 import styles from './Header.module.scss';
 
@@ -84,7 +95,7 @@ export const Header: FC = () => {
 
   return (
     <header className={styles['header']}>
-      <div className={styles['headerContainer']}>
+      <Div className={styles['headerContainer']}>
         <Input
           icon="/icons/outlined-icons/search.svg"
           onChange={handleInputChange}
@@ -140,7 +151,7 @@ export const Header: FC = () => {
             />
           )}
         </Container>
-      </div>
+      </Div>
     </header>
   );
 };

@@ -1,6 +1,6 @@
 import React, { type FC } from 'react';
 
-import { Button } from '@/index/index';
+import { Button, Div, Heading } from '@/index/index';
 
 import Image from 'next/image';
 
@@ -12,8 +12,13 @@ interface HomeModalHeaderProps {
 
 export const HomeModalHeader: FC<HomeModalHeaderProps> = ({ onCloseModal }) => {
   return (
-    <div className={styles['modalHeader']}>
-      <h3 className={styles['modalHeaderTitle']}>Need some Help?</h3>
+    <Div className={styles['modalHeader']}>
+      <Heading
+        tag="h3"
+        className={styles['modalHeaderTitle']}
+      >
+        Need some Help?
+      </Heading>
       <Button
         type="button"
         onClick={onCloseModal}
@@ -27,6 +32,6 @@ export const HomeModalHeader: FC<HomeModalHeaderProps> = ({ onCloseModal }) => {
           className={styles['modalCloseIcon']}
         />
       </Button>
-    </div>
+    </Div>
   );
 };

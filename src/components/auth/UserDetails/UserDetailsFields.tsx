@@ -4,7 +4,7 @@ import React, { useMemo, useState, type FC } from 'react';
 
 import { EventType } from '@/types/signIn';
 
-import { Button, Container, Input } from '@/index/index';
+import { Button, Container, Div, Input } from '@/index/index';
 
 import {
   IsPasswordVisible,
@@ -150,7 +150,7 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
         icon={changeVisibleIcon}
       />
 
-      <div className={styles['phoneInputContainer']}>
+      <Div className={styles['phoneInputContainer']}>
         <Select
           options={countryOptions}
           value={selectedCountryCode}
@@ -180,7 +180,7 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
           onChange={handlePhoneNumberInputChange}
           isRequired
         />
-      </div>
+      </Div>
 
       <Button
         type="submit"

@@ -3,6 +3,8 @@ import React, { type FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { Div, Heading } from '@/index';
+
 import styles from './NavView.module.scss';
 
 interface NavViewProps {
@@ -13,8 +15,13 @@ interface NavViewProps {
 
 export const NavView: FC<NavViewProps> = ({ title, link, href }) => {
   return (
-    <div className={styles['NavViewContainer']}>
-      <h2 className={styles['NavViewTitle']}>{title}</h2>
+    <Div className={styles['NavViewContainer']}>
+      <Heading
+        tag="h2"
+        className={styles['NavViewTitle']}
+      >
+        {title}
+      </Heading>
       <Link
         href={href}
         className={styles['NavViewLink']}
@@ -27,6 +34,6 @@ export const NavView: FC<NavViewProps> = ({ title, link, href }) => {
           height={24}
         />
       </Link>
-    </div>
+    </Div>
   );
 };

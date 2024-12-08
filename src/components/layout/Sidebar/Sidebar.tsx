@@ -5,6 +5,7 @@ import {
   Container,
   SidebarLogout,
   SidebarLogo,
+  Aside,
 } from '@/index/index';
 
 import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
@@ -15,7 +16,7 @@ interface SidebarProps {
 
 export const Sidebar: FC<SidebarProps> = ({ onOpenModal }) => {
   return (
-    <aside className={styles['sidebar']}>
+    <Aside className={styles['sidebar']}>
       <Container className={styles['sidebarContainer']}>
         <Container className={styles['sidebarLogoNavContainer']}>
           <SidebarLogo />
@@ -23,6 +24,6 @@ export const Sidebar: FC<SidebarProps> = ({ onOpenModal }) => {
         </Container>
         <SidebarLogout onOpenModal={onOpenModal} />
       </Container>
-    </aside>
+    </Aside>
   );
 };

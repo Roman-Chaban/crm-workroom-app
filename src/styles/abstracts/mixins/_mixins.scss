@@ -322,3 +322,27 @@
   background: color.$color-white-primary;
   box-shadow: color.$shadow-box-light;
 }
+
+@mixin infoPortalBanner(
+  $maxWidth: $maxWidth,
+  $height: $height,
+  $borderRadius: $borderRadius
+) {
+  width: 100%;
+  max-width: $maxWidth;
+  height: $height;
+  border-radius: $borderRadius;
+  background: color.$color-white-primary;
+  box-shadow: color.$shadow-box-light;
+}
+
+@mixin graySubtitle(
+  $lineHeight: $lineHeight,
+  $color: $color,
+  $opacity: $opacity
+) {
+  font-size: size.$font-size-lg;
+  line-height: $lineHeight;
+  color: $color;
+  opacity: $opacity;
+}

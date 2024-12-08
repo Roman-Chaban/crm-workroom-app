@@ -1,5 +1,7 @@
 import React, { type FC, ReactNode } from 'react';
 
+import { Div } from '@/index';
+
 export interface WidthContainerProps {
   children: ReactNode;
 }
@@ -10,5 +12,5 @@ export const WidthContainer: FC<WidthContainerProps> = ({ children }) => {
     height: '100%',
   };
 
-  return <div style={widthContainerStyles}>{children}</div>;
+  return <Div style={widthContainerStyles}>{children}</Div>;
 };
