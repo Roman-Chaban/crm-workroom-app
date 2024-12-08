@@ -5,6 +5,9 @@
 .dashboard {
   width: 100%;
   height: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 
   &Container {
     width: 100%;
@@ -23,5 +26,24 @@
   &Title {
     line-height: 48px;
     @include title(48px);
+  }
+
+  &Date {
+    width: 100%;
+    max-width: 250px;
+    min-height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px 0 16px;
+    gap: 14px;
+    background: color.$color-gray-light;
+  }
+
+  &DateTitle {
+    width: 100%;
+    max-width: 211px;
+    color: color.$color-black-deep;
+    font-weight: 600;
   }
 }
