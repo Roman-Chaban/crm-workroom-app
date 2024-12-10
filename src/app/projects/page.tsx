@@ -2,11 +2,10 @@ import React from 'react';
 
 import type { Metadata } from 'next';
 
-import { Nav, Grid, ProjectsSidebar, Section, Container } from '@/index/index';
-
-import { ProjectsTasksNav } from '@/components/projects/ProjectsTasksNav/ProjectsTasksNav';
+import { Nav, Grid, ProjectsSidebar, Section } from '@/index/index';
 
 import styles from '@/styles/pages/projects.module.scss';
+import { RenderProjectsActive } from '@/components/projects/RenderProjectsActive/RenderProjectsActive';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom - Projects',
@@ -26,9 +25,7 @@ export default function ProjectsPage() {
       />
       <Section className={styles['projects']}>
         <ProjectsSidebar />
-        <Container className={styles['projectsContainer']}>
-          <ProjectsTasksNav />
-        </Container>
+        <RenderProjectsActive />
       </Section>
     </Grid>
   );

@@ -29,7 +29,7 @@ export const Projects: FC = () => {
         />
 
         <List
-          classNames={{ list: 'projectsItems', listItem: '' }}
+          classNames={{ list: styles['projectsItems'], listItem: '' }}
           renderList={projectsItemsList}
           renderItem={(item) => (
             <ProjectItem

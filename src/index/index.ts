@@ -51,10 +51,15 @@ export { AttachedStream } from '@/components/home/AttachedStream/AttachedStream'
 export { UpdatedStream } from '@/components/home/UpdatedStream/UpdatedStream';
 export { Notifications } from '@/components/home/Notification/Notification';
 export { Nav } from '@/components/ui/Nav/Nav';
-export { ProjectsSidebar } from '@/components/projects/ProjectsSidebar/ProjectsSidebar';
-export { ProjectsSidebarNav } from '@/components/projects/ProjectsSidebarNav/ProjectsSidebarNav';
 export { Aside } from '@/components/ui/Aside/Aside';
 export { Div } from '@/components/ui/Div/Div';
 export { List } from '@/components/ui/List/List';
 export { InfoPortalFolders } from '@/components/info-portal/InfoPortalFolders/InfoPortalFolders';
 export { InfoPortalMain } from '@/components/info-portal/InfoPortalMain/InfoPortalMain';
+export { ProjectsSidebar } from '@/components/projects/ProjectsSidebar/ProjectsSidebar';
+export { ProjectsSidebarNav } from '@/components/projects/ProjectsSidebarNav/ProjectsSidebarNav';
+export { ProjectsActiveTasks } from '@/components/projects/ProjectsActiveTasks/ProjectsActiveTasks';
+export { ProjectsTasksNav } from '@/components/projects/ProjectsTasksNav/ProjectsTasksNav';
+export { RenderProjectsActive } from '@/components/projects/RenderProjectsActive/RenderProjectsActive';
+export { ProjectsBoardTasks } from '@/components/projects/ProjectsBoardTasks/ProjectsBoardTasks';
+export { ProjectsCalendarTasks } from '@/components/projects/ProjectsCalendarTasks/ProjectsCalendarTasks';

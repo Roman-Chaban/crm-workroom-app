@@ -1,18 +1,27 @@
-'use client';
-
-import React, { useState, type FC } from 'react';
+import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
 import { Button, Container, Heading, List } from '@/index';
 
 import { tasksNavButtons } from '@/staticData/tasksNav';
-import { ActiveNavButton } from '@/interfaces/tasksNav';
+
+import { ActiveTab } from '@/interfaces/tasksNav';
 
 import styles from './ProjectsTasksNav.module.scss';
 
-export const ProjectsTasksNav: FC = () => {
-  const [activeNavButton, setActiveNavButton] = useState<ActiveNavButton>(1);
+interface ProjectsTasksNavProps {
+  activeTab: ActiveTab;
+  setActiveTab: (activeTab: ActiveTab) => void;
+}
+
+export const ProjectsTasksNav: FC<ProjectsTasksNavProps> = ({
+  activeTab,
+  setActiveTab,
+}) => {
+  const handleChangeActiveTab = (buttonId: number) => {
+    setActiveTab(buttonId);
+  };
 
   return (
     <nav className={styles['tasksNav']}>
@@ -30,14 +39,14 @@ export const ProjectsTasksNav: FC = () => {
           }}
           renderList={tasksNavButtons}
           renderItem={(button) => {
-            const isActiveNavButton = activeNavButton === button.id;
+            const isActiveNavButton = activeTab === button.id;
             return (
               <Button
                 type="button"
                 className={`${styles['tasksNavListButton']} ${
                   isActiveNavButton ? styles['active'] : ''
                 }`}
-                onClick={() => setActiveNavButton(button.id)}
+                onClick={() => handleChangeActiveTab(button.id)}
               >
                 <Image
                   src={isActiveNavButton ? button.activeIcon : button.icon}

@@ -40,10 +40,17 @@
     background: color.$color-gray-light;
   }
 
+  &CalendarIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+  }
+
   &DateTitle {
     width: 100%;
     max-width: 211px;
     color: color.$color-black-deep;
     font-weight: 600;
+    line-height: 150%;
   }
 }

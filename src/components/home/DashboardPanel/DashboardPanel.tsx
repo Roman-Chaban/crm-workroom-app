@@ -2,12 +2,13 @@
 
 import React, { useMemo, type FC } from 'react';
 
+import Image from 'next/image';
+
 import { useParsedUserName } from '@/hooks/useParsedUserName';
 
 import { Container, Div, Heading } from '@/index/index';
 
 import styles from './DashboardPanel.module.scss';
-import Image from 'next/image';
 
 export const DashboardPanel: FC = () => {
   const sortedData = localStorage.getItem('registration');
@@ -51,6 +52,7 @@ export const DashboardPanel: FC = () => {
           alt="Calendar Icon"
           width={24}
           height={24}
+          className={styles['dashboardCalendarIcon']}
         />
         <Heading
           tag="h5"

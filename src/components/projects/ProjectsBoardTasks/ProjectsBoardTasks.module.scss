@@ -1,0 +1,29 @@
+@use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/base/colors/colors' as color;
+@use '../../../styles/base/globals/globals' as size;
+
+.projectsBoardTasks {
+  width: 100%;
+}
+
+.boardTasksItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & > .boardTasksItem {
+    width: 100%;
+    max-width: 191px;
+    min-height: 58px;
+    border-radius: 24px;
+    background: color.$background-main-light;
+    outline: 6px solid color.$color-white-primary;
+    box-shadow: color.$shadow-box-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > .boardTasksHeading {
+      @include tasksBoardHeading;
+    }
+  }
+}

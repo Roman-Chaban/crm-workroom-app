@@ -1,3 +1,9 @@
+export const enum TASKS_TABS {
+  ACTIVE_TASKS = 1,
+  BOARD_TASKS = 2,
+  CALENDAR_TASKS = 3,
+}
+
 export interface TasksNavButton {
   id: number;
   icon: string;
@@ -6,5 +12,4 @@ export interface TasksNavButton {
 }
 
 export type TasksNavButtons = TasksNavButton[];
-
-export type ActiveNavButton = number;
+export type ActiveTab = number;
