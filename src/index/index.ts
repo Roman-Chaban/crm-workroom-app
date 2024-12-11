@@ -63,3 +63,5 @@ export { ProjectsTasksNav } from '@/components/projects/ProjectsTasksNav/Project
 export { RenderProjectsActive } from '@/components/projects/RenderProjectsActive/RenderProjectsActive';
 export { ProjectsBoardTasks } from '@/components/projects/ProjectsBoardTasks/ProjectsBoardTasks';
 export { ProjectsCalendarTasks } from '@/components/projects/ProjectsCalendarTasks/ProjectsCalendarTasks';
+export { EventModal } from '@/components/ui/EventModal/EventModal';
+export { EventModalHeader } from '@/components/ui/EventModal/EventModalHeader';

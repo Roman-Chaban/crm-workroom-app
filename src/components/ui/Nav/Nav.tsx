@@ -12,6 +12,7 @@ interface NavProps {
   buttonLabel: string;
   isRenderBackLink: boolean;
   onBackClick?: () => void;
+  onClick?: () => void;
   backButton?: {
     linkPath: string;
     linkLabel: string;
@@ -23,6 +24,7 @@ export const Nav: FC<NavProps> = ({
   buttonLabel,
   isRenderBackLink,
   backButton = { linkLabel: '', linkPath: '' },
+  onClick,
   onBackClick,
 }) => {
   return (
@@ -48,6 +50,7 @@ export const Nav: FC<NavProps> = ({
         <Button
           type="button"
           className={styles['navButton']}
+          onClick={onClick}
         >
           <Image
             src={'/icons/projects-icons/add.svg'}

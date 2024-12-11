@@ -1,10 +1,9 @@
 import React, { type FC } from 'react';
 
-import { Button, Div, Heading } from '@/index/index';
-
-import Image from 'next/image';
+import { Div, Heading } from '@/index/index';
 
 import styles from './HomeModal.module.scss';
+import { CloseButton } from '@/components/ui/CloseButton/CloseButton';
 
 interface HomeModalHeaderProps {
   onCloseModal: () => void;
@@ -19,19 +18,13 @@ export const HomeModalHeader: FC<HomeModalHeaderProps> = ({ onCloseModal }) => {
       >
         Need some Help?
       </Heading>
-      <Button
-        type="button"
-        onClick={onCloseModal}
-        className={styles['modalHeaderButton']}
-      >
-        <Image
-          src="/icons/outlined-icons/close.svg"
-          alt="Close Icon"
-          width={24}
-          height={24}
-          className={styles['modalCloseIcon']}
-        />
-      </Button>
+      <CloseButton
+        onCloseModal={onCloseModal}
+        classNames={{
+          button: styles['modalHeaderButton'],
+          icon: styles['modalCloseIcon'],
+        }}
+      />
     </Div>
   );
 };
