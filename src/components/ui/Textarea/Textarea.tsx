@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 
 import { TextareaType } from '@/types/textarea';
 
@@ -14,6 +14,7 @@ export const Textarea: FC<TextareaType> = ({
   placeholder,
   htmlFor = '',
   ref,
+  register,
 }) => {
   return (
     <label
@@ -22,6 +23,7 @@ export const Textarea: FC<TextareaType> = ({
     >
       {children}
       <textarea
+        {...register}
         ref={ref}
         className={className}
         name={name}
@@ -30,7 +32,7 @@ export const Textarea: FC<TextareaType> = ({
         onChange={onChange}
         placeholder={placeholder}
         style={style}
-      ></textarea>
+      />
     </label>
   );
 };

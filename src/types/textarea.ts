@@ -1,4 +1,5 @@
 import { ChangeEventHandler, CSSProperties, ReactNode, RefObject } from 'react';
+import { UseFormRegisterReturn } from 'react-hook-form';
 
 export type TextareaType = {
   className: string;
@@ -12,6 +13,7 @@ export type TextareaType = {
   onChange?: ChangeEventHandler<HTMLTextAreaElement>;
   placeholder: string;
   ref?: RefObject<HTMLTextAreaElement>;
+  register: UseFormRegisterReturn;
 };
 
 export type AreaValue = string;

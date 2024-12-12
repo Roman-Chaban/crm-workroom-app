@@ -6,6 +6,7 @@ import { createPortal } from 'react-dom';
 import { Div, EventModalHeader, EventModalForm } from '@/index';
 
 import styles from './EventModal.module.scss';
+import { EventModalRepeat } from './EventModalRepeat';
 
 interface EventModalProps {
   onCloseModal: () => void;
@@ -53,7 +54,10 @@ export const EventModal: FC<EventModalProps> = ({ onCloseModal, isOpen }) => {
         }
       >
         <EventModalHeader onCloseModal={onCloseModal} />
+
         <EventModalForm />
+
+        <EventModalRepeat />
       </Div>
     </Div>,
     eventPortal,

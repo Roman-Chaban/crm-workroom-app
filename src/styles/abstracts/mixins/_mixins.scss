@@ -370,3 +370,38 @@
   flex-flow: column nowrap;
   gap: $gap;
 }
+
+@mixin modalCustomScrollBar {
+  &::-webkit-scrollbar {
+    width: 3.5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: color.$color-loader-primary;
+    opacity: 0.5;
+    border-radius: 24px;
+    margin-block: 20px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin-block: 20px;
+  }
+}
+
+@mixin customTextarea {
+  width: 100%;
+  border: 2.5px solid color.$background-modal-light;
+  box-shadow: color.$shadow-modal;
+  background: color.$color-white-primary;
+  border-radius: 14px;
+  min-height: 120px;
+  padding: 11px;
+  color: color.$color-gray-neutral;
+  caret-color: color.$color-gray-neutral;
+  resize: none;
+  @include inputHover;
+  &::placeholder {
+    @include selectLabel;
+    font-weight: 400;
+  }
+}

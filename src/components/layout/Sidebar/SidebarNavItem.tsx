@@ -17,6 +17,7 @@ interface SidebarNavItemProps {
 export const SidebarNavItem: FC<SidebarNavItemProps> = ({ item, isActive }) => {
   return (
     <li
+      title={item.title}
       className={classNames(styles['sidebarNavListItem'], {
         [styles['sidebarNavListItemActive']]: isActive,
       })}

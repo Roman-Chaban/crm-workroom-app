@@ -5,7 +5,7 @@ import React, {
   type ReactNode,
 } from 'react';
 
-type ButtonType = 'reset' | 'button' | 'submit';
+type ButtonType = 'button' | 'submit' | 'reset';
 
 interface ButtonProps extends Omit<HTMLProps<HTMLButtonElement>, ''> {
   children: ReactNode;

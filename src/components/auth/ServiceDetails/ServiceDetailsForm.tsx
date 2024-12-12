@@ -32,6 +32,7 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
   currentStep,
 }) => {
   const dispatch = useAppDispatch();
+
   const { companyName, selectedTeamSize, selectedBusinessDirection } =
     useAppSelector((state) => state.serviceDetails);
 

@@ -17,6 +17,8 @@
 
   & .modalContent {
     width: 100%;
+    overflow: auto;
+    @include modalCustomScrollBar;
     @include whiteContainer(584px);
     @include flexColumn(30px);
     padding: 58px 60px;
@@ -43,6 +45,14 @@
     }
   }
 
+  & .modalForm {
+    @include flexColumn(30px);
+  }
+
+  & .modalEventBlock {
+    @include flexColumn(7px);
+  }
+
   & .modalFormLabel {
     @include flexColumn(7px);
     @include selectLabel;
@@ -52,5 +62,72 @@
     @include input;
     @include inputHover;
     max-width: 100%;
+  }
+
+  & .modalEventSelect,
+  .modalPrioritySelect {
+    max-width: 100%;
+  }
+
+  & .modalDescriptionArea {
+    @include customTextarea;
+  }
+
+  & .modalDescriptionLabel {
+    @include flexColumn(7px);
+    @include selectLabel;
+  }
+
+  & .eventModalRepeat {
+    width: 100%;
+    height: 100%;
+    &Container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 20px;
+      width: 100%;
+      min-height: 79px;
+      border-radius: 14px;
+      background: color.$background-main-light;
+    }
+
+    &Title {
+      font-weight: 700;
+      line-height: 170%;
+      font-size: size.$font-size-lg;
+      color: color.$color-black-deep;
+    }
+  }
+
+  & .eventModalRepeatSwitchButton {
+    width: 100%;
+    max-width: 51px;
+    min-height: 31px;
+    border-radius: 18px;
+    background: color.$background-switcher;
+    position: relative;
+    transition: background 0.5s ease;
+    &.active {
+      background: color.$background-support-primary;
+    }
+  }
+
+  & .eventModalRepeatCircle {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    background: color.$color-white-primary;
+    border-radius: 100%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease;
+
+    &.active {
+      transform: translateX(20px);
+    }
   }
 }

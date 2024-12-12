@@ -36,7 +36,7 @@ export const customServicesSelect: StylesConfig<ServiceOption, false> = {
     marginTop: 4,
     borderRadius: 14,
     border: `1.5px solid ${colors.backgroundModalLight}`,
-    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+    boxShadow: `0px 4px 10px ${colors.shadowBoxLight}`,
     overflow: 'hidden',
     opacity: state.selectProps.menuIsOpen ? 1 : 0,
     animation: state.selectProps.menuIsOpen
