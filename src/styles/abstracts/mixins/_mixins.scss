@@ -364,3 +364,9 @@
   color: color.$color-black-deep;
   font-size: size.$font-size-lg;
 }
+
+@mixin flexColumn($gap: $gap) {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: $gap;
+}

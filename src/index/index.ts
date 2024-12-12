@@ -65,3 +65,4 @@ export { ProjectsBoardTasks } from '@/components/projects/ProjectsBoardTasks/Pro
 export { ProjectsCalendarTasks } from '@/components/projects/ProjectsCalendarTasks/ProjectsCalendarTasks';
 export { EventModal } from '@/components/ui/EventModal/EventModal';
 export { EventModalHeader } from '@/components/ui/EventModal/EventModalHeader';
+export { EventModalForm } from '@/components/ui/EventModal/EventModalForm';

@@ -3,7 +3,7 @@
 import React, { useEffect, useState, type FC } from 'react';
 import { createPortal } from 'react-dom';
 
-import { Div, EventModalHeader } from '@/index';
+import { Div, EventModalHeader, EventModalForm } from '@/index';
 
 import styles from './EventModal.module.scss';
 
@@ -53,6 +53,7 @@ export const EventModal: FC<EventModalProps> = ({ onCloseModal, isOpen }) => {
         }
       >
         <EventModalHeader onCloseModal={onCloseModal} />
+        <EventModalForm />
       </Div>
     </Div>,
     eventPortal,

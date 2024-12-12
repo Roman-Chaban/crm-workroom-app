@@ -18,6 +18,7 @@
   & .modalContent {
     width: 100%;
     @include whiteContainer(584px);
+    @include flexColumn(30px);
     padding: 58px 60px;
   }
 
@@ -40,5 +41,16 @@
         background: color.$color-gray-light;
       }
     }
+  }
+
+  & .modalFormLabel {
+    @include flexColumn(7px);
+    @include selectLabel;
+  }
+
+  & .modalFormInput {
+    @include input;
+    @include inputHover;
+    max-width: 100%;
   }
 }
