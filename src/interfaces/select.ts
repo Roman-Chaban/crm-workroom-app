@@ -1,11 +1,11 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, HTMLProps } from 'react';
 
 export interface Option {
   value: string;
   label: string;
 }
 
-export interface Select {
+export interface Select extends HTMLProps<HTMLSelectElement> {
   htmlFor: string;
   name: string;
   id: string;

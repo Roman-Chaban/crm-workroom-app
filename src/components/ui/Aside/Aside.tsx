@@ -1,6 +1,6 @@
-import React, { ReactNode, type FC } from 'react';
+import React, { HTMLProps, ReactNode, type FC } from 'react';
 
-interface AsideProps {
+interface AsideProps extends HTMLProps<HTMLElement> {
   children: ReactNode;
   className: string;
 }

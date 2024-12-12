@@ -1,16 +1,23 @@
-import React, { type CSSProperties, type FC, type ReactNode } from 'react';
+import React, {
+  HTMLProps,
+  type CSSProperties,
+  type FC,
+  type ReactNode,
+} from 'react';
 
-interface ButtonProps {
+type ButtonType = 'reset' | 'button' | 'submit';
+
+interface ButtonProps extends Omit<HTMLProps<HTMLButtonElement>, ''> {
   children: ReactNode;
   className?: string;
-  type: 'reset' | 'button' | 'submit';
-  onClick?: () => void;
+  type: ButtonType;
   disabled?: boolean;
   style?: CSSProperties;
   ariaPressed?: boolean;
-  id?: number | string;
+  id?: string;
   ariaLabel?: string;
   title?: string;
+  onClick?: () => void;
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -19,11 +26,11 @@ export const Button: FC<ButtonProps> = ({
   style,
   className,
   disabled,
-  onClick,
   ariaPressed,
   ariaLabel,
   title,
   id,
+  onClick,
 }) => {
   return (
     <button

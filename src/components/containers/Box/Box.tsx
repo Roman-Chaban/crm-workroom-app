@@ -1,6 +1,11 @@
-import React, { type FC, ReactNode, TransitionEventHandler } from 'react';
+import React, {
+  type FC,
+  HTMLProps,
+  ReactNode,
+  TransitionEventHandler,
+} from 'react';
 
-interface BoxProps {
+interface BoxProps extends HTMLProps<HTMLDivElement> {
   children: ReactNode;
   className?: string;
   onTransitionEnd?: TransitionEventHandler<HTMLDivElement>;

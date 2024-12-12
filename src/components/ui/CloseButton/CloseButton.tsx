@@ -1,10 +1,10 @@
-import React, { type FC } from 'react';
+import React, { HTMLProps, type FC } from 'react';
 
 import Image from 'next/image';
 
 import { Button } from '@/index';
 
-interface CloseButtonProps {
+interface CloseButtonProps extends Omit<HTMLProps<HTMLButtonElement>, ''> {
   onCloseModal: () => void;
   classNames: { button: string; icon: string };
 }

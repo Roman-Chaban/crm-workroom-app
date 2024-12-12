@@ -6,4 +6,6 @@ export const enum REQUESTS_METHODS {
   DELETE = 'DELETE',
   HEAD = 'HEAD',
   OPTIONS = 'OPTIONS',
+  TRACE = 'TRACE',
+  CONNECT = 'CONNECT',
 }
