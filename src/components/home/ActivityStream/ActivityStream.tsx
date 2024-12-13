@@ -21,10 +21,16 @@ export const ActivityStream: FC = () => {
         >
           Activity Stream
         </Heading>
-        <UpdatedStream />
-        <AttachedStream />
-        <UpdatedStream />
-        <ViewLink />
+
+        <Container className={styles['activityStreamPrimary']}>
+          <UpdatedStream />
+          <AttachedStream />
+        </Container>
+
+        <Container className={styles['activityStreamSecondary']}>
+          <UpdatedStream />
+          <ViewLink />
+        </Container>
       </Container>
     </Box>
   );

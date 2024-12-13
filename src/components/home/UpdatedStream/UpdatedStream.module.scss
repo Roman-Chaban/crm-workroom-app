@@ -6,6 +6,7 @@
   width: 100%;
   &Container {
     @include updatedContainer;
+    align-items: flex-start;
   }
 
   &Icon {

@@ -1,4 +1,5 @@
 @use '../../../styles/abstracts/mixins/mixins' as *;
+@use '../../../styles/abstracts/breakpoints/breakpoints' as *;
 @use '../../../styles/base/colors/colors' as color;
 @use '../../../styles/base/globals/globals' as size;
 
@@ -129,5 +130,11 @@
     &.active {
       transform: translateX(20px);
     }
+  }
+}
+
+@include respond-toWidth(large-medium) {
+  .modalOverlay {
+    padding: 30px;
   }
 }

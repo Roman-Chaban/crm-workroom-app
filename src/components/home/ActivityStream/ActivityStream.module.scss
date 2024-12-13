@@ -8,9 +8,18 @@
 
   &Container {
     @include containerPadding;
+    @include flexBasicColumn(24px);
   }
 
   &Title {
     @include boldTitle;
+  }
+
+  &Primary {
+    @include flexBasicColumn(16px);
+  }
+
+  &Secondary {
+    @include flexBasicColumn(20px);
   }
 }

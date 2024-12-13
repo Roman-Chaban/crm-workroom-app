@@ -405,3 +405,9 @@
     font-weight: 400;
   }
 }
+
+@mixin flexBasicColumn($gap: $gap) {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: $gap;
+}
