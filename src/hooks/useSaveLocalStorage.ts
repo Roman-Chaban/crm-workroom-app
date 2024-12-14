@@ -1,22 +1,18 @@
 import { useCallback } from 'react';
 
 export const useSaveLocalStorage = () => {
-  const saveToLocalStorage = useCallback((name: string, value: string) => {
-    const serviceDetails = JSON.parse(
-      localStorage.getItem('service-details') || '{}',
-    );
-    const updatedServiceDetails = {
-      ...serviceDetails,
-      [name]: value,
-    };
-
+  const saveToLocalStorage = useCallback((key: string, value: string) => {
     try {
-      localStorage.setItem(
-        'service-details',
-        JSON.stringify(updatedServiceDetails),
-      );
+      const currentData = JSON.parse(localStorage.getItem(key) || '{}');
+
+      const updatedData = {
+        ...currentData,
+        [key]: value,
+      };
+
+      localStorage.setItem(key, JSON.stringify(updatedData));
     } catch (error) {
-      console.error('Error saving to localStorage:', error);
+      console.error(`Error saving to localStorage (${key}):`, error);
     }
   }, []);
 

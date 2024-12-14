@@ -7,43 +7,44 @@
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
-  gap: 30px;
+  gap: 1.875rem;
 
   &Container {
     width: 100%;
   }
 
   &Banner {
-    @include infoPortalBanner(855px, 186px, 24px);
+    @include infoPortalBanner(53.4375rem, 11.625rem, 1.5rem);
     position: relative;
+
     &::after {
       content: '';
       position: absolute;
       background: url('/images/info-portal/info-illustration.svg') no-repeat
         center center;
-      width: 291px;
+      width: 18.1875rem;
       height: 100%;
-      right: 69px;
+      right: 4.3125rem;
       top: 0;
       background-size: cover;
     }
   }
 
   &SecondBanner {
-    @include infoPortalBanner(265px, 186px, 24px);
+    @include infoPortalBanner(16.5625rem, 11.625rem, 1.5rem);
   }
 
   &SecondBannerContainer {
-    padding: 24px 32px;
+    padding: 1.5rem 2rem;
   }
 
   &BannerInfo {
     display: flex;
     flex-flow: column nowrap;
-    gap: 16px;
+    gap: 1rem;
     width: 100%;
-    max-width: 360px;
-    margin: 44px 0 0 44px;
+    max-width: 22.5rem;
+    margin: 2.75rem 0 0 2.75rem;
   }
 
   &BannerTitle {
@@ -61,7 +62,7 @@
   &SecondBannerContainer {
     display: flex;
     flex-flow: column nowrap;
-    gap: 8px;
+    gap: 0.5rem;
     height: 100%;
   }
 
@@ -73,18 +74,18 @@
     &::after {
       content: '';
       position: absolute;
-      width: 97px;
-      height: 44px;
+      width: 6.0625rem;
+      height: 2.75rem;
       background: url('/images/info-portal/statistics.svg') no-repeat center
         center;
       right: 0;
-      top: 14px;
+      top: 0.875rem;
     }
 
     &Subtitle {
       color: color.$color-gray-neutral;
       font-size: size.$font-size-sm;
-      margin-top: 6px;
+      margin-top: 0.375rem;
     }
   }
 
@@ -106,23 +107,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 1.875rem;
 
   &Item {
-    @include infoPortalBanner(265px, 186px, 24px);
-    padding: 28px;
+    @include infoPortalBanner(16.5625rem, 11.625rem, 1.5rem);
+    padding: 1.75rem;
   }
 
   &Info {
     display: flex;
     flex-flow: column nowrap;
-    gap: 32px;
+    gap: 2rem;
   }
 
   &SubInfo {
     display: flex;
     flex-flow: column nowrap;
-    gap: 8px;
+    gap: 0.5rem;
 
     &Title {
       font-weight: 700;

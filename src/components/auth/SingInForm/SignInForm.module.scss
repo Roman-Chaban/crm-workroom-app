@@ -12,22 +12,23 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 33px;
+    gap: 2.0625rem;
     background: color.$color-white-primary;
     box-shadow: color.$shadow-box-light;
-    border-top-right-radius: 24px;
-    border-bottom-right-radius: 24px;
-    padding: 115px 0 204px 0;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    padding: 7.1875rem 0 12.75rem 0;
   }
 
   & .signInForm {
     width: 100%;
-    max-width: 403px;
+    max-width: 25.1875rem;
     height: 100%;
     display: flex;
     flex-flow: column nowrap;
-    gap: 10px;
+    gap: 0.625rem;
   }
+
   &Title {
     font-weight: 700;
     color: color.$color-black-deep;
@@ -36,7 +37,7 @@
 
   &InputContainer {
     @include label;
-    height: 98px;
+    height: 6.125rem;
     position: relative;
   }
 
@@ -47,8 +48,8 @@
 
   &ViewIcon {
     position: absolute;
-    bottom: 31px;
-    right: 18px;
+    bottom: 1.9375rem;
+    right: 1.125rem;
   }
 
   &Label {
@@ -64,7 +65,7 @@
   &RememberContainer {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 0.875rem;
     flex-flow: row-reverse nowrap;
   }
 
@@ -73,7 +74,7 @@
   }
 
   &RememberCheckbox {
-    @include checkboxInput(22px, 22px);
+    @include checkboxInput(1.375rem, 1.375rem);
     position: relative;
     transition:
       background-color 0.2s ease,
@@ -88,12 +89,12 @@
         top: 40%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(45deg);
-        width: 8px;
-        height: 15px;
+        width: 0.5rem;
+        height: 0.9375rem;
         border: solid color.$background-support-primary;
-        border-width: 0 2px 2px 0;
+        border-width: 0 0.125rem 0.125rem 0;
         display: block;
-        border-radius: 0.5px;
+        border-radius: 0.03125rem;
         transition:
           transform 0.3s ease,
           width 0.2s ease,
@@ -130,14 +131,14 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    gap: 20px;
-    margin-block-start: 49px;
+    gap: 1.25rem;
+    margin-block-start: 3.0625rem;
   }
 
   &Button {
     @include Button;
     position: static;
-    max-width: 170px;
+    max-width: 10.625rem;
     &:disabled {
       @include disabledButton;
     }
@@ -162,13 +163,13 @@
 
 @include respond-toWidth(large-medium) {
   .signInFormBlockRememberCheckbox {
-    @include checkboxInput(21px, 21px);
+    @include checkboxInput(1.3125rem, 1.3125rem);
 
     &:checked {
       &::after {
         content: '';
-        width: 6.5px;
-        height: 13px;
+        width: 0.40625rem;
+        height: 0.8125rem;
       }
     }
   }
@@ -176,6 +177,6 @@
 
 @include respond-toWidth(medium) {
   .signInFormBlockContainer {
-    padding: 65px 0 104px 0;
+    padding: 4.0625rem 0 6.5rem 0;
   }
 }

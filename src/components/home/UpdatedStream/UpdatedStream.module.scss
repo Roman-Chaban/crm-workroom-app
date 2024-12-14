@@ -4,14 +4,15 @@
 
 .updatedStream {
   width: 100%;
+
   &Container {
     @include updatedContainer;
     align-items: flex-start;
   }
 
   &Icon {
-    max-width: 24px;
-    max-height: 24px;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
     object-fit: cover;
   }
 

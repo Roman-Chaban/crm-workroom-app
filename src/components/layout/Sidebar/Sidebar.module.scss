@@ -4,24 +4,24 @@
 
 .sidebar {
   width: 100%;
-  max-width: 200px;
+  max-width: 12.5rem;
 
   &Container {
     width: 100%;
     min-height: 100%;
     background: color.$color-white-primary;
     box-shadow: color.$shadow-box-light;
-    border-radius: 24px;
+    border-radius: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 2.5rem;
     justify-content: space-between;
   }
 
   &Logo {
-    max-width: 55px;
-    padding-block-start: 40px;
-    padding-inline-start: 24px;
+    max-width: 3.4375rem;
+    padding-block-start: 2.5rem;
+    padding-inline-start: 1.5rem;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
     &:hover {
       transform: scale(1.05);
@@ -31,7 +31,7 @@
   &LogoNavContainer {
     display: flex;
     flex-flow: column nowrap;
-    gap: 42px;
+    gap: 2.625rem;
   }
 
   &Nav {
@@ -41,15 +41,15 @@
   &NavList {
     display: flex;
     flex-flow: column nowrap;
-    gap: 14px;
-    padding-inline-start: 16px;
+    gap: 0.875rem;
+    padding-inline-start: 1rem;
 
     &Item {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding-inline-start: 8px;
-      min-height: 48px;
+      gap: 1rem;
+      padding-inline-start: 0.5rem;
+      min-height: 3rem;
     }
 
     &ItemLink {
@@ -60,9 +60,9 @@
   &Logout {
     display: flex;
     flex-direction: column;
-    gap: 51px;
-    padding-inline: 16px;
-    padding-block-end: 25px;
+    gap: 3.1875rem;
+    padding-inline: 1rem;
+    padding-block-end: 1.5625rem;
   }
 
   &LogoutBlock {
@@ -77,27 +77,27 @@
     background: inherit;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 1rem;
     @include listItem;
   }
 
   &NavListItemActive {
     width: 100%;
-    max-width: 172px;
-    height: 44px;
-    padding: 10px 8px;
-    border-radius: 10px;
+    max-width: 10.75rem;
+    height: 2.75rem;
+    padding: 0.625rem 0.5rem;
+    border-radius: 0.625rem;
     background-color: rgba(color.$background-support-primary, 0.1);
     position: relative;
 
     &::after {
       content: '';
       background: color.$background-support-primary;
-      border-radius: 2px;
-      width: 4px;
+      border-radius: 0.125rem;
+      width: 0.25rem;
       height: 100%;
       position: absolute;
-      right: -12px;
+      right: -0.75rem;
     }
   }
 

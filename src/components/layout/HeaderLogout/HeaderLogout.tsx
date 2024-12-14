@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, type FC } from 'react';
 import { useMutation } from '@tanstack/react-query';
+import { useClearLocalStorage } from '@/hooks/useClearLocalStorage';
 
 import Link from 'next/link';
 
@@ -28,6 +29,8 @@ interface HeaderLogoutProps {
 export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
   const [isVisibleMenu, setIsVisibleMenu] = useState<IsVisibleMenu>(false);
 
+  const removeItems = useClearLocalStorage();
+
   useEffect(() => {
     const storedState = localStorage.getItem('isOpen');
     if (storedState) {
@@ -47,10 +50,15 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
     mutationFn: LogoutUser,
     onSuccess: () => {
       toast.success('User is logout!');
-      localStorage.removeItem('accessToken');
-      localStorage.removeItem('refreshToken');
-      localStorage.removeItem('registration');
-      localStorage.removeItem('isOpen');
+
+      const keysForRemove = [
+        'accessToken',
+        'refreshToken',
+        'registration',
+        'isOpen',
+      ];
+
+      removeItems(keysForRemove);
 
       window.location.reload();
     },

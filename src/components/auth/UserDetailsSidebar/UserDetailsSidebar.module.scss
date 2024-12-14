@@ -5,24 +5,24 @@
 
 .sidebarSteps {
   width: 100%;
-  max-width: 346px;
+  max-width: 21.625rem;
 
   &Container {
     display: flex;
     flex-flow: column nowrap;
-    gap: 135px;
+    gap: 8.4375rem;
     width: 100%;
-    max-width: 346px;
+    max-width: 21.625rem;
     height: 100%;
-    border-radius: 24px;
+    border-radius: 1.5rem;
     background: color.$background-support-primary;
-    padding: 60px 40px;
+    padding: 3.75rem 2.5rem;
   }
 
   &GetStarted {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 3.125rem;
   }
 
   &GetStartedTitle {
@@ -33,7 +33,7 @@
   & .stepsList {
     display: flex;
     flex-flow: column nowrap;
-    gap: 36px;
+    gap: 2.25rem;
   }
 
   & .stepsListItem {
@@ -42,7 +42,7 @@
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 21px;
+    gap: 1.3125rem;
     position: relative;
 
     &.firstStepActive {
@@ -68,10 +68,10 @@
 
     & .stepsListItemCircle {
       display: inline-block;
-      width: 21.5px;
-      height: 21.5px;
+      width: 1.34375rem;
+      height: 1.34375rem;
       border-radius: 50%;
-      outline: 2.5px solid rgba(color.$color-white-primary, 0.5);
+      outline: 0.15625rem solid rgba(color.$color-white-primary, 0.5);
       position: relative;
       &.completed {
         outline: none;
@@ -85,11 +85,11 @@
     & .stepsListItemCircle::before {
       content: '';
       position: absolute;
-      border-radius: 1px;
-      width: 2px;
-      height: 26px;
+      border-radius: 0.0625rem;
+      width: 0.125rem;
+      height: 1.625rem;
       top: 120%;
-      left: 10px;
+      left: 0.625rem;
       background: rgba(color.$color-white-primary, 0.5);
     }
 

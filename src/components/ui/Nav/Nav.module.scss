@@ -5,6 +5,7 @@
 .nav {
   grid-column: span 12;
   width: 100%;
+
   &Container {
     display: flex;
     align-items: flex-end;
@@ -14,7 +15,7 @@
   &Top {
     display: flex;
     flex-flow: column nowrap;
-    gap: 8px;
+    gap: 0.5rem;
   }
 
   &Title {
@@ -24,7 +25,7 @@
   &Button {
     @include Button;
     position: static;
-    max-width: 158px;
+    max-width: 9.875rem;
   }
 
   &BackButton {
@@ -32,22 +33,23 @@
     background: inherit;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
     position: relative;
+
     &::before {
       content: '';
       background: url('/icons/outlined-icons/arrow-back.svg') no-repeat center
         center;
-      width: 24px;
-      height: 24px;
+      width: 1.5rem;
+      height: 1.5rem;
       position: absolute;
       left: 0;
-      top: -2.5px;
+      top: -0.15625rem;
     }
   }
 
   &BackLink {
-    margin-inline-start: 28px;
+    margin-inline-start: 1.75rem;
     font-weight: 600;
     color: color.$background-support-primary;
   }

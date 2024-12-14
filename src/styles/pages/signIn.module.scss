@@ -9,7 +9,7 @@
 
 .signUpSteps {
   display: flex;
-  gap: 30px;
+  gap: 1.875rem;
   height: 100%;
 }
 
@@ -18,6 +18,6 @@
     flex-direction: column;
   }
   .signUpSteps {
-    gap: 15px;
+    gap: 0.9375rem;
   }
 }

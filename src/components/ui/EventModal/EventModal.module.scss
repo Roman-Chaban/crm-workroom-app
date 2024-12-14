@@ -13,16 +13,16 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding-block: 58px 59px;
+  padding-block: 3.625rem 3.6875rem;
   background: color.$background-modal-overlay;
 
   & .modalContent {
     width: 100%;
     overflow: auto;
     @include modalCustomScrollBar;
-    @include whiteContainer(584px);
-    @include flexColumn(30px);
-    padding: 58px 60px;
+    @include whiteContainer(36.5rem);
+    @include flexColumn(1.875rem);
+    padding: 3.625rem 3.75rem;
   }
 
   & .modalHeader {
@@ -36,8 +36,8 @@
     &Close {
       @include closeButton;
       position: relative;
-      bottom: 29px;
-      left: 30px;
+      bottom: 1.8125rem;
+      left: 1.875rem;
       transition: 0.3s ease-in-out 0s;
 
       &:hover {
@@ -47,15 +47,15 @@
   }
 
   & .modalForm {
-    @include flexColumn(30px);
+    @include flexColumn(1.875rem);
   }
 
   & .modalEventBlock {
-    @include flexColumn(7px);
+    @include flexColumn(0.4375rem);
   }
 
   & .modalFormLabel {
-    @include flexColumn(7px);
+    @include flexColumn(0.4375rem);
     @include selectLabel;
   }
 
@@ -75,7 +75,7 @@
   }
 
   & .modalDescriptionLabel {
-    @include flexColumn(7px);
+    @include flexColumn(0.4375rem);
     @include selectLabel;
   }
 
@@ -86,10 +86,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 24px 20px;
+      padding: 1.5rem 1.25rem;
       width: 100%;
-      min-height: 79px;
-      border-radius: 14px;
+      min-height: 4.9375rem;
+      border-radius: 0.875rem;
       background: color.$background-main-light;
     }
 
@@ -103,12 +103,13 @@
 
   & .eventModalRepeatSwitchButton {
     width: 100%;
-    max-width: 51px;
-    min-height: 31px;
-    border-radius: 18px;
+    max-width: 3.1875rem;
+    min-height: 1.9375rem;
+    border-radius: 1.125rem;
     background: color.$background-switcher;
     position: relative;
     transition: background 0.5s ease;
+
     &.active {
       background: color.$background-support-primary;
     }
@@ -116,25 +117,25 @@
 
   & .eventModalRepeatCircle {
     display: inline-block;
-    width: 23px;
-    height: 23px;
+    width: 1.4375rem;
+    height: 1.4375rem;
     background: color.$color-white-primary;
     border-radius: 100%;
     position: absolute;
-    top: 4px;
-    left: 4px;
+    top: 0.25rem;
+    left: 0.25rem;
     transition:
       transform 0.3s ease,
       background 0.3s ease;
 
     &.active {
-      transform: translateX(20px);
+      transform: translateX(1.25rem);
     }
   }
 }
 
 @include respond-toWidth(large-medium) {
   .modalOverlay {
-    padding: 30px;
+    padding: 1.875rem;
   }
 }

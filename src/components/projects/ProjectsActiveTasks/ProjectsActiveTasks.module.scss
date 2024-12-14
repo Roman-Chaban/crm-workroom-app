@@ -4,6 +4,6 @@
 
 .projectsActiveTasks {
   &Heading {
-    @include tasksHeading(40px);
+    @include tasksHeading(2.5rem);
   }
 }

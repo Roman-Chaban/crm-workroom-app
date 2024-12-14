@@ -7,9 +7,10 @@
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
-  gap: 20px;
+  gap: 1.25rem;
+
   &Heading {
-    @include tasksHeading(40px);
+    @include tasksHeading(2.5rem);
   }
 }
 
@@ -20,15 +21,16 @@
 
   & > .boardTasksItem {
     width: 100%;
-    max-width: 191px;
-    min-height: 58px;
-    border-radius: 24px;
+    max-width: 11.9375rem;
+    min-height: 3.625rem;
+    border-radius: 1.5rem;
     background: color.$background-main-light;
-    outline: 6px solid color.$color-white-primary;
+    outline: 0.375rem solid color.$color-white-primary;
     box-shadow: color.$shadow-box-light;
     display: flex;
     align-items: center;
     justify-content: center;
+
     & > .boardTasksHeading {
       @include tasksBoardHeading;
     }

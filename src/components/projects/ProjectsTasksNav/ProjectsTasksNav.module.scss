@@ -4,9 +4,10 @@
 
 .tasksNav {
   width: 100%;
+
   &Container {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0.625rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,7 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 1rem;
   }
 
   &ListButton {
@@ -28,7 +29,7 @@
   }
 
   & .active {
-    border: 1.5px solid color.$background-support-primary;
+    border: 0.09375rem solid color.$background-support-primary;
   }
 
   &NotificationsButton {

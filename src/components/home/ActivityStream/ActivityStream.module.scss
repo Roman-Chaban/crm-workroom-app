@@ -3,12 +3,12 @@
 @use '../../../styles/base/globals/globals' as size;
 
 .activityStream {
-  @include whiteContainer(339px);
-  height: 540px;
+  @include whiteContainer(21.1875rem);
+  height: 33.75rem;
 
   &Container {
     @include containerPadding;
-    @include flexBasicColumn(24px);
+    @include flexBasicColumn(1rem);
   }
 
   &Title {
@@ -16,10 +16,10 @@
   }
 
   &Primary {
-    @include flexBasicColumn(16px);
+    @include flexBasicColumn(1rem);
   }
 
   &Secondary {
-    @include flexBasicColumn(20px);
+    @include flexBasicColumn(1.25rem);
   }
 }

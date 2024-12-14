@@ -6,12 +6,12 @@
   width: 100%;
   &Container {
     @include updatedContainer;
-    min-height: 54px;
+    min-height: 3.375rem;
   }
 
   &Icon {
-    max-width: 24px;
-    max-height: 24px;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
     object-fit: cover;
   }
 

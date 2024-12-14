@@ -3,12 +3,12 @@
   min-height: 100vh;
   grid-column: span 12;
   display: flex;
-  gap: 30px;
+  gap: 1.875rem;
 
   &Container {
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
-    gap: 24px;
+    gap: 1.5rem;
   }
 }

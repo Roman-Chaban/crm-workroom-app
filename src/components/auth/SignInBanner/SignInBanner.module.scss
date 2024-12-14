@@ -6,29 +6,29 @@
 .signInBanner {
   width: 100%;
   height: 100%;
-  max-width: 680px;
+  max-width: 42.5rem;
 
   &Container {
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
     height: 100%;
-    gap: 48px;
+    gap: 3rem;
     background: color.$background-support-primary;
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
-    padding: 65px 84px 74px 84px;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    padding: 4.0625rem 5.25rem 4.625rem 5.25rem;
   }
 
   &Logo {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 1.875rem;
   }
 
   &LogoIcon {
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     object-fit: cover;
   }
 
@@ -37,28 +37,28 @@
   }
 
   &Subtitle {
-    @include signInSubtitle(398px);
+    @include signInSubtitle(24.875rem);
   }
 
   &Illustration {
     width: 100%;
     height: 100%;
-    max-width: 500px;
-    max-height: 373px;
+    max-width: 31.25rem;
+    max-height: 23.3125rem;
     aspect-ratio: 16 / 9;
   }
 }
 
 @include respond-toWidth(large) {
   .signInBannerContainer {
-    padding: 65px 5vw 74px 5vw;
+    padding: 4.0625rem 5vw 4.625rem 5vw;
   }
 }
 
 @include respond-toWidth(large-medium) {
   .signInBannerContainer {
-    padding: 35px 4vw 74px 4vw;
-    gap: 38px;
+    padding: 2.1875rem 4vw 4.625rem 4vw;
+    gap: 2.375rem;
   }
 
   .signInBannerTitle {
@@ -72,9 +72,9 @@
   }
 
   .signInBannerContainer {
-    padding: 65px 3vw 74px 3vw;
+    padding: 4.0625rem 3vw 4.625rem 3vw;
     border-bottom-left-radius: 0;
-    border-top-right-radius: 24px;
+    border-top-right-radius: 1.5rem;
     align-items: center;
   }
 
@@ -83,7 +83,7 @@
   }
 
   .signInBannerSubtitle {
-    max-width: 500px;
+    max-width: 31.25rem;
     text-align: center;
     text-align-last: center;
   }

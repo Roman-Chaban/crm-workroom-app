@@ -12,18 +12,18 @@
   top: 0;
   right: 0;
   z-index: 1000;
-  padding: 20px 30px;
+  padding: 1.25rem 1.875rem;
 
   &Container {
-    @include whiteContainer(437px);
+    @include whiteContainer(27.3125rem);
     flex-direction: column;
     margin-top: auto;
     margin-bottom: auto;
-    padding: 37px 30px 23px 30px;
+    padding: 2.3125rem 1.875rem 1.4375rem 1.875rem;
 
     transform: translateY(-100%) scale(0.8);
     opacity: 0;
-    filter: blur(10px);
+    filter: blur(0.625rem);
     transition:
       transform 0.4s ease-in-out,
       opacity 0.4s ease-in-out,
@@ -38,7 +38,7 @@
     &.exiting {
       transform: translateY(-100%) scale(0.8);
       opacity: 0;
-      filter: blur(10px);
+      filter: blur(0.625rem);
     }
   }
 
@@ -46,7 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 44px;
+    min-height: 2.75rem;
   }
 
   & .title {

@@ -2,6 +2,8 @@
 
 import React, { useMemo, useState, type FC } from 'react';
 
+import { SingleValue } from 'react-select';
+
 import { EventType } from '@/types/signIn';
 
 import { Button, Container, Div, Input } from '@/index/index';
@@ -34,9 +36,9 @@ const Select = dynamic(() => import('react-select'), {
 
 interface UserDetailsFieldsProps {
   registrationData: RegistrationUserData;
+  isSubmitting: boolean;
   handleInputChange: (event: EventType) => void;
   handleSubmitConfirmationData: () => void;
-  isSubmitting: boolean;
 }
 
 export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
@@ -53,12 +55,12 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
   const [selectedCountryCode, setSelectedCountryCode] =
     useState<SelectedCountryCode>(countryOptions[0]);
 
-  const handleCountryChange = (selectedOption: CountryOption) => {
-    if (selectedOption) {
-      setSelectedCountryCode(selectedOption);
+  const handleCountryChange = (newValue: SingleValue<CountryOption>) => {
+    if (newValue) {
+      setSelectedCountryCode(newValue);
     }
 
-    const countryCode = `+${selectedOption.value}`;
+    const countryCode = `+${newValue?.value}`;
     if (!phoneNumber.startsWith(countryCode)) {
       setPhoneNumber(`${countryCode}`);
       handleInputChange({

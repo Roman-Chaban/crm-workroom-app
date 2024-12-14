@@ -5,7 +5,7 @@
 .header {
   width: 100%;
   grid-column: span 12;
-  height: 48px;
+  height: 3rem;
   position: relative;
 
   &Container {
@@ -22,7 +22,7 @@
   &SearchInput {
     @include input;
     @include inputHover;
-    border: 1.5px solid transparent;
+    border: 0.09375rem solid transparent;
 
     &::placeholder {
       @include listItem;
@@ -35,7 +35,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 15px;
+    gap: 0.9375rem;
   }
 
   &Notification {
@@ -51,7 +51,7 @@
     align-items: center;
     justify-content: flex-end;
     width: 100%;
-    max-width: 160px;
+    max-width: 10rem;
     position: relative;
   }
 
@@ -60,18 +60,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 48px;
-    @include whiteContainer(160px);
+    min-height: 3rem;
+    @include whiteContainer(10rem);
   }
 
   &UserLoginBanner {
-    padding: 11px 12px;
+    padding: 0.6875rem 0.75rem;
     @include boldTitle;
     font-size: size.$font-size-md;
-    border-radius: 14px;
+    border-radius: 0.875rem;
     display: flex;
     align-items: center;
-    gap: 13px;
+    gap: 0.8125rem;
     position: relative;
 
     & #rotateIconContainer {
@@ -95,6 +95,7 @@
       transform: rotate(180deg);
     }
   }
+
   .dropdownMenu {
     position: absolute;
     top: 100%;
@@ -102,17 +103,17 @@
     background-color: color.$color-white-primary;
     box-shadow: color.$shadow-box-light;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0.625rem;
     z-index: 100;
-    border-radius: 14px;
-    padding: 10px 0;
+    border-radius: 0.875rem;
+    padding: 0.625rem 0;
 
     &::before {
       content: '';
       position: absolute;
-      top: -11px;
-      right: 16.5px;
-      border-width: 6.5px;
+      top: -0.6875rem;
+      right: 1rem;
+      border-width: 0.40625rem;
       border-style: solid;
       border-color: transparent transparent color.$color-white-primary
         transparent;
@@ -122,11 +123,11 @@
 
   .dropdownItem {
     width: 100%;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     text-align: left;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.75rem;
     font-weight: 500;
     font-size: size.$font-size-lg;
     cursor: pointer;
@@ -149,8 +150,8 @@
     position: absolute;
     width: 100%;
     max-width: 100%;
-    min-height: 48px;
-    top: 65px;
+    min-height: 3rem;
+    top: 4.0625rem;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -163,10 +164,10 @@
     &::before {
       content: '';
       position: absolute;
-      top: -16px;
+      top: -1rem;
       left: 50%;
       transform: translateX(-50%);
-      border-width: 10px;
+      border-width: 0.625rem;
       border-style: solid;
       border-color: transparent transparent color.$background-support-primary
         transparent;

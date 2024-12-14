@@ -16,7 +16,7 @@ export const Box: FC<BoxProps> = ({ children, className, onTransitionEnd }) => {
     width: '100%',
     height: '100%',
     display: 'flex',
-    gap: '30px',
+    gap: '1.875rem',
     justifyContent: 'space-between',
   };
   return (

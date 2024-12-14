@@ -13,11 +13,11 @@
     &Item {
       display: flex;
       flex-flow: column nowrap;
-      gap: 4px;
-      min-height: 40px;
+      gap: 0.25rem;
+      min-height: 2.5rem;
       @include listItemTitle;
-      margin-inline: 24px;
-      margin-block: 8px 16px;
+      margin-inline: 1.5rem;
+      margin-block: 0.5rem 1rem;
       cursor: pointer;
     }
 
@@ -25,23 +25,24 @@
       @include listItemCode;
     }
   }
+
   & .activeListItem {
     font-weight: 700;
-    border-radius: 14px;
+    border-radius: 0.875rem;
     background: color.$background-main-light;
-    padding: 14px 16px;
-    margin: 8px 12px;
+    padding: 0.875rem 1rem;
+    margin: 0.5rem 0.75rem;
     position: relative;
 
     &::before {
       content: '';
       height: 100%;
-      width: 4px;
+      width: 0.25rem;
       background: color.$background-support-primary;
       position: absolute;
-      right: -12px;
+      right: -0.75rem;
       top: 0;
-      border-radius: 2px;
+      border-radius: 0.125rem;
     }
   }
 
