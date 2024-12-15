@@ -14,7 +14,7 @@ import {
   optionsForWhy,
   optionsForDescription,
   ServiceOption,
-} from '@/interfaces/servicesSelect';
+} from '@/interfaces/ServicesSelectInterface';
 
 import { toast, Toaster } from 'react-hot-toast';
 

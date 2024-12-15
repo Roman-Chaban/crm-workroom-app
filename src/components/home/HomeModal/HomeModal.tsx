@@ -20,11 +20,11 @@ import {
   Div,
 } from '@/index/index';
 
-import { Option, SelectedValue } from '@/interfaces/select';
+import { Option, SelectedValue } from '@/interfaces/SelectInterface';
 
-import { AreaValue } from '@/types/textarea';
+import { AreaValue } from '@/types/TextareaTypes';
 
-import { options } from '@/staticData/requestOptions';
+import { options } from '@/static/RequestOptions';
 
 import styles from './HomeModal.module.scss';
 

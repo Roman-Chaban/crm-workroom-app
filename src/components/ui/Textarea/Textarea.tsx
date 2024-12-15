@@ -1,6 +1,6 @@
 import React, { type FC } from 'react';
 
-import { TextareaType } from '@/types/textarea';
+import { TextareaType } from '@/types/TextareaTypes';
 
 export const Textarea: FC<TextareaType> = ({
   className,

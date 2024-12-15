@@ -1,6 +1,6 @@
 import React, { ChangeEvent, type FC } from 'react';
 
-import { SmsCode } from '@/types/registration';
+import { SmsCode } from '@/types/RegistrationTypes';
 
 import { Div } from '@/index';
 

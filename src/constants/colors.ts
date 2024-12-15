@@ -1,4 +1,4 @@
-export const colors = {
+export const COLORS = {
   colorWhitePrimary: '#fff',
   colorGrayNeutral: '#7d8592',
   shadowBoxLight: '0 6px 58px 0 rgba(196, 203, 214, 0.1)',

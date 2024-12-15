@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { LoginData } from '@/types/login';
+import { LoginData } from '@/types/LoginTypes';
 
 import { API_ENDPOINTS } from '@/enums/apiEndpoints';
 import { REQUESTS_METHODS } from '@/enums/requestsMethods';

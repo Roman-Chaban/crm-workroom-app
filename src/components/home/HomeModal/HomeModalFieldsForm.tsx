@@ -8,8 +8,8 @@ import { Button, Textarea } from '@/index/index';
 import Select, { SingleValue } from 'react-select';
 import selectStyles from '@/components/ui/Select/selectStyles';
 
-import { options } from '@/staticData/requestOptions';
-import { Option } from '@/interfaces/select';
+import { options } from '@/static/RequestOptions';
+import { Option } from '@/interfaces/SelectInterface';
 
 import styles from './HomeModal.module.scss';
 

@@ -1,6 +1,6 @@
 import React, { type FC } from 'react';
 
-import { InputProps } from '@/types/input';
+import { InputProps } from '@/types/InputTypes';
 
 export const Input: FC<InputProps> = ({
   htmlFor = '',

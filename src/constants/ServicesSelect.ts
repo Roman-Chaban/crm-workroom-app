@@ -1,6 +1,6 @@
 import { StylesConfig } from 'react-select';
-import { colors } from './colors';
-import { ServiceOption } from '@/interfaces/servicesSelect';
+import { COLORS } from './Colors';
+import { ServiceOption } from '@/interfaces/ServicesSelectInterface';
 
 export const customServicesSelect: StylesConfig<ServiceOption, false> = {
   container: (base) => ({
@@ -13,30 +13,30 @@ export const customServicesSelect: StylesConfig<ServiceOption, false> = {
   control: (base, state) => ({
     ...base,
     cursor: 'pointer',
-    background: colors.colorWhitePrimary,
+    background: COLORS.colorWhitePrimary,
     boxShadow: state.isFocused
-      ? `0 0 0 4px rgba(${colors.backgroundSupportPrimary}, 0.2)`
-      : colors.shadowModal,
+      ? `0 0 0 4px rgba(${COLORS.backgroundSupportPrimary}, 0.2)`
+      : COLORS.shadowModal,
     border: `1.5px solid ${
       state.isFocused
-        ? colors.backgroundSupportHover
-        : colors.backgroundModalLight
+        ? COLORS.backgroundSupportHover
+        : COLORS.backgroundModalLight
     }`,
     borderRadius: 14,
     height: '49px',
     transition: 'all 0.3s ease-in-out',
     paddingInline: '10px',
     ':hover': {
-      borderColor: colors.backgroundSupportHover,
-      boxShadow: `0 0 0 4px rgba(${colors.backgroundSupportPrimary}, 0.1)`,
+      borderColor: COLORS.backgroundSupportHover,
+      boxShadow: `0 0 0 4px rgba(${COLORS.backgroundSupportPrimary}, 0.1)`,
     },
   }),
   menu: (base, state) => ({
     ...base,
     marginTop: 4,
     borderRadius: 14,
-    border: `1.5px solid ${colors.backgroundModalLight}`,
-    boxShadow: `0px 4px 10px ${colors.shadowBoxLight}`,
+    border: `1.5px solid ${COLORS.backgroundModalLight}`,
+    boxShadow: `0px 4px 10px ${COLORS.shadowBoxLight}`,
     overflow: 'hidden',
     opacity: state.selectProps.menuIsOpen ? 1 : 0,
     animation: state.selectProps.menuIsOpen
@@ -60,14 +60,14 @@ export const customServicesSelect: StylesConfig<ServiceOption, false> = {
       width: '8px',
     },
     '::-webkit-scrollbar-thumb': {
-      backgroundColor: colors.backgroundSupportPrimary,
+      backgroundColor: COLORS.backgroundSupportPrimary,
       borderRadius: '4px',
     },
     '::-webkit-scrollbar-thumb:hover': {
-      backgroundColor: colors.backgroundSupportHover,
+      backgroundColor: COLORS.backgroundSupportHover,
     },
     '::-webkit-scrollbar-track': {
-      backgroundColor: colors.backgroundModalLight,
+      backgroundColor: COLORS.backgroundModalLight,
     },
   }),
   option: (base, state) => ({
@@ -80,27 +80,27 @@ export const customServicesSelect: StylesConfig<ServiceOption, false> = {
     cursor: 'pointer',
     transition: 'background-color 0.3s ease, transform 0.2s ease',
     backgroundColor: state.isSelected
-      ? colors.backgroundSupportPrimary
+      ? COLORS.backgroundSupportPrimary
       : state.isFocused
-        ? colors.backgroundSupportHover
+        ? COLORS.backgroundSupportHover
         : 'transparent',
     color:
       state.isSelected || state.isFocused
-        ? colors.colorWhitePrimary
-        : colors.colorGrayNeutral,
+        ? COLORS.colorWhitePrimary
+        : COLORS.colorGrayNeutral,
     ':hover': {
-      backgroundColor: colors.backgroundSupportHover,
-      color: colors.colorWhitePrimary,
+      backgroundColor: COLORS.backgroundSupportHover,
+      color: COLORS.colorWhitePrimary,
       transform: 'scale(1.02)',
     },
   }),
   dropdownIndicator: (base, state) => ({
     ...base,
-    color: colors.colorGrayNeutral,
+    color: COLORS.colorGrayNeutral,
     transition: 'transform 0.3s ease',
     transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
     ':hover': {
-      color: colors.backgroundSupportHover,
+      color: COLORS.backgroundSupportHover,
     },
   }),
   indicatorSeparator: (base) => ({

@@ -1,4 +1,4 @@
-import { StepItem } from '@/types/stepItem';
+import { StepItem } from '@/types/StepItemTypes';
 
 export const stepsList: Array<StepItem> = [
   {

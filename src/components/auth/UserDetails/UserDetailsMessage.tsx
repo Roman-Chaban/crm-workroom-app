@@ -7,7 +7,11 @@ import Image from 'next/image';
 
 import { UserDetailsConfirmation } from './UserDetailsConfirmation';
 
-import { ConfirmationResponse, SmsCode, SmsTimer } from '@/types/registration';
+import {
+  ConfirmationResponse,
+  SmsCode,
+  SmsTimer,
+} from '@/types/RegistrationTypes';
 
 import { toast, Toaster } from 'react-hot-toast';
 

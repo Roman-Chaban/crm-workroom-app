@@ -4,10 +4,10 @@ import React, { useState, type FC } from 'react';
 
 import { Input } from '@/index/index';
 
-import { EventType } from '@/types/signIn';
-import { IsPasswordVisible } from '@/types/registration';
+import { EventType } from '@/types/SignInTypes';
+import { IsPasswordVisible } from '@/types/RegistrationTypes';
 
-import { colors } from '@/constants/colors';
+import { COLORS } from '@/constants/Colors';
 
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -34,11 +34,11 @@ export const SignInFormFields: FC<SignInFormFieldsProps> = ({
 
   const changeVisibleIcon = isPasswordVisible ? (
     <VisibilityIcon
-      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+      style={{ color: COLORS.colorGrayNeutral, cursor: 'pointer' }}
     />
   ) : (
     <VisibilityOffIcon
-      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+      style={{ color: COLORS.colorGrayNeutral, cursor: 'pointer' }}
     />
   );
 

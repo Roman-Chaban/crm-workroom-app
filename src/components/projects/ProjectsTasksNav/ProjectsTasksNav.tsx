@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 import { Button, Container, Heading, List } from '@/index';
 
-import { tasksNavButtons } from '@/staticData/tasksNav';
+import { ActiveTab } from '@/interfaces/TasksNavInterface';
 
-import { ActiveTab } from '@/interfaces/tasksNav';
+import { tasksNavButtons } from '@/staticData/tasksNav';
 
 import styles from './ProjectsTasksNav.module.scss';
 

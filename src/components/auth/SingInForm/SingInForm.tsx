@@ -12,10 +12,10 @@ import {
   Heading,
 } from '@/index/index';
 
-import { EventType, Remember } from '@/types/signIn';
-import { IsSubmitting } from '@/types/registration';
+import { EventType, Remember } from '@/types/SignInTypes';
+import { IsSubmitting } from '@/types/RegistrationTypes';
 
-import { LoginData } from '@/types/login';
+import { LoginData } from '@/types/LoginTypes';
 import { LoginUser } from '@/api/login';
 
 import { NAV_PATHS } from '@/enums/navPaths';

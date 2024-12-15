@@ -1,4 +1,4 @@
-import { Options } from '@/interfaces/select';
+import { Options } from '@/interfaces/SelectInterface';
 
 export const options: Options = [
   {

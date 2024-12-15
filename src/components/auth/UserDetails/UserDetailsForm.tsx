@@ -30,7 +30,7 @@ import {
   IsSubmitting,
   IsTimerActive,
   RegistrationUserData,
-} from '@/types/registration';
+} from '@/types/RegistrationTypes';
 
 import styles from './UserDetails.module.scss';
 

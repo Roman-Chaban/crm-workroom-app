@@ -2,7 +2,7 @@ import React, { type FC } from 'react';
 
 import { Heading, List } from '@/index';
 
-import { boardTasks } from '@/staticData/boardTasks';
+import { boardTasks } from '@/static/BoardTasks';
 
 import styles from './ProjectsBoardTasks.module.scss';
 

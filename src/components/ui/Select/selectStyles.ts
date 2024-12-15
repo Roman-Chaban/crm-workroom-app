@@ -2,9 +2,9 @@ import { StylesConfig } from 'react-select';
 
 import { keyframes } from '@emotion/react';
 
-import { Option } from '@/interfaces/select';
+import { Option } from '@/interfaces/SelectInterface';
 
-import { colors } from '@/constants/colors';
+import { COLORS } from '@/constants/Colors';
 
 const fadeIn = keyframes`
   from {
@@ -30,20 +30,20 @@ const customStyles: StylesConfig<Option, false> = {
   }),
   control: (base) => ({
     ...base,
-    border: `2px solid ${colors.backgroundModalLight}`,
-    boxShadow: colors.shadowModal,
+    border: `2px solid ${COLORS.backgroundModalLight}`,
+    boxShadow: COLORS.shadowModal,
     borderRadius: 14,
     minHeight: 49,
     cursor: 'pointer',
     transition: 'all 0.3s',
     ':hover': {
-      borderColor: colors.backgroundSupportHover,
-      outline: `2px solid rgba(${colors.backgroundSupportPrimary}, 0.11)`,
+      borderColor: COLORS.backgroundSupportHover,
+      outline: `2px solid rgba(${COLORS.backgroundSupportPrimary}, 0.11)`,
     },
   }),
   placeholder: (base) => ({
     ...base,
-    color: colors.colorGrayNeutral,
+    color: COLORS.colorGrayNeutral,
     fontSize: 14,
     lineHeight: '171%',
     transition: 'opacity 0.3s',
@@ -55,9 +55,9 @@ const customStyles: StylesConfig<Option, false> = {
     opacity: 0,
     animationFillMode: 'forwards',
     borderRadius: 14,
-    boxShadow: colors.shadowBoxLight,
-    background: colors.colorWhitePrimary,
-    border: `2px solid ${colors.backgroundModalLight}`,
+    boxShadow: COLORS.shadowBoxLight,
+    background: COLORS.colorWhitePrimary,
+    border: `2px solid ${COLORS.backgroundModalLight}`,
     maxHeight: '240px',
     overflowY: 'auto',
     scrollbarWidth: 'none',
@@ -69,12 +69,12 @@ const customStyles: StylesConfig<Option, false> = {
     fontWeight: 500,
     ':hover': {
       fontWeight: 700,
-      color: colors.colorBlackDeep,
+      color: COLORS.colorBlackDeep,
     },
   }),
   singleValue: (base) => ({
     ...base,
-    color: colors.colorGrayNeutral,
+    color: COLORS.colorGrayNeutral,
     fontWeight: 400,
     paddingInlineStart: 10,
     animation: `${fadeIn} 0.3s ease-in-out`,
@@ -89,10 +89,10 @@ const customStyles: StylesConfig<Option, false> = {
   }),
   dropdownIndicator: (base) => ({
     ...base,
-    color: colors.colorGrayNeutral,
+    color: COLORS.colorGrayNeutral,
     transition: 'transform 0.3s ease, color 0.3s ease',
     ':hover': {
-      color: colors.backgroundSupportHover,
+      color: COLORS.backgroundSupportHover,
       transform: 'rotate(180deg)',
     },
   }),

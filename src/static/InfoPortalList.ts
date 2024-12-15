@@ -1,4 +1,4 @@
-import { InfoPortalListItems } from '@/interfaces/infoPortalList';
+import { InfoPortalListItems } from '@/interfaces/InfoPortalListInterface';
 
 export const infoPortalList: InfoPortalListItems = [
   {

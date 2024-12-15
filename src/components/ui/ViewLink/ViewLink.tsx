@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components';
 
 import Image from 'next/image';
 
-import { colors } from '@/constants/colors';
+import { COLORS } from '@/constants/Colors';
 import { Button } from '../Button/Button';
 
 const ViewLinkContainer = styled.div`
@@ -35,18 +35,18 @@ const viewLinkMixin = css`
   display: flex;
   align-items: center;
   gap: 2px;
-  color: ${colors.backgroundSupportPrimary};
+  color: ${COLORS.backgroundSupportPrimary};
   font-size: 1rem;
   font-weight: 600;
   position: relative;
 
   transition: color 0.5s ease-in-out 0s;
   &:hover {
-    color: ${colors.backgroundSupportHover};
+    color: ${COLORS.backgroundSupportHover};
   }
 
   &:active {
-    color: ${colors.backgroundSupportActive};
+    color: ${COLORS.backgroundSupportActive};
   }
 `;
 

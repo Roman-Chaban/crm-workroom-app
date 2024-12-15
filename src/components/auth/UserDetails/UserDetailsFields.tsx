@@ -4,7 +4,7 @@ import React, { useMemo, useState, type FC } from 'react';
 
 import { SingleValue } from 'react-select';
 
-import { EventType } from '@/types/signIn';
+import { EventType } from '@/types/SignInTypes';
 
 import { Button, Container, Div, Input } from '@/index/index';
 
@@ -13,20 +13,20 @@ import {
   PhoneNumber,
   RegistrationUserData,
   SelectedCountryCode,
-} from '@/types/registration';
+} from '@/types/RegistrationTypes';
 
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 import SendIcon from '@mui/icons-material/Send';
 
-import { colors } from '@/constants/colors';
+import { COLORS } from '@/constants/Colors';
 
-import { CountryOption, countryOptions } from '@/staticData/countryOptions';
+import { CountryOption, countryOptions } from '@/static/CountryOptions';
 
 import dynamic from 'next/dynamic';
 
-import countrySelectStyles from '@/constants/country-select';
+import countrySelectStyles from '@/constants/CountrySelect';
 
 import styles from './UserDetails.module.scss';
 
@@ -105,11 +105,11 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
 
   const changeVisibleIcon = isPasswordVisible ? (
     <VisibilityIcon
-      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+      style={{ color: COLORS.colorGrayNeutral, cursor: 'pointer' }}
     />
   ) : (
     <VisibilityOffIcon
-      style={{ color: colors.colorGrayNeutral, cursor: 'pointer' }}
+      style={{ color: COLORS.colorGrayNeutral, cursor: 'pointer' }}
     />
   );
 

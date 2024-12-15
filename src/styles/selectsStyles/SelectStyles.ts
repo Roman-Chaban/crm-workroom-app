@@ -1,7 +1,8 @@
 import { StylesConfig } from 'react-select';
 
-import { ProjectsOption } from '@/interfaces/projects';
-import { colors } from '@/constants/colors';
+import { ProjectsOption } from '@/interfaces/ProjectsInterface';
+
+import { COLORS } from '@/constants/Colors';
 
 export const selectStyles: StylesConfig<ProjectsOption, false> = {
   container: (base) => ({
@@ -36,7 +37,7 @@ export const selectStyles: StylesConfig<ProjectsOption, false> = {
       width: '6px',
     },
     '::-webkit-scrollbar-thumb': {
-      backgroundColor: colors.colorGrayNeutral,
+      backgroundColor: COLORS.colorGrayNeutral,
       borderRadius: '4px',
     },
   }),
@@ -56,7 +57,7 @@ export const selectStyles: StylesConfig<ProjectsOption, false> = {
   singleValue: (base) => ({
     ...base,
     fontSize: 16,
-    color: colors.colorBlackDeep,
+    color: COLORS.colorBlackDeep,
     lineHeight: '150%',
     fontWeight: 700,
     width: 'auto',
@@ -67,12 +68,12 @@ export const selectStyles: StylesConfig<ProjectsOption, false> = {
   }),
   dropdownIndicator: (base, state) => ({
     ...base,
-    color: colors.colorBlackDeep,
+    color: COLORS.colorBlackDeep,
     cursor: 'pointer',
     transition: 'transform 0.3s ease',
     transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
     ':hover': {
-      color: colors.backgroundSupportHover,
+      color: COLORS.backgroundSupportHover,
     },
   }),
   indicatorsContainer: (base) => ({

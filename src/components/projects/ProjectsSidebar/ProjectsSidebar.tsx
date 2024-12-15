@@ -6,10 +6,11 @@ import Select from 'react-select';
 
 import { Container, Aside, ProjectsSidebarNav } from '@/index/index';
 
-import { ProjectsOption } from '@/interfaces/projects';
-import { projectsSelect } from '@/staticData/projectsOptions';
+import { ProjectsOption } from '@/interfaces/ProjectsInterface';
 
-import { selectStyles } from '@/styles/selectsStyles/projectsSelect';
+import { selectStyles } from '@/styles/selectsStyles/SelectStyles';
+
+import { projectsSelect } from '@/staticData/projectsOptions';
 
 import styles from './ProjectsSidebar.module.scss';
 

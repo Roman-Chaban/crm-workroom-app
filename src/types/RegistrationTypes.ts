@@ -1,4 +1,4 @@
-import { CountryOption } from '@/staticData/countryOptions';
+import { CountryOption } from '@/static/CountryOptions';
 
 export interface RegistrationUserData {
   id?: string;

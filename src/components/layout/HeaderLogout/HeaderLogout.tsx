@@ -16,7 +16,7 @@ import { LogoutUser } from '@/api/logout';
 
 import { toast, Toaster } from 'react-hot-toast';
 
-import { IsVisibleMenu, UserName } from '@/types/header';
+import { IsVisibleMenu, UserName } from '@/types/HeaderTypes';
 
 import { NAV_PATHS } from '@/enums/navPaths';
 

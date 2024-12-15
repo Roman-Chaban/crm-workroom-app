@@ -1,6 +1,6 @@
 import React, { type FC } from 'react';
 
-import { Option, Select as SelectProps } from '@/interfaces/select';
+import { Option, Select as SelectProps } from '@/interfaces/SelectInterface';
 
 import styles from './Select.module.scss';
 

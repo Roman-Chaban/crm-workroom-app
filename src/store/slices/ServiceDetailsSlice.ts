@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { serviceBusinessOptions } from '@/constants/service-business';
+import { serviceBusinessOptions } from '@/constants/ServiceBusiness';
 
-import { ServiceOption } from '@/interfaces/servicesSelect';
+import { ServiceOption } from '@/interfaces/ServicesSelectInterface';
 
 interface ServiceDetailsState {
   companyName: string;

@@ -1,4 +1,4 @@
-import { TasksNavButtons } from '@/interfaces/tasksNav';
+import { TasksNavButtons } from '@/interfaces/TasksNavInterface';
 
 export const tasksNavButtons: TasksNavButtons = [
   {

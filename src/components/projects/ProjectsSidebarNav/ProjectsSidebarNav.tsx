@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { Button, Container } from '@/index/index';
 
-import { projectsNavList } from '@/staticData/projectsNav';
+import { projectsNavList } from '@/static/ProjectsNav';
 
 import styles from './ProjectsSidebarNav.module.scss';
 

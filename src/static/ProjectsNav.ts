@@ -1,4 +1,4 @@
-import { ProjectsNavList } from '@/interfaces/projects';
+import { ProjectsNavList } from '@/interfaces/ProjectsInterface';
 
 export const projectsNavList: ProjectsNavList = [
   {

@@ -10,7 +10,7 @@ import {
   ProjectsCalendarTasks,
 } from '@/index';
 
-import { ActiveTab, TASKS_TABS } from '@/interfaces/tasksNav';
+import { ActiveTab, TASKS_TABS } from '@/interfaces/TasksNavInterface';
 
 import styles from '@/styles/pages/projects.module.scss';
 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { ServicesDetails } from '@/types/servicesDetails';
+import { ServicesDetails } from '@/types/ServicesDetailsTypes';
 
 import { REQUESTS_METHODS } from '@/enums/requestsMethods';
 import { API_ENDPOINTS } from '@/enums/apiEndpoints';

@@ -16,7 +16,7 @@ import {
   eventOptions,
   PriorityOption,
   priorityOptions,
-} from '@/interfaces/eventOptions';
+} from '@/interfaces/EventOptionsInterface';
 
 import styles from './EventModal.module.scss';
 

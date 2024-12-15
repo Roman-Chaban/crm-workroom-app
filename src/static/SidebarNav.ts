@@ -1,4 +1,4 @@
-import { SidebarNav } from '@/types/sidebarNav';
+import { SidebarNav } from '@/types/SidebarNavTypes';
 
 import { NAV_PATHS } from '@/enums/navPaths';
 

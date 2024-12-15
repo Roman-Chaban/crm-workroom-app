@@ -9,10 +9,10 @@ import { Container, Input, SignInNav } from '@/index/index';
 import Select, { SingleValue } from 'react-select';
 import customStyles from '@/components/ui/Select/selectStyles';
 
-import { ServiceOption } from '@/interfaces/servicesSelect';
-import { serviceBusinessOptions } from '@/constants/service-business';
+import { ServiceOption } from '@/interfaces/ServicesSelectInterface';
+import { serviceBusinessOptions } from '@/constants/ServiceBusiness';
 import { ServiceDetailsFormButtons } from './ServiceDetailsFormButtons';
-import { ServicesDetails } from '@/types/servicesDetails';
+import { ServicesDetails } from '@/types/ServicesDetailsTypes';
 import { getServicesDetails } from '@/api/services';
 
 import toast from 'react-hot-toast';

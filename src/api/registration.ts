@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
-import { RegistrationUserData } from '@/types/registration';
+import { RegistrationUserData } from '@/types/RegistrationTypes';
 
 import { REQUESTS_METHODS } from '@/enums/requestsMethods';
 import { API_ENDPOINTS } from '@/enums/apiEndpoints';

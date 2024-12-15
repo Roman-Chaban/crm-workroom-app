@@ -1,4 +1,4 @@
-import { ServiceButton } from '@/interfaces/serviceButtons';
+import { ServiceButton } from '@/interfaces/ServiceButtonsInterface';
 
 export const serviceDetailsButtons: ServiceButton[] = [
   {

@@ -14,7 +14,7 @@ import Image from 'next/image';
 import { Button, Container, Input, HeaderLogout, Div } from '@/index/index';
 import { Notifications } from '@/components/home/Notification/Notification';
 
-import { Value } from '@/types/input';
+import { Value } from '@/types/InputTypes';
 
 import { NAV_PATHS } from '@/enums/navPaths';
 
@@ -23,7 +23,7 @@ import {
   IsNotification,
   IsRegistered,
   UserName,
-} from '@/types/header';
+} from '@/types/HeaderTypes';
 
 import styles from './Header.module.scss';
 

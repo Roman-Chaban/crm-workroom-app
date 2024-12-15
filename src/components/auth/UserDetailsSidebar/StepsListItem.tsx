@@ -2,7 +2,7 @@ import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
-import { StepItem } from '@/types/stepItem';
+import { StepItem } from '@/types/StepItemTypes';
 
 import styles from './UserDetailsSidebar.module.scss';
 

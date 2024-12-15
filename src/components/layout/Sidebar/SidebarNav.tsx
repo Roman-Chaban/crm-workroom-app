@@ -4,9 +4,9 @@ import React, { type FC } from 'react';
 
 import { usePathname } from 'next/navigation';
 
-import { sidebarNav } from '@/staticData/sidebarNav';
-
 import { SidebarNavItem } from '@/index/index';
+
+import { sidebarNav } from '@/staticData/sidebarNav';
 
 import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 

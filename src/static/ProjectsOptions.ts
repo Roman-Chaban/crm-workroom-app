@@ -1,4 +1,4 @@
-import { ProjectsOptions } from '@/interfaces/projects';
+import { ProjectsOptions } from '@/interfaces/ProjectsInterface';
 
 export const projectsSelect: ProjectsOptions = [
   {

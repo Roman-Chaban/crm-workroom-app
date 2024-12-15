@@ -1,4 +1,4 @@
-import { ServiceOptions } from '@/interfaces/servicesSelect';
+import { ServiceOptions } from '@/interfaces/ServicesSelectInterface';
 
 export const serviceBusinessOptions: ServiceOptions = [
   {
