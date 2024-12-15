@@ -115,3 +115,9 @@
     }
   }
 }
+
+@include respond-toWidth(large-medium) {
+  .sidebarStepsContainer {
+    gap: 3.4375rem;
+  }
+}

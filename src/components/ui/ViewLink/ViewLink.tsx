@@ -36,7 +36,7 @@ const viewLinkMixin = css`
   align-items: center;
   gap: 2px;
   color: ${colors.backgroundSupportPrimary};
-  font-size: size.$font-size-lg;
+  font-size: 1rem;
   font-weight: 600;
   position: relative;
 

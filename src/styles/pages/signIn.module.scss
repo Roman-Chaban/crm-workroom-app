@@ -13,6 +13,12 @@
   height: 100%;
 }
 
+@include respond-toWidth(large-medium) {
+  .signInContainer {
+    max-height: 31rem;
+  }
+}
+
 @include respond-toWidth(medium) {
   .signInContainer {
     flex-direction: column;

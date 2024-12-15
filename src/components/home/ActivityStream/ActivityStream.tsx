@@ -13,7 +13,10 @@ import styles from './ActivityStream.module.scss';
 
 export const ActivityStream: FC = () => {
   return (
-    <Box className={styles['activityStream']}>
+    <Box
+      isStyles
+      className={styles['activityStream']}
+    >
       <Container className={styles['activityStreamContainer']}>
         <Heading
           tag="h2"

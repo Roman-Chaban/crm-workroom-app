@@ -37,7 +37,7 @@ export const SignInNav: FC<SignInNavProps> = ({
 
   const renderPreviousButton = currentStep > 1;
 
-  const lastStepSubmit = currentStep === 3;
+  const lastStepSubmit = currentStep > 2;
 
   return (
     <Div className={classNames.container}>

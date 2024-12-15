@@ -8,10 +8,16 @@ import React, {
 interface BoxProps extends HTMLProps<HTMLDivElement> {
   children: ReactNode;
   className?: string;
+  isStyles?: boolean;
   onTransitionEnd?: TransitionEventHandler<HTMLDivElement>;
 }
 
-export const Box: FC<BoxProps> = ({ children, className, onTransitionEnd }) => {
+export const Box: FC<BoxProps> = ({
+  children,
+  className,
+  isStyles,
+  onTransitionEnd,
+}) => {
   const boxCSSProperties = {
     width: '100%',
     height: '100%',
@@ -21,7 +27,7 @@ export const Box: FC<BoxProps> = ({ children, className, onTransitionEnd }) => {
   };
   return (
     <div
-      style={boxCSSProperties}
+      style={isStyles ? {} : boxCSSProperties}
       className={className}
       onTransitionEnd={onTransitionEnd}
     >

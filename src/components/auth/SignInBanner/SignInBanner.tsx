@@ -28,9 +28,12 @@ export const SignInBanner: FC = () => {
           </Heading>
         </Div>
 
-        <p className={styles['signInBannerSubtitle']}>
+        <Heading
+          tag="h1"
+          className={styles['signInBannerSubtitle']}
+        >
           Your place to work Plan. Create. Control.
-        </p>
+        </Heading>
 
         <Image
           src={'/images/auth/signIn-banner.svg'}

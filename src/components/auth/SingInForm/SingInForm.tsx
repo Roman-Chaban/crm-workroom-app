@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FormEvent, useState, type FC } from 'react';
+import React, { FormEvent, useEffect, useState, type FC } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 
@@ -86,6 +86,10 @@ export const SignInForm: FC = () => {
   };
 
   const isButtonDisabled = !loginData.email || !loginData.password;
+
+  useEffect(() => {
+    console.log(window.innerHeight);
+  }, []);
 
   return (
     <>

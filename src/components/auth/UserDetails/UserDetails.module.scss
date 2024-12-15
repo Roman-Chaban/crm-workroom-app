@@ -168,3 +168,6 @@
     max-width: 25.375rem;
   }
 }
+
+@include respond-toWidth(large-medium) {
+}

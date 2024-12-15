@@ -173,6 +173,10 @@
       }
     }
   }
+
+  .signInFormBlockContainer {
+    padding-block-start: 4.0625rem;
+  }
 }
 
 @include respond-toWidth(medium) {
