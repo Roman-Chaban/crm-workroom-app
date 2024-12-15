@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { Box, Div, Heading, List } from '@/index';
 
-import { infoPortalList } from '@/staticData/infoPortalList';
+import { infoPortalList } from '@/static/InfoPortalList';
 
 import styles from '../InfoPortalMain/InfoPortalMain.module.scss';
 

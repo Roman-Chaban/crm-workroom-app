@@ -4,8 +4,9 @@ import type { Metadata } from 'next';
 
 import { Nav, Grid, ProjectsSidebar, Section } from '@/index/index';
 
-import styles from '@/styles/pages/projects.module.scss';
 import { RenderProjectsActive } from '@/components/projects/RenderProjectsActive/RenderProjectsActive';
+
+import styles from '@/styles/pages/Projects.module.scss';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom - Projects',

@@ -2,7 +2,7 @@ import React, { type FC } from 'react';
 
 import { StepsListItem } from '@/index/index';
 
-import { stepsList } from '@/staticData/stepsList';
+import { stepsList } from '@/static/StepsList';
 
 import styles from './UserDetailsSidebar.module.scss';
 

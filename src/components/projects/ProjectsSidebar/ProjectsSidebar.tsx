@@ -10,7 +10,7 @@ import { ProjectsOption } from '@/interfaces/ProjectsInterface';
 
 import { selectStyles } from '@/styles/selectsStyles/SelectStyles';
 
-import { projectsSelect } from '@/staticData/projectsOptions';
+import { projectsSelect } from '@/static/ProjectsOptions';
 
 import styles from './ProjectsSidebar.module.scss';
 

@@ -9,7 +9,7 @@ import { Nav, Section, EventModal } from '@/index';
 
 import { NAV_PATHS } from '@/enums/navPaths';
 
-import styles from '@/styles/pages/nearest-events.module.scss';
+import styles from '@/styles/pages/NearestEvents.module.scss';
 
 export default function NearestEventsPage() {
   const [isEventModalOpen, setIsEventModalOpen] = useState<boolean>(false);

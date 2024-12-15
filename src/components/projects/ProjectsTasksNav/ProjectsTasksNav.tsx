@@ -6,7 +6,7 @@ import { Button, Container, Heading, List } from '@/index';
 
 import { ActiveTab } from '@/interfaces/TasksNavInterface';
 
-import { tasksNavButtons } from '@/staticData/tasksNav';
+import { tasksNavButtons } from '@/static/TasksNav';
 
 import styles from './ProjectsTasksNav.module.scss';
 

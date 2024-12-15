@@ -12,7 +12,7 @@ import {
   Section,
 } from '@/index/index';
 
-import styles from '@/styles/pages/home.module.scss';
+import styles from '@/styles/pages/Home.module.scss';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom - Dashboard',

@@ -12,7 +12,7 @@ import {
 
 import { ActiveTab, TASKS_TABS } from '@/interfaces/TasksNavInterface';
 
-import styles from '@/styles/pages/projects.module.scss';
+import styles from '@/styles/pages/Projects.module.scss';
 
 export const RenderProjectsActive: FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>(
