@@ -2,6 +2,8 @@ import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
+import { Paragraph } from '@/components/shared-ui/Paragraph/Paragraph';
+
 import styles from './HomeModal.module.scss';
 
 export const HomeModalIllustration: FC = () => {
@@ -14,10 +16,10 @@ export const HomeModalIllustration: FC = () => {
         height={192}
         className={styles['modalBannerImage']}
       />
-      <p className={styles['modalHeaderParagraph']}>
+      <Paragraph className={styles['modalHeaderParagraph']}>
         Describe your question and our specialists will answer you within 24
         hours.
-      </p>
+      </Paragraph>
     </>
   );
 };

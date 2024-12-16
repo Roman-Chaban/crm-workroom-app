@@ -74,3 +74,4 @@ export { ProfileSidebarContactInfo } from '@/components/profile/ProfileSidebar/P
 export { ProfileSettingsBar } from '@/components/profile/ProfileSettings/ProfileSettingsBar';
 export { ProfileSettingsNotifications } from '@/components/profile/ProfileSettings/ProfileSettingsNotifications';
 export { ProfileSettings } from '@/components/profile/ProfileSettings/ProfileSettings';
+export { Paragraph } from '@/components/shared-ui/Paragraph/Paragraph';

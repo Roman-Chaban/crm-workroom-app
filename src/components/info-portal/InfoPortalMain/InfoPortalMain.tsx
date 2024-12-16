@@ -1,6 +1,13 @@
 import React, { type FC } from 'react';
 
-import { Box, Container, Heading, Div, InfoPortalFolders } from '@/index';
+import {
+  Box,
+  Container,
+  Heading,
+  Div,
+  InfoPortalFolders,
+  Paragraph,
+} from '@/index';
 
 import styles from './InfoPortalMain.module.scss';
 
@@ -16,10 +23,10 @@ export const InfoPortalMain: FC = () => {
             >
               Your project data warehouse
             </Heading>
-            <p className={styles['infoPortalMainBannerSubtitle']}>
+            <Paragraph className={styles['infoPortalMainBannerSubtitle']}>
               Add project data, create thematic pages, edit data, share
               information with team members
-            </p>
+            </Paragraph>
           </Div>
         </Div>
 
