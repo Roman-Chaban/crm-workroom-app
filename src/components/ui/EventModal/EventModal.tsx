@@ -1,14 +1,15 @@
 'use client';
 
-import React, { useEffect, useState, type FC } from 'react';
+import React, { HTMLProps, useEffect, useState, type FC } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Div, EventModalHeader, EventModalForm } from '@/index';
 
-import styles from './EventModal.module.scss';
 import { EventModalRepeat } from './EventModalRepeat';
 
-interface EventModalProps {
+import styles from './EventModal.module.scss';
+
+interface EventModalProps extends HTMLProps<HTMLDivElement> {
   onCloseModal: () => void;
   isOpen: boolean;
 }

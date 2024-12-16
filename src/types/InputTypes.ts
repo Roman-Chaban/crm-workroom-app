@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, ReactNode } from 'react';
+import { ChangeEvent, CSSProperties, HTMLProps, ReactNode } from 'react';
 
 export interface InputClassNames {
   container: string;
@@ -7,7 +7,7 @@ export interface InputClassNames {
   inputIcon?: string;
 }
 
-export interface InputProps {
+export interface InputProps extends HTMLProps<HTMLInputElement> {
   htmlFor: string;
   type: InputTypes;
   label: string;

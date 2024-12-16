@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import React, { HTMLProps, type FC } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import { Button, Container, Div } from '@/index/index';
 
 import styles from './Nav.module.scss';
 
-interface NavProps {
+interface NavProps extends HTMLProps<HTMLElement> {
   title: string;
   buttonLabel: string;
   isRenderBackLink: boolean;

@@ -5,13 +5,12 @@
 .sidebar {
   width: 100%;
   max-width: 12.5rem;
-
   &Container {
     width: 100%;
-    min-height: 100%;
     background: color.$color-white-primary;
     box-shadow: color.$shadow-box-light;
     border-radius: 1.5rem;
+    min-height: 75.0625rem;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;

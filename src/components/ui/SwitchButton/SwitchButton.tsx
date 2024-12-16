@@ -2,6 +2,8 @@ import React, { HTMLProps, useState, type FC } from 'react';
 
 import { Button } from '@/index';
 
+type IsActive = boolean;
+
 interface SwitchButtonProps extends HTMLProps<HTMLButtonElement> {
   classNames: {
     button: string;
@@ -11,7 +13,7 @@ interface SwitchButtonProps extends HTMLProps<HTMLButtonElement> {
 }
 
 export const SwitchButton: FC<SwitchButtonProps> = ({ classNames }) => {
-  const [isActive, setIsActive] = useState<boolean>(false);
+  const [isActive, setIsActive] = useState<IsActive>(false);
 
   const handleToggleSwitcher = () => {
     setIsActive((prevSwitcherState) => !prevSwitcherState);

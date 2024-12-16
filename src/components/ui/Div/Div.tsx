@@ -1,6 +1,6 @@
-import React, { CSSProperties, ReactNode, type FC } from 'react';
+import React, { CSSProperties, HTMLProps, ReactNode, type FC } from 'react';
 
-interface DivProps {
+interface DivProps extends HTMLProps<HTMLDivElement> {
   children: ReactNode;
   className?: string;
   style?: CSSProperties;

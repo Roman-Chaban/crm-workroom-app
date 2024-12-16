@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
+import React, { HTMLProps, ReactNode } from 'react';
 
-interface ListProps<T> {
+interface ListProps<T> extends HTMLProps<HTMLElement> {
   renderList: Array<T>;
   classNames: {
     list: string;

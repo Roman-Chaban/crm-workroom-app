@@ -411,3 +411,16 @@
   flex-flow: column nowrap;
   gap: $gap;
 }
+
+@mixin profileSidebarFormTitle {
+  color: color.$color-black-deep;
+  font-size: size.$font-size-xl;
+  font-weight: 700;
+  line-height: 144%;
+}
+
+@mixin profileListItemButton {
+  color: color.$color-gray-neutral;
+  font-size: size.$font-size-lg;
+  font-weight: 600;
+}

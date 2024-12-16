@@ -66,3 +66,11 @@ export { ProjectsCalendarTasks } from '@/components/projects/ProjectsCalendarTas
 export { EventModal } from '@/components/ui/EventModal/EventModal';
 export { EventModalHeader } from '@/components/ui/EventModal/EventModalHeader';
 export { EventModalForm } from '@/components/ui/EventModal/EventModalForm';
+export { RegisterInput } from '@/components/ui/RegisterInput/RegisterInput';
+export { ProfileSidebar } from '@/components/profile/ProfileSidebar/ProfileSidebar';
+export { ProfileSidebarInfo } from '@/components/profile/ProfileSidebar/ProfileSidebarInfo';
+export { ProfileSidebarMainInfo } from '@/components/profile/ProfileSidebar/ProfileSidebarMainInfo';
+export { ProfileSidebarContactInfo } from '@/components/profile/ProfileSidebar/ProfileSidebarContactInfo';
+export { ProfileSettingsBar } from '@/components/profile/ProfileSettings/ProfileSettingsBar';
+export { ProfileSettingsNotifications } from '@/components/profile/ProfileSettings/ProfileSettingsNotifications';
+export { ProfileSettings } from '@/components/profile/ProfileSettings/ProfileSettings';

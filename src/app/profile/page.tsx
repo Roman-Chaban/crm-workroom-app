@@ -2,7 +2,15 @@ import React from 'react';
 
 import { Metadata } from 'next';
 
-import { Section } from '@/index';
+import {
+  Heading,
+  Section,
+  ProfileSidebar,
+  Grid,
+  ProfileSettings,
+} from '@/index';
+
+import styles from '@/styles/pages/Profile.module.scss';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom - Profile',
@@ -10,5 +18,19 @@ export const metadata: Metadata = {
 };
 
 export default function ProfilePage() {
-  return <Section className="">ProfilePage</Section>;
+  return (
+    <Section className={styles['profile']}>
+      <Heading
+        tag="h1"
+        className={styles['profileTitle']}
+      >
+        My Profile
+      </Heading>
+
+      <Grid className={styles['profileMainContainer']}>
+        <ProfileSidebar />
+        <ProfileSettings />
+      </Grid>
+    </Section>
+  );
 }

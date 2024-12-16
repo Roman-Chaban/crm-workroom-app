@@ -1,0 +1,132 @@
+@use '../abstracts/mixins/mixins' as *;
+@use '../abstracts/breakpoints/breakpoints' as *;
+@use '../base/colors/colors' as color;
+@use '../base/globals/globals' as size;
+
+.profile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+
+  &Title {
+    @include navTitle;
+  }
+
+  &MainContainer {
+    width: 100%;
+    height: 100%;
+    gap: 1.875rem;
+  }
+
+  &Sidebar {
+    grid-column: span 3;
+    width: 100%;
+    max-width: 16.5625rem;
+    &Container {
+      @include sidebar;
+      min-height: 64.125rem;
+    }
+  }
+
+  &SidebarInfo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 1rem 1rem 1rem 1.5rem;
+    border-bottom: 0.09375rem solid color.$border-light;
+    &EditButton {
+      @include closeNotificationButton;
+    }
+
+    &EditIcon {
+      object-fit: cover;
+    }
+
+    &Title {
+      color: color.$color-black-deep;
+      font-size: size.$font-size-2xl;
+      font-weight: 700;
+    }
+  }
+
+  &SidebarMainInfo {
+    padding: 1.75rem 1.4375rem 1.25rem 1.5rem;
+
+    &Heading {
+      @include profileSidebarFormTitle;
+    }
+
+    &Form {
+      display: flex;
+      flex-flow: column nowrap;
+      margin-block-start: 0.4375rem;
+
+      & .registerLabel {
+        min-height: 6.125rem;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0.4375rem;
+        @include selectLabel;
+        position: relative;
+      }
+
+      & .registerInput {
+        @include input;
+        @include inputHover;
+      }
+    }
+
+    & .inputIcon {
+      position: absolute;
+      right: 1.125rem;
+      top: 2.6625rem;
+    }
+  }
+
+  &Settings {
+    width: 100%;
+    height: 100%;
+    grid-column: span 9;
+    display: flex;
+    flex-flow: column;
+    gap: 1.3125rem;
+  }
+
+  &SettingsButton {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    background: inherit;
+    @include boldTitle;
+  }
+
+  &SettingsBar {
+    @include whiteContainer(16.5625rem);
+
+    &Container {
+      padding: 2.25rem 0.75rem 0 1.625rem;
+    }
+
+    &List {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 1.875rem;
+    }
+
+    &ListItemButton {
+      width: 100%;
+      background: inherit;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      @include profileListItemButton;
+    }
+  }
+
+  &SettingsNotifications {
+    @include whiteContainer(35rem);
+  }
+}

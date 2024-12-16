@@ -1,8 +1,9 @@
-import React, { CSSProperties, forwardRef } from 'react';
+import Image from 'next/image';
+import React, { CSSProperties, forwardRef, HTMLProps } from 'react';
 
 import { UseFormRegisterReturn } from 'react-hook-form';
 
-interface InputProps {
+interface InputProps extends HTMLProps<HTMLInputElement> {
   register: UseFormRegisterReturn;
   label: string;
   placeholder: string;
@@ -16,6 +17,9 @@ interface InputProps {
     input: string;
   };
   errorMessage?: string;
+  isIcon?: boolean;
+  iconClassName?: string;
+  iconPath?: string;
 }
 
 export const RegisterInput = forwardRef<HTMLInputElement, InputProps>(
@@ -30,6 +34,9 @@ export const RegisterInput = forwardRef<HTMLInputElement, InputProps>(
       classNames,
       required,
       errorMessage,
+      iconPath,
+      isIcon,
+      iconClassName,
       ...props
     },
     ref,
@@ -48,6 +55,18 @@ export const RegisterInput = forwardRef<HTMLInputElement, InputProps>(
           required={required}
           {...props}
         />
+        {isIcon && iconPath ? (
+          <Image
+            src={iconPath}
+            alt={name}
+            width={24}
+            height={24}
+            className={iconClassName}
+          />
+        ) : (
+          <></>
+        )}
+
         {errorMessage && <span className="error">{errorMessage}</span>}
       </div>
     );

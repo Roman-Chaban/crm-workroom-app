@@ -1,11 +1,11 @@
 import { StylesConfig } from 'react-select';
-import { keyframes } from '@emotion/react';
+import { Keyframes, keyframes } from '@emotion/react';
 
 import { COLORS } from './Colors';
 
 import { CountryOption } from '@/static/CountryOptions';
 
-const fadeIn = keyframes`
+const fadeIn: Keyframes = keyframes`
   from {
     opacity: 0;
     transform: translateY(-5px);
