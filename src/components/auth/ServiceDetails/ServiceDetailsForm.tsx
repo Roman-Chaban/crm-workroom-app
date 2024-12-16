@@ -7,7 +7,7 @@ import { useAppDispatch } from '@/hooks/useAppDispatch';
 import { Container, Input, SignInNav } from '@/index/index';
 
 import Select, { SingleValue } from 'react-select';
-import customStyles from '@/components/ui/Select/selectStyles';
+import customStyles from '@/components/shared-ui/Select/selectStyles';
 
 import { ServiceOption } from '@/interfaces/ServicesSelectInterface';
 import { serviceBusinessOptions } from '@/constants/ServiceBusiness';

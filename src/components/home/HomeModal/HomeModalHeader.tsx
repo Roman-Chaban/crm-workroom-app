@@ -3,7 +3,7 @@ import React, { type FC } from 'react';
 import { Div, Heading } from '@/index/index';
 
 import styles from './HomeModal.module.scss';
-import { CloseButton } from '@/components/ui/CloseButton/CloseButton';
+import { CloseButton } from '@/components/shared-ui/CloseButton/CloseButton';
 
 interface HomeModalHeaderProps {
   onCloseModal: () => void;

@@ -18,7 +18,7 @@ import {
 
 import { toast, Toaster } from 'react-hot-toast';
 
-import customStyles from '@/components/ui/Select/selectStyles';
+import customStyles from '@/components/shared-ui/Select/selectStyles';
 
 import {
   setPersonDescriptor,
