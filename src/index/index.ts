@@ -75,3 +75,4 @@ export { ProfileSettingsBar } from '@/components/profile/ProfileSettings/Profile
 export { ProfileSettingsNotifications } from '@/components/profile/ProfileSettings/ProfileSettingsNotifications';
 export { ProfileSettings } from '@/components/profile/ProfileSettings/ProfileSettings';
 export { Paragraph } from '@/components/shared-ui/Paragraph/Paragraph';
+export { Notification } from '@/components/shared-ui/Notification/Notification';

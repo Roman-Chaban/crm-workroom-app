@@ -74,49 +74,7 @@
   }
 
   &RememberCheckbox {
-    @include checkboxInput(1.375rem, 1.375rem);
-    position: relative;
-    transition:
-      background-color 0.2s ease,
-      transform 0.2s ease;
-
-    &:checked {
-      background-color: color.$color-white-primary;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-        width: 0.5rem;
-        height: 0.9375rem;
-        border: solid color.$background-support-primary;
-        border-width: 0 0.125rem 0.125rem 0;
-        display: block;
-        border-radius: 0.03125rem;
-        transition:
-          transform 0.3s ease,
-          width 0.2s ease,
-          height 0.2s ease;
-      }
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      transform: translate(-50%, -50%) rotate(0deg);
-      border: solid transparent;
-      border-width: 0 0 0 0;
-      transition:
-        transform 0.3s ease,
-        width 0.3s ease,
-        height 0.3s ease;
-    }
+    @include customCheckBox;
   }
 
   &ForgotButton {
@@ -176,6 +134,12 @@
 
   .signInFormBlockContainer {
     padding-block-start: 4.0625rem;
+  }
+
+  .signInFormBlock {
+    &ViewIcon {
+      bottom: 1.7575rem;
+    }
   }
 }
 

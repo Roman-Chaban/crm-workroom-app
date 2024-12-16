@@ -1,6 +1,12 @@
-import React, { CSSProperties, type FC, ForwardedRef, ReactNode } from 'react';
+import React, {
+  CSSProperties,
+  type FC,
+  ForwardedRef,
+  HTMLProps,
+  ReactNode,
+} from 'react';
 
-interface ContainerProps {
+interface ContainerProps extends HTMLProps<HTMLDivElement> {
   children: ReactNode;
   className?: string;
   ref?: ForwardedRef<HTMLDivElement>;

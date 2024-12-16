@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 import { Section, SignInBanner, SignInForm } from '@/index/index';
 
-import styles from '@/styles/pages/signIn.module.scss';
+import styles from '@/styles/pages/SignIn.module.scss';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom - Sign In',

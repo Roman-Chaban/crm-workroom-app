@@ -14,9 +14,9 @@
 }
 
 @include respond-toWidth(large-medium) {
-  .signInContainer {
-    max-height: 31rem;
-  }
+  // .signInContainer {
+  //   max-height: 31rem;
+  // }
 }
 
 @include respond-toWidth(medium) {

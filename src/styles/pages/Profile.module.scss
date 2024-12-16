@@ -107,13 +107,17 @@
     @include whiteContainer(16.5625rem);
 
     &Container {
-      padding: 2.25rem 0.75rem 0 1.625rem;
+      padding: 1.4rem 0 0 0;
     }
 
     &List {
       display: flex;
       flex-flow: column nowrap;
-      gap: 1.875rem;
+      gap: 0.5rem;
+      &Item {
+        width: 100%;
+        padding: 0 0.75rem 0 0.75rem;
+      }
     }
 
     &ListItemButton {
@@ -123,10 +127,106 @@
       align-items: center;
       gap: 1rem;
       @include profileListItemButton;
+      min-height: 3.25rem;
+      display: flex;
+      padding: 0 1.125rem;
+    }
+    & .activeListItem {
+      @include activeListItem;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: -0.75rem;
+        height: 100%;
+        background: color.$background-support-primary;
+        width: 0.25rem;
+        border-radius: 0.125rem;
+      }
     }
   }
 
   &SettingsNotifications {
     @include whiteContainer(35rem);
+
+    &List {
+      @include flexBasicColumn(1rem);
+    }
+
+    &Container {
+      padding: 2.125rem 2rem;
+      @include flexBasicColumn(1.25rem);
+    }
+
+    &Heading {
+      @include profileSidebarFormTitle;
+    }
+
+    & .notificationMain {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 0.875rem;
+      background: color.$background-main-light;
+      padding: 1rem 1.25rem;
+    }
+
+    & .notificationContainer {
+      @include flexBasicColumn(0.1875rem);
+      & .notificationHeading {
+        @include listItemTitle;
+        font-weight: 700;
+      }
+      & .notificationParagraph {
+        @include selectLabel;
+        font-weight: 600;
+      }
+
+      &Button {
+        width: 100%;
+        max-width: 3.1875rem;
+        min-height: 1.9375rem;
+        border-radius: 1.125rem;
+        background: color.$background-switcher;
+        position: relative;
+        transition: background 0.5s ease;
+
+        &.active {
+          background: color.$background-support-primary;
+        }
+
+        &Circle {
+          display: inline-block;
+          width: 1.4375rem;
+          height: 1.4375rem;
+          background: color.$color-white-primary;
+          border-radius: 100%;
+          position: absolute;
+          top: 0.25rem;
+          left: 0.25rem;
+          transition:
+            transform 0.3s ease,
+            background 0.3s ease;
+
+          &.active {
+            transform: translateX(1.25rem);
+          }
+        }
+      }
+    }
+  }
+
+  & .customCheckboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    color: color.$color-black-deep;
+    line-height: 150%;
+  }
+
+  & .customCheckbox {
+    @include customCheckBox;
   }
 }

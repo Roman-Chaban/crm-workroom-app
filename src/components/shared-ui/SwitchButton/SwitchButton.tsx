@@ -1,3 +1,5 @@
+'use client';
+
 import React, { HTMLProps, useState, type FC } from 'react';
 
 import { Button } from '@/index';

@@ -424,3 +424,59 @@
   font-size: size.$font-size-lg;
   font-weight: 600;
 }
+
+@mixin activeListItem {
+  width: 100%;
+  max-width: 15.3125rem;
+  border-radius: 0.875rem;
+  min-height: 3.25rem;
+  color: color.$color-black-deep;
+  background: color.$background-main-light;
+  padding: 0 1.125rem;
+}
+
+@mixin customCheckBox {
+  @include checkboxInput(1.25rem, 1.25rem);
+  position: relative;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:checked {
+    background-color: color.$color-white-primary;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 39.5%;
+      left: 51%;
+      transform: translate(-50%, -50%) rotate(43deg);
+      width: 0.4rem;
+      height: 0.7375rem;
+      border: solid color.$background-support-primary;
+      border-width: 0 0.125rem 0.125rem 0;
+      display: block;
+      border-radius: 0.03125rem;
+      transition:
+        transform 0.3s ease,
+        width 0.2s ease,
+        height 0.2s ease;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%) rotate(0deg);
+    border: solid transparent;
+    border-width: 0 0 0 0;
+    transition:
+      transform 0.3s ease,
+      width 0.3s ease,
+      height 0.3s ease;
+  }
+}

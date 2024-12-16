@@ -11,3 +11,6 @@ export interface ProfileBarListClassNames {
 }
 
 export type ProfileBarItems = ProfileBarItem[];
+
+export type IsActiveItem = number;
+export type IsActiveItemClass = boolean;

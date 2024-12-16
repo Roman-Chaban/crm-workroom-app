@@ -10,7 +10,7 @@ import { SidebarRender } from '@/components/containers/SidebarRender/SidebarRend
 
 import { MainRender } from '@/components/containers/MainRender/MainRender';
 
-import '@/styles/main/main.scss';
+import '@/styles/main/Main.scss';
 
 const basicFont = Nunito_Sans({
   subsets: ['latin'],
