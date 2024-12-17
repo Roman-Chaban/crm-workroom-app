@@ -10,13 +10,14 @@ import { RegisterInput } from '../RegisterInput/RegisterInput';
 
 import Select from 'react-select';
 
-import customStyles from '../Select/selectStyles';
 import {
   EventOption,
   eventOptions,
   PriorityOption,
   priorityOptions,
 } from '@/interfaces/EventOptionsInterface';
+
+import customStyles from '@/styles/selectsStyles/ServiceSelectStyles';
 
 import styles from './EventModal.module.scss';
 
