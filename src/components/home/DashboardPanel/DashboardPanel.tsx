@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, type FC } from 'react';
+import React, { useEffect, useMemo, useState, type FC } from 'react';
 
 import Image from 'next/image';
 
@@ -11,7 +11,13 @@ import { Container, Div, Heading } from '@/index/index';
 import styles from './DashboardPanel.module.scss';
 
 export const DashboardPanel: FC = () => {
-  const sortedData = localStorage.getItem('registration');
+  const [sortedData, setSortedData] = useState<string | null>(null);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem('registration');
+    setSortedData(storedData);
+  }, []);
+
   const userName = useParsedUserName(sortedData);
 
   const formatDateRange = useMemo(() => {
