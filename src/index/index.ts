@@ -20,7 +20,6 @@ export { NavView } from '@/components/home/NavView/NavView';
 export { ActivityStream } from '@/components/home/ActivityStream/ActivityStream';
 export { HomeModal } from '@/components/home/HomeModal/HomeModal';
 export { SidebarLogo } from '@/components/layout/Sidebar/SidebarLogo';
-export { Select } from '@/components/shared-ui/Select/Select';
 export { HomeModalHeader } from '@/components/home/HomeModal/HomeModalHeader';
 export { Textarea } from '@/components/shared-ui/Textarea/Textarea';
 export { HomeModalFieldsForm } from '@/components/home/HomeModal/HomeModalFieldsForm';
