@@ -16,7 +16,7 @@ import { profileBarItems } from '@/static/ProfileBar';
 
 import classNames from 'classnames';
 
-import styles from '@/styles/pages/Profile.module.scss';
+import styles from '@/styles/pages/profile.module.scss';
 
 const settingsBarList: ProfileBarListClassNames = {
   list: styles['profileSettingsBarList'],

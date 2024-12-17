@@ -10,7 +10,7 @@ import { FormStateContact } from '@/interfaces/ProfileSidebarInterface';
 
 import { registerInputClassNames } from './ProfileSidebarMainInfo';
 
-import styles from '@/styles/pages/Profile.module.scss';
+import styles from '@/styles/pages/profile.module.scss';
 
 interface ProfileSidebarContactInfoProps extends HTMLProps<HTMLDivElement> {
   formStateContact: FormStateContact;

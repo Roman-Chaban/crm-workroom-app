@@ -11,7 +11,7 @@ import {
   RegisterInputClassNames,
 } from '@/interfaces/ProfileSidebarInterface';
 
-import styles from '@/styles/pages/Profile.module.scss';
+import styles from '@/styles/pages/profile.module.scss';
 
 export const registerInputClassNames: RegisterInputClassNames = {
   input: styles['registerInput'],

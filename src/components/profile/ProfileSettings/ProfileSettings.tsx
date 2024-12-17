@@ -10,7 +10,7 @@ import {
   ProfileSettingsNotifications,
 } from '@/index';
 
-import styles from '@/styles/pages/Profile.module.scss';
+import styles from '@/styles/pages/profile.module.scss';
 
 export const ProfileSettings: FC = () => {
   return (

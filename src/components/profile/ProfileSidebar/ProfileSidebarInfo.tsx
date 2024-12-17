@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 import { Button, Container, Heading } from '@/index';
 
-import styles from '@/styles/pages/Profile.module.scss';
+import styles from '@/styles/pages/profile.module.scss';
 import { useParsedUserName } from '@/hooks/useParsedUserName';
 
 export const ProfileSidebarInfo: FC = () => {

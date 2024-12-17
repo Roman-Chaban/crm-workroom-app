@@ -10,7 +10,7 @@ import {
 
 import { notificationItems } from '@/static/NotificationItems';
 
-import styles from '@/styles/pages/Profile.module.scss';
+import styles from '@/styles/pages/profile.module.scss';
 import { useForm } from 'react-hook-form';
 import { CheckBox } from '@/components/shared-ui/CheckBox/CheckBox';
 import { CheckBoxClassNames } from '@/interfaces/CheckBoxInterface';

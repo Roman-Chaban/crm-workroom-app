@@ -14,7 +14,7 @@ import {
 
 import { FormState } from '@/interfaces/ProfileSidebarInterface';
 
-import styles from '@/styles/pages/Profile.module.scss';
+import styles from '@/styles/pages/profile.module.scss';
 
 export const ProfileSidebar: FC = () => {
   const { handleSubmit, register, watch } = useForm<FormState>({
