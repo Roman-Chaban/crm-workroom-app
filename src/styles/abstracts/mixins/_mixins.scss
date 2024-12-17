@@ -297,7 +297,7 @@
 
 @mixin sidebar {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   max-width: 16.5625rem;
   border-radius: 1.5rem;
   background: color.$color-white-primary;
