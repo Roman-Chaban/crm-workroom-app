@@ -6,7 +6,7 @@ import { Nav, Grid, ProjectsSidebar, Section } from '@/index/index';
 
 import { RenderProjectsActive } from '@/components/projects/RenderProjectsActive/RenderProjectsActive';
 
-import styles from '@/styles/pages/Projects.module.scss';
+import styles from '@/styles/pages/projects.module.scss';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom - Projects',

@@ -15,7 +15,7 @@ import {
 
 import { STEPS } from '@/enums/steps';
 
-import styles from '@/styles/pages/SignIn.module.scss';
+import styles from '@/styles/pages/signIn.module.scss';
 
 export default function MultiStepsSignUpPage() {
   const currentStep = useAppSelector((state) => state.steps.currentStep);
