@@ -18,14 +18,13 @@ import {
 
 import { toast, Toaster } from 'react-hot-toast';
 
-import customStyles from '@/components/shared-ui/Select/selectStyles';
-
 import {
   setPersonDescriptor,
   setUsagePurpose,
 } from '@/store/slices/ServiceSelectionSlice';
 
 import styles from './ServiceSelection.module.scss';
+import customStyles from '@/styles/selectsStyles/ServiceSelectStyles';
 
 interface ServiceSelectionFormProps {
   currentStep: number;

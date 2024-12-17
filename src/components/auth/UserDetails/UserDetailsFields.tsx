@@ -20,7 +20,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 import SendIcon from '@mui/icons-material/Send';
 
-import { COLORS } from '@/constants/Colors';
+import { COLORS } from '@/constants/colors';
 
 import { CountryOption, countryOptions } from '@/static/CountryOptions';
 

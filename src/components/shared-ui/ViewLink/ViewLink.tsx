@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components';
 
 import Image from 'next/image';
 
-import { COLORS } from '@/constants/Colors';
+import { COLORS } from '@/constants/colors';
 import { Button } from '../Button/Button';
 
 const ViewLinkContainer = styled.div`

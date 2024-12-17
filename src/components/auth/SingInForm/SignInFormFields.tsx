@@ -7,10 +7,10 @@ import { Input } from '@/index/index';
 import { EventType } from '@/types/SignInTypes';
 import { IsPasswordVisible } from '@/types/RegistrationTypes';
 
-import { COLORS } from '@/constants/Colors';
-
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+
+import { COLORS } from '@/constants/colors';
 
 import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
