@@ -13,7 +13,7 @@ export type TextareaType = {
   onChange?: ChangeEventHandler<HTMLTextAreaElement>;
   placeholder: string;
   ref?: RefObject<HTMLTextAreaElement>;
-  register: UseFormRegisterReturn;
+  register?: UseFormRegisterReturn;
 };
 
 export type AreaValue = string;

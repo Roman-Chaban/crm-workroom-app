@@ -6,12 +6,12 @@ import { ChangeEvent } from 'react';
 import { Button, Textarea } from '@/index/index';
 
 import Select, { SingleValue } from 'react-select';
-import selectStyles from '@/components/shared-ui/Select/selectStyles';
 
 import { options } from '@/static/RequestOptions';
 import { Option } from '@/interfaces/SelectInterface';
 
 import styles from './HomeModal.module.scss';
+import { selectStyles } from '@/styles/selectsStyles/SelectStyles';
 
 interface HomeModalFieldsFormProps {
   selectedValue: string;
