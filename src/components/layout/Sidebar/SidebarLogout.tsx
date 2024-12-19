@@ -4,13 +4,11 @@ import Image from 'next/image';
 
 import { Button, Div } from '@/index/index';
 
+import { SidebarProps } from '@/interfaces/SidebarInterface';
+
 import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 
-interface SidebarLogoutProps {
-  onOpenModal: () => void;
-}
-
-export const SidebarLogout: FC<SidebarLogoutProps> = ({ onOpenModal }) => {
+export const SidebarLogout: FC<SidebarProps> = ({ onOpenModal }) => {
   return (
     <Div className={styles['sidebarLogout']}>
       <Div className={styles['sidebarLogoutBlock']}>

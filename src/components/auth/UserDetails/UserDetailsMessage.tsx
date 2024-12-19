@@ -5,6 +5,8 @@ import { useMutation } from '@tanstack/react-query';
 
 import Image from 'next/image';
 
+import { Div, Heading } from '@/index';
+
 import { UserDetailsConfirmation } from './UserDetailsConfirmation';
 
 import {
@@ -17,16 +19,9 @@ import { toast, Toaster } from 'react-hot-toast';
 
 import { confirmUserRegistration } from '@/api/confirmation';
 
-import styles from './UserDetails.module.scss';
-import { Div, Heading } from '@/index';
+import { UserDetailsMessageProps } from '@/interfaces/UserDetailsInterface';
 
-interface UserDetailsMessageProps {
-  userEmail: string;
-  isTimerActive: boolean;
-  isSubmitting: boolean;
-  onSmsCodeComplete: (isComplete: boolean) => void;
-  setIsSubmitting: (value: boolean) => void;
-}
+import styles from './UserDetails.module.scss';
 
 export const UserDetailsMessage: FC<UserDetailsMessageProps> = ({
   userEmail,

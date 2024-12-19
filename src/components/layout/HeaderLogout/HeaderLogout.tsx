@@ -16,15 +16,11 @@ import { LogoutUser } from '@/api/logout';
 
 import { toast, Toaster } from 'react-hot-toast';
 
-import { IsVisibleMenu, UserName } from '@/types/HeaderTypes';
+import { HeaderLogoutProps, IsVisibleMenu } from '@/types/HeaderTypes';
 
 import { NAV_PATHS } from '@/enums/navPaths';
 
 import styles from '@/components/layout/Header/Header.module.scss';
-
-interface HeaderLogoutProps {
-  validateUserName: UserName;
-}
 
 export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
   const [isVisibleMenu, setIsVisibleMenu] = useState<IsVisibleMenu>(false);

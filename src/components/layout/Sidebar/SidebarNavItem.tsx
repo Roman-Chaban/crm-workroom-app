@@ -3,16 +3,11 @@ import React, { type FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { SidebarNavListItem } from '@/types/SidebarNavTypes';
-
 import classNames from 'classnames';
 
-import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
+import { SidebarNavItemProps } from '@/interfaces/SidebarInterface';
 
-interface SidebarNavItemProps {
-  item: SidebarNavListItem;
-  isActive: boolean;
-}
+import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 
 export const SidebarNavItem: FC<SidebarNavItemProps> = ({ item, isActive }) => {
   return (

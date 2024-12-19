@@ -18,4 +18,9 @@ export interface NotificationClassNames {
   switcher: SwitcherButtonClassNames;
 }
 
+export interface NotificationsProps {
+  onCloseNotifications: () => void;
+  isOpen: boolean;
+}
+
 export type NotificationItems = NotificationItem[];

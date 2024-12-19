@@ -1,3 +1,4 @@
+import { Container } from '@/index';
 import React, { type FC } from 'react';
 
 interface ProjectsDayListProps {
@@ -12,7 +13,7 @@ export const ProjectsDayList: FC<ProjectsDayListProps> = ({
   visibleDays,
 }) => {
   return (
-    <div
+    <Container
       style={{
         display: 'flex',
         gap: '0.25rem',
@@ -28,6 +29,6 @@ export const ProjectsDayList: FC<ProjectsDayListProps> = ({
           {index + 1}
         </span>
       ))}
-    </div>
+    </Container>
   );
 };

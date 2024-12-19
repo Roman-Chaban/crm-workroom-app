@@ -11,7 +11,6 @@ import { Button, Container, Div, Input } from '@/index/index';
 import {
   IsPasswordVisible,
   PhoneNumber,
-  RegistrationUserData,
   SelectedCountryCode,
 } from '@/types/RegistrationTypes';
 
@@ -28,18 +27,13 @@ import dynamic from 'next/dynamic';
 
 import countrySelectStyles from '@/constants/CountrySelect';
 
+import { UserDetailsFieldsProps } from '@/interfaces/UserDetailsInterface';
+
 import styles from './UserDetails.module.scss';
 
 const Select = dynamic(() => import('react-select'), {
   ssr: false,
 }) as typeof import('react-select').default<CountryOption, false>;
-
-interface UserDetailsFieldsProps {
-  registrationData: RegistrationUserData;
-  isSubmitting: boolean;
-  handleInputChange: (event: EventType) => void;
-  handleSubmitConfirmationData: () => void;
-}
 
 export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
   registrationData,

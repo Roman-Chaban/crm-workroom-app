@@ -2,14 +2,13 @@ import React, { type FC } from 'react';
 
 import { Div, Heading } from '@/index/index';
 
-import styles from './HomeModal.module.scss';
+import { HomeModalProps } from '@/interfaces/HomeModalInterface';
+
 import { CloseButton } from '@/components/shared-ui/CloseButton/CloseButton';
 
-interface HomeModalHeaderProps {
-  onCloseModal: () => void;
-}
+import styles from './HomeModal.module.scss';
 
-export const HomeModalHeader: FC<HomeModalHeaderProps> = ({ onCloseModal }) => {
+export const HomeModalHeader: FC<HomeModalProps> = ({ onCloseModal }) => {
   return (
     <Div className={styles['modalHeader']}>
       <Heading

@@ -21,13 +21,11 @@ import {
   setSelectedBusinessDirection,
 } from '@/store/slices/ServiceDetailsSlice';
 
+import { ServiceDetailsFormProps } from '@/interfaces/ServiceDetailsInterface';
+
 import customStyles from '@/styles/selectsStyles/ServiceSelectStyles';
 
 import styles from './ServiceDetails.module.scss';
-
-interface ServiceDetailsFormProps {
-  currentStep: number;
-}
 
 export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
   currentStep,

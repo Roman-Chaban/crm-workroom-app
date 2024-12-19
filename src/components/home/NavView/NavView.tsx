@@ -5,13 +5,9 @@ import Image from 'next/image';
 
 import { Div, Heading } from '@/index';
 
-import styles from './NavView.module.scss';
+import { NavViewProps } from '@/interfaces/NavViewInterface';
 
-interface NavViewProps {
-  title: string;
-  link: string;
-  href: string;
-}
+import styles from './NavView.module.scss';
 
 export const NavView: FC<NavViewProps> = ({ title, link, href }) => {
   return (

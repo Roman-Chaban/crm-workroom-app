@@ -4,7 +4,6 @@ import React, { useState, type FC } from 'react';
 
 import { Input } from '@/index/index';
 
-import { EventType } from '@/types/SignInTypes';
 import { IsPasswordVisible } from '@/types/RegistrationTypes';
 
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -12,13 +11,9 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 import { COLORS } from '@/constants/colors';
 
-import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
+import { SignInFormFieldsProps } from '@/interfaces/SignInInterface';
 
-interface SignInFormFieldsProps {
-  email: string;
-  password: string;
-  handleInputChange: (event: EventType) => void;
-}
+import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
 export const SignInFormFields: FC<SignInFormFieldsProps> = ({
   email,

@@ -4,12 +4,9 @@ import Link from 'next/link';
 
 import { Button, Div, Input } from '@/index/index';
 
-import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
+import { SignInFormRememberProps } from '@/interfaces/SignInInterface';
 
-interface SignInFormRememberProps {
-  remember: boolean;
-  handleCheckedRemember: () => void;
-}
+import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
 export const SignInFormRemember: FC<SignInFormRememberProps> = ({
   remember,

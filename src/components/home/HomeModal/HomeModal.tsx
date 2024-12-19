@@ -24,13 +24,11 @@ import { Option, SelectedValue } from '@/interfaces/SelectInterface';
 
 import { AreaValue } from '@/types/TextareaTypes';
 
+import { HomeModalProps } from '@/interfaces/HomeModalInterface';
+
 import { options } from '@/static/RequestOptions';
 
 import styles from './HomeModal.module.scss';
-
-interface HomeModalProps {
-  onCloseModal: () => void;
-}
 
 export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
   ({ onCloseModal }, ref: ForwardedRef<HTMLDivElement>) => {

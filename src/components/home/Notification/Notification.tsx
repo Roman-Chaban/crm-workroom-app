@@ -11,12 +11,9 @@ import Image from 'next/image';
 
 import { Box, Button, Container, Heading } from '@/index/index';
 
-import styles from './Notification.module.scss';
+import { NotificationsProps } from '@/interfaces/NotificationInterface';
 
-interface NotificationsProps {
-  onCloseNotifications: () => void;
-  isOpen: boolean;
-}
+import styles from './Notification.module.scss';
 
 export const Notifications: FC<NotificationsProps> = ({
   onCloseNotifications,

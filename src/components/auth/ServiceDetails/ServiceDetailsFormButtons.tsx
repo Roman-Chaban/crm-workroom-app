@@ -7,12 +7,9 @@ import { serviceDetailsButtons } from '@/constants/ServiceDetailsButtons';
 import { Button, Div } from '@/index/index';
 
 import { setSelectedTeamSize } from '@/store/slices/ServiceDetailsSlice';
+import { ServiceDetailsFormButtonsProps } from '@/interfaces/ServiceDetailsInterface';
 
 import styles from './ServiceDetails.module.scss';
-
-interface ServiceDetailsFormButtonsProps {
-  selectedTeamSize: string;
-}
 
 export const ServiceDetailsFormButtons: FC<ServiceDetailsFormButtonsProps> = ({
   selectedTeamSize,

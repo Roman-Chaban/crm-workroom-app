@@ -75,3 +75,8 @@ export { ProfileSettingsNotifications } from '@/components/profile/ProfileSettin
 export { ProfileSettings } from '@/components/profile/ProfileSettings/ProfileSettings';
 export { Paragraph } from '@/components/shared-ui/Paragraph/Paragraph';
 export { Notification } from '@/components/shared-ui/Notification/Notification';
+export { ProjectsCalendarBoard } from '@/components/projects/ProjectsCalendarTasks/ProjectsCalendarBoard';
+export { ProjectsCalendarBoardBar } from '@/components/projects/ProjectsCalendarTasks/ProjectsCalendarBoardBar';
+export { ProjectsCalendarBoardHeader } from '@/components/projects/ProjectsCalendarTasks/ProjectsCalendarBoardHeader';
+export { ProjectsCalendarBoardMain } from '@/components/projects/ProjectsCalendarTasks/ProjectsCalendarBoardMain';
+export { ProjectsDayList } from '@/components/projects/ProjectsCalendarTasks/ProjectsDayList';

@@ -4,11 +4,9 @@ import Image from 'next/image';
 
 import { Aside, Div, Heading, StepsList } from '@/index/index';
 
-import styles from './UserDetailsSidebar.module.scss';
+import { UserDetailsSidebarProps } from '@/interfaces/UserDetailsInterface';
 
-interface UserDetailsSidebarProps {
-  currentStep: number;
-}
+import styles from './UserDetailsSidebar.module.scss';
 
 export const UserDetailsSidebar: FC<UserDetailsSidebarProps> = ({
   currentStep,

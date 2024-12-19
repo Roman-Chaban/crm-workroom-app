@@ -1,15 +1,8 @@
-import { Div, Heading } from '@/index';
 import React, { type FC } from 'react';
 
-interface SignInHeaderProps {
-  stepTitle: string;
-  title: string;
-  classNames: {
-    header: string;
-    stepsFigures: string;
-    headerTitle: string;
-  };
-}
+import { Div, Heading } from '@/index';
+
+import { SignInHeaderProps } from '@/interfaces/SignInInterface';
 
 export const SignInHeader: FC<SignInHeaderProps> = ({
   stepTitle,

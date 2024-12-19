@@ -23,12 +23,11 @@ import {
   setUsagePurpose,
 } from '@/store/slices/ServiceSelectionSlice';
 
-import styles from './ServiceSelection.module.scss';
+import { ServiceSelectionFormProps } from '@/interfaces/ServiceSelectionInterface';
+
 import customStyles from '@/styles/selectsStyles/ServiceSelectStyles';
 
-interface ServiceSelectionFormProps {
-  currentStep: number;
-}
+import styles from './ServiceSelection.module.scss';
 
 export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({
   currentStep,

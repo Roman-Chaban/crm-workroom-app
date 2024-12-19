@@ -2,14 +2,9 @@ import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
-import { StepItem } from '@/types/StepItemTypes';
+import { StepsListItemProps } from '@/interfaces/UserDetailsInterface';
 
 import styles from './UserDetailsSidebar.module.scss';
-
-interface StepsListItemProps {
-  step: StepItem;
-  currentStep: number;
-}
 
 export const StepsListItem: FC<StepsListItemProps> = ({
   step,

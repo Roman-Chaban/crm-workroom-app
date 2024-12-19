@@ -1,12 +1,14 @@
 import React, { type FC } from 'react';
 
-import { Container, Grid } from '@/index';
-
-import { ProjectsCalendarBoardBar } from './ProjectsCalendarBoardBar';
-import { ProjectsCalendarBoardHeader } from './ProjectsCalendarBoardHeader';
+import {
+  Container,
+  Grid,
+  ProjectsCalendarBoardBar,
+  ProjectsCalendarBoardHeader,
+  ProjectsCalendarBoardMain,
+} from '@/index';
 
 import styles from './ProjectsCalendarTasks.module.scss';
-import { ProjectsCalendarBoardMain } from './ProjectsCalendarBoardMain';
 
 export const ProjectsCalendarBoard: FC = () => {
   return (

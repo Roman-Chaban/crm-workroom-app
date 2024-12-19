@@ -2,13 +2,11 @@ import React, { type FC } from 'react';
 
 import { StepsListItem } from '@/index/index';
 
+import { StepsListProps } from '@/interfaces/UserDetailsInterface';
+
 import { stepsList } from '@/static/StepsList';
 
 import styles from './UserDetailsSidebar.module.scss';
-
-interface StepsListProps {
-  currentStep: number;
-}
 
 export const StepsList: FC<StepsListProps> = ({ currentStep }) => {
   return (

@@ -1,15 +1,10 @@
 import React, { ChangeEvent, type FC } from 'react';
 
-import { SmsCode } from '@/types/RegistrationTypes';
-
 import { Div } from '@/index';
 
-import styles from './UserDetails.module.scss';
+import { UserDetailsConfirmationProps } from '@/interfaces/UserDetailsInterface';
 
-interface UserDetailsConfirmationProps {
-  smsCode: SmsCode;
-  handleSmsCodeChange: (index: number, value: string) => void;
-}
+import styles from './UserDetails.module.scss';
 
 export const UserDetailsConfirmation: FC<UserDetailsConfirmationProps> = ({
   handleSmsCodeChange,

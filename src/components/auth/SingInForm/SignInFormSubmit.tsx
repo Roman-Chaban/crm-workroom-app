@@ -7,12 +7,9 @@ import { Button, Div } from '@/index/index';
 
 import { NAV_PATHS } from '@/enums/navPaths';
 
-import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
+import { SignInFormSubmitProps } from '@/interfaces/SignInInterface';
 
-interface SignInFormSubmitProps {
-  isSubmitting: boolean;
-  isButtonDisabled: boolean;
-}
+import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
 
 export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({
   isSubmitting,

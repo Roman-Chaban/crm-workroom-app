@@ -8,11 +8,9 @@ import {
   Aside,
 } from '@/index/index';
 
-import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
+import { SidebarProps } from '@/interfaces/SidebarInterface';
 
-interface SidebarProps {
-  onOpenModal: () => void;
-}
+import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 
 export const Sidebar: FC<SidebarProps> = ({ onOpenModal }) => {
   return (

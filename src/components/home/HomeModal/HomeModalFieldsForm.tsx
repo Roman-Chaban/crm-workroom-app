@@ -1,26 +1,18 @@
 'use client';
 
 import React, { type FC } from 'react';
-import { ChangeEvent } from 'react';
 
 import { Button, Textarea } from '@/index/index';
 
-import Select, { SingleValue } from 'react-select';
+import Select from 'react-select';
 
 import { options } from '@/static/RequestOptions';
-import { Option } from '@/interfaces/SelectInterface';
 
-import styles from './HomeModal.module.scss';
+import { HomeModalFieldsFormProps } from '@/interfaces/HomeModalInterface';
+
 import { selectStyles } from '@/styles/selectsStyles/SelectStyles';
 
-interface HomeModalFieldsFormProps {
-  selectedValue: string;
-  areaDescription: string;
-  handleSelectChange: (newValue: SingleValue<Option>) => void;
-  handleChangeAreaDescription: (
-    event: ChangeEvent<HTMLTextAreaElement>,
-  ) => void;
-}
+import styles from './HomeModal.module.scss';
 
 export const HomeModalFieldsForm: FC<HomeModalFieldsFormProps> = ({
   selectedValue,

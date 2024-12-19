@@ -8,17 +8,9 @@ import Image from 'next/image';
 
 import { Button, Div } from '@/index/index';
 
-import { handleNextStep, handlePrevStep } from '@/store/slices/StepsSlice';
+import { SignInNavProps } from '@/interfaces/SignInInterface';
 
-interface SignInNavProps {
-  isNextButtonDisabled: boolean;
-  currentStep: number;
-  classNames: {
-    container: string;
-    nextBtn: string;
-    prevBtn?: string;
-  };
-}
+import { handleNextStep, handlePrevStep } from '@/store/slices/StepsSlice';
 
 export const SignInNav: FC<SignInNavProps> = ({
   isNextButtonDisabled,
