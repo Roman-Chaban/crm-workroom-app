@@ -480,3 +480,23 @@
       height 0.3s ease;
   }
 }
+
+@mixin taskBarListItem {
+  font-size: size.$font-size-md;
+  color: color.$color-black-deep;
+  line-height: 150%;
+}
+
+@mixin calendarDay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.4375rem;
+  background: color.$background-main-light;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  line-height: 138%;
+  color: color.$color-gray-neutral;
+}

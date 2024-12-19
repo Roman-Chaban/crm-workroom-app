@@ -9,6 +9,11 @@ interface ListProps<T> extends HTMLProps<HTMLElement> {
   renderItem: (item: T) => ReactNode;
 }
 
+export interface ListClassNames {
+  list: string;
+  listItem: string;
+}
+
 export const List = <T,>({
   renderList,
   classNames,

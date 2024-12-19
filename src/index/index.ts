@@ -61,7 +61,7 @@ export { ProjectsActiveTasks } from '@/components/projects/ProjectsActiveTasks/P
 export { ProjectsTasksNav } from '@/components/projects/ProjectsTasksNav/ProjectsTasksNav';
 export { RenderProjectsActive } from '@/components/projects/RenderProjectsActive/RenderProjectsActive';
 export { ProjectsBoardTasks } from '@/components/projects/ProjectsBoardTasks/ProjectsBoardTasks';
-export { ProjectsCalendarTasks } from '@/components/projects/ProjectsCalendarTasks/ProjectsCalendarTasks';
+export { ProjectsCalendarBoard as ProjectsCalendarTasks } from '@/components/projects/ProjectsCalendarTasks/ProjectsCalendarBoard';
 export { EventModal } from '@/components/shared-ui/EventModal/EventModal';
 export { EventModalHeader } from '@/components/shared-ui/EventModal/EventModalHeader';
 export { EventModalForm } from '@/components/shared-ui/EventModal/EventModalForm';
