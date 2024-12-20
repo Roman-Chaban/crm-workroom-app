@@ -9,7 +9,7 @@ import { IsPasswordVisible } from '@/types/RegistrationTypes';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
-import { COLORS } from '@/constants/colors';
+import { COLORS } from '@/constants/Colors';
 
 import { SignInFormFieldsProps } from '@/interfaces/SignInInterface';
 

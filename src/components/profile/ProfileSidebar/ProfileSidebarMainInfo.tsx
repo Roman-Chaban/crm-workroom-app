@@ -12,6 +12,7 @@ import {
 } from '@/interfaces/ProfileSidebarInterface';
 
 import styles from '@/styles/pages/profile.module.scss';
+import { Form } from '@/components/shared-ui/Form/Form';
 
 export const registerInputClassNames: RegisterInputClassNames = {
   input: styles['registerInput'],
@@ -42,7 +43,7 @@ export const ProfileSidebarMainInfo: FC<ProfileSidebarMainInfoProps> = ({
       >
         Main Info
       </Heading>
-      <form
+      <Form
         className={styles['profileSidebarMainInfoForm']}
         onSubmit={handleSubmitMainForm}
       >
@@ -91,7 +92,7 @@ export const ProfileSidebarMainInfo: FC<ProfileSidebarMainInfoProps> = ({
           iconPath={'/icons/form-icons/calendar.svg'}
           iconClassName={styles['inputIcon']}
         />
-      </form>
+      </Form>
     </Container>
   );
 };

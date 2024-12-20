@@ -19,13 +19,13 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 import SendIcon from '@mui/icons-material/Send';
 
-import { COLORS } from '@/constants/colors';
+import { COLORS } from '@/constants/Colors';
 
 import { CountryOption, countryOptions } from '@/static/CountryOptions';
 
 import dynamic from 'next/dynamic';
 
-import countrySelectStyles from '@/constants/CountrySelect';
+import countrySelectStyles from '@/styles/selectsStyles/CountrySelect';
 
 import { UserDetailsFieldsProps } from '@/interfaces/UserDetailsInterface';
 

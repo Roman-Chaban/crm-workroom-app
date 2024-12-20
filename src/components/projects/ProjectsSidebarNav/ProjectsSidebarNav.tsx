@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction, type FC } from 'react';
 
 import Image from 'next/image';
 
-import { Button, Container } from '@/index/index';
+import { Button, Container, Span } from '@/index/index';
 
 import { projectsNavList } from '@/static/ProjectsNav';
 
@@ -29,9 +29,9 @@ export const ProjectsSidebarNav: FC<ProjectsSidebarNavProps> = ({
                 className={`${styles['sidebarListItem']} ${isActiveListItem ? styles['activeListItem'] : ''}`}
                 onClick={() => setActiveListItem(listItem.id)}
               >
-                <span className={styles['sidebarListItemCode']}>
+                <Span className={styles['sidebarListItemCode']}>
                   {listItem.code}
-                </span>
+                </Span>
                 {listItem.title}
                 {isActiveListItem && (
                   <Button

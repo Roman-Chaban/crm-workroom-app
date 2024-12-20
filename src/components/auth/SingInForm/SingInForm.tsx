@@ -23,6 +23,7 @@ import { NAV_PATHS } from '@/enums/navPaths';
 import { toast, Toaster } from 'react-hot-toast';
 
 import styles from '@/components/auth/SingInForm/SignInForm.module.scss';
+import { Form } from '@/components/shared-ui/Form/Form';
 
 export const SignInForm: FC = () => {
   const router = useRouter();
@@ -98,7 +99,7 @@ export const SignInForm: FC = () => {
           >
             Sign In to Workroom
           </Heading>
-          <form
+          <Form
             className={styles['signInForm']}
             onSubmit={handleSubmitForm}
           >
@@ -117,7 +118,7 @@ export const SignInForm: FC = () => {
               isSubmitting={isSubmitting}
               isButtonDisabled={isButtonDisabled}
             />
-          </form>
+          </Form>
         </Div>
       </Div>
     </>

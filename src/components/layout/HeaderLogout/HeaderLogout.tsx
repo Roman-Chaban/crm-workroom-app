@@ -10,7 +10,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
-import { Button, Div } from '@/index/index';
+import { Button, Div, Heading, Span } from '@/index/index';
 
 import { LogoutUser } from '@/api/logout';
 
@@ -81,9 +81,12 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
             onClick={handleShowMenu}
             className={styles['headerUserLoginButton']}
           >
-            <h5 className={styles['headerUserLoginBanner']}>
+            <Heading
+              tag="h5"
+              className={styles['headerUserLoginBanner']}
+            >
               {validateUserName}
-              <span
+              <Span
                 id={styles['rotateIconContainer']}
                 className={
                   isVisibleMenu
@@ -92,8 +95,8 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
                 }
               >
                 <ExpandMoreIcon />
-              </span>
-            </h5>
+              </Span>
+            </Heading>
           </Button>
         )}
         {isVisibleMenu && (

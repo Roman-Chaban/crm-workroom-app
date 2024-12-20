@@ -80,3 +80,6 @@ export { ProjectsCalendarBoardBar } from '@/components/projects/ProjectsCalendar
 export { ProjectsCalendarBoardHeader } from '@/components/projects/ProjectsCalendarTasks/ProjectsCalendarBoardHeader';
 export { ProjectsCalendarBoardMain } from '@/components/projects/ProjectsCalendarTasks/ProjectsCalendarBoardMain';
 export { ProjectsDayList } from '@/components/projects/ProjectsCalendarTasks/ProjectsDayList';
+export { Span } from '@/components/shared-ui/Span/Span';
+export { Label } from '@/components/shared-ui/Label/Label';
+export { Header as HeaderElement } from '@/components/shared-ui/Header/Header';

@@ -6,7 +6,7 @@ import { useSaveLocalStorage } from '@/hooks/useSaveLocalStorage';
 import { useAppSelector } from '@/hooks/useAppSelector';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
 
-import { Container, SignInNav } from '@/index/index';
+import { Container, Label, SignInNav } from '@/index/index';
 
 import Select, { SingleValue } from 'react-select';
 
@@ -28,6 +28,7 @@ import { ServiceSelectionFormProps } from '@/interfaces/ServiceSelectionInterfac
 import customStyles from '@/styles/selectsStyles/ServiceSelectStyles';
 
 import styles from './ServiceSelection.module.scss';
+import { Form } from '@/components/shared-ui/Form/Form';
 
 export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({
   currentStep,
@@ -100,11 +101,11 @@ export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({
   return (
     <>
       <Toaster />
-      <form
+      <Form
         className={styles['stepForm']}
         onSubmit={handleSubmitAboutForm}
       >
-        <label className={styles['servicesLabel']}>
+        <Label className={styles['servicesLabel']}>
           Why will you use the service?
           <Select
             placeholder={optionsForWhy[0].label}
@@ -116,9 +117,9 @@ export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({
             styles={customStyles}
             onChange={handleChangeServicesForWhyOption}
           />
-        </label>
+        </Label>
 
-        <label className={styles['servicesLabel']}>
+        <Label className={styles['servicesLabel']}>
           What describes you best?
           <Select
             placeholder={optionsForDescription[0].label}
@@ -130,8 +131,8 @@ export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({
             styles={customStyles}
             onChange={handleChangeDescriptionOption}
           />
-        </label>
-      </form>
+        </Label>
+      </Form>
       <Container className={styles['multiStepsFooterContainer']}>
         <SignInNav
           classNames={{

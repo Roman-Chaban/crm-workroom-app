@@ -2,7 +2,9 @@
 
 import React, { type FC } from 'react';
 
-import { Button, Textarea } from '@/index/index';
+import { Button, Label, Textarea } from '@/index/index';
+
+import { Form } from '@/components/shared-ui/Form/Form';
 
 import Select from 'react-select';
 
@@ -10,7 +12,7 @@ import { options } from '@/static/RequestOptions';
 
 import { HomeModalFieldsFormProps } from '@/interfaces/HomeModalInterface';
 
-import { selectStyles } from '@/styles/selectsStyles/SelectStyles';
+import selectStyles from '@/styles/selectsStyles/ServiceSelectStyles';
 
 import styles from './HomeModal.module.scss';
 
@@ -25,8 +27,8 @@ export const HomeModalFieldsForm: FC<HomeModalFieldsFormProps> = ({
   const isSendButtonDisabled = !selectedValue || !areaDescription;
 
   return (
-    <form autoComplete="off">
-      <label className={styles['modalSelectLabel']}>
+    <Form autoComplete="off">
+      <Label className={styles['modalSelectLabel']}>
         Request Subject
         <Select
           className={styles['modalSelect']}
@@ -35,7 +37,7 @@ export const HomeModalFieldsForm: FC<HomeModalFieldsFormProps> = ({
           styles={selectStyles}
           onChange={handleSelectChange}
         />
-      </label>
+      </Label>
       <Textarea
         className={styles['modalTextarea']}
         htmlFor={description}
@@ -55,6 +57,6 @@ export const HomeModalFieldsForm: FC<HomeModalFieldsFormProps> = ({
       >
         Send Request
       </Button>
-    </form>
+    </Form>
   );
 };

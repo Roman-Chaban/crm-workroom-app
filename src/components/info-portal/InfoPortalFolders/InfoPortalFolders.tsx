@@ -2,7 +2,7 @@ import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
-import { Box, Div, Heading, List } from '@/index';
+import { Box, Div, Heading, List, Span } from '@/index';
 
 import { infoPortalList } from '@/static/InfoPortalList';
 
@@ -31,9 +31,9 @@ export const InfoPortalFolders: FC = () => {
               >
                 {item.title}
               </Heading>
-              <span className={styles['infoPortalListSubInfoSubtitle']}>
+              <Span className={styles['infoPortalListSubInfoSubtitle']}>
                 {item.pagesAmount}
-              </span>
+              </Span>
             </Div>
           </Div>
         )}

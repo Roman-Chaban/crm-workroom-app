@@ -1,6 +1,7 @@
 import { StylesConfig } from 'react-select';
-import { COLORS } from './colors';
 import { ServiceOption } from '@/interfaces/ServicesSelectInterface';
+
+import { COLORS } from '@/constants/colors';
 
 export const customServicesSelect: StylesConfig<ServiceOption, false> = {
   container: (base) => ({

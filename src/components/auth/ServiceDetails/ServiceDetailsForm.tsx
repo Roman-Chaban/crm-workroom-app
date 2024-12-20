@@ -9,7 +9,7 @@ import { Container, Input, SignInNav } from '@/index/index';
 import Select, { SingleValue } from 'react-select';
 
 import { ServiceOption } from '@/interfaces/ServicesSelectInterface';
-import { serviceBusinessOptions } from '@/constants/ServiceBusiness';
+import { serviceBusinessOptions } from '@/static/ServiceBusiness';
 import { ServiceDetailsFormButtons } from './ServiceDetailsFormButtons';
 import { ServicesDetails } from '@/types/ServicesDetailsTypes';
 import { getServicesDetails } from '@/api/services';
@@ -26,6 +26,8 @@ import { ServiceDetailsFormProps } from '@/interfaces/ServiceDetailsInterface';
 import customStyles from '@/styles/selectsStyles/ServiceSelectStyles';
 
 import styles from './ServiceDetails.module.scss';
+import { Form } from '@/components/shared-ui/Form/Form';
+import { Label } from '@/components/shared-ui/Label/Label';
 
 export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
   currentStep,
@@ -104,7 +106,7 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
     !companyName || !selectedTeamSize || !selectedBusinessDirection;
 
   return (
-    <form
+    <Form
       className={styles['serviceDetailsForm']}
       onSubmit={handleServiceDetailsFormSubmit}
     >
@@ -125,7 +127,7 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
           onChange={handleCompanyNameChange}
         />
 
-        <label className={styles['businessDirectionLabel']}>
+        <Label className={styles['businessDirectionLabel']}>
           Business Direction
           <Select
             styles={customStyles}
@@ -133,7 +135,7 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
             value={selectedBusinessDirection}
             onChange={handleBusinessDirectionChange}
           />
-        </label>
+        </Label>
 
         <ServiceDetailsFormButtons selectedTeamSize={selectedTeamSize} />
       </Container>
@@ -147,6 +149,6 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
           prevBtn: styles['multiStepsPreviousButton'],
         }}
       />
-    </form>
+    </Form>
   );
 };

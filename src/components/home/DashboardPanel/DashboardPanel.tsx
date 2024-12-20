@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 import { useParsedUserName } from '@/hooks/useParsedUserName';
 
-import { Container, Div, Heading } from '@/index/index';
+import { Container, Div, Heading, Span } from '@/index/index';
 
 import styles from './DashboardPanel.module.scss';
 
@@ -41,9 +41,9 @@ export const DashboardPanel: FC = () => {
     <Div className={styles['dashboard']}>
       <Container className={styles['dashboardContainer']}>
         {userName && (
-          <span className={styles['dashboardGreetTitle']}>
+          <Span className={styles['dashboardGreetTitle']}>
             Welcome back, {userName}!
-          </span>
+          </Span>
         )}
         <Heading
           tag="h1"

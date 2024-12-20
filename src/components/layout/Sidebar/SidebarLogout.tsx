@@ -18,6 +18,7 @@ export const SidebarLogout: FC<SidebarProps> = ({ onOpenModal }) => {
           width={168}
           height={214}
           priority
+          className={styles['sidebarLogoutSupportImage']}
         />
         <Button
           type="button"
@@ -29,6 +30,7 @@ export const SidebarLogout: FC<SidebarProps> = ({ onOpenModal }) => {
             alt="Support Image"
             width={24}
             height={24}
+            className={styles['sidebarChatIcon']}
           />{' '}
           Support
         </Button>

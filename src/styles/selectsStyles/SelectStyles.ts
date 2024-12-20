@@ -1,7 +1,8 @@
 import { StylesConfig } from 'react-select';
 
 import { ProjectsOption } from '@/interfaces/ProjectsInterface';
-import { COLORS } from '@/constants/colors';
+
+import { COLORS } from '@/constants/Colors';
 
 export const selectStyles: StylesConfig<ProjectsOption, false> = {
   container: (base) => ({

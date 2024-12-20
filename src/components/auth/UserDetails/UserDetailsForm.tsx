@@ -33,6 +33,7 @@ import {
 } from '@/types/RegistrationTypes';
 
 import styles from './UserDetails.module.scss';
+import { Form } from '@/components/shared-ui/Form/Form';
 
 export const UserDetailsForm: FC = () => {
   const currentStep = useAppSelector((state) => state.steps.currentStep);
@@ -143,7 +144,7 @@ export const UserDetailsForm: FC = () => {
   };
 
   return (
-    <form
+    <Form
       className={styles['stepForm']}
       onSubmit={handleSubmitForm}
     >
@@ -174,6 +175,6 @@ export const UserDetailsForm: FC = () => {
           nextBtn: styles['multiStepsNextButton'],
         }}
       />
-    </form>
+    </Form>
   );
 };

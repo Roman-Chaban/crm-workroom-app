@@ -1,5 +1,6 @@
-import { Container } from '@/index';
 import React, { type FC } from 'react';
+
+import { Container, Span } from '@/index';
 
 interface ProjectsDayListProps {
   className: string;
@@ -21,13 +22,13 @@ export const ProjectsDayList: FC<ProjectsDayListProps> = ({
       }}
     >
       {Array.from({ length: days }, (_, index) => (
-        <span
+        <Span
           key={index + 1}
           style={{ minWidth: '1.75rem', textAlign: 'center' }}
           className={className}
         >
           {index + 1}
-        </span>
+        </Span>
       ))}
     </Container>
   );

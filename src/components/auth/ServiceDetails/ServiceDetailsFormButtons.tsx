@@ -2,7 +2,7 @@ import React, { type FC } from 'react';
 
 import { useAppDispatch } from '@/hooks/useAppDispatch';
 
-import { serviceDetailsButtons } from '@/constants/ServiceDetailsButtons';
+import { serviceDetailsButtons } from '@/static/ServiceDetailsButtons';
 
 import { Button, Div } from '@/index/index';
 

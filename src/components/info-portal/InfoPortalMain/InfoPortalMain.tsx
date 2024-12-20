@@ -7,6 +7,7 @@ import {
   Div,
   InfoPortalFolders,
   Paragraph,
+  Span,
 } from '@/index';
 
 import styles from './InfoPortalMain.module.scss';
@@ -41,13 +42,13 @@ export const InfoPortalMain: FC = () => {
             </Heading>
             <Div className={styles['projectsStatistic']}>
               <strong className={styles['projectsStatisticTitle']}>10</strong>
-              <span className={styles['projectsStatisticGrowth']}>
+              <Span className={styles['projectsStatisticGrowth']}>
                 Growth +3
-              </span>
+              </Span>
             </Div>
-            <span className={styles['projectsStatisticSubtitle']}>
+            <Span className={styles['projectsStatisticSubtitle']}>
               Ongoing projects last month - 7
-            </span>
+            </Span>
           </Div>
         </Div>
       </Box>

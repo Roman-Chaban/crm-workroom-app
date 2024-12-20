@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { StepsListItemProps } from '@/interfaces/UserDetailsInterface';
 
 import styles from './UserDetailsSidebar.module.scss';
+import { Span } from '@/index';
 
 export const StepsListItem: FC<StepsListItemProps> = ({
   step,
@@ -20,7 +21,7 @@ export const StepsListItem: FC<StepsListItemProps> = ({
         isCompleted ? styles['completed'] : ''
       } ${isFirstStepActive ? styles['firstStepActive'] : ''}`}
     >
-      <span
+      <Span
         className={`${styles['stepsListItemCircle']} ${
           isActive ? styles['active'] : ''
         } ${isCompleted ? styles['completed'] : ''}`}
@@ -34,7 +35,7 @@ export const StepsListItem: FC<StepsListItemProps> = ({
             className={styles['doneIcon']}
           />
         )}
-      </span>
+      </Span>
       {step.label}
     </li>
   );

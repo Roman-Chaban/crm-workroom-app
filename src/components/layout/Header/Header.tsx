@@ -11,7 +11,14 @@ import React, {
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Button, Container, Input, HeaderLogout, Div } from '@/index/index';
+import {
+  Button,
+  Container,
+  Input,
+  HeaderLogout,
+  Div,
+  HeaderElement,
+} from '@/index/index';
 import { Notifications } from '@/components/home/Notification/Notification';
 
 import { Value } from '@/types/InputTypes';
@@ -94,7 +101,7 @@ export const Header: FC = () => {
   }, [userName]);
 
   return (
-    <header className={styles['header']}>
+    <HeaderElement className={styles['header']}>
       <Div className={styles['headerContainer']}>
         <Input
           icon="/icons/outlined-icons/search.svg"
@@ -152,6 +159,6 @@ export const Header: FC = () => {
           )}
         </Container>
       </Div>
-    </header>
+    </HeaderElement>
   );
 };

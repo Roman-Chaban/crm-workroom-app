@@ -5,6 +5,7 @@
 .sidebar {
   width: 100%;
   max-width: 12.5rem;
+  grid-column: span 2;
   &Container {
     width: 100%;
     background: color.$color-white-primary;
@@ -61,14 +62,33 @@
     gap: 3.1875rem;
     padding-inline: 1rem;
     padding-block-end: 3.1875rem;
+
+    &SupportImage {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      position: relative;
+    }
   }
 
   &LogoutBlock {
     position: relative;
+    width: 100%;
+    max-width: 100%;
   }
 
   &SupportButton {
     @include Button;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include responsiveButton;
+
+    .sidebarChatIcon {
+      @include responsiveIcon;
+    }
   }
 
   &LogoutButton {

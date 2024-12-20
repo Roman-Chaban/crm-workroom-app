@@ -3,7 +3,7 @@ import { StylesConfig } from 'react-select';
 import { keyframes } from '@emotion/react';
 
 import { Option } from '@/interfaces/SelectInterface';
-import { COLORS } from '@/constants/colors';
+import { COLORS } from '@/constants/Colors';
 
 const fadeIn = keyframes`
   from {

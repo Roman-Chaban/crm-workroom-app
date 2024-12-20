@@ -16,6 +16,7 @@ interface GridProps {
   tag?: 'table' | 'div' | 'section' | 'article';
   position?: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky';
   className?: string;
+  gridColumn?: string;
 }
 
 export const Grid: FC<GridProps> = ({
@@ -33,6 +34,7 @@ export const Grid: FC<GridProps> = ({
   borderRadius = '',
   isSection = false,
   position = 'static',
+  gridColumn = '',
   className,
 }) => {
   const gridStyles: CSSProperties = {
@@ -47,6 +49,7 @@ export const Grid: FC<GridProps> = ({
     gridTemplateRows,
     gap,
     position,
+    gridColumn,
   };
 
   const Tag = tag || (isSection ? 'section' : 'div');

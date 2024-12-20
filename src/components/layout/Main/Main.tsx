@@ -20,6 +20,7 @@ export const Main: FC<MainProps> = ({ children }) => {
   return (
     <Grid
       gap="50px"
+      gridColumn="span 10"
       gridTemplateRows={isHeaderRender ? '1fr' : 'auto 1fr'}
     >
       {!isHeaderRender && <Header />}

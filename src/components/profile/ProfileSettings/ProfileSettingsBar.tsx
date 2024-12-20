@@ -39,15 +39,16 @@ export const ProfileSettingsBar: FC = () => {
           renderItem={(item) => {
             const isActiveListItem: IsActiveItemClass =
               activeListItem === item.id;
+            const activeListItemClassName = {
+              [styles['activeListItem']]: isActiveListItem,
+            };
 
             return (
               <Button
                 type="button"
                 className={classNames(
                   styles['profileSettingsBarListItemButton'],
-                  {
-                    [styles['activeListItem']]: isActiveListItem,
-                  },
+                  activeListItemClassName,
                 )}
                 key={item.id}
                 onClick={() => handleChangeListItem(item.id)}

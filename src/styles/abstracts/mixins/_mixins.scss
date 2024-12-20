@@ -500,3 +500,18 @@
   line-height: 138%;
   color: color.$color-gray-neutral;
 }
+
+@mixin responsiveButton {
+  @media (max-width: 76.875rem) {
+    max-width: 80%;
+    font-size: 0.75rem;
+    min-height: 2.2rem;
+  }
+}
+
+@mixin responsiveIcon {
+  @media (max-width: 70rem) {
+    max-width: 1.125rem;
+    max-height: 1.125rem;
+  }
+}

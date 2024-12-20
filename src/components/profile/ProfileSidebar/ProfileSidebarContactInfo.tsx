@@ -11,6 +11,7 @@ import { FormStateContact } from '@/interfaces/ProfileSidebarInterface';
 import { registerInputClassNames } from './ProfileSidebarMainInfo';
 
 import styles from '@/styles/pages/profile.module.scss';
+import { Form } from '@/components/shared-ui/Form/Form';
 
 interface ProfileSidebarContactInfoProps extends HTMLProps<HTMLDivElement> {
   formStateContact: FormStateContact;
@@ -33,7 +34,7 @@ export const ProfileSidebarContactInfo: FC<ProfileSidebarContactInfoProps> = ({
       >
         Contact Info
       </Heading>
-      <form
+      <Form
         className={styles['profileSidebarMainInfoForm']}
         onSubmit={handleSubmitContactForm}
       >
@@ -66,7 +67,7 @@ export const ProfileSidebarContactInfo: FC<ProfileSidebarContactInfoProps> = ({
           type="text"
           classNames={registerInputClassNames}
         />
-      </form>
+      </Form>
     </Container>
   );
 };

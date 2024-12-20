@@ -1,7 +1,7 @@
 import { StylesConfig } from 'react-select';
 import { Keyframes, keyframes } from '@emotion/react';
 
-import { COLORS } from './colors';
+import { COLORS } from '@/constants/Colors';
 
 import { CountryOption } from '@/static/CountryOptions';
 

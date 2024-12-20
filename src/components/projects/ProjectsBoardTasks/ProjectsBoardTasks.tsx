@@ -1,6 +1,7 @@
 import React, { type FC } from 'react';
 
 import { Container, Heading } from '@/index';
+
 import { BoardTasksItems } from './BoardTasksItems';
 
 import styles from './ProjectsBoardTasks.module.scss';

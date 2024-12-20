@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 
+import { Div } from '@/index';
+
 import styles from './ProjectsCalendarTasks.module.scss';
 
 export const ProjectsCalendarBoardMain: FC = () => {
@@ -8,14 +10,14 @@ export const ProjectsCalendarBoardMain: FC = () => {
   const visibleColumns = 20;
 
   return (
-    <div
+    <Div
       className={styles['tableContainer']}
       style={{
         overflowX: 'auto',
         maxWidth: `${visibleColumns * 50}px`,
       }}
     >
-      <div
+      <Div
         className={styles['scrollWrapper']}
         style={{
           minWidth: `${columns * 31}px`,
@@ -48,7 +50,7 @@ export const ProjectsCalendarBoardMain: FC = () => {
             ))}
           </tbody>
         </table>
-      </div>
-    </div>
+      </Div>
+    </Div>
   );
 };

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { serviceBusinessOptions } from '@/constants/ServiceBusiness';
+import { serviceBusinessOptions } from '@/static/ServiceBusiness';
 
 import { ServiceOption } from '@/interfaces/ServicesSelectInterface';
 
