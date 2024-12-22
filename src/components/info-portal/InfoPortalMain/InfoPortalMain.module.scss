@@ -1,7 +1,7 @@
-@use '../../../styles/abstracts/mixins/mixins' as *;
-@use '../../../styles/abstracts/breakpoints/breakpoints' as *;
-@use '../../../styles/base/colors/colors' as color;
-@use '../../../styles/base/globals/globals' as size;
+@use "../../../styles/abstracts/mixins/mixins" as *;
+@use "../../../styles/abstracts/breakpoints/breakpoints" as *;
+@use "../../../styles/base/colors/colors" as color;
+@use "../../../styles/base/globals/globals" as size;
 
 .infoPortalMain {
   width: 100%;
@@ -12,6 +12,8 @@
 
   &Container {
     width: 100%;
+    container-type: inline-size;
+    container-name: portalMainContainer;
   }
 
   &Banner {
@@ -19,10 +21,9 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
-      background: url('/images/info-portal/info-illustration.svg') no-repeat
-        center center;
+      background: url("/images/info-portal/info-illustration.svg") no-repeat center center;
       width: 18.1875rem;
       height: 100%;
       right: 4.3125rem;
@@ -73,12 +74,11 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       width: 6.0625rem;
       height: 2.75rem;
-      background: url('/images/info-portal/statistics.svg') no-repeat center
-        center;
+      background: url("/images/info-portal/statistics.svg") no-repeat center center;
       right: 0;
       top: 0.875rem;
     }
@@ -139,55 +139,53 @@
   }
 }
 
-@include respond-toWidth(large) {
-  .infoPortalMain {
-    &Banner {
-      &::after {
-        right: 1rem;
-        max-width: 14.1875rem;
-      }
-      &Info {
-        max-width: 20.5rem;
-        padding-inline-start: 1.75rem;
-      }
+@media (max-width: 79.375rem) {
+  .infoPortalList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &Item {
+      max-width: 100%;
+    }
+  }
+
+  .infoPortalMainBanner {
+    &Title {
+      font-size: size.$font-size-xl;
     }
 
-    &SecondBanner {
-      max-width: 12.5625rem;
-
-      &Container {
-        padding: 1.5rem 1rem;
-      }
+    &Subtitle {
+      max-width: calc(100% - 20%);
     }
+  }
+
+  .infoPortalMainBannerInfo {
+    max-width: 20.5rem;
+    padding-block-start: 1.7rem;
+    position: relative;
+    z-index: 100;
+  }
+
+  .infoPortalMainBanner::after {
+    max-width: 15.1875rem;
+    right: 2.3125rem;
+  }
+
+  .infoPortalMainSecondBanner {
+    max-width: 13.5625rem;
+  }
+
+  .infoPortalMainSecondBannerContainer {
+    padding-inline: 1rem;
   }
 }
 
-@include respond-toWidth(large-medium) {
-  .infoPortalMain {
-    .infoPortalList {
-      gap: 1rem;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      &Info {
-        gap: 1.5rem;
-      }
-
-      &Item {
-        max-width: 100%;
-        cursor: pointer;
-        transition: transform 0.2s ease-in 0s;
-
-        &:hover {
-          transform: scale(1.03);
-        }
-      }
-    }
+@media (max-width: 64rem) {
+  .infoPortalMainContainer {
+    flex-direction: column;
   }
 
-  .projectsStatistic {
-    &::after {
-      max-width: 5.2625rem;
-    }
+  .infoPortalMainSecondBanner {
+    max-width: 100%;
   }
 }

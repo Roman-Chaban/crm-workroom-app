@@ -5,6 +5,7 @@
 .nearestEvents {
   @include whiteContainer(339px);
   height: 29.375rem;
+  grid-column: span 4;
 
   &Container {
     @include containerPadding;

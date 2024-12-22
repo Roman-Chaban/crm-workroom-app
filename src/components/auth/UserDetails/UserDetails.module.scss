@@ -1,7 +1,7 @@
-@use '../../../styles/abstracts/breakpoints/breakpoints' as *;
-@use '../../../styles/abstracts/mixins/mixins' as *;
-@use '../../../styles/base/colors/colors' as color;
-@use '../../../styles/base/globals/globals' as size;
+@use "../../../styles/abstracts/breakpoints/breakpoints" as *;
+@use "../../../styles/abstracts/mixins/mixins" as *;
+@use "../../../styles/base/colors/colors" as color;
+@use "../../../styles/base/globals/globals" as size;
 
 .multiSteps {
   width: 100%;
@@ -167,7 +167,4 @@
     width: 100%;
     max-width: 25.375rem;
   }
-}
-
-@include respond-toWidth(large-medium) {
 }

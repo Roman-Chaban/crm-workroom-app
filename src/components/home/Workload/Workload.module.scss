@@ -5,6 +5,7 @@
 .workload {
   @include whiteContainer(48.8125rem);
   height: 29.375rem;
+  grid-column: span 8;
 
   &Container {
     @include containerPadding;

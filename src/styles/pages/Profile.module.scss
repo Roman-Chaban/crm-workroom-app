@@ -1,7 +1,7 @@
-@use '../abstracts/mixins/mixins' as *;
-@use '../abstracts/breakpoints/breakpoints' as *;
-@use '../base/colors/colors' as color;
-@use '../base/globals/globals' as size;
+@use "../abstracts/mixins/mixins" as *;
+@use "../abstracts/breakpoints/breakpoints" as *;
+@use "../base/colors/colors" as color;
+@use "../base/globals/globals" as size;
 
 .profile {
   width: 100%;
@@ -136,7 +136,7 @@
       position: relative;
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         right: -0.75rem;
         height: 100%;
@@ -228,5 +228,34 @@
 
   & .customCheckbox {
     @include customCheckBox;
+  }
+}
+
+@media (max-width: 83.5625rem) {
+  .profile {
+    &SidebarInfo {
+      &Title {
+        font-size: size.$font-size-xxl;
+      }
+
+      &EditButton {
+        max-width: size.$font-size-4xl;
+        max-height: size.$font-size-4xl;
+        border-radius: 0.675rem;
+      }
+
+      &EditIcon {
+        max-width: 1rem;
+        max-height: 1rem;
+      }
+    }
+
+    &SettingsBar {
+      max-width: 14.5625rem;
+    }
+  }
+
+  .notificationContainer {
+    padding-inline-end: 0.5rem;
   }
 }

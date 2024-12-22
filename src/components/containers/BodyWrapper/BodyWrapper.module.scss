@@ -2,6 +2,7 @@
 @use '../../../styles/base/colors/colors' as color;
 
 .bodyWrapper {
+  display: flex;
   gap: 1.875rem;
   width: 100%;
   min-height: 100vh;

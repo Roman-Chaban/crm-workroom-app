@@ -1,7 +1,7 @@
-@use '../../../styles/abstracts/breakpoints/breakpoints' as *;
-@use '../../../styles/abstracts/mixins/mixins' as *;
-@use '../../../styles/base/colors/colors' as color;
-@use '../../../styles/base/globals/globals' as size;
+@use "../../../styles/abstracts/breakpoints/breakpoints" as *;
+@use "../../../styles/abstracts/mixins/mixins" as *;
+@use "../../../styles/base/colors/colors" as color;
+@use "../../../styles/base/globals/globals" as size;
 
 .sidebarSteps {
   width: 100%;
@@ -83,7 +83,7 @@
     }
 
     & .stepsListItemCircle::before {
-      content: '';
+      content: "";
       position: absolute;
       border-radius: 0.0625rem;
       width: 0.125rem;

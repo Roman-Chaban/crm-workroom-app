@@ -6,7 +6,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { client } from '@/shared/client/client';
 
-import { Grid } from '@/index';
+import { Container } from '@/index';
 
 import { Provider } from 'react-redux';
 
@@ -31,7 +31,7 @@ export const BodyWrapper: FC<BodyWrapperProps> = ({ children }) => {
           initialIsOpen={false}
           position={position}
         />
-        <Grid className={bodyWrapper}>{children}</Grid>
+        <Container className={bodyWrapper}>{children}</Container>
       </QueryClientProvider>
     </Provider>
   );

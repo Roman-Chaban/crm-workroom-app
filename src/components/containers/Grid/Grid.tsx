@@ -15,8 +15,10 @@ interface GridProps {
   boxShadow?: string;
   tag?: 'table' | 'div' | 'section' | 'article';
   position?: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky';
+  justifyContent?: string;
   className?: string;
   gridColumn?: string;
+  justifyItems?: string;
 }
 
 export const Grid: FC<GridProps> = ({
@@ -36,6 +38,8 @@ export const Grid: FC<GridProps> = ({
   position = 'static',
   gridColumn = '',
   className,
+  justifyContent = 'start',
+  justifyItems = '',
 }) => {
   const gridStyles: CSSProperties = {
     width,
@@ -50,6 +54,8 @@ export const Grid: FC<GridProps> = ({
     gap,
     position,
     gridColumn,
+    justifyContent,
+    justifyItems,
   };
 
   const Tag = tag || (isSection ? 'section' : 'div');

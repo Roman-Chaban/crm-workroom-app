@@ -1,6 +1,6 @@
-@use '../../../styles/abstracts/mixins/mixins' as *;
-@use '../../../styles/base/colors/colors' as color;
-@use '../../../styles/base/globals/globals' as size;
+@use "../../../styles/abstracts/mixins/mixins" as *;
+@use "../../../styles/base/colors/colors" as color;
+@use "../../../styles/base/globals/globals" as size;
 
 .notifications {
   display: flex;
@@ -20,7 +20,6 @@
     margin-top: auto;
     margin-bottom: auto;
     padding: 2.3125rem 1.875rem 1.4375rem 1.875rem;
-
     transform: translateY(-100%) scale(0.8);
     opacity: 0;
     filter: blur(0.625rem);
