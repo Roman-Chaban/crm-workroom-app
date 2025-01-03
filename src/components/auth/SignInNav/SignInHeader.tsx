@@ -10,7 +10,11 @@ export const SignInHeader: FC<SignInHeaderProps> = ({
   classNames,
 }) => {
   return (
-    <Div className={classNames?.header}>
+    <Div
+      className={classNames?.header}
+      role="region"
+      aria-label="header"
+    >
       <Heading
         tag="h5"
         className={classNames?.stepsFigures}

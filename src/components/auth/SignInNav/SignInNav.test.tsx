@@ -36,6 +36,8 @@ describe('SignInNav Component', () => {
     expect(previousButton).toBeInTheDocument();
     expect(nextButton).toBeInTheDocument();
 
+    expect(previousButton).toMatchSnapshot();
+
     fireEvent.click(nextButton);
   });
 

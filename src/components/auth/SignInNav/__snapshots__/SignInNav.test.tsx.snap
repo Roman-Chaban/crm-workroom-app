@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignInNav Component renders SignInNav component correctly 1`] = `
+<button
+  class=""
+  type="button"
+>
+  <img
+    alt="Arrow Right Icon"
+    data-nimg="1"
+    decoding="async"
+    height="24"
+    src="/images/auth/icons/arrow-previous.svg"
+    style="color: transparent;"
+    width="24"
+  />
+  Previous
+</button>
+`;
