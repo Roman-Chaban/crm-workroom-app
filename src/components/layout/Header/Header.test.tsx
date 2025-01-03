@@ -12,5 +12,8 @@ describe('Header Component', () => {
 
     const notificationButton = screen.getByTitle('Your Notification');
     expect(notificationButton).toBeInTheDocument();
+
+    const signInButton = screen.getByTitle('Sign In Button');
+    expect(signInButton).toBeInTheDocument();
   });
 });

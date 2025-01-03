@@ -136,6 +136,7 @@ export const Header: FC = () => {
           {!isRegistered && (
             <Button
               type="button"
+              title="Sign In Button"
               className={styles['headerSignInButton']}
             >
               <Link href={NAV_PATHS.SIGN_IN}>
