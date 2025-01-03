@@ -32,10 +32,13 @@ export const ProfileSidebarMainInfo: FC<ProfileSidebarMainInfoProps> = ({
   handleSubmitMainForm,
   register,
 }) => {
+
+  const paddingNone = { paddingBlockEnd: 0 };
+
   return (
     <Container
       className={styles['profileSidebarMainInfo']}
-      style={{ paddingBlockEnd: 0 }}
+      style={paddingNone}
     >
       <Heading
         tag="h5"

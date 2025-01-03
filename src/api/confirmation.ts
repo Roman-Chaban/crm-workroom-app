@@ -10,6 +10,7 @@ const apiClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+
   method: REQUESTS_METHODS.POST,
 });
 

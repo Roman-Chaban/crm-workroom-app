@@ -18,6 +18,7 @@ import styles from './ServiceSelection.module.scss';
 
 export const ServiceSelection: FC = () => {
   const currentStep = useAppSelector((state) => state.steps.currentStep);
+
   useDocumentTitle('Registration | Service Selection');
 
   return (

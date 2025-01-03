@@ -1,5 +1,5 @@
-@use '../../base/colors/colors' as color;
-@use '../../base/globals/globals' as size;
+@use "../../base/colors/colors" as color;
+@use "../../base/globals/globals" as size;
 
 @mixin BoundingBox {
   width: 100%;
@@ -61,7 +61,7 @@
 
 @mixin title($min-height: $min-height) {
   color: color.$color-black-deep;
-  font-size: size.$font-size-4xl;
+  font-size: clamp(1rem, 0.7143rem + 1.4286vw, size.$font-size-4xl);
   font-weight: 700;
   min-height: $min-height;
 }
@@ -103,7 +103,7 @@
     color: color.$background-support-active;
   }
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -2px;
     left: 50%;
@@ -280,7 +280,7 @@
 }
 
 @mixin navTitle {
-  font-size: size.$font-size-4xxl;
+  font-size: clamp(1rem, 0.6429rem + 1.7857vw, size.$font-size-4xxl);
   color: color.$color-black-deep;
   font-weight: 700;
 }
@@ -323,11 +323,7 @@
   box-shadow: color.$shadow-box-light;
 }
 
-@mixin infoPortalBanner(
-  $maxWidth: $maxWidth,
-  $height: $height,
-  $borderRadius: $borderRadius
-) {
+@mixin infoPortalBanner($maxWidth: $maxWidth, $height: $height, $borderRadius: $borderRadius) {
   width: 100%;
   max-width: $maxWidth;
   height: $height;
@@ -336,11 +332,7 @@
   box-shadow: color.$shadow-box-light;
 }
 
-@mixin graySubtitle(
-  $lineHeight: $lineHeight,
-  $color: $color,
-  $opacity: $opacity
-) {
+@mixin graySubtitle($lineHeight: $lineHeight, $color: $color, $opacity: $opacity) {
   font-size: size.$font-size-lg;
   line-height: $lineHeight;
   color: $color;
@@ -446,7 +438,7 @@
     background-color: color.$color-white-primary;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 39.5%;
       left: 51%;
@@ -465,7 +457,7 @@
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
