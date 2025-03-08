@@ -15,7 +15,7 @@ import {
 
 import { STEPS } from '@/shared/enums/steps';
 
-import styles from '@/styles/pages/signIn.module.scss';
+import styles from '@/shared/styles/pages/signIn.module.scss';
 
 type StepComponent = string;
 

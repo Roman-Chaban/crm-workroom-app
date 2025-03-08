@@ -10,7 +10,7 @@ import {
   ProfileSettings,
 } from '@/index';
 
-import styles from '@/styles/pages/profile.module.scss';
+import styles from '@/shared/styles/pages/profile.module.scss';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom - Profile',

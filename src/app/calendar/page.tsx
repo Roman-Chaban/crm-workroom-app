@@ -4,7 +4,7 @@ import React from 'react';
 
 import { Section, Nav } from '@/index';
 
-import styles from '@/styles/pages/calendar.module.scss';
+import styles from '@/shared/styles/pages/calendar.module.scss';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom - Calendar',
