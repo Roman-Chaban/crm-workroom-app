@@ -4,7 +4,7 @@ import React from 'react';
 
 import { Section, Nav, InfoPortalMain } from '@/index';
 
-import styles from '@/shared/styles/pages/infoPortal.module.scss';
+import styles from '@/shared/styles/pages/InfoPortal.module.scss';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom - Info Portal',
