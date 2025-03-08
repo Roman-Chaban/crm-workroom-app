@@ -4,13 +4,13 @@ import { useMutation } from '@tanstack/react-query';
 import { useAppSelector } from '@/hooks/useAppSelector';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
 
-import { Container, Input, SignInNav } from '@/index/index';
+import { Container, Input, SignInNav, Form, Label } from '@/index/index';
 
 import Select, { SingleValue } from 'react-select';
 
 import { ServiceOption } from '@/interfaces/ServicesSelectInterface';
 import { serviceBusinessOptions } from '@/static/ServiceBusiness';
-import { ServiceDetailsFormButtons } from './ServiceDetailsFormButtons';
+import { ServiceDetailsFormButtons } from '../ServiceDetailsFormButtons/ServiceDetailsFormButtons';
 import { ServicesDetails } from '@/types/ServicesDetailsTypes';
 import { getServicesDetails } from '@/api/services';
 
@@ -25,9 +25,7 @@ import { ServiceDetailsFormProps } from '@/interfaces/ServiceDetailsInterface';
 
 import customStyles from '@/styles/selectsStyles/ServiceSelectStyles';
 
-import styles from './ServiceDetails.module.scss';
-import { Form } from '@/components/shared-ui/Form/Form';
-import { Label } from '@/components/shared-ui/Label/Label';
+import styles from '../ServiceDetails.module.scss';
 
 export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
   currentStep,
@@ -107,6 +105,8 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
 
   return (
     <Form
+      role="form"
+      aria-labelledby="service-details-form-title"
       className={styles['serviceDetailsForm']}
       onSubmit={handleServiceDetailsFormSubmit}
     >
@@ -125,6 +125,7 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
           }}
           value={companyName}
           onChange={handleCompanyNameChange}
+          aria-required="true"
         />
 
         <Label className={styles['businessDirectionLabel']}>
@@ -134,6 +135,8 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
             options={serviceBusinessOptions}
             value={selectedBusinessDirection}
             onChange={handleBusinessDirectionChange}
+            aria-required="true"
+            aria-label="Select business direction"
           />
         </Label>
 

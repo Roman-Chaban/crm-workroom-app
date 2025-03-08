@@ -12,7 +12,10 @@ export const metadata: Metadata = {
 
 export default function SignInPage() {
   return (
-    <Section className={styles['signInContainer']}>
+    <Section
+      role="section"
+      className={styles['signInContainer']}
+    >
       <SignInBanner />
       <SignInForm />
     </Section>

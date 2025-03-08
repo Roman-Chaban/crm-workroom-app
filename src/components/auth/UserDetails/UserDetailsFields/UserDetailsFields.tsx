@@ -29,7 +29,7 @@ import countrySelectStyles from '@/styles/selectsStyles/CountrySelect';
 
 import { UserDetailsFieldsProps } from '@/interfaces/UserDetailsInterface';
 
-import styles from './UserDetails.module.scss';
+import styles from '../UserDetails.module.scss';
 
 const Select = dynamic(() => import('react-select'), {
   ssr: false,

@@ -10,15 +10,20 @@ import styles from '../InfoPortalMain/InfoPortalMain.module.scss';
 
 export const InfoPortalFolders: FC = () => {
   return (
-    <Box>
+    <Box role="box">
       <List
+        role="list"
         classNames={{
           list: styles['infoPortalList'],
           listItem: styles['infoPortalListItem'],
         }}
         renderItem={(item) => (
-          <Div className={styles['infoPortalListInfo']}>
+          <Div
+            role="listInfo"
+            className={styles['infoPortalListInfo']}
+          >
             <Image
+              role="img"
               src={item.icon}
               alt={item.title}
               width={44}
@@ -26,6 +31,7 @@ export const InfoPortalFolders: FC = () => {
             />
             <Div className={styles['infoPortalListSubInfo']}>
               <Heading
+                role="h6"
                 tag="h6"
                 className={styles['infoPortalListSubInfoTitle']}
               >

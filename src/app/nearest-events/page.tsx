@@ -9,10 +9,11 @@ import { Nav, Section, EventModal } from '@/index';
 
 import { NAV_PATHS } from '@/enums/navPaths';
 
-import styles from '@/styles/pages/nearestEvents.module.scss';
+type isEventModalOpenType = boolean;
 
 export default function NearestEventsPage() {
-  const [isEventModalOpen, setIsEventModalOpen] = useState<boolean>(false);
+  const [isEventModalOpen, setIsEventModalOpen] =
+    useState<isEventModalOpenType>(false);
 
   const router = useRouter();
 
@@ -31,8 +32,9 @@ export default function NearestEventsPage() {
   };
 
   return (
-    <Section className={styles['']}>
+    <Section role="section">
       <Nav
+        role="nav"
         isRenderBackLink
         buttonLabel="Add Event"
         title="Nearest Events"

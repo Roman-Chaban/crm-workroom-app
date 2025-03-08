@@ -11,9 +11,17 @@ import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 
 export const SidebarLogo: FC = () => {
   return (
-    <Div className={styles['sidebarLogo']}>
-      <Link href={NAV_PATHS.DASHBOARD}>
+    <Div
+      role="container"
+      className={styles['sidebarLogo']}
+    >
+      <Link
+        role="link"
+        href={NAV_PATHS.DASHBOARD}
+        className={styles['sidebarLogoLink']}
+      >
         <Image
+          role="img"
           src={'/icons/sidebar-icons/Logo.svg'}
           alt="Workroom Logo"
           width={50}

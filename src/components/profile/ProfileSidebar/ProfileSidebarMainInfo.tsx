@@ -11,7 +11,7 @@ import {
   RegisterInputClassNames,
 } from '@/interfaces/ProfileSidebarInterface';
 
-import styles from '@/styles/pages/profile.module.scss';
+import styles from '../../../styles/pages/Profile.module.scss';
 import { Form } from '@/components/shared-ui/Form/Form';
 
 export const registerInputClassNames: RegisterInputClassNames = {
@@ -32,7 +32,6 @@ export const ProfileSidebarMainInfo: FC<ProfileSidebarMainInfoProps> = ({
   handleSubmitMainForm,
   register,
 }) => {
-
   const paddingNone = { paddingBlockEnd: 0 };
 
   return (

@@ -13,8 +13,12 @@ export const metadata: Metadata = {
 
 export default function CalendarPage() {
   return (
-    <Section className={styles['calendar']}>
+    <Section
+      role="section"
+      className={styles['calendar']}
+    >
       <Nav
+        role="nav"
         title="Calendar"
         buttonLabel="Add Event"
         isRenderBackLink={false}

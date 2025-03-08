@@ -1,11 +1,10 @@
-import React, { type ReactNode } from 'react';
+import React, { FC, HTMLProps, type ReactNode } from 'react';
 
-export const Section = ({
-  children,
-  className,
-}: {
+interface SectionProps extends HTMLProps<HTMLElement> {
   children: ReactNode;
-  className: string;
-}) => {
+  className?: string;
+}
+
+export const Section: FC<SectionProps> = ({ children, className }) => {
   return <section className={className}>{children}</section>;
 };

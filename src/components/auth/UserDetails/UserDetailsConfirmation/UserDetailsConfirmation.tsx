@@ -4,7 +4,7 @@ import { Div } from '@/index';
 
 import { UserDetailsConfirmationProps } from '@/interfaces/UserDetailsInterface';
 
-import styles from './UserDetails.module.scss';
+import styles from '../UserDetails.module.scss';
 
 export const UserDetailsConfirmation: FC<UserDetailsConfirmationProps> = ({
   handleSmsCodeChange,

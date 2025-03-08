@@ -10,9 +10,13 @@ import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 
 export const SidebarLogout: FC<SidebarProps> = ({ onOpenModal }) => {
   return (
-    <Div className={styles['sidebarLogout']}>
+    <Div
+      role="container"
+      className={styles['sidebarLogout']}
+    >
       <Div className={styles['sidebarLogoutBlock']}>
         <Image
+          role="img"
           src={'/images/sidebar/support.svg'}
           alt="Support Image"
           width={168}
@@ -21,11 +25,13 @@ export const SidebarLogout: FC<SidebarProps> = ({ onOpenModal }) => {
           className={styles['sidebarLogoutSupportImage']}
         />
         <Button
+          role="button"
           type="button"
           className={styles['sidebarSupportButton']}
           onClick={onOpenModal}
         >
           <Image
+            role="img"
             src={'/icons/sidebar-icons/chat-icon.svg'}
             alt="Support Image"
             width={24}

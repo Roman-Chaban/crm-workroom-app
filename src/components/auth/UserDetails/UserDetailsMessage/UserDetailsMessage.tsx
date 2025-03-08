@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 import { Div, Heading } from '@/index';
 
-import { UserDetailsConfirmation } from './UserDetailsConfirmation';
+import { UserDetailsConfirmation } from '../UserDetailsConfirmation/UserDetailsConfirmation';
 
 import {
   ConfirmationResponse,
@@ -21,7 +21,7 @@ import { confirmUserRegistration } from '@/api/confirmation';
 
 import { UserDetailsMessageProps } from '@/interfaces/UserDetailsInterface';
 
-import styles from './UserDetails.module.scss';
+import styles from '../UserDetails.module.scss';
 
 export const UserDetailsMessage: FC<UserDetailsMessageProps> = ({
   userEmail,

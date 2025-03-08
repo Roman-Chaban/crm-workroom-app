@@ -8,7 +8,7 @@ import { Button, Container, Heading } from '@/index';
 
 import { useParsedUserName } from '@/hooks/useParsedUserName';
 
-import styles from '@/styles/pages/profile.module.scss';
+import styles from '../../../styles/pages/Profile.module.scss';
 
 export const ProfileSidebarInfo: FC = () => {
   const profileUserName = useParsedUserName(

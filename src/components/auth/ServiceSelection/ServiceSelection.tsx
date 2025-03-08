@@ -22,7 +22,10 @@ export const ServiceSelection: FC = () => {
   useDocumentTitle('Registration | Service Selection');
 
   return (
-    <Section className={styles['MultiStepsSignUpAbout']}>
+    <Section
+      className={styles['MultiStepsSignUpAbout']}
+      aria-labelledby="service-selection-title"
+    >
       <Toaster />
       <Container className={styles['MultiStepsSignUpAboutContainer']}>
         <SignInHeader

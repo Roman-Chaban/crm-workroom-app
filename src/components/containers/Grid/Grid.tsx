@@ -1,6 +1,11 @@
-import React, { type FC, type ReactNode, type CSSProperties } from 'react';
+import React, {
+  type FC,
+  type ReactNode,
+  type CSSProperties,
+  HTMLProps,
+} from 'react';
 
-interface GridProps {
+interface GridProps extends HTMLProps<HTMLDivElement> {
   width?: string;
   height?: string;
   maxWidth?: string;

@@ -14,12 +14,19 @@ export const SidebarNav: FC = () => {
   const pathname = usePathname();
 
   return (
-    <nav className={styles['sidebarNav']}>
-      <ul className={styles['sidebarNavList']}>
+    <nav
+      role="nav"
+      className={styles['sidebarNav']}
+    >
+      <ul
+        role="list"
+        className={styles['sidebarNavList']}
+      >
         {sidebarNav.map((item) => {
           const isActive = pathname === item.href;
           return (
             <SidebarNavItem
+              role="listItem"
               key={item.id}
               item={item}
               isActive={isActive}

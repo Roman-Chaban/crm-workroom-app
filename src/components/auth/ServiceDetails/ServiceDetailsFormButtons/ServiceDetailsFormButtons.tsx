@@ -9,7 +9,7 @@ import { Button, Div } from '@/index/index';
 import { setSelectedTeamSize } from '@/store/slices/ServiceDetailsSlice';
 import { ServiceDetailsFormButtonsProps } from '@/interfaces/ServiceDetailsInterface';
 
-import styles from './ServiceDetails.module.scss';
+import styles from '../ServiceDetails.module.scss';
 
 export const ServiceDetailsFormButtons: FC<ServiceDetailsFormButtonsProps> = ({
   selectedTeamSize,
@@ -21,7 +21,11 @@ export const ServiceDetailsFormButtons: FC<ServiceDetailsFormButtonsProps> = ({
   };
 
   return (
-    <Div className={styles['serviceDetailsButtons']}>
+    <Div
+      role="group"
+      aria-labelledby="team-size-label"
+      className={styles['serviceDetailsButtons']}
+    >
       <label className={styles['serviceDetailsLabel']}>
         How many people in your team?
       </label>
@@ -34,6 +38,7 @@ export const ServiceDetailsFormButtons: FC<ServiceDetailsFormButtonsProps> = ({
             className={`${styles['serviceDetailsButton']} ${
               selectedTeamSize === button.label ? styles['activeButton'] : ''
             }`}
+            aria-pressed={selectedTeamSize === button.label}
           >
             {button.label}
           </Button>

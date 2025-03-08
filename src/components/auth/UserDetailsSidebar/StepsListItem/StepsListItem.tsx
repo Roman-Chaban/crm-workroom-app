@@ -2,10 +2,11 @@ import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
+import { Span } from '@/index';
+
 import { StepsListItemProps } from '@/interfaces/UserDetailsInterface';
 
-import styles from './UserDetailsSidebar.module.scss';
-import { Span } from '@/index';
+import styles from '../UserDetailsSidebar.module.scss';
 
 export const StepsListItem: FC<StepsListItemProps> = ({
   step,

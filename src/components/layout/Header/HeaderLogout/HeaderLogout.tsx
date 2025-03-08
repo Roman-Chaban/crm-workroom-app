@@ -72,16 +72,19 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
     <>
       <Toaster />
       <Div
+        role="container"
         title="Open menu"
         className={`${styles['headerUserLogout']} ${isVisibleMenu ? styles['visibleMenu'] : ''} `}
       >
         {validateUserName && (
           <Button
+            role="button"
             type="button"
             onClick={handleShowMenu}
             className={styles['headerUserLoginButton']}
           >
             <Heading
+              role="h5"
               tag="h5"
               className={styles['headerUserLoginBanner']}
             >
@@ -100,14 +103,19 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
           </Button>
         )}
         {isVisibleMenu && (
-          <Div className={styles['dropdownMenu']}>
+          <Div
+            role="dropdownContainer"
+            className={styles['dropdownMenu']}
+          >
             <Button
+              role="button"
               title="Profile"
               type="button"
               className={styles['dropdownItem']}
             >
               <AccountBoxIcon />
               <Link
+                role="link"
                 href={NAV_PATHS.PROFILE}
                 className={styles['profileLink']}
               >
@@ -115,6 +123,7 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
               </Link>
             </Button>
             <Button
+              role="button"
               title="Logout"
               type="button"
               className={styles['dropdownItem']}

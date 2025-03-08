@@ -19,15 +19,22 @@ export const metadata: Metadata = {
 
 export default function ProfilePage() {
   return (
-    <Section className={styles['profile']}>
+    <Section
+      role="section"
+      className={styles['profile']}
+    >
       <Heading
+        role="h1"
         tag="h1"
         className={styles['profileTitle']}
       >
         My Profile
       </Heading>
 
-      <Grid className={styles['profileMainContainer']}>
+      <Grid
+        role="container"
+        className={styles['profileMainContainer']}
+      >
         <ProfileSidebar />
         <ProfileSettings />
       </Grid>

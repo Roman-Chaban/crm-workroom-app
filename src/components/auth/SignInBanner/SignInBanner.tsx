@@ -8,10 +8,14 @@ import styles from '@/components/auth/SignInBanner/SignInBanner.module.scss';
 
 export const SignInBanner: FC = () => {
   return (
-    <Div className={styles['signInBanner']}>
+    <Div
+      role="region"
+      className={styles['signInBanner']}
+    >
       <Div className={styles['signInBannerContainer']}>
         <Div className={styles['signInBannerLogo']}>
           <Image
+            role="img"
             src={'/images/auth/icons/signIn-logo.svg'}
             alt="Workroom Logo"
             width={50}
@@ -21,6 +25,7 @@ export const SignInBanner: FC = () => {
           />
 
           <Heading
+            role="h3"
             tag="h3"
             className={styles['signInBannerTitle']}
           >
@@ -29,6 +34,7 @@ export const SignInBanner: FC = () => {
         </Div>
 
         <Heading
+          role="h1"
           tag="h1"
           className={styles['signInBannerSubtitle']}
         >
@@ -36,6 +42,7 @@ export const SignInBanner: FC = () => {
         </Heading>
 
         <Image
+          role="img"
           src={'/images/auth/signIn-banner.svg'}
           alt="Illustration Image"
           width={500}

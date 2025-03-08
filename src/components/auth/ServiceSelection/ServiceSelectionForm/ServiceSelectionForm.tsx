@@ -27,7 +27,7 @@ import { ServiceSelectionFormProps } from '@/interfaces/ServiceSelectionInterfac
 
 import customStyles from '@/styles/selectsStyles/ServiceSelectStyles';
 
-import styles from './ServiceSelection.module.scss';
+import styles from '../ServiceSelection.module.scss';
 import { Form } from '@/components/shared-ui/Form/Form';
 
 export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({
@@ -102,6 +102,8 @@ export const ServiceSelectionForm: FC<ServiceSelectionFormProps> = ({
     <>
       <Toaster />
       <Form
+        role="form"
+        aria-labelledby="service-selection-form"
         className={styles['stepForm']}
         onSubmit={handleSubmitAboutForm}
       >

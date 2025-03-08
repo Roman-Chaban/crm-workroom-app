@@ -18,6 +18,7 @@ import {
   Container,
   UserDetailsFields,
   SignInNav,
+  Form,
 } from '@/index/index';
 
 import { toast } from 'react-hot-toast';
@@ -32,8 +33,7 @@ import {
   RegistrationUserData,
 } from '@/types/RegistrationTypes';
 
-import styles from './UserDetails.module.scss';
-import { Form } from '@/components/shared-ui/Form/Form';
+import styles from '../UserDetails.module.scss';
 
 export const UserDetailsForm: FC = () => {
   const currentStep = useAppSelector((state) => state.steps.currentStep);

@@ -2,18 +2,21 @@
 
 import React, { type FC } from 'react';
 
+import { useForm } from 'react-hook-form';
+
 import { Container, Div, Heading, Notification } from '@/index';
 import {
   NotificationClassNames,
   NotificationItem,
 } from '@/interfaces/NotificationInterface';
 
+import { CheckBox } from '@/components/shared-ui/CheckBox/CheckBox';
+
 import { notificationItems } from '@/static/NotificationItems';
 
-import styles from '@/styles/pages/profile.module.scss';
-import { useForm } from 'react-hook-form';
-import { CheckBox } from '@/components/shared-ui/CheckBox/CheckBox';
 import { CheckBoxClassNames } from '@/interfaces/CheckBoxInterface';
+
+import styles from '../../../styles/pages/Profile.module.scss';
 
 const notificationClassNames: NotificationClassNames = {
   main: styles['notificationMain'],

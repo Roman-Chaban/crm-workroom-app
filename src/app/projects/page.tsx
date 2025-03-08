@@ -16,10 +16,12 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <Grid
+      role="section"
       isSection
       gap="30px"
     >
       <Nav
+        role="nav"
         title="Projects"
         buttonLabel="Add Project"
         isRenderBackLink={false}

@@ -1,6 +1,7 @@
 import { SidebarNavListItem } from '@/types/SidebarNavTypes';
+import { HTMLProps } from 'react';
 
-export interface SidebarNavItemProps {
+export interface SidebarNavItemProps extends HTMLProps<HTMLLIElement> {
   item: SidebarNavListItem;
   isActive: boolean;
 }

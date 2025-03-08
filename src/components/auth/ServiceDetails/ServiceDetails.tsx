@@ -7,7 +7,7 @@ import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 
 import { Container, Section, SignInHeader } from '@/index/index';
 
-import { ServiceDetailsForm } from './ServiceDetailsForm';
+import { ServiceDetailsForm } from './ServiceDetailsForm/ServiceDetailsForm';
 
 import styles from './ServiceDetails.module.scss';
 
@@ -17,7 +17,12 @@ export const ServiceDetails: FC = () => {
   useDocumentTitle('Registration | Service Details');
 
   return (
-    <Section className={styles['serviceDetails']}>
+    <Section
+      role="region"
+      aria-labelledby="service-details-title"
+      aria-live="polite"
+      className={styles['serviceDetails']}
+    >
       <Container className={styles['serviceDetailsContainer']}>
         <SignInHeader
           title="Tell about your company"

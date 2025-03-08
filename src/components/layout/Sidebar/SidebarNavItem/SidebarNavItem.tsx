@@ -18,6 +18,7 @@ export const SidebarNavItem: FC<SidebarNavItemProps> = ({ item, isActive }) => {
       })}
     >
       <Image
+        role="img"
         src={isActive ? item.activeIcon : item.inactiveIcon}
         alt={item.label}
         title={item.label}
@@ -27,6 +28,7 @@ export const SidebarNavItem: FC<SidebarNavItemProps> = ({ item, isActive }) => {
         className={styles['sidebarNavListItemIcon']}
       />
       <Link
+        role="link"
         href={item.href}
         className={classNames(styles['sidebarNavListItemLink'], {
           [styles['activeColor']]: isActive,

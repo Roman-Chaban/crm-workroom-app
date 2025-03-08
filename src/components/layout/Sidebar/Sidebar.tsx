@@ -14,8 +14,14 @@ import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 
 export const Sidebar: FC<SidebarProps> = ({ onOpenModal }) => {
   return (
-    <Aside className={styles['sidebar']}>
-      <Container className={styles['sidebarContainer']}>
+    <Aside
+      role="aside"
+      className={styles['sidebar']}
+    >
+      <Container
+        role="container"
+        className={styles['sidebarContainer']}
+      >
         <Container className={styles['sidebarLogoNavContainer']}>
           <SidebarLogo />
           <SidebarNav />

@@ -13,8 +13,12 @@ export const metadata: Metadata = {
 
 export default function InfoPortalPage() {
   return (
-    <Section className={styles['infoPortal']}>
+    <Section
+      role="section"
+      className={styles['infoPortal']}
+    >
       <Nav
+        role="nav"
         title="Info Portal"
         buttonLabel="Add Folder"
         isRenderBackLink={false}

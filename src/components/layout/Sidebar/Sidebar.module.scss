@@ -1,6 +1,6 @@
-@use '../../../styles/abstracts/mixins/mixins' as *;
-@use '../../../styles/base/colors/colors' as color;
-@use '../../../styles/base/globals/globals' as size;
+@use "../../../styles/abstracts/mixins/mixins" as *;
+@use "../../../styles/base/colors/colors" as color;
+@use "../../../styles/base/globals/globals" as size;
 
 .sidebar {
   width: 100%;
@@ -20,10 +20,17 @@
 
   &Logo {
     max-width: 3.4375rem;
-    padding: 2.5rem 0 0 1.5rem;
+    margin: 2.5rem 0 0 1.5rem;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
     &:hover {
       transform: scale(1.05);
+    }
+
+    &Icon {
+      width: 100%;
+      max-height: 100%;
+      max-width: 3.125rem;
+      max-height: 3.125rem;
     }
   }
 
@@ -61,7 +68,7 @@
     flex-direction: column;
     gap: 3.1875rem;
     padding-inline: 1rem;
-    padding-block-end: 3.1875rem;
+    padding-block: 3.1875rem;
 
     &SupportImage {
       width: 100%;
@@ -103,7 +110,7 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       background: color.$background-support-primary;
       border-radius: 0.125rem;
       width: 0.25rem;
