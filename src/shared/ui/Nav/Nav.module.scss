@@ -1,0 +1,56 @@
+@use "../../../shared/styles/abstracts/mixins/mixins" as *;
+@use "../../../shared/styles/base/colors/colors" as color;
+@use "../../../shared/styles/base/globals/globals" as size;
+@use "../../../shared/styles/abstracts/breakpoints/breakpoints" as *;
+
+.nav {
+  grid-column: span 12;
+  width: 100%;
+
+  &Container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &Top {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5rem;
+  }
+
+  &Title {
+    @include navTitle;
+  }
+
+  &Button {
+    @include Button;
+    position: static;
+    max-width: 9.875rem;
+  }
+
+  &BackButton {
+    width: auto;
+    background: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      background: url("/icons/outlined-icons/arrow-back.svg") no-repeat center center;
+      width: 1.5rem;
+      height: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -0.15625rem;
+    }
+  }
+
+  &BackLink {
+    margin-inline-start: 1.75rem;
+    font-weight: 600;
+    color: color.$background-support-primary;
+  }
+}

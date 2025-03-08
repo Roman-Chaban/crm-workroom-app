@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import React from 'react';
 
-import { Section, Nav, InfoPortalMain } from '@/index/index';
+import { Section, Nav, InfoPortalMain } from '@/index';
 
 import styles from '@/styles/pages/infoPortal.module.scss';
 

@@ -3,11 +3,11 @@
 import React, { useState } from 'react';
 
 import { useRouter } from 'next/navigation';
-import { useDocumentTitle } from '@/hooks/useDocumentTitle';
+import { useDocumentTitle } from '@/shared/lib/hooks/useDocumentTitle';
 
 import { Nav, Section, EventModal } from '@/index';
 
-import { NAV_PATHS } from '@/enums/navPaths';
+import { NAV_PATHS } from '@/shared/enums/navPaths';
 
 type isEventModalOpenType = boolean;
 

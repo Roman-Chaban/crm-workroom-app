@@ -1,0 +1,127 @@
+@use "../../../shared/styles/abstracts/mixins/mixins" as *;
+@use "../../../shared/styles/base/colors/colors" as color;
+@use "../../../shared/styles/base/globals/globals" as size;
+@use "../../../shared/styles/abstracts/breakpoints/breakpoints" as *;
+
+.sidebar {
+  width: 100%;
+  max-width: 12.5rem;
+  grid-column: span 2;
+  &Container {
+    width: 100%;
+    background: color.$color-white-primary;
+    box-shadow: color.$shadow-box-light;
+    border-radius: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    justify-content: space-between;
+  }
+
+  &Logo {
+    max-width: 3.4375rem;
+    margin: 2.5rem 0 0 1.5rem;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &Icon {
+      width: 100%;
+      max-height: 100%;
+      max-width: 3.125rem;
+      max-height: 3.125rem;
+    }
+  }
+
+  &LogoNavContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2.625rem;
+  }
+
+  &Nav {
+    width: 100%;
+  }
+
+  &NavList {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.875rem;
+    padding-inline-start: 1rem;
+
+    &Item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-inline-start: 0.5rem;
+      min-height: 3rem;
+    }
+
+    &ItemLink {
+      @include listItem;
+    }
+  }
+
+  &Logout {
+    display: flex;
+    flex-direction: column;
+    gap: 3.1875rem;
+    padding-inline: 1rem;
+    padding-block: 3.1875rem;
+
+    &SupportImage {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      position: relative;
+    }
+  }
+
+  &LogoutBlock {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &SupportButton {
+    @include Button;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &LogoutButton {
+    background: inherit;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    @include listItem;
+  }
+
+  &NavListItemActive {
+    width: 100%;
+    max-width: 10.75rem;
+    height: 2.75rem;
+    padding: 0.625rem 0.5rem;
+    border-radius: 0.625rem;
+    background-color: rgba(color.$background-support-primary, 0.1);
+    position: relative;
+
+    &::after {
+      content: "";
+      background: color.$background-support-primary;
+      border-radius: 0.125rem;
+      width: 0.25rem;
+      height: 100%;
+      position: absolute;
+      right: -0.75rem;
+    }
+  }
+
+  & .activeColor {
+    color: color.$background-support-primary;
+  }
+}

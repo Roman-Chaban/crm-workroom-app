@@ -10,9 +10,9 @@ import {
   Projects,
   ActivityStream,
   Section,
-} from '@/index/index';
+} from '@/index';
 
-import styles from '@/styles/pages/home.module.scss';
+import styles from '@/shared/styles/pages/home.module.scss';
 
 export const metadata: Metadata = {
   title: 'CRM Workroom - Dashboard',

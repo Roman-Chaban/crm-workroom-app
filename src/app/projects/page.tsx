@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { Metadata } from 'next';
 
-import { Nav, Grid, ProjectsSidebar, Section } from '@/index/index';
+import { Nav, Grid, ProjectsSidebar, Section } from '@/index';
 
 import { RenderProjectsActive } from '@/components/projects/RenderProjectsActive/RenderProjectsActive';
 

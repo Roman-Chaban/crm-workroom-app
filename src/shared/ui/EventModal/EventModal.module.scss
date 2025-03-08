@@ -1,0 +1,141 @@
+@use "../../../shared/styles/abstracts/mixins/mixins" as *;
+@use "../../../shared/styles/base/colors/colors" as color;
+@use "../../../shared/styles/base/globals/globals" as size;
+@use "../../../shared/styles/abstracts/breakpoints/breakpoints" as *;
+
+.modalOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding-block: 3.625rem 3.6875rem;
+  background: color.$background-modal-overlay;
+
+  & .modalContent {
+    width: 100%;
+    overflow: auto;
+    @include modalCustomScrollBar;
+    @include whiteContainer(36.5rem);
+    @include flexColumn(1.875rem);
+    padding: 3.625rem 3.75rem;
+  }
+
+  & .modalHeader {
+    display: flex;
+    justify-content: space-between;
+
+    &Title {
+      @include boldTitle;
+    }
+
+    &Close {
+      @include closeButton;
+      position: relative;
+      bottom: 1.8125rem;
+      left: 1.875rem;
+      transition: 0.3s ease-in-out 0s;
+
+      &:hover {
+        background: color.$color-gray-light;
+      }
+    }
+  }
+
+  & .modalForm {
+    @include flexColumn(1.875rem);
+  }
+
+  & .modalEventBlock {
+    @include flexColumn(0.4375rem);
+  }
+
+  & .modalFormLabel {
+    @include flexColumn(0.4375rem);
+    @include selectLabel;
+  }
+
+  & .modalFormInput {
+    @include input;
+    @include inputHover;
+    max-width: 100%;
+  }
+
+  & .modalEventSelect,
+  .modalPrioritySelect {
+    max-width: 100%;
+  }
+
+  & .modalDescriptionArea {
+    @include customTextarea;
+  }
+
+  & .modalDescriptionLabel {
+    @include flexColumn(0.4375rem);
+    @include selectLabel;
+  }
+
+  & .eventModalRepeat {
+    width: 100%;
+    height: 100%;
+    &Container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 1.25rem;
+      width: 100%;
+      min-height: 4.9375rem;
+      border-radius: 0.875rem;
+      background: color.$background-main-light;
+    }
+
+    &Title {
+      font-weight: 700;
+      line-height: 170%;
+      font-size: size.$font-size-lg;
+      color: color.$color-black-deep;
+    }
+  }
+
+  & .eventModalRepeatSwitchButton {
+    width: 100%;
+    max-width: 3.1875rem;
+    min-height: 1.9375rem;
+    border-radius: 1.125rem;
+    background: color.$background-switcher;
+    position: relative;
+    transition: background 0.5s ease;
+
+    &.active {
+      background: color.$background-support-primary;
+    }
+  }
+
+  & .eventModalRepeatCircle {
+    display: inline-block;
+    width: 1.4375rem;
+    height: 1.4375rem;
+    background: color.$color-white-primary;
+    border-radius: 100%;
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease;
+
+    &.active {
+      transform: translateX(1.25rem);
+    }
+  }
+}
+
+@include respond-toWidth(large-medium) {
+  .modalOverlay {
+    padding: 1.875rem;
+  }
+}

@@ -4,13 +4,13 @@ import type { Metadata } from 'next';
 
 import { Nunito_Sans } from 'next/font/google';
 
-import { BodyWrapper } from '@/index/index';
+import { BodyWrapper } from '@/index';
 
-import { SidebarRender } from '@/components/containers/SidebarRender/SidebarRender';
+import { SidebarRender } from '@/features/containers/SidebarRender/SidebarRender';
 
-import { MainRender } from '@/components/containers/MainRender/MainRender';
+import { MainRender } from '@/features/containers/MainRender/MainRender';
 
-import '@/styles/main/main.scss';
+import '@/shared/styles/main/main.scss';
 
 const basicFont = Nunito_Sans({
   subsets: ['latin'],

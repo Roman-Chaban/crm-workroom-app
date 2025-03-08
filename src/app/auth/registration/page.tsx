@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-import { useAppSelector } from '@/hooks/useAppSelector';
-import { useDocumentTitle } from '@/hooks/useDocumentTitle';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { useDocumentTitle } from '@/shared/lib/hooks/useDocumentTitle';
 
 import {
   Container,
@@ -11,9 +11,9 @@ import {
   ServiceSelection,
   UserDetailsSidebar,
   ServiceDetails,
-} from '@/index/index';
+} from '@/index';
 
-import { STEPS } from '@/enums/steps';
+import { STEPS } from '@/shared/enums/steps';
 
 import styles from '@/styles/pages/signIn.module.scss';
 
