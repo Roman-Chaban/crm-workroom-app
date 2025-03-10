@@ -6,12 +6,16 @@ export const useDocumentTitle = (title: string) => {
   const defaultTitle = useRef<string>(document.title);
 
   useEffect(() => {
-    if (title && document.title !== title) {
-      document.title = title;
+    if (typeof window !== 'undefined') {
+      if (title && document.title !== title) {
+        document.title = title;
+      }
     }
 
     return () => {
-      document.title = defaultTitle.current;
+      if (typeof window !== 'undefined') {
+        document.title = defaultTitle.current;
+      }
     };
   }, [title]);
 };

@@ -1,11 +1,10 @@
 module.exports = {
     presets: [
-      'next/babel',            // Якщо ви використовуєте Next.js
-      '@babel/preset-typescript',  // Для підтримки TypeScript
-      '@babel/preset-env'      // Для підтримки сучасного JS
+      'next/babel',
+      '@babel/preset-typescript',
+      '@babel/preset-env'      
     ],
     plugins: [
-      // Додаткові плагіни, якщо потрібно
     ]
   };
   
