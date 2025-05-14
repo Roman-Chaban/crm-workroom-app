@@ -20,10 +20,7 @@ export const registerInputClassNames: RegisterInputClassNames = {
 
 interface ProfileSidebarMainInfoProps {
   formStateMain: FormStateMain;
-  register: (
-    name: keyof FormStateMain,
-    options?: object,
-  ) => UseFormRegisterReturn;
+  register: (name: keyof FormStateMain, options?: object) => UseFormRegisterReturn;
   handleSubmitMainForm: () => void;
 }
 

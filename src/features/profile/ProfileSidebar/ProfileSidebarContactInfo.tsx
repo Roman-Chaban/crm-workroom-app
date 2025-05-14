@@ -16,10 +16,7 @@ import styles from '@/shared/styles/pages/Profile.module.scss';
 
 interface ProfileSidebarContactInfoProps extends HTMLProps<HTMLDivElement> {
   formStateContact: FormStateContact;
-  register: (
-    name: keyof FormStateContact,
-    options?: object,
-  ) => UseFormRegisterReturn;
+  register: (name: keyof FormStateContact, options?: object) => UseFormRegisterReturn;
   handleSubmitContactForm: () => void;
 }
 

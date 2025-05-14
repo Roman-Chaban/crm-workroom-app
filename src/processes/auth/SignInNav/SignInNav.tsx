@@ -10,10 +10,7 @@ import { Button, Div } from '@/index';
 
 import { SignInNavProps } from '@/shared/interfaces/SignInInterface';
 
-import {
-  handleNextStep,
-  handlePrevStep,
-} from '@/shared/store/slices/StepsSlice';
+import { handleNextStep, handlePrevStep } from '@/shared/store/slices/StepsSlice';
 
 export const SignInNav: FC<SignInNavProps> = ({
   isNextButtonDisabled,

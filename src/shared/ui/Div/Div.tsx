@@ -8,13 +8,7 @@ interface DivProps extends HTMLProps<HTMLDivElement> {
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-export const Div: FC<DivProps> = ({
-  children,
-  className,
-  style,
-  title,
-  onClick,
-}) => {
+export const Div: FC<DivProps> = ({ children, className, style, title, onClick }) => {
   return (
     <div
       onClick={onClick}

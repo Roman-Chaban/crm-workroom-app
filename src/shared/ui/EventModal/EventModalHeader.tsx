@@ -9,9 +9,7 @@ interface EventModalHeaderProps {
   onCloseModal: () => void;
 }
 
-export const EventModalHeader: FC<EventModalHeaderProps> = ({
-  onCloseModal,
-}) => {
+export const EventModalHeader: FC<EventModalHeaderProps> = ({ onCloseModal }) => {
   return (
     <Div className={styles['modalHeader']}>
       <Heading

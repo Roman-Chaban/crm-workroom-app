@@ -1,7 +1,7 @@
-@use "../../../shared/styles/abstracts/mixins/mixins" as *;
-@use "../../../shared/styles/base/colors/colors" as color;
-@use "../../../shared/styles/base/globals/globals" as size;
-@use "../../../shared/styles/abstracts/breakpoints/breakpoints" as *;
+@use '../../../shared/styles/abstracts/mixins/mixins' as *;
+@use '../../../shared/styles/base/colors/colors' as color;
+@use '../../../shared/styles/base/globals/globals' as size;
+@use '../../../shared/styles/abstracts/breakpoints/breakpoints' as *;
 
 .nearestEvents {
   @include whiteContainer(339px);

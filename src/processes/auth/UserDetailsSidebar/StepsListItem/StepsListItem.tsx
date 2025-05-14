@@ -8,10 +8,7 @@ import { StepsListItemProps } from '@/shared/interfaces/UserDetailsInterface';
 
 import styles from '../UserDetailsSidebar.module.scss';
 
-export const StepsListItem: FC<StepsListItemProps> = ({
-  step,
-  currentStep,
-}) => {
+export const StepsListItem: FC<StepsListItemProps> = ({ step, currentStep }) => {
   const isActive = currentStep === step.id;
   const isCompleted = currentStep > step.id;
   const isFirstStepActive = isActive && step.id === 1;

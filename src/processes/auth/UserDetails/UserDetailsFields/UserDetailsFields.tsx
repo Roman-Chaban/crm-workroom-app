@@ -21,10 +21,7 @@ import SendIcon from '@mui/icons-material/Send';
 
 import { COLORS } from '@/shared/constants/Colors';
 
-import {
-  CountryOption,
-  countryOptions,
-} from '@/shared/assets/static/CountryOptions';
+import { CountryOption, countryOptions } from '@/shared/assets/static/CountryOptions';
 
 import dynamic from 'next/dynamic';
 
@@ -46,11 +43,11 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
 }) => {
   const [phoneNumber, setPhoneNumber] = useState<PhoneNumber>('');
 
-  const [isPasswordVisible, setIsPasswordVisible] =
-    useState<IsPasswordVisible>(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState<IsPasswordVisible>(false);
 
-  const [selectedCountryCode, setSelectedCountryCode] =
-    useState<SelectedCountryCode>(countryOptions[0]);
+  const [selectedCountryCode, setSelectedCountryCode] = useState<SelectedCountryCode>(
+    countryOptions[0],
+  );
 
   const handleCountryChange = (newValue: SingleValue<CountryOption>) => {
     if (newValue) {
@@ -66,9 +63,7 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
     }
   };
 
-  const handlePhoneNumberInputChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => {
+  const handlePhoneNumberInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value;
     const countryCode = `+${selectedCountryCode.value}`;
 
@@ -89,25 +84,14 @@ export const UserDetailsFields: FC<UserDetailsFieldsProps> = ({
 
   const isNextButtonDisabled = useMemo(() => {
     return (
-      !registrationData.email ||
-      !registrationData.password ||
-      !phoneNumber ||
-      !selectedCountryCode
+      !registrationData.email || !registrationData.password || !phoneNumber || !selectedCountryCode
     );
-  }, [
-    registrationData.email,
-    registrationData.password,
-    registrationData.phoneNumber,
-  ]);
+  }, [registrationData.email, registrationData.password, registrationData.phoneNumber]);
 
   const changeVisibleIcon = isPasswordVisible ? (
-    <VisibilityIcon
-      style={{ color: COLORS.colorGrayNeutral, cursor: 'pointer' }}
-    />
+    <VisibilityIcon style={{ color: COLORS.colorGrayNeutral, cursor: 'pointer' }} />
   ) : (
-    <VisibilityOffIcon
-      style={{ color: COLORS.colorGrayNeutral, cursor: 'pointer' }}
-    />
+    <VisibilityOffIcon style={{ color: COLORS.colorGrayNeutral, cursor: 'pointer' }} />
   );
 
   return (

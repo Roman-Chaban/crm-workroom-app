@@ -11,10 +11,7 @@ const apiClient = axios.create({
   method: REQUESTS_METHODS.POST,
 });
 
-export const LoginUser = async (
-  loginData: LoginData,
-  queryParams: QueryParams,
-) => {
+export const LoginUser = async (loginData: LoginData, queryParams: QueryParams) => {
   try {
     const response = await apiClient.post(
       `${API_ENDPOINTS.LOGIN}?remember=${queryParams.remember}`,
@@ -26,8 +23,7 @@ export const LoginUser = async (
     return { email, id, isAccountVerified, refreshToken };
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      const errorMessage =
-        error.response?.data?.message || 'Registration failed';
+      const errorMessage = error.response?.data?.message || 'Registration failed';
       throw new Error(errorMessage);
     }
     throw new Error('Unknown error occurred during registration');

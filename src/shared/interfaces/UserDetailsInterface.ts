@@ -1,7 +1,4 @@
-import {
-  RegistrationUserData,
-  SmsCode,
-} from '@/shared/types/RegistrationTypes';
+import { RegistrationUserData, SmsCode } from '@/shared/types/RegistrationTypes';
 import { EventType } from '@/shared/types/SignInTypes';
 import { StepItem } from '@/shared/types/StepItemTypes';
 

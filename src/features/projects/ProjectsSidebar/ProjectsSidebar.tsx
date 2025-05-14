@@ -15,9 +15,7 @@ import { projectsSelect } from '@/shared/assets/static/ProjectsOptions';
 import styles from './ProjectsSidebar.module.scss';
 
 export const ProjectsSidebar: FC = () => {
-  const [selectedProjects, setSelectedProjects] = useState<ProjectsOption>(
-    projectsSelect[0],
-  );
+  const [selectedProjects, setSelectedProjects] = useState<ProjectsOption>(projectsSelect[0]);
 
   const [activeListItem, setActiveListItem] = useState<number>(1);
 

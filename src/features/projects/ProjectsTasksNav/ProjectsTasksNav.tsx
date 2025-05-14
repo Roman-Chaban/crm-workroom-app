@@ -15,10 +15,7 @@ interface ProjectsTasksNavProps {
   setActiveTab: (activeTab: ActiveTab) => void;
 }
 
-export const ProjectsTasksNav: FC<ProjectsTasksNavProps> = ({
-  activeTab,
-  setActiveTab,
-}) => {
+export const ProjectsTasksNav: FC<ProjectsTasksNavProps> = ({ activeTab, setActiveTab }) => {
   const handleChangeActiveTab = (buttonId: number) => {
     setActiveTab(buttonId);
   };

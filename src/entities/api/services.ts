@@ -1,9 +1,6 @@
 import axios from 'axios';
 
-import {
-  ServicesDetails,
-  ServiceDetailsReturned,
-} from '@/shared/types/ServicesDetailsTypes';
+import { ServicesDetails, ServiceDetailsReturned } from '@/shared/types/ServicesDetailsTypes';
 
 import { REQUESTS_METHODS } from '@/shared/enums/requestsMethods';
 import { API_ENDPOINTS } from '@/shared/enums/apiEndpoints';
@@ -25,9 +22,7 @@ export const getServicesDetails = async (
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(
-        error.response?.data?.message || 'Failed to fetch service details.',
-      );
+      throw new Error(error.response?.data?.message || 'Failed to fetch service details.');
     } else {
       throw new Error('An unexpected error occurred.');
     }

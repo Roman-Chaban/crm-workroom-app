@@ -13,13 +13,7 @@ import React, {
 import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
 import { useMutation } from '@tanstack/react-query';
 
-import {
-  UserDetailsMessage,
-  Container,
-  UserDetailsFields,
-  SignInNav,
-  Form,
-} from '@/index';
+import { UserDetailsMessage, Container, UserDetailsFields, SignInNav, Form } from '@/index';
 
 import { toast } from 'react-hot-toast';
 
@@ -52,21 +46,16 @@ export const UserDetailsForm: FC = () => {
   const [isConfirmationMessageVisible, setIsConfirmationMessageVisible] =
     useState<IsConfirmationMessageVisible>(false);
 
-  const [registrationData, setRegistrationData] =
-    useState<RegistrationUserData>({
-      email: '',
-      password: '',
-      phoneNumber: '',
-    });
+  const [registrationData, setRegistrationData] = useState<RegistrationUserData>({
+    email: '',
+    password: '',
+    phoneNumber: '',
+  });
 
   const currentStep = useAppSelector((state) => state.steps.currentStep);
 
   const handleSubmitTimerStart = () => {
-    if (
-      registrationData.email &&
-      registrationData.password &&
-      registrationData.phoneNumber
-    ) {
+    if (registrationData.email && registrationData.password && registrationData.phoneNumber) {
       setIsTimerActive(true);
       setIsConfirmationMessageVisible(true);
     } else {
@@ -116,34 +105,23 @@ export const UserDetailsForm: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (
-      registrationData.email ||
-      registrationData.password ||
-      registrationData.phoneNumber
-    ) {
+    if (registrationData.email || registrationData.password || registrationData.phoneNumber) {
       localStorage.setItem('registration', JSON.stringify(registrationData));
     }
   }, [registrationData]);
 
-  const handleRegistrationDataChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      const { name, value } = event.target;
-      setRegistrationData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
-    },
-    [],
-  );
+  const handleRegistrationDataChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setRegistrationData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  }, []);
 
   const handleSubmitForm = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (
-      !registrationData.email ||
-      !registrationData.password ||
-      !registrationData.phoneNumber
-    ) {
+    if (!registrationData.email || !registrationData.password || !registrationData.phoneNumber) {
       toast.error('Please fill in all fields!');
       return;
     }

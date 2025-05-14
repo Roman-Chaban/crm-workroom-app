@@ -28,10 +28,7 @@ export const LogoutUser = async (): LogoutReturned => {
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      console.error(
-        `Failed to delete account`,
-        error.response?.data || error.message,
-      );
+      console.error(`Failed to delete account`, error.response?.data || error.message);
     }
   }
 };

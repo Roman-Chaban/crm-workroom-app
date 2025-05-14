@@ -41,9 +41,7 @@ export const DashboardPanel: FC = () => {
     <Div className={styles['dashboard']}>
       <Container className={styles['dashboardContainer']}>
         {userName && (
-          <Span className={styles['dashboardGreetTitle']}>
-            Welcome back, {userName}!
-          </Span>
+          <Span className={styles['dashboardGreetTitle']}>Welcome back, {userName}!</Span>
         )}
         <Heading
           tag="h1"

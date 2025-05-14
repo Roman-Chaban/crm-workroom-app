@@ -66,9 +66,7 @@ describe('SignInForm Component', () => {
     });
 
     const emailInput = screen.getByLabelText(/Email/i) as HTMLInputElement;
-    const passwordInput = screen.getByLabelText(
-      /Password/i,
-    ) as HTMLInputElement;
+    const passwordInput = screen.getByLabelText(/Password/i) as HTMLInputElement;
 
     expect(emailInput.value).toBe('test@example.com');
     expect(passwordInput.value).toBe('password123');

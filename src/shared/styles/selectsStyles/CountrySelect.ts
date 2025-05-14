@@ -29,13 +29,9 @@ const customSelectStyles: StylesConfig<CountryOption, false> = {
     ...base,
     height: 48,
     border: `2px solid ${
-      state.isFocused
-        ? COLORS.backgroundSupportPrimary
-        : COLORS.backgroundModalLight
+      state.isFocused ? COLORS.backgroundSupportPrimary : COLORS.backgroundModalLight
     }`,
-    boxShadow: state.isFocused
-      ? `0 4px 10px ${COLORS.shadowBoxSupport}`
-      : COLORS.shadowModal,
+    boxShadow: state.isFocused ? `0 4px 10px ${COLORS.shadowBoxSupport}` : COLORS.shadowModal,
     borderRadius: 12,
     transition: 'all 0.3s ease',
     backgroundColor: COLORS.colorWhitePrimary,
@@ -89,10 +85,7 @@ const customSelectStyles: StylesConfig<CountryOption, false> = {
       : isFocused
         ? COLORS.optionBackground
         : COLORS.colorWhitePrimary,
-    color:
-      isSelected || isFocused
-        ? COLORS.colorWhitePrimary
-        : COLORS.colorGrayNeutral,
+    color: isSelected || isFocused ? COLORS.colorWhitePrimary : COLORS.colorGrayNeutral,
     cursor: 'pointer',
     ':hover': {
       backgroundColor: COLORS.backgroundSupportHover,
@@ -111,9 +104,7 @@ const customSelectStyles: StylesConfig<CountryOption, false> = {
   }),
   dropdownIndicator: (base, state) => ({
     ...base,
-    color: state.isFocused
-      ? COLORS.backgroundSupportPrimary
-      : COLORS.colorGrayNeutral,
+    color: state.isFocused ? COLORS.backgroundSupportPrimary : COLORS.colorGrayNeutral,
     ':hover': {
       color: COLORS.backgroundSupportHover,
     },

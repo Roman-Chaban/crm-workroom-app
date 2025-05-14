@@ -9,10 +9,7 @@ interface CloseButtonProps extends Omit<HTMLProps<HTMLButtonElement>, ''> {
   classNames: { button: string; icon: string };
 }
 
-export const CloseButton: FC<CloseButtonProps> = ({
-  onCloseModal,
-  classNames,
-}) => {
+export const CloseButton: FC<CloseButtonProps> = ({ onCloseModal, classNames }) => {
   return (
     <Button
       type="button"

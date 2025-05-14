@@ -30,9 +30,7 @@ export const ProjectsCalendarBoardBar: FC = () => {
     label: 'All Tasks',
   });
 
-  const handleChangeSelectedOption = (
-    option: SingleValue<ProjectsOption | null>,
-  ) => {
+  const handleChangeSelectedOption = (option: SingleValue<ProjectsOption | null>) => {
     setSelectedOption(option);
   };
 

@@ -49,18 +49,14 @@ export const ProfileSidebar: FC = () => {
         <ProfileSidebarInfo />
         <ProfileSidebarMainInfo
           formStateMain={formState.formStateMain}
-          register={(name, options) =>
-            register(`formStateMain.${name}` as const, options)
-          }
+          register={(name, options) => register(`formStateMain.${name}` as const, options)}
           handleSubmitMainForm={handleSubmit((data) => {
             handleSubmitMainForm(data);
           })}
         />
         <ProfileSidebarContactInfo
           formStateContact={formState.formStateContact}
-          register={(name, options) =>
-            register(`formStateContact.${name}` as const, options)
-          }
+          register={(name, options) => register(`formStateContact.${name}` as const, options)}
           handleSubmitContactForm={handleSubmit((data) => {
             handleSubmitContactForm(data);
           })}

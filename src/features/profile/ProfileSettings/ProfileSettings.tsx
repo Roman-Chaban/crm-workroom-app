@@ -2,13 +2,7 @@ import React, { type FC } from 'react';
 
 import Image from 'next/image';
 
-import {
-  Box,
-  Button,
-  Container,
-  ProfileSettingsBar,
-  ProfileSettingsNotifications,
-} from '@/index';
+import { Box, Button, Container, ProfileSettingsBar, ProfileSettingsNotifications } from '@/index';
 
 import styles from '@/shared/styles/pages/Profile.module.scss';
 

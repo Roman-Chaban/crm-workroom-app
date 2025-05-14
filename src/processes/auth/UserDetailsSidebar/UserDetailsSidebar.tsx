@@ -8,9 +8,7 @@ import { UserDetailsSidebarProps } from '@/shared/interfaces/UserDetailsInterfac
 
 import styles from './UserDetailsSidebar.module.scss';
 
-export const UserDetailsSidebar: FC<UserDetailsSidebarProps> = ({
-  currentStep,
-}) => {
+export const UserDetailsSidebar: FC<UserDetailsSidebarProps> = ({ currentStep }) => {
   return (
     <Aside className={styles['sidebarSteps']}>
       <Div className={styles['sidebarStepsContainer']}>

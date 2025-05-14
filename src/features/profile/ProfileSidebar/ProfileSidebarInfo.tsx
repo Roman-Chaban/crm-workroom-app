@@ -11,9 +11,7 @@ import { useParsedUserName } from '@/shared/lib/hooks/useParsedUserName';
 import styles from '@/shared/styles/pages/Profile.module.scss';
 
 export const ProfileSidebarInfo: FC = () => {
-  const profileUserName = useParsedUserName(
-    localStorage.getItem('registration'),
-  );
+  const profileUserName = useParsedUserName(localStorage.getItem('registration'));
 
   return (
     <Container className={styles['profileSidebarInfo']}>

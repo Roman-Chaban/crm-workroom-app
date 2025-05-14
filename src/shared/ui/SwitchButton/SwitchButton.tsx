@@ -27,9 +27,7 @@ export const SwitchButton: FC<SwitchButtonProps> = ({ classNames }) => {
       className={`${classNames.button} ${isActive ? classNames.active : ''}`}
       onClick={handleToggleSwitcher}
     >
-      <span
-        className={`${classNames.circle} ${isActive ? classNames.active : ''} `}
-      ></span>
+      <span className={`${classNames.circle} ${isActive ? classNames.active : ''} `}></span>
     </Button>
   );
 };

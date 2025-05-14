@@ -37,8 +37,7 @@ export const ProfileSettingsBar: FC = () => {
           classNames={settingsBarList}
           renderList={profileBarItems}
           renderItem={(item) => {
-            const isActiveListItem: IsActiveItemClass =
-              activeListItem === item.id;
+            const isActiveListItem: IsActiveItemClass = activeListItem === item.id;
             const activeListItemClassName = {
               [styles['activeListItem']]: isActiveListItem,
             };

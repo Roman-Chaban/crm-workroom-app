@@ -11,10 +11,7 @@ import { SignInFormSubmitProps } from '@/shared/interfaces/SignInInterface';
 
 import styles from '../SignInForm.module.scss';
 
-export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({
-  isSubmitting,
-  isButtonDisabled,
-}) => {
+export const SignInFormSubmit: FC<SignInFormSubmitProps> = ({ isSubmitting, isButtonDisabled }) => {
   return (
     <Div className={styles['signInFormBlockSubmit']}>
       <Button

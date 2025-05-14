@@ -50,9 +50,7 @@ export const EventModal: FC<EventModalProps> = ({ onCloseModal, isOpen }) => {
     >
       <Div
         className={styles['modalContent']}
-        onClick={(event: React.MouseEvent<HTMLDivElement>) =>
-          event.stopPropagation()
-        }
+        onClick={(event: React.MouseEvent<HTMLDivElement>) => event.stopPropagation()}
       >
         <EventModalHeader onCloseModal={onCloseModal} />
 

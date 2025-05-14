@@ -2,13 +2,7 @@ import React from 'react';
 
 import type { Metadata } from 'next';
 
-import {
-  Nav,
-  Grid,
-  ProjectsSidebar,
-  Section,
-  RenderProjectsActive,
-} from '@/index';
+import { Nav, Grid, ProjectsSidebar, Section, RenderProjectsActive } from '@/index';
 
 import styles from '@/shared/styles/pages/projects.module.scss';
 

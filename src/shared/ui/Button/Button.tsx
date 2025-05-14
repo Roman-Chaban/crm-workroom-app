@@ -1,9 +1,4 @@
-import React, {
-  HTMLProps,
-  type CSSProperties,
-  type FC,
-  type ReactNode,
-} from 'react';
+import React, { HTMLProps, type CSSProperties, type FC, type ReactNode } from 'react';
 
 type ButtonType = 'button' | 'submit' | 'reset';
 

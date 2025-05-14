@@ -27,21 +27,18 @@ import customStyles from '@/shared/styles/selectsStyles/ServiceSelectStyles';
 
 import styles from '../ServiceDetails.module.scss';
 
-export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
-  currentStep,
-}) => {
+export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({ currentStep }) => {
   const dispatch = useAppDispatch();
 
-  const { companyName, selectedTeamSize, selectedBusinessDirection } =
-    useAppSelector((state) => state.serviceDetails);
+  const { companyName, selectedTeamSize, selectedBusinessDirection } = useAppSelector(
+    (state) => state.serviceDetails,
+  );
 
   const handleCompanyNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setCompanyName(event.target.value));
   };
 
-  const handleBusinessDirectionChange = (
-    selectedOption: SingleValue<ServiceOption>,
-  ) => {
+  const handleBusinessDirectionChange = (selectedOption: SingleValue<ServiceOption>) => {
     if (selectedOption) {
       dispatch(setSelectedBusinessDirection(selectedOption));
     }
@@ -57,9 +54,7 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
     },
   });
 
-  const handleServiceDetailsFormSubmit = (
-    event: FormEvent<HTMLFormElement>,
-  ) => {
+  const handleServiceDetailsFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!companyName || !selectedTeamSize || !selectedBusinessDirection) {
@@ -67,9 +62,7 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
       return;
     }
 
-    const existingServiceDetails = JSON.parse(
-      localStorage.getItem('service-details') || '{}',
-    );
+    const existingServiceDetails = JSON.parse(localStorage.getItem('service-details') || '{}');
 
     const updatedServiceDetails = {
       ...existingServiceDetails,
@@ -79,10 +72,7 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
     };
 
     try {
-      localStorage.setItem(
-        'service-details',
-        JSON.stringify(updatedServiceDetails),
-      );
+      localStorage.setItem('service-details', JSON.stringify(updatedServiceDetails));
       toast.success('Service details saved successfully.');
     } catch (error) {
       console.error('Failed to save service details to localStorage:', error);
@@ -100,8 +90,7 @@ export const ServiceDetailsForm: FC<ServiceDetailsFormProps> = ({
     submitServiceDetailsMutation.mutate(serviceDetails);
   };
 
-  const isNextStepDisabled =
-    !companyName || !selectedTeamSize || !selectedBusinessDirection;
+  const isNextStepDisabled = !companyName || !selectedTeamSize || !selectedBusinessDirection;
 
   return (
     <Form

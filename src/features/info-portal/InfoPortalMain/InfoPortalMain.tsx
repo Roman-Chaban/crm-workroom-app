@@ -1,14 +1,6 @@
 import React, { type FC } from 'react';
 
-import {
-  Box,
-  Container,
-  Heading,
-  Div,
-  InfoPortalFolders,
-  Paragraph,
-  Span,
-} from '@/index';
+import { Box, Container, Heading, Div, InfoPortalFolders, Paragraph, Span } from '@/index';
 
 import styles from './InfoPortalMain.module.scss';
 
@@ -25,8 +17,8 @@ export const InfoPortalMain: FC = () => {
               Your project data warehouse
             </Heading>
             <Paragraph className={styles['infoPortalMainBannerSubtitle']}>
-              Add project data, create thematic pages, edit data, share
-              information with team members
+              Add project data, create thematic pages, edit data, share information with team
+              members
             </Paragraph>
           </Div>
         </Div>
@@ -42,9 +34,7 @@ export const InfoPortalMain: FC = () => {
             </Heading>
             <Div className={styles['projectsStatistic']}>
               <strong className={styles['projectsStatisticTitle']}>10</strong>
-              <Span className={styles['projectsStatisticGrowth']}>
-                Growth +3
-              </Span>
+              <Span className={styles['projectsStatisticGrowth']}>Growth +3</Span>
             </Div>
             <Span className={styles['projectsStatisticSubtitle']}>
               Ongoing projects last month - 7

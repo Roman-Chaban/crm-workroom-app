@@ -10,10 +10,7 @@ export const UserDetailsConfirmation: FC<UserDetailsConfirmationProps> = ({
   handleSmsCodeChange,
   smsCode,
 }) => {
-  const handleSmsCodeInputChange = (
-    index: number,
-    event: ChangeEvent<HTMLInputElement>,
-  ) => {
+  const handleSmsCodeInputChange = (index: number, event: ChangeEvent<HTMLInputElement>) => {
     handleSmsCodeChange(index, event.target.value);
   };
 
@@ -26,11 +23,7 @@ export const UserDetailsConfirmation: FC<UserDetailsConfirmationProps> = ({
     if (event.key === 'Backspace' && !target.value && index > 0) {
       const prev = target.previousElementSibling as HTMLInputElement | null;
       prev?.focus();
-    } else if (
-      /\d/.test(event.key) &&
-      target.value &&
-      index < smsCode.length - 1
-    ) {
+    } else if (/\d/.test(event.key) && target.value && index < smsCode.length - 1) {
       const next = target.nextElementSibling as HTMLInputElement | null;
       next?.focus();
     }

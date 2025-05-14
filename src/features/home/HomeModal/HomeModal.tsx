@@ -1,12 +1,6 @@
 'use client';
 
-import React, {
-  ChangeEvent,
-  ForwardedRef,
-  forwardRef,
-  useEffect,
-  useState,
-} from 'react';
+import React, { ChangeEvent, ForwardedRef, forwardRef, useEffect, useState } from 'react';
 
 import { createPortal } from 'react-dom';
 
@@ -32,14 +26,10 @@ import styles from './HomeModal.module.scss';
 
 export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
   ({ onCloseModal }, ref: ForwardedRef<HTMLDivElement>) => {
-    const [selectedValue, setSelectedValue] = useState<SelectedValue>(
-      options[0].label,
-    );
+    const [selectedValue, setSelectedValue] = useState<SelectedValue>(options[0].label);
     const [areaDescription, setAreaDescription] = useState<AreaValue>('');
 
-    const [portalContainer, setPortalContainer] = useState<Element | null>(
-      null,
-    );
+    const [portalContainer, setPortalContainer] = useState<Element | null>(null);
 
     useEffect(() => {
       const modalRoot = document.getElementById('modal-root');
@@ -65,9 +55,7 @@ export const HomeModal = forwardRef<HTMLDivElement, HomeModalProps>(
       }
     };
 
-    const handleChangeAreaDescription = (
-      event: ChangeEvent<HTMLTextAreaElement>,
-    ) => {
+    const handleChangeAreaDescription = (event: ChangeEvent<HTMLTextAreaElement>) => {
       setAreaDescription(event.target.value);
     };
 

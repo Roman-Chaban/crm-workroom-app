@@ -1,12 +1,6 @@
 import React, { type FC } from 'react';
 
-import {
-  SidebarNav,
-  Container,
-  SidebarLogout,
-  SidebarLogo,
-  Aside,
-} from '@/index';
+import { SidebarNav, Container, SidebarLogout, SidebarLogo, Aside } from '@/index';
 
 import { SidebarProps } from '@/shared/interfaces/SidebarInterface';
 

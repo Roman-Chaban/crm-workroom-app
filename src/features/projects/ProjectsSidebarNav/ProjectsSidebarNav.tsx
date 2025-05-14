@@ -29,9 +29,7 @@ export const ProjectsSidebarNav: FC<ProjectsSidebarNavProps> = ({
                 className={`${styles['sidebarListItem']} ${isActiveListItem ? styles['activeListItem'] : ''}`}
                 onClick={() => setActiveListItem(listItem.id)}
               >
-                <Span className={styles['sidebarListItemCode']}>
-                  {listItem.code}
-                </Span>
+                <Span className={styles['sidebarListItemCode']}>{listItem.code}</Span>
                 {listItem.title}
                 {isActiveListItem && (
                   <Button

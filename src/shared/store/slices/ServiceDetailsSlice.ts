@@ -29,19 +29,13 @@ const serviceDetailsSlice = createSlice({
     setSelectedTeamSize: (state, action: PayloadAction<string>) => {
       state.selectedTeamSize = action.payload;
     },
-    setSelectedBusinessDirection: (
-      state,
-      action: PayloadAction<ServiceOption>,
-    ) => {
+    setSelectedBusinessDirection: (state, action: PayloadAction<ServiceOption>) => {
       state.selectedBusinessDirection = action.payload;
     },
   },
 });
 
-export const {
-  setCompanyName,
-  setSelectedTeamSize,
-  setSelectedBusinessDirection,
-} = serviceDetailsSlice.actions;
+export const { setCompanyName, setSelectedTeamSize, setSelectedBusinessDirection } =
+  serviceDetailsSlice.actions;
 
 export default serviceDetailsSlice.reducer;

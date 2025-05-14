@@ -37,9 +37,7 @@ export const InfoPortalFolders: FC = () => {
               >
                 {item.title}
               </Heading>
-              <Span className={styles['infoPortalListSubInfoSubtitle']}>
-                {item.pagesAmount}
-              </Span>
+              <Span className={styles['infoPortalListSubInfoSubtitle']}>{item.pagesAmount}</Span>
             </Div>
           </Div>
         )}

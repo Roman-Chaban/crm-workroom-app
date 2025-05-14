@@ -47,12 +47,7 @@ export const HeaderLogout: FC<HeaderLogoutProps> = ({ validateUserName }) => {
     onSuccess: () => {
       toast.success('User is logout!');
 
-      const keysForRemove = [
-        'accessToken',
-        'refreshToken',
-        'registration',
-        'isOpen',
-      ];
+      const keysForRemove = ['accessToken', 'refreshToken', 'registration', 'isOpen'];
 
       removeItems(keysForRemove);
 

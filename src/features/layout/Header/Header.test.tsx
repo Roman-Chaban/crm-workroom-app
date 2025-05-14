@@ -55,9 +55,7 @@ describe('Header Component', () => {
     fireEvent.click(notificationButton);
 
     fireEvent.click(notificationButton);
-    await waitFor(() =>
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument(),
-    );
+    await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument());
   });
 
   test('shows sign-in button when user is not registered', () => {

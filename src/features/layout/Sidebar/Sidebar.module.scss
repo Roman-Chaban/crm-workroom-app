@@ -1,7 +1,7 @@
-@use "../../../shared/styles/abstracts/mixins/mixins" as *;
-@use "../../../shared/styles/base/colors/colors" as color;
-@use "../../../shared/styles/base/globals/globals" as size;
-@use "../../../shared/styles/abstracts/breakpoints/breakpoints" as *;
+@use '../../../shared/styles/abstracts/mixins/mixins' as *;
+@use '../../../shared/styles/base/colors/colors' as color;
+@use '../../../shared/styles/base/globals/globals' as size;
+@use '../../../shared/styles/abstracts/breakpoints/breakpoints' as *;
 
 .sidebar {
   width: 100%;
@@ -111,7 +111,7 @@
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       background: color.$background-support-primary;
       border-radius: 0.125rem;
       width: 0.25rem;

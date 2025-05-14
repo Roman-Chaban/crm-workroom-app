@@ -32,11 +32,7 @@ export const Notification: FC<NotificationProps> = ({
             {heading}
           </Heading>
         )}
-        {paragraph && (
-          <Paragraph className={classNames.paragraph || ''}>
-            {paragraph}
-          </Paragraph>
-        )}
+        {paragraph && <Paragraph className={classNames.paragraph || ''}>{paragraph}</Paragraph>}
       </Div>
       <SwitchButton
         classNames={{

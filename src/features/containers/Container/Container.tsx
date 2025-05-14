@@ -1,10 +1,4 @@
-import React, {
-  CSSProperties,
-  type FC,
-  ForwardedRef,
-  HTMLProps,
-  ReactNode,
-} from 'react';
+import React, { CSSProperties, type FC, ForwardedRef, HTMLProps, ReactNode } from 'react';
 
 interface ContainerProps extends HTMLProps<HTMLDivElement> {
   children: ReactNode;
@@ -13,12 +7,7 @@ interface ContainerProps extends HTMLProps<HTMLDivElement> {
   style?: CSSProperties;
 }
 
-export const Container: FC<ContainerProps> = ({
-  children,
-  className,
-  ref,
-  style,
-}) => {
+export const Container: FC<ContainerProps> = ({ children, className, ref, style }) => {
   return (
     <div
       className={className}

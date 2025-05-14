@@ -14,11 +14,7 @@ export interface ListClassNames {
   listItem: string;
 }
 
-export const List = <T,>({
-  renderList,
-  classNames,
-  renderItem,
-}: ListProps<T>) => {
+export const List = <T,>({ renderList, classNames, renderItem }: ListProps<T>) => {
   return (
     <ul className={classNames.list}>
       {renderList.map((listItem, index) => (

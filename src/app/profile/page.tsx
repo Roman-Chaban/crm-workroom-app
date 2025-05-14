@@ -2,13 +2,7 @@ import React from 'react';
 
 import { Metadata } from 'next';
 
-import {
-  Heading,
-  Section,
-  ProfileSidebar,
-  Grid,
-  ProfileSettings,
-} from '@/index';
+import { Heading, Section, ProfileSidebar, Grid, ProfileSettings } from '@/index';
 
 import styles from '@/shared/styles/pages/Profile.module.scss';
 

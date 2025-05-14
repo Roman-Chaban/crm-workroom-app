@@ -15,9 +15,7 @@ import { ActiveTab, TASKS_TABS } from '@/shared/interfaces/TasksNavInterface';
 import styles from '@/shared/styles/pages/projects.module.scss';
 
 export const RenderProjectsActive: FC = () => {
-  const [activeTab, setActiveTab] = useState<ActiveTab>(
-    TASKS_TABS.ACTIVE_TASKS,
-  );
+  const [activeTab, setActiveTab] = useState<ActiveTab>(TASKS_TABS.ACTIVE_TASKS);
 
   const tabsContent: Record<ActiveTab, JSX.Element> = {
     [TASKS_TABS.ACTIVE_TASKS]: <ProjectsActiveTasks />,

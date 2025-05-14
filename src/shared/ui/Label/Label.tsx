@@ -6,12 +6,7 @@ interface LabelProps extends HTMLProps<HTMLLabelElement> {
   className?: string;
 }
 
-export const Label: FC<LabelProps> = ({
-  children,
-  htmlFor,
-  className,
-  ...rest
-}) => {
+export const Label: FC<LabelProps> = ({ children, htmlFor, className, ...rest }) => {
   return (
     <label
       htmlFor={htmlFor}

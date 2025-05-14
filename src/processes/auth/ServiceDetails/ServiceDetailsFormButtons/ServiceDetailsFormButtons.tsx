@@ -26,9 +26,7 @@ export const ServiceDetailsFormButtons: FC<ServiceDetailsFormButtonsProps> = ({
       aria-labelledby="team-size-label"
       className={styles['serviceDetailsButtons']}
     >
-      <label className={styles['serviceDetailsLabel']}>
-        How many people in your team?
-      </label>
+      <label className={styles['serviceDetailsLabel']}>How many people in your team?</label>
       <Div className={styles['serviceDetailsButtonsContainer']}>
         {serviceDetailsButtons.map((button) => (
           <Button

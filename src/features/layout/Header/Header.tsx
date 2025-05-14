@@ -1,36 +1,18 @@
 'use client';
 
-import React, {
-  ChangeEvent,
-  useEffect,
-  useMemo,
-  useState,
-  type FC,
-} from 'react';
+import React, { ChangeEvent, useEffect, useMemo, useState, type FC } from 'react';
 
 import Link from 'next/link';
 import Image from 'next/image';
 
-import {
-  Button,
-  Container,
-  Input,
-  HeaderLogout,
-  Div,
-  HeaderElement,
-} from '@/index';
+import { Button, Container, Input, HeaderLogout, Div, HeaderElement } from '@/index';
 import { Notifications } from '@/features/home/Notification/Notification';
 
 import { Value } from '@/shared/types/InputTypes';
 
 import { NAV_PATHS } from '@/shared/enums/navPaths';
 
-import {
-  IsAnimating,
-  IsNotification,
-  IsRegistered,
-  UserName,
-} from '@/shared/types/HeaderTypes';
+import { IsAnimating, IsNotification, IsRegistered, UserName } from '@/shared/types/HeaderTypes';
 
 import styles from './Header.module.scss';
 

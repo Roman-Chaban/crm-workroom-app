@@ -12,8 +12,7 @@ import { NAV_PATHS } from '@/shared/enums/navPaths';
 type isEventModalOpenType = boolean;
 
 export default function NearestEventsPage() {
-  const [isEventModalOpen, setIsEventModalOpen] =
-    useState<isEventModalOpenType>(false);
+  const [isEventModalOpen, setIsEventModalOpen] = useState<isEventModalOpenType>(false);
 
   const router = useRouter();
 

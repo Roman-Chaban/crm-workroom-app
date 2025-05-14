@@ -4,11 +4,7 @@ import { Div, Heading } from '@/index';
 
 import { SignInHeaderProps } from '@/shared/interfaces/SignInInterface';
 
-export const SignInHeader: FC<SignInHeaderProps> = ({
-  stepTitle,
-  title,
-  classNames,
-}) => {
+export const SignInHeader: FC<SignInHeaderProps> = ({ stepTitle, title, classNames }) => {
   return (
     <Div className={classNames?.header}>
       <Heading

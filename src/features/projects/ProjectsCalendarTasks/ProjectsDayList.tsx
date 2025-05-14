@@ -8,11 +8,7 @@ interface ProjectsDayListProps {
   visibleDays: number;
 }
 
-export const ProjectsDayList: FC<ProjectsDayListProps> = ({
-  className,
-  days,
-  visibleDays,
-}) => {
+export const ProjectsDayList: FC<ProjectsDayListProps> = ({ className, days, visibleDays }) => {
   return (
     <Container
       style={{
